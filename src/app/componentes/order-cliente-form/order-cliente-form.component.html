@@ -1,0 +1,110 @@
+<div class="col-md-10 offset-md-1">
+    <div class="card">
+        <div class="card-body">
+            <div class="card card-header">
+                <h2>Crear Orden de Cliente</h2>
+            </div>
+            <div style="float: right;">
+                <button class="btn btn-success" style="margin-top: 4px;"  type="submit" routerLink="/ordenCliente" (click)="edit ? actualizarOrdenCliente() : guardarOrdenCliente()"  [disabled]="form.invalid">Guardar</button>
+                <button class="btn btn-success "  style="margin-left: 7px; margin-top: 4px;" type="submit" routerLink="/ordenCliente">Cancelar</button>
+            </div>
+            <div>
+                <form  [formGroup]="form" class="row g-3 " style="margin-top: 30px;" (ngSubmit)="save($event)">
+                    <table >
+                        <thead>
+                            <tr>
+                                <th>
+                                    <label for="fecha" class="form-label">Fecha</label> 
+                                </th>
+                                <th>
+                                    <label for="destino" class="form-label">Destino</label>
+                                </th>
+                            </tr>
+                        </thead>
+                            <tr>
+                                <td>
+                                    <input type="date" class="form-control" style="width: 80%; height: 30px;" name="fecha" id="fecha" formControlName="fecha">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" style="width: 80%; height: 30px;" name="destino" id="destino" formControlName="destino">
+                                </td>
+                            </tr>
+                        <thead>
+                            <tr>
+                                <th>
+                                    <label for="referencia" style="margin-top: 12px;" class="form-label">Referencia</label>
+                                </th>
+                                <th>
+                                    <label for="observacion" style="margin-top: 12px;" class="form-label">Observación</label>
+                                </th>
+                            </tr>
+                        </thead>
+                            <tr>
+                                <td>
+                                    <input type="text" class="form-control" style="width: 80%; height: 30px;" name="referencia" id="referencia" formControlName="referencia">
+                                </td>
+                                <td>
+                                    <textarea name="observacion" class="form-control"  id="observacion" cols="10" rows="2" formControlName="observacion"></textarea>
+                                </td>
+                            </tr>
+                        <thead>
+                            <tr>
+                                <th>
+                                    <label for="cliente" style="margin-top: 12px;" class="form-label">Cliente</label>
+                                </th>
+                            </tr>
+                        </thead>
+                            <tr>
+                                <td>
+                                    <ng-select type="text" style="width: 92%; height: 35px;" class="form-select" name="cliente" id="cliente" formControlName="cliente" autofocus [(ngModel)]="OrdenCliente.cliente" ngDefaultControl>
+                                    </ng-select>
+                                </td>
+                            </tr>
+                        <thead>
+                        <tr>
+                            <th>
+                                <label for="producto" style="margin-top: 12px;" class="form-label">Producto</label>
+                            </th>
+                        </tr>
+                        </thead>
+                        <tr>
+                            <td>   
+                                <select type="text"class="form-control"  style="width: 92%; height: 35px;"  name="producto" id="producto" formControlName="producto">
+                                    <option>CAMARON ENTERO</option>
+                                    <option>CAMARON COLA</option>
+                                    <option>CAMARON PYD</option>
+                                    <option>CAMARON IQF</option>
+                                    <option>LANGOSTA ROJA</option>
+                                    <option>CORVINA PLATEADA</option>
+                                    <option>DORADO</option>
+                                    <option>ESCOLAR</option>
+                                    <option>ESPADA</option>
+                                    <option>WAHOO</option>
+                                    <option>TINTO</option>
+                                    <option>RABON</option>
+                                    <option>PICUDO</option>
+                                    <option>BOTELLA</option>
+                                    <option>CARITA</option>
+                                    <option>CORBATA</option>
+                                    <option>CORNETA</option>
+                                    <option>MERLUZA</option>
+                                    <option>PAMPANO</option>
+                                    <option>TROMPETA</option>
+                                    <option>SARDINA</option>
+                                    <option>HOJITA</option>
+                                    <option>CORVINA ROCA</option>
+                                    <option>CALAMAR</option>  
+                                    <option>MURICO</option>
+                                    <option>LANGOSTINO ENTERO</option>
+                                    <option>ESPECIES VARIAS</option>
+                                    <option>PINCHAGUA</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

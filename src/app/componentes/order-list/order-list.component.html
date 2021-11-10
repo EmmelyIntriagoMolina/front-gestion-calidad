@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.css">
+</head>
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <nav class="navbar navbar-expand-lg ">
+        <div class="content">  
+            <div class="card text-center">
+                <div class="card card-header registrotitle text-left">
+                    <h3>Orden Trabajo (Camarón)</h3>  
+                </div>
+                <div class="card-body ">
+                    <div>
+                        <button type="button" class="btn btn-success btn-sm" routerLink="ordenTrabajo/add" routerLinkActive="active" style="margin-bottom: 16px; float: left;" ><a aria-current="page"></a>
+                            <i class="fas fa-plus"> Nueva Orden de Trabajo</i>
+                        </button> 
+                    </div>
+                    <div style="float: right; margin-bottom: 20px;">
+                        <div>
+                            <label for="reporteProyeccion" style="color: steelblue;">Reporte de Proyección </label>
+                            <i class="fas fa-chart-line" style="color:steelblue; margin-left: 3px;"></i>
+                        </div>
+                        <div>
+                            <button class="btn btn-outline-secondary btn-sm">
+                                Reporte Ctrl. Almc. Camarón
+                            </button>
+                        </div>
+                    </div>
+                   
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th style="color:steelblue;">Código</th>
+                                <th style="color:steelblue;" >Fecha Registro</th>
+                                <th>Proveedor</th>
+                                <th>Lote</th>
+                                <th style="color:steelblue;" >Estado Calidad</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <td><input class="form-control me-2" type="text" name="filterCodigo" placeholder="Código" [(ngModel)]="filterCodigo"></td>
+                            <td><input class="form-control me-2" type="date" name="filterFecha" placeholder="Fecha" [(ngModel)]="filterFecha"></td>
+                            <td><input class="form-control me-2" type="text" name="filterProv" placeholder="Proveedor" [(ngModel)]="filterProv"></td>
+                            <td><input class="form-control me-2" type="text" name="filterLot" placeholder="Lote" [(ngModel)]="filterLot"></td>
+                            <td><select class="form-control me-2" name="filterEstadoCali" id="estadoCalidad" [(ngModel)]="filterEstadoCali">
+                                <option value="estado">Aprobado</option>
+                                <option value="estado">Rechazado</option>
+                            </select></td>
+
+                            <tr class="text-center" *ngFor=" let ordenTrabajo of ordenesTrabajo
+                            | filter: filterCodigo
+                            | filterProveedor: filterProv
+                            | filterLote: filterLot
+                            | filterEstadoCalidad: filterEstadoCali
+                            | paginate: {itemsPerPage: 10, currentPage: pageActual}">
+                            
+                                <td>{{ordenTrabajo.codigo}}</td>
+                                <td>{{ordenTrabajo.fechaRegistro}}</td>
+                                <td>{{ordenTrabajo.proveedor}}</td>
+                                <td>{{ordenTrabajo.lote}}</td>
+                                <td>{{ordenTrabajo.estadoCalidad}}</td>
+                        
+                               
+                                <td>
+                                    <button  class="btn btn-outline-info btn-sm">
+                                        <i class="fas fa-boxes"></i>
+                                        Recepción
+                                    </button>
+                                </td>
+
+                                <td>
+                                    <button  class="btn btn-outline-info btn-sm">
+                                        <i class="fas fa-flask"></i>
+                                        Aprobación
+                                    </button>
+                                </td>
+
+                                <td>
+                                    <button  class="btn btn-outline-info btn-sm">
+                                        <i class="far fa-file-alt"></i>
+                                        Guías
+                                    </button>
+                                </td>
+
+                                <td>
+                                    <button  class="btn btn-outline-secondary btn-sm" style="margin-right: 3px;">
+                                        <i class="fas fa-eye"></i>
+                                        Ver
+                                    </button>
+                                
+                                    <button  class="btn btn-outline-secondary btn-sm" style="margin-right: 3px;">
+                                        <i class="fas fa-pencil-alt"></i>
+                                    </button>
+
+                                    <button  class="btn btn-danger btn-sm" (click)="eliminarOrdenTrabajo(ordenTrabajo.id)">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-outline-secondary btn-sm">
+                                        <i class="far fa-file-pdf"></i>
+                                        Reporte Calidad
+                                    </button>
+                                    <br>
+                                    <button class="btn btn-outline-secondary btn-sm">
+                                        <i class="far fa-file-pdf"></i>
+                                        Reporte Recepción
+                                    </button>
+                                    <br>
+                                    <button class="btn btn-outline-secondary btn-sm">
+                                        <i class="far fa-file-pdf"></i>
+                                        Trazabilidad
+                                    </button>
+                                </td>
+                                
+                            </tr>
+                        </tbody>
+                    </table>
+                    <pagination-controls (pageChange)="pageActual = $event"></pagination-controls>
+                </div>
+            </div>
+        </div>
+    </nav>
+</body>
+</html>

@@ -1,0 +1,165 @@
+<div class="col-md-10 offset-md-1">
+    <div class="card">
+        <div class="card-body">
+            <div class="registrotitle text-left">
+                <h2>Nueva Orden Trabajo</h2>
+            </div>
+            <form  [formGroup]="form" class="row g-3" style="margin-top: 30px;" (ngSubmit)="save($event)">
+                <table >
+                    <thead>
+                        <tr>
+                            <th>
+                                <label for="codigo" class="form-label">Código</label> 
+                            </th>
+                            <th>
+                                <label for="ordenCompra" class="form-label">Orden de Compra</label>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tr>
+                        <td>
+                            <input type="text" style="width: 80%; height: 30px;" class="form-control" name="codigo" id="codigo" formControlName="codigo" autofocus [(ngModel)]="OrdenTrabajo.codigo" >
+                        </td>
+                        <td>
+                            <ng-select type="text" style="width: 80%; height: 35px;" class="form-select" name="ordencompra" id="ordencompra" formControlName="ordenCompra" autofocus [(ngModel)]="OrdenTrabajo.ordenCompra" ngDefaultControl >
+                            </ng-select>
+                        </td>
+                    </tr>
+
+                    <thead>
+                        <tr>
+                            <th>
+                                <label for="fechaRegistro" style="margin-top: 12px;" class="form-label">Fecha Registro</label>
+                            </th>
+                            <th>
+                                <label for="horaRecepcion" style="margin-top: 12px;" class="form-label">Hora Recepción</label>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tr>
+                        <td>
+                            <input type="date" class="form-control" style="width: 80%; height: 30px;" name="fechaRegistro" id="fechaRegistro" formControlName="fechaRegistro">
+                        </td>
+                        <td>
+                            <input type="time" class="form-control" style="width: 80%; height: 30px;" name="horaRecepcion" id="horaRecepcion" formControlName="horaRecepcion">
+        
+                        </td>
+                    </tr>
+
+                    <thead>
+                        <tr>
+                            <th>
+                                <label for="proveedor" style="margin-top: 12px;" class="form-label">Proveedor</label>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tr>
+                        <td colspan="2">
+                            <ng-select type="text" style="width: 92%; height: 35px;" class="form-select" name="proveedor" id="proveedor" formControlName="proveedor" autofocus [(ngModel)]="OrdenTrabajo.proveedor" ngDefaultControl>
+                            </ng-select>
+                        </td>
+                    </tr>
+                    <thead>
+                        <tr>
+                            <th>
+                                <label for="procedencia" style="margin-top: 12px;" class="form-label">Procedencia</label>
+                            </th>
+                            <th>
+                                <label for="piscina" style="margin-top: 12px;" class="form-label">Piscina</label>
+                            </th>
+                            
+                        </tr>
+                    </thead>
+                    <tr>
+                        <td>
+                            <input type="text" class="form-control" style="width: 80%; height: 30px;" name="procedencia" id="procedencia" formControlName="procedencia">  
+                        </td>
+                        <td>
+                            <input type="text" class="form-control" style="width: 80%; height: 30px;" name="piscina" id="piscina" formControlName="piscina">
+                        </td> 
+                    </tr>
+
+                    <thead>
+                        <tr>
+                            <th>
+                                <label for="producto" style="margin-top: 12px; color: red;" class="form-label">Producto</label>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tr>
+                        <td colspan="2">   
+                            <select type="text"class="form-control"  style="width: 92%; height: 35px;"  name="producto" id="producto" formControlName="producto">
+                                <option>CAMARON ENTERO</option>
+                                <option>CAMARON COLA</option>
+                                <option>CAMARON PYD</option>
+                                <option>CAMARON IQF</option>
+                                <option>LANGOSTA ROJA</option>
+                                <option>CALAMAR</option>  
+                                <option>CORVINA PLATEADA</option>
+                                <option>DORADO</option>
+                                <option>ESCOLAR</option>
+                                <option>ESPADA</option>
+                                <option>WAHOO</option>
+                                <option>TINTO</option>
+                                <option>RABON</option>
+                                <option>PICUDO</option>
+                                <option>BOTELLA</option>
+                                <option>CARITA</option>
+                                <option>CORBATA</option>
+                                <option>CORNETA</option>
+                                <option>MERLUZA</option>
+                                <option>PAMPANO</option>
+                                <option>PINCHAGUA</option>
+                                <option>TROMPETA</option>
+                                <option>SARDINA</option>
+                                <option>HOJITA</option>
+                                <option>CORVINA ROCA</option>
+                                <option>MURICO</option>
+                                <option>LANGOSTINO ENTERO</option>
+                                <option>ESPECIES VARIAS</option>
+
+                            </select>
+                        </td>
+                    </tr>
+
+                    <thead>
+                        <tr>
+                            <th>
+                                <label for="tipoProducto" style="margin-top: 13px;" class="form-label">Tipo Producto</label>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tr>
+                        <td>
+                            <input name="camaron" type="radio" value="clasificar"/> Camarón para Clasificar
+                            <br/>
+                            <input name="camaron" type="radio" value="descabezar"/> Camarón para Descabezar
+                            <br>
+                        </td>
+                        <td>
+                            <input name="camaron" type="checkbox" value="mar"/> Camarón de mar
+                        </td>
+                    </tr>
+
+                    <thead>
+                        <tr>
+                            <th>
+                                <label for="observacion" style="margin-top: 13px;" class="form-label">Observación</label>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tr>
+                        <td >
+                            <textarea name="textarea" class="form-control" rows="3" cols="40" formControlName="observacion"></textarea>
+                        </td>
+                    </tr>
+                </table>
+                <div>
+                    <button class="btn btn-success"  style="margin-top: 50px;" type="submit" routerLink="/" (click)="edit ? actualizarOrdenTrabajo() : guardarOrdenTrabajo()"  [disabled]="form.invalid">Crear Orden</button>
+                    <button class="btn btn-success "  style="margin-left: 10px; margin-top: 50px;" type="submit" routerLink="/">Cancelar</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
