@@ -14,11 +14,7 @@ import { NgSelectConfig } from '@ng-select/ng-select';
   styleUrls: ['./order-form.component.css']
 })
 
-
-
 export class OrderFormComponent  {
-
-  
 
   rta:any = [];
 
@@ -45,12 +41,14 @@ export class OrderFormComponent  {
     procedencia: '',
     piscina:0,
     producto:'',
+    tipoProducto:'',
     camaronMar:false,
     observacion:'',
     estadoCalidad:''
   }
  
   edit : boolean = false;
+
   constructor(private ordenTrabajoService:OrdenTrabajoService, private router:Router, private http:HttpClient) {  
   }
 
@@ -66,6 +64,7 @@ export class OrderFormComponent  {
   }
 
   guardarOrdenTrabajo() {
+
     Swal.fire({
       position: 'top-end',
       icon: 'success',

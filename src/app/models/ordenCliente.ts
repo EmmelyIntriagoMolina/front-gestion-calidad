@@ -1,6 +1,5 @@
 export interface ordenCliente{
-    id: number;
-    numero: string;
+    numero: number;
     destino: string;
     referencia: string;
     cliente: string;

@@ -14,7 +14,7 @@ import Swal from 'sweetalert2';
 })
 export class OrderClienteFormComponent implements OnInit {
 
-  rta:any = [];
+  rt:any = [];
 
   form: FormGroup = new FormGroup({
     fecha : new FormControl(),
@@ -27,8 +27,7 @@ export class OrderClienteFormComponent implements OnInit {
 
 
   OrdenCliente:ordenCliente = {
-    id: 0,
-    numero: '',
+    numero: 0,
     destino: '',
     referencia: '',
     cliente: '',
@@ -74,7 +73,7 @@ export class OrderClienteFormComponent implements OnInit {
 
 
   actualizarOrdenCliente(){
-    this.ordenClienteService.putOrdenTrabajo(this.OrdenCliente.id, this.OrdenCliente)
+    this.ordenClienteService.putOrdenTrabajo(this.OrdenCliente.numero, this.OrdenCliente)
     .subscribe(
       res=> {
         console.log(res);

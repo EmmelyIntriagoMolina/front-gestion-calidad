@@ -9,31 +9,28 @@ const routes: Routes = [
 
   //Rutas orden de Trabajo
   {
-    path:'',
+    path: '',
     redirectTo:'/',
     pathMatch:'full'
   },
   {
-    path:'',
+    path: '',
     component:OrderListComponent
   },
   {
-    path:'ordenTrabajo/add',
+    path: 'ordenTrabajo/add',
     component:OrderFormComponent
   },
-  {
-    path:'ordenTrabajo/edit/:id',
-    component:OrderFormComponent
-  },
+  
 
   //Rutas orden de cliente
   {
-    path:'ordenCliente',
+    path: 'ordenCliente',
     component:OrderClienteListComponent
   },
 
   {
-    path:'ordenCliente/add',
+    path: 'ordenCliente/add',
     component:OrderClienteFormComponent
   }
 

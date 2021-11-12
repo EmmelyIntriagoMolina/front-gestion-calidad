@@ -10,6 +10,7 @@ export interface ordenTrabajo{
     procedencia: string;
     piscina:number;
     producto:string;
+    tipoProducto:string;
     camaronMar:boolean;
     observacion:string;
     estadoCalidad:string;

@@ -23,10 +23,10 @@
                         </thead>
                             <tr>
                                 <td>
-                                    <input type="date" class="form-control" style="width: 80%; height: 30px;" name="fecha" id="fecha" formControlName="fecha">
+                                    <input type="date" class="form-control" style="width: 80%; height: 30px;" value="aaaa-mm-dd" name="fecha" id="fecha" formControlName="fecha">
                                 </td>
                                 <td>
-                                    <input type="text" class="form-control" style="width: 80%; height: 30px;" name="destino" id="destino" formControlName="destino">
+                                    <input type="text" class="form-control" style="width: 80%; height: 30px;" name="destino" id="destino" formControlName="destino" [(ngModel)]="OrdenCliente.destino">
                                 </td>
                             </tr>
                         <thead>
@@ -41,10 +41,10 @@
                         </thead>
                             <tr>
                                 <td>
-                                    <input type="text" class="form-control" style="width: 80%; height: 30px;" name="referencia" id="referencia" formControlName="referencia">
+                                    <input type="text" class="form-control" style="width: 80%; height: 30px;" name="referencia" id="referencia" formControlName="referencia" [(ngModel)]="OrdenCliente.referencia">
                                 </td>
                                 <td>
-                                    <textarea name="observacion" class="form-control"  id="observacion" cols="10" rows="2" formControlName="observacion"></textarea>
+                                    <textarea name="observacion" class="form-control"  id="observacion" cols="10" rows="2" formControlName="observacion" [(ngModel)]="OrdenCliente.observacion"></textarea>
                                 </td>
                             </tr>
                         <thead>
@@ -57,7 +57,7 @@
                             <tr>
                                 <td>
                                     <ng-select type="text" style="width: 92%; height: 35px;" class="form-select" name="cliente" id="cliente" formControlName="cliente" autofocus
-                                        [items]="rta"
+                                        [items]="rt"
                                         [(ngModel)]="OrdenCliente.cliente"
                                         bindLabel="cliente"
                                         bindValue="id"
@@ -74,7 +74,7 @@
                         </thead>
                         <tr>
                             <td>   
-                                <select type="text"class="form-control"  style="width: 92%; height: 35px;"  name="producto" id="producto" formControlName="producto">
+                                <select type="text"class="form-control"  style="width: 92%; height: 35px;"  name="producto" id="producto" formControlName="producto" [(ngModel)]="OrdenCliente.producto">
                                     <option>CAMARON ENTERO</option>
                                     <option>CAMARON COLA</option>
                                     <option>CAMARON PYD</option>

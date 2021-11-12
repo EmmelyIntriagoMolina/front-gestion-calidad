@@ -42,10 +42,10 @@
                     </thead>
                     <tr>
                         <td>
-                            <input type="date" ui-date-format="yyyy-mm-dd" class="form-control" style="width: 80%; height: 30px;" name="fechaRegistro" id="fechaRegistro" formControlName="fechaRegistro">
+                            <input type="date" ui-date-format="yyyy-mm-dd" class="form-control" style="width: 80%; height: 30px;" name="fechaRegistro" id="fechaRegistro" value="aaaa-mm-dd" formControlName="fechaRegistro">
                         </td>
                         <td>
-                            <input type="time" class="form-control" style="width: 80%; height: 30px;" name="horaRecepcion" id="horaRecepcion" formControlName="horaRecepcion">
+                            <input type="time" class="form-control" style="width: 80%; height: 30px;" name="horaRecepcion" value="mm:ss" id="horaRecepcion" formControlName="horaRecepcion" >
         
                         </td>
                     </tr>
@@ -80,10 +80,10 @@
                     </thead>
                     <tr>
                         <td>
-                            <input type="text" class="form-control" style="width: 80%; height: 30px;" name="procedencia" id="procedencia" formControlName="procedencia">  
+                            <input type="text" class="form-control" style="width: 80%; height: 30px;" name="procedencia" id="procedencia" formControlName="procedencia" [(ngModel)]="OrdenTrabajo.procedencia">  
                         </td>
                         <td>
-                            <input type="text" class="form-control" style="width: 80%; height: 30px;" name="piscina" id="piscina" formControlName="piscina">
+                            <input type="text" class="form-control" style="width: 80%; height: 30px;" name="piscina" id="piscina" formControlName="piscina" [(ngModel)]="OrdenTrabajo.piscina">
                         </td> 
                     </tr>
 
@@ -96,7 +96,7 @@
                     </thead>
                     <tr>
                         <td colspan="2">   
-                            <select type="text"class="form-control"  style="width: 92%; height: 35px;"  name="producto" id="producto" formControlName="producto">
+                            <select type="text"class="form-control"  style="width: 92%; height: 35px;"  name="producto" id="producto" formControlName="producto" [(ngModel)]="OrdenTrabajo.producto">
                                 <option>CAMARON ENTERO</option>
                                 <option>CAMARON COLA</option>
                                 <option>CAMARON PYD</option>
@@ -139,20 +139,20 @@
                     </thead>
                     <tr>
                         <td>
-                            <input name="camaron" type="radio" value="clasificar" /> Camarón para Clasificar
+                            <input name="camaron" type="radio" value="clasificar" [(ngModel)]="OrdenTrabajo.tipoProducto"/> Camarón para Clasificar
                             <br/>
-                            <input name="camaron" type="radio" value="descabezar"/> Camarón para Descabezar
+                            <input name="camaron" type="radio" value="descabezar" [(ngModel)]="OrdenTrabajo.tipoProducto"/> Camarón para Descabezar
                             <br>
                         </td>
                         <td>
-                            <input name="camaronMar" type="checkbox" value="mar"/> Camarón de mar
+                            <input name="camaronMar" type="checkbox" value="mar" [(ngModel)]="OrdenTrabajo.camaronMar"/> Camarón de mar
                         </td>
                     </tr>
 
                     <thead>
                         <tr>
                             <th>
-                                <label for="observacion" style="margin-top: 13px;" class="form-label">Observación</label>
+                                <label for="observacion" style="margin-top: 13px;" class="form-label" [(ngModel)]="OrdenTrabajo.observacion">Observación</label>
                             </th>
                         </tr>
                     </thead>
