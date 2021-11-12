@@ -17,7 +17,8 @@ import { FilterDestinoPipe } from './pipes/filter-destino/filter-destino.pipe';
 import { FilterReferenciaPipe } from './pipes/filter-referencia/filter-referencia.pipe';
 import { OrderClienteFormComponent } from './componentes/order-cliente-form/order-cliente-form.component';
 import { FilterEstadoCalidadPipe } from './pipes/filter-estadoCalidad/filter-estado-calidad.pipe';
-
+import { NgSelectModule } from '@ng-select/ng-select';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -36,12 +37,13 @@ import { FilterEstadoCalidadPipe } from './pipes/filter-estadoCalidad/filter-est
     FilterEstadoCalidadPipe
   ],
   imports: [
-    BrowserModule,
+    BrowserModule, FormsModule,
     AppRoutingModule,
     NgxPaginationModule,
-    FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgSelectModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

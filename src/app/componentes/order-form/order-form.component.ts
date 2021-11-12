@@ -5,6 +5,8 @@ import {Router } from '@angular/router';
 import { ordenTrabajo } from '../../models/ordenTrabajo';
 import {OrdenTrabajoService} from '../../services/orden-trabajo.service'
 import { HttpClient } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
+import { NgSelectConfig } from '@ng-select/ng-select';
 
 @Component({
   selector: 'app-order-form',
@@ -12,7 +14,13 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./order-form.component.css']
 })
 
+
+
 export class OrderFormComponent  {
+
+  
+
+  rta:any = [];
 
   form: FormGroup = new FormGroup({
     codigo : new FormControl(),
@@ -39,7 +47,7 @@ export class OrderFormComponent  {
     producto:'',
     camaronMar:false,
     observacion:'',
-    estadoCalidad:false
+    estadoCalidad:''
   }
  
   edit : boolean = false;
@@ -85,4 +93,7 @@ export class OrderFormComponent  {
       err => console.log(err)
     )
   }
+  
 }
+
+

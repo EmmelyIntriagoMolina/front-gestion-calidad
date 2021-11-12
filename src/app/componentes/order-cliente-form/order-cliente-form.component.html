@@ -56,7 +56,12 @@
                         </thead>
                             <tr>
                                 <td>
-                                    <ng-select type="text" style="width: 92%; height: 35px;" class="form-select" name="cliente" id="cliente" formControlName="cliente" autofocus [(ngModel)]="OrdenCliente.cliente" ngDefaultControl>
+                                    <ng-select type="text" style="width: 92%; height: 35px;" class="form-select" name="cliente" id="cliente" formControlName="cliente" autofocus
+                                        [items]="rta"
+                                        [(ngModel)]="OrdenCliente.cliente"
+                                        bindLabel="cliente"
+                                        bindValue="id"
+                                        [(ngModel)]="OrdenCliente.cliente">
                                     </ng-select>
                                 </td>
                             </tr>

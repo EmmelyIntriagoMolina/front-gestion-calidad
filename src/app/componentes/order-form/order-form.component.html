@@ -21,7 +21,11 @@
                             <input type="text" style="width: 80%; height: 30px;" class="form-control" name="codigo" id="codigo" formControlName="codigo" autofocus [(ngModel)]="OrdenTrabajo.codigo" >
                         </td>
                         <td>
-                            <ng-select type="text" style="width: 80%; height: 35px;" class="form-select" name="ordencompra" id="ordencompra" formControlName="ordenCompra" autofocus [(ngModel)]="OrdenTrabajo.ordenCompra" ngDefaultControl >
+                            <ng-select type="text" style="width: 80%; height: 35px;" class="form-select" name="ordencompra" id="ordencompra" formControlName="ordenCompra" autofocus  
+                                [items]="rta"
+                                bindLabel="ordenCompra"
+                                bindValue="id"
+                                [(ngModel)]="OrdenTrabajo.ordenCompra">
                             </ng-select>
                         </td>
                     </tr>
@@ -38,7 +42,7 @@
                     </thead>
                     <tr>
                         <td>
-                            <input type="date" class="form-control" style="width: 80%; height: 30px;" name="fechaRegistro" id="fechaRegistro" formControlName="fechaRegistro">
+                            <input type="date" ui-date-format="yyyy-mm-dd" class="form-control" style="width: 80%; height: 30px;" name="fechaRegistro" id="fechaRegistro" formControlName="fechaRegistro">
                         </td>
                         <td>
                             <input type="time" class="form-control" style="width: 80%; height: 30px;" name="horaRecepcion" id="horaRecepcion" formControlName="horaRecepcion">
@@ -55,7 +59,11 @@
                     </thead>
                     <tr>
                         <td colspan="2">
-                            <ng-select type="text" style="width: 92%; height: 35px;" class="form-select" name="proveedor" id="proveedor" formControlName="proveedor" autofocus [(ngModel)]="OrdenTrabajo.proveedor" ngDefaultControl>
+                            <ng-select type="text" style="width: 92%; height: 35px;" class="form-select" name="proveedor" id="proveedor" formControlName="proveedor" autofocus 
+                                [items]="rta"
+                                bindLabel="proveedor"
+                                bindValue="id"
+                                [(ngModel)]="OrdenTrabajo.proveedor">
                             </ng-select>
                         </td>
                     </tr>
@@ -131,13 +139,13 @@
                     </thead>
                     <tr>
                         <td>
-                            <input name="camaron" type="radio" value="clasificar"/> Camarón para Clasificar
+                            <input name="camaron" type="radio" value="clasificar" /> Camarón para Clasificar
                             <br/>
                             <input name="camaron" type="radio" value="descabezar"/> Camarón para Descabezar
                             <br>
                         </td>
                         <td>
-                            <input name="camaron" type="checkbox" value="mar"/> Camarón de mar
+                            <input name="camaronMar" type="checkbox" value="mar"/> Camarón de mar
                         </td>
                     </tr>
 

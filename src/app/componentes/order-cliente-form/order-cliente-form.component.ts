@@ -6,12 +6,15 @@ import { ordenCliente } from 'src/app/models/ordenCliente';
 import { OrdenClienteService } from 'src/app/services/ordenCliente/orden-cliente.service';
 import Swal from 'sweetalert2';
 
+
 @Component({
   selector: 'app-order-cliente-form',
   templateUrl: './order-cliente-form.component.html',
   styleUrls: ['./order-cliente-form.component.css']
 })
 export class OrderClienteFormComponent implements OnInit {
+
+  rta:any = [];
 
   form: FormGroup = new FormGroup({
     fecha : new FormControl(),

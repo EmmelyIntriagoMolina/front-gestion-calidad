@@ -7,7 +7,7 @@ import { ordenTrabajo } from '../models/ordenTrabajo';
 })
 export class OrdenTrabajoService {
 
-  URL =`http://192.168.0.224:3333/ordenTrabajo`
+  URL =`https://192.168.0.226:3333/ordenTrabajo`
 
   constructor(private http:HttpClient) { }
 
@@ -15,7 +15,7 @@ export class OrdenTrabajoService {
   getOrdenesTrabajo(){
    return this.http.get(`${this.URL}/consultarOrdenesTrabajo`);
   }
-
+ 
   postOrdenTrabajo(ordenTrabajo:ordenTrabajo){
     return this.http.post(`${this.URL}/ingresarOrdenTrabajo`, ordenTrabajo)
   }

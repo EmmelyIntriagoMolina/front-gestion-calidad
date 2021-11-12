@@ -12,6 +12,6 @@ export interface ordenTrabajo{
     producto:string;
     camaronMar:boolean;
     observacion:string;
-    estadoCalidad:boolean;
+    estadoCalidad:string;
     
 }
