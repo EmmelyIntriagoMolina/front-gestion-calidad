@@ -22,7 +22,8 @@ export class OrderClienteFormComponent implements OnInit {
     referencia : new FormControl(),
     observacion : new FormControl(),
     cliente : new FormControl(),
-    producto : new FormControl(),
+    producto : new FormControl()
+
   })
 
 
@@ -37,7 +38,11 @@ export class OrderClienteFormComponent implements OnInit {
 
   edit : boolean = false;
 
-  constructor(private ordenClienteService:OrdenClienteService, private router:Router, private http:HttpClient) { }
+  constructor(private ordenClienteService:OrdenClienteService, private router:Router, private http:HttpClient) {
+
+  }
+
+  
 
   save(event: Event){
     event.preventDefault();

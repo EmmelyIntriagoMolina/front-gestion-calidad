@@ -7,7 +7,7 @@ import { ordenCliente } from 'src/app/models/ordenCliente';
 })
 export class OrdenClienteService {
 
-  URL=`http://192.168.0.226:3333/ordenCliente` 
+  URL=`http://192.168.0.222:3333/ordenCliente` 
 
   constructor(private http:HttpClient) { }
 
@@ -26,5 +26,9 @@ export class OrdenClienteService {
 
   putOrdenTrabajo(id:string | number, putOrdenCliente:ordenCliente){
     return this.http.put(`${this.URL}/actualizarOrdenCliente/${id}`, putOrdenCliente);
+  }
+
+  deleteOrdenCliente(id: string | number, deleteOrdenCliente:ordenCliente){
+    return this.http.put(`${this.URL}/eliminarOrdenTrabajo/${id}`, this.deleteOrdenCliente);
   }
 }

@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
+    <base href="./">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.css">
 </head>
@@ -46,7 +47,7 @@
                         </thead>
                         <tbody>
                             <td><input class="form-control me-2" type="text" name="filterCodigo" placeholder="Código" [(ngModel)]="filterCodigo"></td>
-                            <td><input class="form-control me-2" type="date" name="filterFecha" placeholder="Fecha" [(ngModel)]="filterFecha"></td>
+                            <td><input class="form-control me-2" type="date" value="aaaa-dd-mm" name="filterFecha" placeholder="Fecha" [(ngModel)]="filterFecha"></td>
                             <td><input class="form-control me-2" type="text" name="filterProv" placeholder="Proveedor" [(ngModel)]="filterProv"></td>
                             <td><input class="form-control me-2" type="text" name="filterLot" placeholder="Lote" [(ngModel)]="filterLot"></td>
                             <td><select class="form-control me-2" name="filterEstadoCali" id="estadoCalidad" [(ngModel)]="filterEstadoCali">
@@ -59,7 +60,7 @@
                             | filterProveedor: filterProv
                             | filterLote: filterLot
                             | filterEstadoCalidad: filterEstadoCali
-                            | paginate: {itemsPerPage: 10, currentPage: pageActual}">
+                            | paginate: {itemsPerPage: 15, currentPage: pageActual}">
                             
                                 <td>{{ordenTrabajo.codigo}}</td>
                                 <td>{{ordenTrabajo.fechaRegistro}}</td>
@@ -67,7 +68,6 @@
                                 <td>{{ordenTrabajo.lote}}</td>
                                 <td>{{ordenTrabajo.estadoCalidad}}</td>
                         
-                               
                                 <td>
                                     <button  class="btn btn-outline-info btn-sm">
                                         <i class="fas fa-boxes"></i>

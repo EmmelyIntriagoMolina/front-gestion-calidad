@@ -47,17 +47,26 @@
                             | filterReferencia: filterRef
                             | filterDestino: filterDest
                             | paginate: {itemsPerPage: 7, currentPage: pageActual}">
-                            
-                                <td>{{ordenCliente.numero}}</td>
+                       
+                                <td>#{{ordenCliente.numero}}</td>
                                 <td>{{ordenCliente.fecha}}</td>
                                 <td>{{ordenCliente.referencia}}</td>
                                 <td>{{ordenCliente.cliente}}</td>
                                 <td>{{ordenCliente.destino}}</td>
-                                
+
                                 <td style="color: steelblue;">
-                                    <i class="fas fa-eye" style="margin-right: 3px;"></i>
-                                    <i class="fas fa-pencil-alt" style="margin-right: 3px;"></i>
-                                    <i class="fas fa-trash-alt" style="margin-right: 3px;"></i>
+                                    <a href="/">
+                                        <i class="fas fa-eye" style="margin-right: 4px;"></i>
+                                    </a> 
+
+                                    <a href="/ordenCliente/add">
+                                        <i class="fas fa-pencil-alt" style="margin-right: 4px;"></i>
+                                    </a>
+                                    
+                                    <a (click)="eliminarOrdenCliente(ordenCliente)" href="/ordenCliente">
+                                    <i class="fas fa-trash-alt" style="margin-right: 4px;"></i>
+
+                                    </a>
                                 </td>
                                
                                 <td><button  class="btn btn-warning" style="color: white;">Finalizar</button></td>

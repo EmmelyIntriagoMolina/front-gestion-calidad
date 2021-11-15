@@ -20,16 +20,12 @@ export class OrderListComponent implements OnInit{
  
   ordenesTrabajo: any = [];
 
-  constructor(private ordenTrabajoService:OrdenTrabajoService, private http:HttpClient) {
+  constructor(private ordenTrabajoService:OrdenTrabajoService, private http:HttpClient) { }
 
-  }
-
-  ngOnInit(): void {
-    
-  }
+  ngOnInit(): void { }
 
   getOrdenesTrabajo(){
-    this.ordenTrabajoService.getOrdenesTrabajo()
+    this.ordenTrabajoService.getOrdenesT()
     .subscribe(
       (res:any)=>{
       this.ordenesTrabajo = res.ordenTrabajo;
@@ -37,6 +33,8 @@ export class OrderListComponent implements OnInit{
     }),
     (err: any)=> console.log(err)
   } 
+
+
 
   eliminarOrdenTrabajo(id:string){
     Swal.fire({

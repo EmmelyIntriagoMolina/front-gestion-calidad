@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { OrdenClienteService } from 'src/app/services/ordenCliente/orden-cliente.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-order-cliente-list',
@@ -23,15 +24,38 @@ export class OrderClienteListComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  getOrdenCliente(){
+  getOrdenesCliente(){
     this.ordenClienteService.getOrdenesCliente()
     .subscribe(
       (res:any)=>{
-      this.ordenesCliente = res.ordenCliente;
-      console.log(res.ordenTrabajo)
+      this.ordenesCliente = res.ordenescliente
+      console.log(res.ordenesCliente)
     }),
-    (err: any)=> console.log(err)
+    (err:any)=> console.log(err)
   } 
+
+  eliminarOrdenCliente(numero:number){
+    Swal.fire({
+      title: '¿Deseas eliminar el registro?',
+      text: "Al eliminar el registro no podrás visualizarlo",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      cancelButtonText: 'Cancelar',
+      confirmButtonText: 'Sí, Eliminar'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.ordenClienteService.deleteOrdenCliente(numero, this.ordenesCliente).subscribe(
+          res => {
+            console.log(res)
+            this.getOrdenesCliente();
+          },
+          err => console.log(err)
+        )
+      }
+    })
+  }
 }
 
 

@@ -2,7 +2,7 @@
     <div class="card">
         <div class="card-body">
             <div class="card card-header">
-                <h2>Crear Orden de Cliente</h2>
+                <h2>Orden de Cliente</h2>
             </div>
             <div style="float: right;">
                 <button class="btn btn-success" style="margin-top: 4px;"  type="submit" routerLink="/ordenCliente" (click)="edit ? actualizarOrdenCliente() : guardarOrdenCliente()"  [disabled]="form.invalid">Guardar</button>
@@ -41,7 +41,10 @@
                         </thead>
                             <tr>
                                 <td>
-                                    <input type="text" class="form-control" style="width: 80%; height: 30px;" name="referencia" id="referencia" formControlName="referencia" [(ngModel)]="OrdenCliente.referencia">
+                                    <input type="text" class="form-control" style="width: 80%; height: 30px;" name="referencia" id="referencia" formControlName="referencia" [(ngModel)]="OrdenCliente.referencia" required>
+                                    <span *ngIf="this.form.get('referencia')?.errors?.required" style="color: red;">
+                                        (El campo no puede ser enviado vacío)
+                                    </span>
                                 </td>
                                 <td>
                                     <textarea name="observacion" class="form-control"  id="observacion" cols="10" rows="2" formControlName="observacion" [(ngModel)]="OrdenCliente.observacion"></textarea>

@@ -21,11 +21,12 @@
                             <input type="text" style="width: 80%; height: 30px;" class="form-control" name="codigo" id="codigo" formControlName="codigo" autofocus [(ngModel)]="OrdenTrabajo.codigo" >
                         </td>
                         <td>
-                            <ng-select type="text" style="width: 80%; height: 35px;" class="form-select" name="ordencompra" id="ordencompra" formControlName="ordenCompra" autofocus  
+                            <ng-select type="text" style="width: 80%; height: 35px;" class="form-select" name="ordencompra" id="ordencompra"  autofocus  
                                 [items]="rta"
-                                bindLabel="ordenCompra"
-                                bindValue="id"
-                                [(ngModel)]="OrdenTrabajo.ordenCompra">
+                                bindLabel="codigo"
+                                bindValue="codigo"
+                                [(ngModel)]="ordenCompra.codigo"
+                                [ngModelOptions]="{standalone: true}">
                             </ng-select>
                         </td>
                     </tr>
@@ -45,7 +46,7 @@
                             <input type="date" ui-date-format="yyyy-mm-dd" class="form-control" style="width: 80%; height: 30px;" name="fechaRegistro" id="fechaRegistro" value="aaaa-mm-dd" formControlName="fechaRegistro">
                         </td>
                         <td>
-                            <input type="time" class="form-control" style="width: 80%; height: 30px;" name="horaRecepcion" value="mm:ss" id="horaRecepcion" formControlName="horaRecepcion" >
+                            <input type="time" class="form-control" style="width: 80%; height: 30px;" name="horaRecepcion" value="HH:mm:ss" id="horaRecepcion" formControlName="horaRecepcion" >
         
                         </td>
                     </tr>
@@ -59,11 +60,12 @@
                     </thead>
                     <tr>
                         <td colspan="2">
-                            <ng-select type="text" style="width: 92%; height: 35px;" class="form-select" name="proveedor" id="proveedor" formControlName="proveedor" autofocus 
-                                [items]="rta"
+                            <ng-select type="text" style="width: 92%; height: 35px;" class="form-select" name="proveedor" id="proveedor"  
+                                [items]="rt"
                                 bindLabel="proveedor"
                                 bindValue="id"
-                                [(ngModel)]="OrdenTrabajo.proveedor">
+                                [(ngModel)]="OrdenTrabajo.proveedor"
+                                [ngModelOptions]="{standalone: true}">
                             </ng-select>
                         </td>
                     </tr>
@@ -80,11 +82,17 @@
                     </thead>
                     <tr>
                         <td>
-                            <input type="text" class="form-control" style="width: 80%; height: 30px;" name="procedencia" id="procedencia" formControlName="procedencia" [(ngModel)]="OrdenTrabajo.procedencia">  
+                            <input type="text" class="form-control" style="width: 80%; height: 30px;" name="procedencia" id="procedencia" formControlName="procedencia" [(ngModel)]="OrdenTrabajo.procedencia" required>  
+                            <span *ngIf="this.form.get('procedencia')?.errors?.required" style="color: red;">
+                                (El campo no puede ser enviado vacío)
+                            </span>
                         </td>
                         <td>
-                            <input type="text" class="form-control" style="width: 80%; height: 30px;" name="piscina" id="piscina" formControlName="piscina" [(ngModel)]="OrdenTrabajo.piscina">
-                        </td> 
+                            <input type="text" class="form-control" style="width: 80%; height: 30px;" name="piscina" id="piscina" formControlName="piscina" [(ngModel)]="OrdenTrabajo.piscina" required>
+                            <span *ngIf="this.form.get('piscina')?.errors?.required" style="color: red;">
+                                (El campo no puede ser enviado vacío)
+                            </span>
+                        </td>  
                     </tr>
 
                     <thead>
@@ -139,13 +147,13 @@
                     </thead>
                     <tr>
                         <td>
-                            <input name="camaron" type="radio" value="clasificar" [(ngModel)]="OrdenTrabajo.tipoProducto"/> Camarón para Clasificar
+                            <input type="radio" [(ngModel)]="OrdenTrabajo.tipoProducto" formControlName="tipoProducto" value="clasificar" name="tipoProducto" /> Camarón para Clasificar
                             <br/>
-                            <input name="camaron" type="radio" value="descabezar" [(ngModel)]="OrdenTrabajo.tipoProducto"/> Camarón para Descabezar
+                            <input type="radio" [(ngModel)]="OrdenTrabajo.tipoProducto" formControlName="tipoProducto" value="descabezar" name="tipoProducto"/> Camarón para Descabezar
                             <br>
                         </td>
                         <td>
-                            <input name="camaronMar" type="checkbox" value="mar" [(ngModel)]="OrdenTrabajo.camaronMar"/> Camarón de mar
+                            <input name="camaronMar" type="checkbox" value="mar" [(ngModel)]="OrdenTrabajo.camaronMar" formControlName="camaronMar"/> Camarón de mar
                         </td>
                     </tr>
 
@@ -163,7 +171,7 @@
                     </tr>
                 </table>
                 <div>
-                    <button class="btn btn-success"  style="margin-top: 50px;" type="submit" routerLink="/" (click)="edit ? actualizarOrdenTrabajo() : guardarOrdenTrabajo()"  [disabled]="form.invalid">Crear Orden</button>
+                    <button class="btn btn-success"  style="margin-top: 50px;" type="button" routerLink="/" (click)="edit ? actualizarOrdenTrabajo() : guardarOrdenTrabajo()"  [disabled]="form.invalid">Crear Orden</button>
                     <button class="btn btn-success "  style="margin-left: 10px; margin-top: 50px;" type="submit" routerLink="/">Cancelar</button>
                 </div>
             </form>

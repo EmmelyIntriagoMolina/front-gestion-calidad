@@ -7,6 +7,7 @@ import {OrdenTrabajoService} from '../../services/orden-trabajo.service'
 import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { NgSelectConfig } from '@ng-select/ng-select';
+import { OrdenCompra } from 'src/app/models/ordenCompra';
 
 @Component({
   selector: 'app-order-form',
@@ -17,17 +18,18 @@ import { NgSelectConfig } from '@ng-select/ng-select';
 export class OrderFormComponent  {
 
   rta:any = [];
+  rt:any = [];
 
   form: FormGroup = new FormGroup({
     codigo : new FormControl(),
-    ordenCompra : new FormControl(),
     fechaRegistro : new FormControl(),
     horaRecepcion : new FormControl(),
-    proveedor : new FormControl(),
     procedencia : new FormControl(),
     piscina : new FormControl(),
     producto : new FormControl(),
-    observacion : new FormControl()
+    observacion : new FormControl(),
+    tipoProducto : new FormControl(),
+    camaronMar: new FormControl()
   })
 
   @HostBinding('class') classes = 'row'
@@ -49,6 +51,10 @@ export class OrderFormComponent  {
  
   edit : boolean = false;
 
+  ordenCompra:OrdenCompra = {
+    codigo: 0
+  }
+
   constructor(private ordenTrabajoService:OrdenTrabajoService, private router:Router, private http:HttpClient) {  
   }
 
@@ -61,6 +67,13 @@ export class OrderFormComponent  {
   }
   
   ngOnInit(): void {
+    this.ordenTrabajoService.getOrdenCompra()
+    .subscribe(
+      (res:any)=>{
+        console.log(res);
+      },
+      (err:any)=> console.log(err)
+    )
   }
 
   guardarOrdenTrabajo() {
@@ -76,7 +89,7 @@ export class OrderFormComponent  {
     .subscribe(
       res=> {
         console.log(res);
-        this.router.navigate(['/ordenTrabajo']);
+        this.router.navigate(['/']);
       },
       err => console.log(err)
     )
@@ -87,7 +100,7 @@ export class OrderFormComponent  {
     .subscribe(
       res=> {
         console.log(res);
-        this.router.navigate(['/ordenTrabajo']);
+        this.router.navigate(['/']);
       },
       err => console.log(err)
     )

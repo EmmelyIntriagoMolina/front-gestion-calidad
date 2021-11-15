@@ -8,14 +8,11 @@ import { OrderListComponent } from './componentes/order-list/order-list.componen
 const routes: Routes = [
 
   //Rutas orden de Trabajo
+ 
   {
     path: '',
-    redirectTo:'/',
-    pathMatch:'full'
-  },
-  {
-    path: '',
-    component:OrderListComponent
+    component:OrderListComponent,
+
   },
   {
     path: 'ordenTrabajo/add',
