@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { ordenCliente } from 'src/app/models/ordenCliente';
 import { OrdenClienteService } from 'src/app/services/ordenCliente/orden-cliente.service';
 import Swal from 'sweetalert2';
 
@@ -17,7 +18,9 @@ export class OrderClienteListComponent implements OnInit {
   filterRef = '';
   filterDest = '';
 
-  ordenesCliente: any = [ ];
+  ordenesCliente: any = [
+   
+  ]
 
   constructor(private ordenClienteService:OrdenClienteService, private http:HttpClient) { }
 
@@ -35,6 +38,7 @@ export class OrderClienteListComponent implements OnInit {
   } 
 
   eliminarOrdenCliente(numero:number){
+    
     Swal.fire({
       title: '¿Deseas eliminar el registro?',
       text: "Al eliminar el registro no podrás visualizarlo",

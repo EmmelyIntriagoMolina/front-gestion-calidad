@@ -8,6 +8,7 @@ import Swal from 'sweetalert2';
   templateUrl: './order-list.component.html',
   styleUrls: ['./order-list.component.css']
 })
+
 export class OrderListComponent implements OnInit{
 
   condicion = 'EN ESPERA'
@@ -18,24 +19,27 @@ export class OrderListComponent implements OnInit{
   filterLot = '';
   filterEstadoCali = ''
  
-  ordenesTrabajo: any = [];
+  ordenesTrabajo: any = []; 
 
-  constructor(private ordenTrabajoService:OrdenTrabajoService, private http:HttpClient) { }
+  constructor(private ordenTrabajoService:OrdenTrabajoService, private http:HttpClient) { 
 
-  ngOnInit(): void { }
+  }
+
+  ngOnInit(): void {
+  }
+
 
   getOrdenesTrabajo(){
-    this.ordenTrabajoService.getOrdenesT()
+    this.ordenTrabajoService.getOrdenesTrabajo()
     .subscribe(
       (res:any)=>{
       this.ordenesTrabajo = res.ordenTrabajo;
-      console.log(res.ordenTrabajo)
+      console.log('orden de trabajo',this.ordenesTrabajo)
     }),
     (err: any)=> console.log(err)
-  } 
-
-
-
+  }
+  
+  
   eliminarOrdenTrabajo(id:string){
     Swal.fire({
       title: '¿Deseas eliminar el registro?',

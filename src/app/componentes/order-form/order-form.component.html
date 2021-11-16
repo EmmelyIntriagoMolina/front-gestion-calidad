@@ -1,11 +1,17 @@
+<div class="text-left" style="margin-bottom: 7px;">
+    <a href="/"> <button mat-button style="border-radius: 0%;" class="btn btn-success" > Orden Trabajo </button></a>
+    
+    <a href="/ordenCliente"> <button mat-button style="border-radius: 0%;" class="btn btn-success"> Orden Cliente</button> </a>
+</div>
 <div class="col-md-10 offset-md-1">
-    <div class="card">
         <div class="card-body">
+            
             <div class="registrotitle text-left">
                 <h2>Nueva Orden Trabajo</h2>
             </div>
-            <form  [formGroup]="form" class="row g-3" style="margin-top: 30px;" (ngSubmit)="save($event)">
-                <table >
+            
+            <form  [formGroup]="form" class="row g-3" style=" margin: 0 auto; width: 50%; height: 30%;" (ngSubmit)="save($event)" >
+                <table width="200" >
                     <thead>
                         <tr>
                             <th>
@@ -166,16 +172,15 @@
                     </thead>
                     <tr>
                         <td >
-                            <textarea name="textarea" class="form-control" rows="3" cols="40" formControlName="observacion"></textarea>
+                            <textarea name="textarea" class="form-control" rows="2" cols="40" formControlName="observacion"></textarea>
                         </td>
                     </tr>
                 </table>
                 <div>
-                    <button class="btn btn-success"  style="margin-top: 50px;" type="button" routerLink="/" (click)="edit ? actualizarOrdenTrabajo() : guardarOrdenTrabajo()"  [disabled]="form.invalid">Crear Orden</button>
-                    <button class="btn btn-success "  style="margin-left: 10px; margin-top: 50px;" type="submit" routerLink="/">Cancelar</button>
+                    <button class="btn btn-success"  style="margin-top: 30px;" type="button" routerLink="/" (click)="edit ? actualizarOrdenTrabajo() : guardarOrdenTrabajo()"  [disabled]="form.invalid">Crear Orden</button>
+                    <button class="btn btn-success "  style="margin-left: 10px; margin-top: 30px;" type="submit" routerLink="/">Cancelar</button>
                 </div>
             </form>
 
         </div>
     </div>
-</div>

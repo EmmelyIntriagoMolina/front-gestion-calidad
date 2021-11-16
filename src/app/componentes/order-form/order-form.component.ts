@@ -20,6 +20,8 @@ export class OrderFormComponent  {
   rta:any = [];
   rt:any = [];
 
+  conversion:any;
+
   form: FormGroup = new FormGroup({
     codigo : new FormControl(),
     fechaRegistro : new FormControl(),
@@ -70,14 +72,15 @@ export class OrderFormComponent  {
     this.ordenTrabajoService.getOrdenCompra()
     .subscribe(
       (res:any)=>{
-        console.log(res);
+        //this.conversion = res.rows;
+        //this.rta = this.conversion;
+        console.log('prueba', this.rta)
       },
       (err:any)=> console.log(err)
     )
   }
 
   guardarOrdenTrabajo() {
-
     Swal.fire({
       position: 'top-end',
       icon: 'success',

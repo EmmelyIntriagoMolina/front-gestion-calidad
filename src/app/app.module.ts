@@ -19,6 +19,11 @@ import { OrderClienteFormComponent } from './componentes/order-cliente-form/orde
 import { FilterEstadoCalidadPipe } from './pipes/filter-estadoCalidad/filter-estado-calidad.pipe';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule } from '@angular/material/button';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatIconModule} from '@angular/material/icon';
+
 
 @NgModule({
   declarations: [
@@ -43,7 +48,11 @@ import { CommonModule } from '@angular/common';
     ReactiveFormsModule,
     HttpClientModule,
     NgSelectModule,
-    CommonModule
+    CommonModule,
+    MatMenuModule,
+    MatButtonModule,
+    BrowserAnimationsModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

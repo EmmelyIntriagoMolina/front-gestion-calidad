@@ -7,12 +7,12 @@ import { ordenTrabajo } from '../models/ordenTrabajo';
 })
 export class OrdenTrabajoService {
 
-  URL =`http://192.168.0.222:3333/ordenTrabajo`
+  URL =`http://192.168.0.223:3333/ordenTrabajo`
 
   constructor(private http:HttpClient) { }
 
-  //metodos orden de trabajo 
-  getOrdenesT(){
+  //metodos orden de trabajo
+  getOrdenesTrabajo(){
    return this.http.get(`${this.URL}/consultarOrdenesTrabajo`);
   }
  
@@ -35,6 +35,5 @@ export class OrdenTrabajoService {
   //Orden Compra
   getOrdenCompra(){
     return this.http.get(`${this.URL}/consultarOrdenCompra`);
-  }
-  
+  } 
 }

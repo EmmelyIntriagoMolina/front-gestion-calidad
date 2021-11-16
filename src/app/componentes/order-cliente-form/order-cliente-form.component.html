@@ -1,15 +1,23 @@
+<div class="text-left" style="margin-bottom: 7px;">
+    <a href="/"> <button mat-button style="border-radius: 0%;" class="btn btn-success"> Orden Trabajo </button></a>
+    
+    <a href="/ordenCliente"> <button mat-button style="border-radius: 0%;" class="btn btn-success"> Orden Cliente</button> </a>
+</div>
 <div class="col-md-10 offset-md-1">
+    
     <div class="card">
+        
         <div class="card-body">
+            
             <div class="card card-header">
                 <h2>Orden de Cliente</h2>
             </div>
             <div style="float: right;">
                 <button class="btn btn-success" style="margin-top: 4px;"  type="submit" routerLink="/ordenCliente" (click)="edit ? actualizarOrdenCliente() : guardarOrdenCliente()"  [disabled]="form.invalid">Guardar</button>
-                <button class="btn btn-success "  style="margin-left: 7px; margin-top: 4px;" type="submit" routerLink="/ordenCliente">Cancelar</button>
+                <button class="btn btn-success" style="margin-left: 7px; margin-top: 4px;" type="submit" routerLink="/ordenCliente">Cancelar</button>
             </div>
             <div>
-                <form  [formGroup]="form" class="row g-3 " style="margin-top: 30px;" (ngSubmit)="save($event)">
+                <form  [formGroup]="form" class="row g-3 " style="margin: 0 auto;" (ngSubmit)="save($event)">
                     <table >
                         <thead>
                             <tr>
@@ -43,11 +51,11 @@
                                 <td>
                                     <input type="text" class="form-control" style="width: 80%; height: 30px;" name="referencia" id="referencia" formControlName="referencia" [(ngModel)]="OrdenCliente.referencia" required>
                                     <span *ngIf="this.form.get('referencia')?.errors?.required" style="color: red;">
-                                        (El campo no puede ser enviado vacío)
+                                       
                                     </span>
                                 </td>
                                 <td>
-                                    <textarea name="observacion" class="form-control"  id="observacion" cols="10" rows="2" formControlName="observacion" [(ngModel)]="OrdenCliente.observacion"></textarea>
+                                    <textarea name="observacion" class="form-control"  id="observacion" style="width: 80%;" rows="2" formControlName="observacion" [(ngModel)]="OrdenCliente.observacion"></textarea>
                                 </td>
                             </tr>
                         <thead>
