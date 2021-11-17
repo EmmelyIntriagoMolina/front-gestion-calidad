@@ -8,7 +8,7 @@ export class FilterPipe implements PipeTransform {
   transform(value: any, ...arg: any[]): any {
     const resultadoCodigo = [];
     for (const post of value){
-      if(post.codigo.toUpperCase().indexof(arg)> -1){
+      if(post.codigo.indexof(arg)> -1){
         resultadoCodigo.push(post)
       }
     }

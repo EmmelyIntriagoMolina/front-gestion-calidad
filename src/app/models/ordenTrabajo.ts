@@ -14,5 +14,5 @@ export interface ordenTrabajo{
     camaronMar:boolean;
     observacion:string;
     estadoCalidad:string;
-    
+        
 }

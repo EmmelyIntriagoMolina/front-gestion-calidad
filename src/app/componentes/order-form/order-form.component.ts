@@ -98,16 +98,7 @@ export class OrderFormComponent  {
     )
   }
 
-  actualizarOrdenTrabajo(){
-    this.ordenTrabajoService.putOrdenTrabajo(this.OrdenTrabajo.id, this.OrdenTrabajo)
-    .subscribe(
-      res=> {
-        console.log(res);
-        this.router.navigate(['/']);
-      },
-      err => console.log(err)
-    )
-  }
+
   
 }
 

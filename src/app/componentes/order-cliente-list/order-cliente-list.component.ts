@@ -25,14 +25,21 @@ export class OrderClienteListComponent implements OnInit {
   constructor(private ordenClienteService:OrdenClienteService, private http:HttpClient) { }
 
   ngOnInit(): void {
-  }
+    this.ordenClienteService.getOrdenesCliente()
+    .subscribe(
+      (res:any)=>{
+      this.ordenesCliente = res.ordenCliente
+      console.log(res.ordenCliente)
+    }),
+    (err:any)=> console.log(err)
+  } 
 
   getOrdenesCliente(){
     this.ordenClienteService.getOrdenesCliente()
     .subscribe(
       (res:any)=>{
-      this.ordenesCliente = res.ordenescliente
-      console.log(res.ordenesCliente)
+      this.ordenesCliente = res.ordenCliente
+      console.log(res.ordenCliente)
     }),
     (err:any)=> console.log(err)
   } 

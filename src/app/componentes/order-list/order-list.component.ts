@@ -26,17 +26,25 @@ export class OrderListComponent implements OnInit{
   }
 
   ngOnInit(): void {
+    this.ordenTrabajoService.getOrdenesTrabajo()
+    .subscribe(
+      (res:any)=>{
+      this.ordenesTrabajo = res.ordenTrabajo;
+      console.log('orden de trabajo',res.ordenTrabajo)
+    }),
+    (err: any)=> console.log(err);
   }
 
 
+  
   getOrdenesTrabajo(){
     this.ordenTrabajoService.getOrdenesTrabajo()
     .subscribe(
       (res:any)=>{
       this.ordenesTrabajo = res.ordenTrabajo;
-      console.log('orden de trabajo',this.ordenesTrabajo)
+      console.log('orden de trabajo',res.ordenTrabajo)
     }),
-    (err: any)=> console.log(err)
+    (err: any)=> console.log(err);
   }
   
   

@@ -1,18 +1,30 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ordenCliente } from 'src/app/models/ordenCliente';
 import { OrdenClienteService } from 'src/app/services/ordenCliente/orden-cliente.service';
-import Swal from 'sweetalert2';
-
 
 @Component({
-  selector: 'app-order-cliente-form',
-  templateUrl: './order-cliente-form.component.html',
-  styleUrls: ['./order-cliente-form.component.css']
+  selector: 'app-order-cliente-edit',
+  templateUrl: './order-cliente-edit.component.html',
+  styleUrls: ['./order-cliente-edit.component.css']
 })
-export class OrderClienteFormComponent implements OnInit {
+export class OrderClienteEditComponent implements OnInit {
+
+  constructor(private ordenClienteService:OrdenClienteService, private router:Router) { }
+
+  ngOnInit(): void {
+  }
+
+  
+  save(event: Event){
+    event.preventDefault();
+    if (this.form.valid) {
+      const value=this.form.value;
+      console.log(value)
+    }
+    
+  }
 
   rt:any = [];
 
@@ -26,7 +38,6 @@ export class OrderClienteFormComponent implements OnInit {
 
   })
 
-
   OrdenCliente:ordenCliente = {
     numero: 0,
     destino: '',
@@ -36,36 +47,8 @@ export class OrderClienteFormComponent implements OnInit {
     observacion:''
   }
 
-  edit : boolean = false;
-
-  constructor(private ordenClienteService:OrdenClienteService, private router:Router, private http:HttpClient) {
-
-  }
-
-  
-
-  save(event: Event){
-    event.preventDefault();
-    if (this.form.valid) {
-      const value=this.form.value;
-      console.log(value)
-    }
-    
-  }
-
-
-  ngOnInit(): void {
-  }
-
-  guardarOrdenCliente() {
-    Swal.fire({
-      position: 'top-end',
-      icon: 'success',
-      title: '¡Registro Guardado!',
-      showConfirmButton: false,
-      timer: 1500
-    })
-    this.ordenClienteService.postOrdenTrabajo(this.OrdenCliente)
+  actualizarOrdenCliente(){
+    this.ordenClienteService.putOrdenTrabajo(this.OrdenCliente.numero, this.OrdenCliente)
     .subscribe(
       res=> {
         console.log(res);
@@ -73,8 +56,6 @@ export class OrderClienteFormComponent implements OnInit {
       },
       err => console.log(err)
     )
-    
   }
-
 
 }

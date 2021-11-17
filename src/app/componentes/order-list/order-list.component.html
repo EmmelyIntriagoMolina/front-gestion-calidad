@@ -12,9 +12,9 @@
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <div class="text-left" style="margin-bottom: 7px;">
-        <a href="/"> <button mat-button style="border-radius: 0%;" class="btn btn-success"> Orden Trabajo </button></a>
+        <a href="/"> <button mat-button style="border-radius: 0%; margin-bottom: 10px;" class="btn btn-success"> Orden Trabajo </button></a>
         
-        <a href="/ordenCliente"> <button mat-button style="border-radius: 0%;" class="btn btn-success"> Orden Cliente</button> </a>
+        <a href="/ordenCliente"> <button mat-button style="border-radius: 0%; margin-bottom: 10px;" class="btn btn-success"> Orden Cliente</button> </a>
     </div>
     <nav class="navbar navbar-expand-lg ">
         <div class="content">  
@@ -32,17 +32,18 @@
                     </div>
                     <div style="float: right; margin-bottom: 20px;">
                         <div>
-                            <label for="reporteProyeccion" style="color: steelblue;">Reporte de Proyección </label>
+                            <a href="/ordenCliente"><label for="reporteProyeccion" style="color: steelblue;">Reporte de Proyección </label></a>
                             <i class="fas fa-chart-line" style="color:steelblue; margin-left: 3px;"></i>
                         </div>
                         <div>
-                            <button class="btn btn-outline-secondary btn-sm">
+                            <a href="/"><button class="btn btn-outline-secondary btn-sm">
                                 Reporte Ctrl. Almc. Camarón
-                            </button>
+                            </button> </a>
+                            
                         </div>
                     </div>
                    
-                    <table class="table table-hover">
+                    <table class="table table-hover" style="width: 90%; margin: 0 auto;">
                         <thead>
                             <tr>
                                 <th style="color:steelblue;">Código</th>
@@ -50,23 +51,26 @@
                                 <th>Proveedor</th>
                                 <th>Lote</th>
                                 <th style="color:steelblue;" >Estado Calidad</th>
+                                <th colspan="5"></th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <td><input class="form-control me-2" type="text" name="filterCodigo" placeholder="Código" [(ngModel)]="filterCodigo"></td>
-                            <td><input class="form-control me-2" type="date" value="aaaa-dd-mm" name="filterFecha" placeholder="Fecha" [(ngModel)]="filterFecha"></td>
-                            <td><input class="form-control me-2" type="text" name="filterProv" placeholder="Proveedor" [(ngModel)]="filterProv"></td>
-                            <td><input class="form-control me-2" type="text" name="filterLot" placeholder="Lote" [(ngModel)]="filterLot"></td>
-                            <td><select class="form-control me-2" name="filterEstadoCali" id="estadoCalidad" [(ngModel)]="filterEstadoCali">
-                                <option value="estado">Aprobado</option>
-                                <option value="estado">Rechazado</option>
-                            </select></td>
-
+                        
+                            <tr>
+                                <td><input class="form-control me-2" type="text" name="filterCodigo" placeholder="Código" [(ngModel)]="filterCodigo"></td>
+                                <td><input class="form-control me-2" type="date" value="aaaa-dd-mm" name="filterFecha" placeholder="Fecha" [(ngModel)]="filterFecha"></td>
+                                <td><input class="form-control me-2" type="text" name="filterProv" placeholder="Proveedor" [(ngModel)]="filterProv"></td>
+                                <td><input class="form-control me-2" type="text" name="filterLot" placeholder="Lote" [(ngModel)]="filterLot"></td>
+                                <td><select class="form-control me-2" name="filterEstadoCali" id="estadoCalidad" [(ngModel)]="filterEstadoCali">
+                                    <option value="estado">Aprobado</option>
+                                    <option value="estado">Rechazado</option>
+                                </select>
+                                </td>
+                            </tr>
+                        
+                        
                             <tr class="text-center" *ngFor=" let ordenTrabajo of ordenesTrabajo
-                            | filter: filterCodigo
-                            | filterProveedor: filterProv
-                            | filterLote: filterLot
-                            | filterEstadoCalidad: filterEstadoCali
+                            
+                            
                             | paginate: {itemsPerPage: 15, currentPage: pageActual}">
                             
                                 <td>{{ordenTrabajo.codigo}}</td>
@@ -76,58 +80,57 @@
                                 <td>{{ordenTrabajo.estadoCalidad}}</td>
                         
                                 <td>
-                                    <button  class="btn btn-outline-info btn-sm">
+                                    <a href="/"><button  class="btn btn-outline-info btn-sm">
                                         <i class="fas fa-boxes"></i>
                                         Recepción
-                                    </button>
+                                    </button> </a>
                                 </td>
 
                                 <td>
-                                    <button  class="btn btn-outline-info btn-sm">
+                                    <a href=""><button  class="btn btn-outline-info btn-sm">
                                         <i class="fas fa-flask"></i>
                                         Aprobación
-                                    </button>
+                                    </button> </a>
                                 </td>
 
                                 <td>
-                                    <button  class="btn btn-outline-info btn-sm">
+                                    <a href=""><button  class="btn btn-outline-info btn-sm">
                                         <i class="far fa-file-alt"></i>
                                         Guías
-                                    </button>
+                                    </button></a>
                                 </td>
 
                                 <td>
-                                    <button  class="btn btn-outline-secondary btn-sm" style="margin-right: 3px;">
+                                    <a href="/"><button  class="btn btn-outline-secondary btn-sm" style="margin-right: 3px;">
                                         <i class="fas fa-eye"></i>
                                         Ver
-                                    </button>
+                                    </button></a>
                                 
-                                    <button  class="btn btn-outline-secondary btn-sm" style="margin-right: 3px;">
+                                     <a href="/ordenTrabajo/editar/:id"><button  class="btn btn-outline-secondary btn-sm" style="margin-right: 3px;">
                                         <i class="fas fa-pencil-alt"></i>
-                                    </button>
+                                    </button> </a>
 
-                                    <button  class="btn btn-danger btn-sm" (click)="eliminarOrdenTrabajo(ordenTrabajo.id)">
+                                    <a href="/"><button  class="btn btn-danger btn-sm" (click)="eliminarOrdenTrabajo(ordenTrabajo.id)">
                                         <i class="fas fa-trash-alt"></i>
-                                    </button>
+                                    </button> </a>
                                 </td>
                                 <td>
-                                    <button class="btn btn-outline-secondary btn-sm">
+                                    <a href="/"><button class="btn btn-outline-secondary btn-sm">
                                         <i class="far fa-file-pdf"></i>
                                         Reporte Calidad
-                                    </button>
+                                    </button> </a>
                                     <br>
-                                    <button class="btn btn-outline-secondary btn-sm">
+                                    <a href="/"><button class="btn btn-outline-secondary btn-sm">
                                         <i class="far fa-file-pdf"></i>
                                         Reporte Recepción
-                                    </button>
+                                    </button> </a>
                                     <br>
-                                    <button class="btn btn-outline-secondary btn-sm">
+                                    <a href="/"><button class="btn btn-outline-secondary btn-sm">
                                         <i class="far fa-file-pdf"></i>
                                         Trazabilidad
-                                    </button>
+                                    </button> </a>
                                 </td>  
                             </tr>
-                        </tbody>
                     </table>
                     <pagination-controls (pageChange)="pageActual = $event"></pagination-controls>
                 </div>
