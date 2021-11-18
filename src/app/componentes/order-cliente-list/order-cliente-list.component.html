@@ -31,43 +31,43 @@
                    
                     <table class="table table-hover" style="margin:0 auto;">
                         <thead>
-                            <tr>
-                                <th style="color: steelblue;">#</th>
+                            <tr style="text-align: left;">
+                                <th style="color: steelblue; width: 60px;">#</th>
                                 <th style="color: steelblue;">Fecha</th>
                                 <th style="color: steelblue;">Referencia</th>
-                                <th>Cliente</th>
+                                <th colspan="2">Cliente</th>
                                 <th style="color: steelblue;">Destino</th>
                                 <th colspan="4"></th>
                             
                             </tr>
                         </thead>
                         <tbody>
-                            <td><input class="form-control me-2" type="text" name="filterNum" placeholder="#" [(ngModel)]="filterNum"></td>
-                            <td><input class="form-control me-2" type="date" name="filterFecha" ></td>
-                            <td><input class="form-control me-2" type="text" name="filterRef" placeholder="Referencia"></td>
-                            <td><input class="form-control me-2" type="text" name="filterClient" placeholder="Cliente"></td>
-                            <td><input class="form-control me-2" type="text" name="filterDest" placeholder="Destino"></td>
+                            <td style="text-align: left; width: 60px;"><input class="form-control me-2" type="text" name="filterNum" placeholder="#" [(ngModel)]="filterNum"></td>
+                            <td style="text-align: left;"><input class="form-control me-2" type="date" name="filterFecha" ></td>
+                            <td style="text-align: left;"><input class="form-control me-2" type="text" name="filterRef" placeholder="Referencia"></td>
+                            <td colspan="2" style="text-align: left; width: 25%;"><input class="form-control me-2" type="text" name="filterClient" placeholder="Cliente"></td>
+                            <td style="text-align: left;"><input class="form-control me-2" type="text" name="filterDest" placeholder="Destino"></td>
                             
 
                             <tr class="text-center" *ngFor=" let ordenCliente of ordenesCliente
-                            | paginate: {itemsPerPage: 7, currentPage: pageActual}">
+                            | paginate: {itemsPerPage: 15, currentPage: pageActual}">
                        
-                                <td>#{{ordenCliente.numero}}</td>
-                                <td>{{ordenCliente.fecha}}</td>
-                                <td>{{ordenCliente.referencia}}</td>
-                                <td>{{ordenCliente.cliente}}</td>
-                                <td>{{ordenCliente.destino}}</td>
+                                <td style="text-align: left;">#{{ordenCliente.numero}}</td>
+                                <td style="text-align: left;">{{ordenCliente.fecha}}</td>
+                                <td style="text-align: left;">{{ordenCliente.referencia}}</td>
+                                <td colspan="2" style="text-align: left;">{{ordenCliente.cliente}}</td>
+                                <td style="text-align: left;">{{ordenCliente.destino}}</td>
 
-                                <td style="color: steelblue;">
+                                <td style="color: steelblue; width: 100px;">
                                     <a href="/">
                                         <i class="fas fa-eye" style="margin-right: 4px;"></i>
                                     </a> 
 
-                                    <a href="/ordenCliente/editar/:numero">
+                                    <a href='/ordenCliente/editar/:numero' >
                                         <i class="fas fa-pencil-alt" style="margin-right: 4px;"></i>
                                     </a>
                                     
-                                    <a (click)="eliminarOrdenCliente(ordenCliente)" href="/ordenCliente">
+                                    <a (click)="eliminarOrdenCliente(ordenCliente.numero)" href="/ordenCliente">
                                     <i class="fas fa-trash-alt" style="margin-right: 4px;"></i>
 
                                     </a>

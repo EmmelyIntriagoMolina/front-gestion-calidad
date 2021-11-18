@@ -31,7 +31,7 @@
                         </thead>
                             <tr>
                                 <td>
-                                    <input type="date" class="form-control" style="width: 80%; height: 30px;" value="aaaa-mm-dd" name="fecha" id="fecha" formControlName="fecha">
+                                    <input type="date" class="form-control" style="width: 80%; height: 30px;" value="aaaa-mm-dd hh:mm" name="fecha" id="fecha" formControlName="fecha">
                                 </td>
                                 <td>
                                     <input type="text" class="form-control" style="width: 80%; height: 30px;" name="destino" id="destino" formControlName="destino" [(ngModel)]="OrdenCliente.destino">
@@ -85,7 +85,7 @@
                         </thead>
                         <tr>
                             <td>   
-                                <select type="text"class="form-control"  style="width: 92%; height: 35px;"  name="producto" id="producto" formControlName="producto" [(ngModel)]="OrdenCliente.producto">
+                                <select type="text"class="form-select"  style="width: 92%; height: 35px;"  name="producto" id="producto" formControlName="producto" [(ngModel)]="OrdenCliente.producto">
                                     <option>CAMARON ENTERO</option>
                                     <option>CAMARON COLA</option>
                                     <option>CAMARON PYD</option>

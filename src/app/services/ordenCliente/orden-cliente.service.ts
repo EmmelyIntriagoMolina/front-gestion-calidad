@@ -29,6 +29,6 @@ export class OrdenClienteService {
   }
 
   deleteOrdenCliente(id: string | number, deleteOrdenCliente:ordenCliente){
-    return this.http.put(`${this.URL}/eliminarOrdenTrabajo/${id}`, deleteOrdenCliente);
+    return this.http.put(`${this.URL}/eliminarOrdenCliente/${id}`, deleteOrdenCliente);
   }
 }

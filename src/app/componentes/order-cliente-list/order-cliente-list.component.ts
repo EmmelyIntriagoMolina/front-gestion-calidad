@@ -25,13 +25,7 @@ export class OrderClienteListComponent implements OnInit {
   constructor(private ordenClienteService:OrdenClienteService, private http:HttpClient) { }
 
   ngOnInit(): void {
-    this.ordenClienteService.getOrdenesCliente()
-    .subscribe(
-      (res:any)=>{
-      this.ordenesCliente = res.ordenCliente
-      console.log(res.ordenCliente)
-    }),
-    (err:any)=> console.log(err)
+    this.getOrdenesCliente();
   } 
 
   getOrdenesCliente(){
@@ -44,8 +38,8 @@ export class OrderClienteListComponent implements OnInit {
     (err:any)=> console.log(err)
   } 
 
-  eliminarOrdenCliente(numero:number){
-    
+
+  eliminarOrdenCliente(id:number){
     Swal.fire({
       title: '¿Deseas eliminar el registro?',
       text: "Al eliminar el registro no podrás visualizarlo",
@@ -57,7 +51,7 @@ export class OrderClienteListComponent implements OnInit {
       confirmButtonText: 'Sí, Eliminar'
     }).then((result) => {
       if (result.isConfirmed) {
-        this.ordenClienteService.deleteOrdenCliente(numero, this.ordenesCliente).subscribe(
+        this.ordenClienteService.deleteOrdenCliente(id, this.ordenesCliente).subscribe(
           res => {
             console.log(res)
             this.getOrdenesCliente();

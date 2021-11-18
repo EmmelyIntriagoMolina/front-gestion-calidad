@@ -26,29 +26,22 @@ export class OrderListComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    this.ordenTrabajoService.getOrdenesTrabajo()
-    .subscribe(
-      (res:any)=>{
-      this.ordenesTrabajo = res.ordenTrabajo;
-      console.log('orden de trabajo',res.ordenTrabajo)
-    }),
-    (err: any)=> console.log(err);
+    this.getOrdenesTrabajo();
   }
 
 
-  
   getOrdenesTrabajo(){
     this.ordenTrabajoService.getOrdenesTrabajo()
     .subscribe(
       (res:any)=>{
       this.ordenesTrabajo = res.ordenTrabajo;
-      console.log('orden de trabajo',res.ordenTrabajo)
+      console.log('orden de trabajo', res.ordenTrabajo)
     }),
     (err: any)=> console.log(err);
   }
   
   
-  eliminarOrdenTrabajo(id:string){
+  deleteOrdenTrabajo(codigo:string){
     Swal.fire({
       title: '¿Deseas eliminar el registro?',
       text: "Al eliminar el registro no podrás visualizarlo",
@@ -60,7 +53,7 @@ export class OrderListComponent implements OnInit{
       confirmButtonText: 'Sí, Eliminar'
     }).then((result)=>{
       if(result.isConfirmed){
-        this.ordenTrabajoService.deleteOrdenTrabajo(id, this.ordenesTrabajo)
+        this.ordenTrabajoService.deleteOrdenT(codigo, this.ordenesTrabajo)
         .subscribe(
           res => {
             console.log(res)

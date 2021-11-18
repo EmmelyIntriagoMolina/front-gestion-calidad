@@ -16,14 +16,12 @@ export class OrderClienteEditComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  
   save(event: Event){
     event.preventDefault();
     if (this.form.valid) {
       const value=this.form.value;
       console.log(value)
-    }
-    
+    } 
   }
 
   rt:any = [];

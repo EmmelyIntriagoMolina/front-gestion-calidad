@@ -28,7 +28,7 @@ export class OrdenTrabajoService {
     return this.http.put(`${this.URL}/actualizarOrdenTrabajo/${id}`, putOrdenTrabajo);
   }
 
-  deleteOrdenTrabajo(id: string, deleteOrdenTrabajo:ordenTrabajo){
+  deleteOrdenT(id: string, deleteOrdenTrabajo:ordenTrabajo){
     return this.http.put(`${this.URL}/eliminarOrdenTrabajo/${id}`, deleteOrdenTrabajo);
   }
 
