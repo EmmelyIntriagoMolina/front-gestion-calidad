@@ -25,6 +25,8 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatIconModule} from '@angular/material/icon';
 import { OrderEditComponent } from './componentes/order-edit/order-edit.component';
 import { OrderClienteEditComponent } from './componentes/order-cliente-edit/order-cliente-edit.component';
+import { GuiaListComponent } from './componentes/guia-list/guia-list.component';
+import { GuiaFormComponent } from './componentes/guia-form/guia-form.component';
 
 
 @NgModule({
@@ -43,7 +45,9 @@ import { OrderClienteEditComponent } from './componentes/order-cliente-edit/orde
     OrderClienteFormComponent,
     FilterEstadoCalidadPipe,
     OrderEditComponent,
-    OrderClienteEditComponent
+    OrderClienteEditComponent,
+    GuiaListComponent,
+    GuiaFormComponent
   ],
   imports: [
     BrowserModule, FormsModule,

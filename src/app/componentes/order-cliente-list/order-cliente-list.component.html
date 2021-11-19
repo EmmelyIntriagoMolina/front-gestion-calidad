@@ -50,6 +50,7 @@
                             
 
                             <tr class="text-center" *ngFor=" let ordenCliente of ordenesCliente
+                           
                             | paginate: {itemsPerPage: 15, currentPage: pageActual}">
                        
                                 <td style="text-align: left;">#{{ordenCliente.numero}}</td>

@@ -1,5 +1,7 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { GuiaFormComponent } from './componentes/guia-form/guia-form.component';
+import { GuiaListComponent } from './componentes/guia-list/guia-list.component';
 import { OrderClienteEditComponent } from './componentes/order-cliente-edit/order-cliente-edit.component';
 import { OrderClienteFormComponent } from './componentes/order-cliente-form/order-cliente-form.component';
 import { OrderClienteListComponent } from './componentes/order-cliente-list/order-cliente-list.component';
@@ -40,6 +42,18 @@ const routes: Routes = [
   {
     path: 'ordenCliente/editar/:id',
     component:OrderClienteEditComponent
+  },
+
+  //Rutas guías de remision
+
+  {
+    path: 'ordenTrabajo/guiasRemision',
+    component: GuiaListComponent
+  },
+
+  {
+    path: 'ordenTrabajo/guiasRemision/add',
+    component: GuiaFormComponent
   }
 
 ];

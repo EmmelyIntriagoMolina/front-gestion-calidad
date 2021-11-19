@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <base href="./">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.css">
+</head>
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <div class="text-left" style="margin-bottom: 7px;">
+        <a href="/"> <button mat-button style="border-radius: 0%; margin-bottom: 10px;" class="btn btn-success"> Orden Trabajo </button></a>
+        
+        <a href="/ordenCliente"> <button mat-button style="border-radius: 0%; margin-bottom: 10px;" class="btn btn-success"> Orden Cliente</button> </a>
+    </div>
+    <nav class="navbar navbar-expand-lg ">
+        <div class="content">
+            <div style="width: 100%;" >
+                <div class="card card-header">
+                    <div style="float: left;">
+                        <h4>Guías de Remisión</h4>
+                    </div>
+                      
+                    <div style="float: right;">
+                        <a href="/"><button class="btn btn-danger" style="margin-right: 7px;">
+                            <i class="fas fa-chevron-left"> </i>
+                            Regresar
+                        </button></a>
+                        <button class="btn btn-warning" style="margin-right: 7px; color: white;;">
+                            Aprobación de Calidad
+                            <i class="fas fa-flask"></i>
+                        </button>
+                        <button class="btn btn-success" style="margin-right: 7px;">
+                            Nueva Guía
+                            <i class="far fa-file-alt"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="card-body ">
+                    <table  style="width: 100%; ">
+                        <tr>
+                            <td><b> FECHA:</b></td>
+                            <td><b> COLOR CAMARON: </b></td>
+                            <td rowspan="3" style="vertical-align: text-top; "><b>Calidad</b></td>
+                        </tr>
+                        <tr>
+                            <td><b> LOTE: </b></td>
+                            <td><b> PROCEDENCIA: </b></td>
+                        </tr>
+                        <tr>
+                            <td><b>PROVEEDOR:</b></td>
+                            <td><b>PISCINA:</b></td>
+                        </tr>
+                        <tr>
+                            <td><b>MATERIA PRIMA: </b></td>
+                            <td>TIPO CAMARON</td>
+                        </tr>
+                        
+                    </table>
+                    <br>
+                    <b><label for="guias">Guías</label></b>
+                    <table class="table table-hover" style="width: 100%; margin: 0 auto;">
+                        <thead style="text-align: left;">
+                            <tr style="text-align: left;">
+                                <th style="color:steelblue; width: 90px;">Folio</th>
+                                <th style="width: 120;">N° Guia Prov</th>
+                                <th style="width: 180px;">Vehiculo</th>
+                                <th style="width: 50px;">Peso</th>
+                                <th style="width: 50px;">Gavetas</th>
+                                <th >Muestras(Lb)</th>
+                                <th >Estado</th>
+                                <th colspan="4"></th>                             
+                            </tr>
+                        </thead>
+                            <tbody>
+                                <tr *ngFor="let guiaRemision of guiasRemision
+                                | paginate: {itemsPerPage: 15, currentPage: pageActual}">
+                                    <td>
+                                        <button>
+                                            
+                                        </button>
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        
+                    </table>
+                </div>
+            </div>
+        </div>
+    </nav>
+                   
