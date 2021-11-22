@@ -27,6 +27,7 @@ import { OrderEditComponent } from './componentes/order-edit/order-edit.componen
 import { OrderClienteEditComponent } from './componentes/order-cliente-edit/order-cliente-edit.component';
 import { GuiaListComponent } from './componentes/guia-list/guia-list.component';
 import { GuiaFormComponent } from './componentes/guia-form/guia-form.component';
+import { AprobacionComponent } from './componentes/aprobacion/aprobacion.component';
 
 
 @NgModule({
@@ -47,7 +48,8 @@ import { GuiaFormComponent } from './componentes/guia-form/guia-form.component';
     OrderEditComponent,
     OrderClienteEditComponent,
     GuiaListComponent,
-    GuiaFormComponent
+    GuiaFormComponent,
+    AprobacionComponent
   ],
   imports: [
     BrowserModule, FormsModule,

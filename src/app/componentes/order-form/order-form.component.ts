@@ -43,7 +43,7 @@ export class OrderFormComponent  {
     proveedor: '',
     lote: 0,
     procedencia: '',
-    piscina:0,
+    piscina:'',
     producto:'',
     tipoProducto:'',
     camaronMar:false,
@@ -69,15 +69,7 @@ export class OrderFormComponent  {
   }
   
   ngOnInit(): void {
-    this.ordenTrabajoService.getOrdenCompra()
-    .subscribe(
-      (res:any)=>{
-        //this.conversion = res.rows;
-        //this.rta = this.conversion;
-        console.log('prueba', this.rta)
-      },
-      (err:any)=> console.log(err)
-    )
+   
   }
 
   guardarOrdenTrabajo() {

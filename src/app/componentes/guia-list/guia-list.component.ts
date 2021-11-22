@@ -11,8 +11,11 @@ import Swal from 'sweetalert2';
 })
 export class GuiaListComponent implements OnInit {
 
+  sum:any;
+  total:number = 0;
   pageActual: number = 1;
-
+  sumaTotal:number = 0;
+  guiaRemision:any;
   guiasRemision:any = []
 
   constructor(private guiaRemisionService:GuiaRemisionService, private router:Router, private http:HttpClient) { }

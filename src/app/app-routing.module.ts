@@ -1,5 +1,6 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AprobacionComponent } from './componentes/aprobacion/aprobacion.component';
 import { GuiaFormComponent } from './componentes/guia-form/guia-form.component';
 import { GuiaListComponent } from './componentes/guia-list/guia-list.component';
 import { OrderClienteEditComponent } from './componentes/order-cliente-edit/order-cliente-edit.component';
@@ -54,6 +55,12 @@ const routes: Routes = [
   {
     path: 'ordenTrabajo/guiasRemision/add',
     component: GuiaFormComponent
+  },
+
+  //Aprobacion Lote
+  {
+    path: 'ordenTrabajo/aprobacion',
+    component: AprobacionComponent
   }
 
 ];

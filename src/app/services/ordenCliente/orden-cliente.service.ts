@@ -7,7 +7,7 @@ import { ordenCliente } from 'src/app/models/ordenCliente';
 })
 export class OrdenClienteService {
 
-  URL=`http://192.168.0.240:3333/ordenCliente` 
+  URL=`http://192.168.0.236:3333/ordenCliente` 
 
   constructor(private http:HttpClient) { }
 

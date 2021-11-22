@@ -18,13 +18,12 @@
     </div>
     <nav class="navbar navbar-expand-lg ">
         <div class="content">
-            <div style="width: 100%;" >
-                <div class="card card-header">
+            <div>
+                <div class="card card-header" style="width: 100%;">
                     <div style="float: left;">
                         <h4>Guías de Remisión</h4>
                     </div>
-                      
-                    <div style="float: right;">
+                    <div style="text-align: right;">
                         <a href="/"><button class="btn btn-danger" style="margin-right: 7px;">
                             <i class="fas fa-chevron-left"> </i>
                             Regresar
@@ -33,12 +32,14 @@
                             Aprobación de Calidad
                             <i class="fas fa-flask"></i>
                         </button>
-                        <button class="btn btn-success" style="margin-right: 7px;">
+                        <a><button class="btn btn-success" style="margin-right: 7px;">
                             Nueva Guía
                             <i class="far fa-file-alt"></i>
-                        </button>
+                        </button></a>
                     </div>
+                   
                 </div>
+                
                 <div class="card-body ">
                     <table  style="width: 100%; ">
                         <tr>
@@ -61,7 +62,12 @@
                         
                     </table>
                     <br>
-                    <b><label for="guias">Guías</label></b>
+                    <b><label for="guias">GUÍAS:</label></b>
+                    <div style="text-align: right; margin-bottom: 20px;">
+                        <button class="btn btn-outline-secondary btn-sm" style="font-size: 12px;">
+                            Reporte Calidad por O/T <i class="far fa-file-pdf"></i>
+                        </button>
+                    </div>
                     <table class="table table-hover" style="width: 100%; margin: 0 auto;">
                         <thead style="text-align: left;">
                             <tr style="text-align: left;">
@@ -75,18 +81,53 @@
                                 <th colspan="4"></th>                             
                             </tr>
                         </thead>
-                            <tbody>
-                                <tr *ngFor="let guiaRemision of guiasRemision
-                                | paginate: {itemsPerPage: 15, currentPage: pageActual}">
-                                    <td>
-                                        <button>
-                                            
-                                        </button>
-                                    </td>
-
-                                </tr>
-                            </tbody>
-                        
+                        <tbody>
+                            <tr *ngFor="let guiaRemision of guiasRemision
+                            | paginate: {itemsPerPage: 15, currentPage: pageActual}">
+                                <td>{{guiaRemision.id}}</td>
+                                <td>{{guiaRemision.codigo}}</td>
+                                <td>
+                                    Hora Ingreso: 
+                                    {{guiaRemision.horaIngreso}}
+                                    <br>
+                                    Placa: 
+                                        {{guiaRemision.placa}}
+                                    <br>
+                                    Chofer:
+                                    {{guiaRemision.Chofer}}
+                                </td>
+                                <td>{{guiaRemision.peso}}</td>
+                                <td>{{guiaRemision.gavetas}}</td>
+                                <td>{{guiaRemision.muestras}}</td>
+                                <td>
+                                    <span *ngIf="guiaRemision.estado==1"><i class="fas fa-lock-open"></i></span>
+                                </td>
+                                <td>
+                                    <button class="btn btn-primary">Análisis</button>
+                                </td>
+                                <td>
+                                    <i class="far fa-file-image"></i>
+                                </td>
+                                <td>
+                                    <i class="far fa-file-pdf"></i>PDF
+                                    <br>
+                                    <i class="far fa-file-excel"></i>XLS
+                                </td>
+                                <td>
+                                    <button class="btn btn-primary">
+                                        <i class="fas fa-pencil-alt"></i>
+                                    </button>
+                                    <br>
+                                    <button class="btn btn-danger">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="3"></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
                     </table>
                 </div>
             </div>

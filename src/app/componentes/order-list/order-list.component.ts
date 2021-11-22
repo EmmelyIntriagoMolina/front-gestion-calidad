@@ -11,8 +11,8 @@ import Swal from 'sweetalert2';
 
 export class OrderListComponent implements OnInit{
 
-  condicion = 'EN ESPERA'
-  condicion2 = 'RECHAZADO'
+  condicion = 'APROBADO'
+  
 
   pageActual: number = 1;
   filterCodigo = '';

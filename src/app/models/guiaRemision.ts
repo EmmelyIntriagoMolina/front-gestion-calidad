@@ -1,6 +1,7 @@
 import { Time } from "@angular/common";
 
 export interface GuiaRemision{
+    id:number,
     codigo:number,
     horaIngreso: Time,
     placa: string,

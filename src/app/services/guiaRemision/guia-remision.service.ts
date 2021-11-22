@@ -7,7 +7,7 @@ import { GuiaRemision } from 'src/app/models/guiaRemision';
 })
 export class GuiaRemisionService {
 
-  URL='';
+  URL =`http://192.168.0.236:3333/ordenTrabajo/guiasRemision`
 
   constructor(private http:HttpClient) { }
 

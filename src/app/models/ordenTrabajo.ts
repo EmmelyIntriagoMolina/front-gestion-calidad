@@ -8,7 +8,7 @@ export interface ordenTrabajo{
     proveedor: string;
     lote: number;
     procedencia: string;
-    piscina:number;
+    piscina:string;
     producto:string;
     tipoProducto:string;
     camaronMar:boolean;
