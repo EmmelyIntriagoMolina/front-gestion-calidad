@@ -47,10 +47,10 @@
                 </thead>
                 <tr>
                         <td>
-                            <input type="date" ui-date-format="yyyy-mm-dd" class="form-control" style="width: 80%; height: 30px;" name="fechaRegistro" id="fechaRegistro" value="aaaa-mm-dd" formControlName="fechaRegistro">
+                            <input type="date" ui-date-format="yyyy-mm-dd" class="form-control" style="width: 80%; height: 30px;" name="fechaRegistro" id="fechaRegistro" value="aaaa-mm-dd" formControlName="fechaRegistro" [(ngModel)]="OrdenTrabajo.fechaRegistro">
                         </td>
                         <td>
-                            <input type="time" class="form-control" style="width: 80%; height: 30px;" name="horaRecepcion" value="HH:mm:ss" id="horaRecepcion" formControlName="horaRecepcion" >
+                            <input type="time" class="form-control" style="width: 80%; height: 30px;" name="horaRecepcion" value="hh:mm:ss" id="horaRecepcion" formControlName="horaRecepcion" [(ngModel)]="OrdenTrabajo.horaRecepcion">
         
                         </td>
                 </tr>
@@ -150,9 +150,9 @@
                 </thead>
                 <tr>
                     <td>
-                        <label for="tipoProducto"><input type="radio" [(ngModel)]="OrdenTrabajo.tipoProducto" formControlName="tipoProducto" value="clasificar" name="tipoProducto"> Camarón para Clasificar </label>
+                        <label for="tipoProducto"><input type="radio" [(ngModel)]="OrdenTrabajo.tipoProducto" formControlName="tipoProducto" value="clasificar" name="clasificar"> Camarón para Clasificar </label>
                         <br/>
-                        <label for="tipoProducto"><input type="radio" [(ngModel)]="OrdenTrabajo.tipoProducto" formControlName="tipoProducto" value="descabezar" name="tipoProducto"> Camarón para Descabezar </label>
+                        <label for="tipoProducto"><input type="radio" [(ngModel)]="OrdenTrabajo.tipoProducto" formControlName="tipoProducto" value="descabezar" name="descabezar"> Camarón para Descabezar </label>
                         <br>
                     </td>
                     <td>

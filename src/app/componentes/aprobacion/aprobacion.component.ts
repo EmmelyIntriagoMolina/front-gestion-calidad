@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { OrdenTrabajoService } from 'src/app/services/orden-trabajo.service';
 
 @Component({
@@ -8,12 +9,12 @@ import { OrdenTrabajoService } from 'src/app/services/orden-trabajo.service';
 })
 export class AprobacionComponent implements OnInit {
 
-  constructor(private ordenTrabajoService:OrdenTrabajoService) { }
+  constructor(private ordenTrabajoService:OrdenTrabajoService, private router:Router) { }
 
   ordenesTrabajo: any = []; 
 
   ngOnInit(): void {
-    this.getOrdenesTrabajo
+    
   }
 
   getOrdenesTrabajo(){

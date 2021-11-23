@@ -1,8 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { MatDialogConfig } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { GuiaRemisionService } from 'src/app/services/guiaRemision/guia-remision.service';
 import Swal from 'sweetalert2';
+import { GuiaFormComponent } from '../guia-form/guia-form.component';
 
 @Component({
   selector: 'app-guia-list',
@@ -17,11 +19,14 @@ export class GuiaListComponent implements OnInit {
   sumaTotal:number = 0;
   guiaRemision:any;
   guiasRemision:any = []
+  dialog: any;
 
   constructor(private guiaRemisionService:GuiaRemisionService, private router:Router, private http:HttpClient) { }
 
   ngOnInit(): void {
+
     this.getGuiasRemision;
+    
   }
 
   getGuiasRemision(){
@@ -32,7 +37,7 @@ export class GuiaListComponent implements OnInit {
       console.log(res.guiaRemision)
     }),
     (err:any)=> console.log(err)
-  }
+  } 
 
   eliminarGuiaRemision(id:number){
     Swal.fire({
@@ -57,4 +62,12 @@ export class GuiaListComponent implements OnInit {
     })
   }
 
+  openDialog() {
+
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = false;
+    dialogConfig.autoFocus = true;
+    const dialogRef = this.dialog.open(GuiaFormComponent, dialogConfig);
+
+  }
 }

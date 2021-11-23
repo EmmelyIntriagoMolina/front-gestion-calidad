@@ -28,11 +28,11 @@
                             <i class="fas fa-chevron-left"> </i>
                             Regresar
                         </button></a>
-                        <button class="btn btn-warning" style="margin-right: 7px; color: white;;">
+                        <a href="/ordenTrabajo/aprobacion"><button class="btn btn-warning" style="margin-right: 7px; color: white;;">
                             Aprobación de Calidad
                             <i class="fas fa-flask"></i>
-                        </button>
-                        <a><button class="btn btn-success" style="margin-right: 7px;">
+                        </button></a>
+                        <a><button class="btn btn-success" (click)="openDialog()" style="margin-right: 7px;">
                             Nueva Guía
                             <i class="far fa-file-alt"></i>
                         </button></a>
@@ -40,8 +40,8 @@
                    
                 </div>
                 
-                <div class="card-body ">
-                    <table  style="width: 100%; ">
+                <div class="card-body">
+                    <table  style="width: 100%;">
                         <tr>
                             <td><b> FECHA:</b></td>
                             <td><b> COLOR CAMARON: </b></td>

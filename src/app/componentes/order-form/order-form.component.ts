@@ -31,7 +31,8 @@ export class OrderFormComponent  {
     producto : new FormControl(),
     observacion : new FormControl(),
     tipoProducto : new FormControl(),
-    camaronMar: new FormControl()
+    camaronMar: new FormControl(),
+
   })
 
   @HostBinding('class') classes = 'row'
@@ -45,8 +46,10 @@ export class OrderFormComponent  {
     procedencia: '',
     piscina:'',
     producto:'',
+    fechaRegistro:'',
+    horaRecepcion:'',
     tipoProducto:'',
-    camaronMar:false,
+    camaronMar:'',
     observacion:'',
     estadoCalidad:''
   }

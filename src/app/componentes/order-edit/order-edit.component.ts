@@ -50,10 +50,12 @@ export class OrderEditComponent implements OnInit {
     proveedor: '',
     lote: 0,
     procedencia: '',
+    fechaRegistro:'',
+    horaRecepcion:'',
     piscina:'',
     producto:'',
     tipoProducto:'',
-    camaronMar:false,
+    camaronMar:'',
     observacion:'',
     estadoCalidad:''
   }

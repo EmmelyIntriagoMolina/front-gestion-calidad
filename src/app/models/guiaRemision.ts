@@ -3,7 +3,7 @@ import { Time } from "@angular/common";
 export interface GuiaRemision{
     id:number,
     codigo:number,
-    horaIngreso: Time,
+    horaingreso: string,
     placa: string,
     chofer:string,
     peso:number,

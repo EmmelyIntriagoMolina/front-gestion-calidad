@@ -28,6 +28,7 @@ import { OrderClienteEditComponent } from './componentes/order-cliente-edit/orde
 import { GuiaListComponent } from './componentes/guia-list/guia-list.component';
 import { GuiaFormComponent } from './componentes/guia-form/guia-form.component';
 import { AprobacionComponent } from './componentes/aprobacion/aprobacion.component';
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 @NgModule({
@@ -65,6 +66,7 @@ import { AprobacionComponent } from './componentes/aprobacion/aprobacion.compone
     MatIconModule
   ],
   providers: [],
+  entryComponents:[MatDialogModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

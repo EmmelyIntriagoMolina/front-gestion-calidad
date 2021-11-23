@@ -31,7 +31,7 @@
                             </button></a>
                         </div>
                     </div>
-                    <table class="table table-hover" style="width: 90%; margin: 0 auto; font-size: 18px; margin-top: 15px;">
+                    <table class="table table-bordered">
                         <tr style="text-align: left;">
                             <td style="width: 300px;">
                                 <b>Fecha</b> 
@@ -39,33 +39,33 @@
                                 a
                             </td>
 
-                                <td style="width: 300px;">
-                                    <b>Proveedor</b>
-                                    <br>
-                                    a
-                                </td>
+                            <td style="width: 300px;">
+                                <b>Proveedor</b>
+                                <br>
+                                a
+                            </td>
 
-                                <td style="width: 300px;">
-                                    <b>Procedencia</b>
-                                    <br>
-                                    a
-                                </td>
+                            <td style="width: 300px;">
+                                <b>Procedencia</b>
+                                <br>
+                                a
+                            </td>
 
-                                <td style="width: 300px;">
-                                    <b>Producto</b>
-                                    <br>
-                                    a
-                                </td>
-                            </tr>
-                            <tr style="text-align: left;">
-                                <td style="width: 300px;">
-                                    <b>Piscina</b>
-                                    <br>
-                                    a
-                                </td>
-                                <td style="width: 300px;">
-                                    <b>Libras reportadas</b>
-                                    <br>
+                            <td style="width: 300px;">
+                                <b>Producto</b>
+                                <br>
+                                a
+                            </td>
+                        </tr>
+                        <tr style="text-align: left;">
+                            <td style="width: 300px;">
+                                <b>Piscina</b>
+                                <br>
+                                a
+                            </td>
+                            <td style="width: 300px;">
+                                <b>Libras reportadas</b>
+                                <br>
                                     a
                                 </td>
                                 <td colspan="2">
@@ -75,15 +75,49 @@
                             </td>
                         </tr>
                     </table>
-                    <div style="text-align: left;">
-                        <div style="text-align: left;">
-                            <h3>N° Lote</h3>
-                            <input type="text">
-                        </div>
-                        
-                    </div>
+                    <table style="text-align: left; width: 100%; margin-top: 30px">
+                        <tr>
+                            <td style="width: 100px;">
+                                <b><label for="numerolote" style="font-size: 18px;">N° Lote</label></b>
+                            </td>
+                            <td>
+                                <b><label for="estado" style="font-size: 18px;">Estado</label></b>
+                            </td>
+                            <td>
+                                <b><label for="colorcamaron" style="font-size: 18px;">Color del camarón</label></b>
+                            </td>
+                            <td>
+                                <b><label for="producto" style="font-size: 18px;">Producto</label></b>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 150px;">
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                      <span class="input-group-text" id="basic-addon1" style="font-size: 12px;">C-</span>
+                                    </div>
+                                    <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1" style="width: 50px; font-size: 12px;">
+                                </div>
+                            </td>
+                            <td>
+                               <label for="aprobado" style="font-size: 18px;"> <input type="radio" name="estado" id="aprobado" value="aprobado">APROBADO</label>
+                                <label for="rechazado" style="font-size: 18px; margin-left: 7px;" ><input type="radio" name="estado" id="rechazado" value="rechazado">RECHAZADO</label>
+                            </td>
+                            <td>
+                                <select name="colorcamaron" id="colorcamaron" class="form-select">
+                                    <option value="a2" name="colorcamaron">A2</option>
+                                </select>
+                            </td>
+                            <td>
+                                
+                            </td>
+                        </tr>
+                    </table>
                     <div style="text-align: right;">
-
+                        <button class="btn btn-info btn-sm" style="margin-top: 20px;">
+                            <i class="far fa-save"></i>
+                            Guardar Cambios
+                        </button>
                     </div>
                 </div>
             </div>
