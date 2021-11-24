@@ -13,6 +13,7 @@ export class GuiaFormComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
   guiaRemision:GuiaRemision={
@@ -27,8 +28,7 @@ export class GuiaFormComponent implements OnInit {
     estado:false
   }
   guardarGuia(){
-
+    
   }
-
 
 }

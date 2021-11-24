@@ -9,6 +9,7 @@ import { OrderClienteListComponent } from './componentes/order-cliente-list/orde
 import { OrderEditComponent } from './componentes/order-edit/order-edit.component';
 import { OrderFormComponent } from './componentes/order-form/order-form.component';
 import { OrderListComponent } from './componentes/order-list/order-list.component';
+import { VerOTComponent } from './componentes/ver-ot/ver-ot.component';
 
 const routes: Routes = [
 
@@ -52,15 +53,15 @@ const routes: Routes = [
     component: GuiaListComponent
   },
 
-  {
-    path: 'ordenTrabajo/guiasRemision/add',
-    component: GuiaFormComponent
-  },
-
   //Aprobacion Lote
   {
-    path: 'ordenTrabajo/aprobacion',
+    path: 'ordenTrabajo/aprobacion/:id',
     component: AprobacionComponent
+  },
+
+  {
+    path: 'ordenTrabajo/ver',
+    component: VerOTComponent
   }
 
 ];

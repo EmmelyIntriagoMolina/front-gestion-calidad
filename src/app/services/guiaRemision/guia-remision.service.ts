@@ -7,7 +7,7 @@ import { GuiaRemision } from 'src/app/models/guiaRemision';
 })
 export class GuiaRemisionService {
 
-  URL =`http://192.168.0.250:3333/ordenTrabajo/guiasRemision`
+  URL =`http://192.168.0.194:3333/guiasRemision`
 
   constructor(private http:HttpClient) { }
 
@@ -16,7 +16,7 @@ export class GuiaRemisionService {
       return this.http.get(`${this.URL}/consultarGuiasRemision`);
     }
   
-    postGuiaRemisiono(guiaRemision:GuiaRemision){
+    postGuiaRemision(guiaRemision:GuiaRemision){
       return this.http.post(`${this.URL}/ingresarGuiaRemision`, guiaRemision)
     }
   

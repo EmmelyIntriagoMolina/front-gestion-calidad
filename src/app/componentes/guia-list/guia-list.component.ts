@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { MatDialogConfig } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { GuiaRemision } from 'src/app/models/guiaRemision';
 import { GuiaRemisionService } from 'src/app/services/guiaRemision/guia-remision.service';
 import Swal from 'sweetalert2';
 import { GuiaFormComponent } from '../guia-form/guia-form.component';
@@ -20,6 +21,7 @@ export class GuiaListComponent implements OnInit {
   guiaRemision:any;
   guiasRemision:any = []
   dialog: any;
+  logService: any;
 
   constructor(private guiaRemisionService:GuiaRemisionService, private router:Router, private http:HttpClient) { }
 
@@ -62,12 +64,26 @@ export class GuiaListComponent implements OnInit {
     })
   }
 
+  open(){
+
+  }
+
   openDialog() {
 
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = false;
     dialogConfig.autoFocus = true;
-    const dialogRef = this.dialog.open(GuiaFormComponent, dialogConfig);
-
+    const dialogRef = this.dialog.open(GuiaFormComponent, dialogConfig)
+    dialogRef.afterClosed().subscribe(
+      (data: any) => {
+        this.guardarGuia(data);
+      }, (error: any) => console.log(error));
+      
+    }
+    
+    private guardarGuia(guiaToInsert: GuiaRemision) {
+    this.guiaRemisionService.postGuiaRemision(guiaToInsert).subscribe();
   }
+
+
 }

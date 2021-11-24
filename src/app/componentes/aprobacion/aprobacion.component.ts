@@ -12,13 +12,14 @@ export class AprobacionComponent implements OnInit {
   constructor(private ordenTrabajoService:OrdenTrabajoService, private router:Router) { }
 
   ordenesTrabajo: any = []; 
+  guiasRemision: any = [];
 
   ngOnInit(): void {
-    
+    this.getOrdenTrabajoId(this.ordenesTrabajo.id)
+  
   }
-
-  getOrdenesTrabajo(){
-    this.ordenTrabajoService.getOrdenesTrabajo()
+  getOrdenTrabajoId(id:number){
+    this.ordenTrabajoService.getOrdenTrabajoId(id)
     .subscribe(
       (res:any)=>{
       this.ordenesTrabajo = res.ordenTrabajo;
@@ -26,6 +27,5 @@ export class AprobacionComponent implements OnInit {
     }),
     (err: any)=> console.log(err);
   }
-  
 
 }

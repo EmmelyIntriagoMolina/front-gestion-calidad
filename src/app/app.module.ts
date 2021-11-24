@@ -29,6 +29,7 @@ import { GuiaListComponent } from './componentes/guia-list/guia-list.component';
 import { GuiaFormComponent } from './componentes/guia-form/guia-form.component';
 import { AprobacionComponent } from './componentes/aprobacion/aprobacion.component';
 import {MatDialogModule} from '@angular/material/dialog';
+import { VerOTComponent } from './componentes/ver-ot/ver-ot.component';
 
 
 @NgModule({
@@ -50,7 +51,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     OrderClienteEditComponent,
     GuiaListComponent,
     GuiaFormComponent,
-    AprobacionComponent
+    AprobacionComponent,
+    VerOTComponent
   ],
   imports: [
     BrowserModule, FormsModule,

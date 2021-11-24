@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <base href="./">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.css">
+</head>
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <div class="text-left" style="margin-bottom: 7px;">
+        <a href="/"> <button mat-button style="border-radius: 0%; margin-bottom: 10px;" class="btn btn-success"> Orden Trabajo </button></a>
+        
+        <a href="/ordenCliente"> <button mat-button style="border-radius: 0%; margin-bottom: 10px;" class="btn btn-success"> Orden Cliente</button> </a>
+    </div>
+    <nav class="navbar navbar-expand-lg ">
+        <div class="content">  
+            <div class="card text-center">
+                
+                <div class="card card-header registrotitle text-left">
+                    <h3>Orden Trabajo O/T--2021 </h3>  
+                </div>
+                <div class="card-body ">
+                    
+                        <div style="text-align: left; margin-bottom: 10px;">
+                            <a class="btn btn-primary" href="ordenTrabajo/editar/:id" role="button" style="margin-right: 7px;">Actualizar</a>
+                            <a class="btn btn-danger" href="ordenTrabajo/" role="button" (click)="deleteOrdenTrabajo(ordenesTrabajo.codigo)">Eliminar</a> 
+                        </div>
+                   
+                    <table style="width: 100%; margin: 0 auto; font-size: 14px;">
+                            <tr style="text-align: left;">
+                                <td style="width: 100%; height: 30px;"><b>Fecha Registro</b></td>
+                                <td style="width: 100%; height: 30px;"></td>
+                                <td style="width: 100%; height: 30px;"><b>Entidad</b></td>
+                                <td style="width: 100%; height: 30px;"></td>
+                            </tr>
+                            <tr style="text-align: left;">
+                                <td style="width: 100%; height: 30px;"><b>Hora Recepción</b></td>
+                                <td style="width: 100%; height: 30px;"></td>
+                                <td style="width: 100%; height: 30px;"><b>Procedencia</b></td>
+                                <td style="width: 100%; height: 30px;"></td>
+                            </tr>
+                            <tr style="text-align: left;">
+                                <td style="width: 100%; height: 30px;"><b>Estado Calidad</b></td>
+                                <td style="width: 100%; height: 30px;"></td>
+                                <td style="width: 100%; height: 30px;"><b>Piscna</b></td>
+                                <td style="width: 100%; height: 30px;"></td>
+                            </tr>
+                            <tr style="text-align: left;">
+                                <td style="width: 100%; height: 30px;"><b>Lote</b></td>
+                                <td style="width: 100%; height: 30px;"></td>
+                                <td style="width: 100%; height: 30px;"><b>Producto</b></td>
+                                <td style="width: 100%; height: 30px;"></td>
+                            </tr>
+                            <tr style="text-align: left;">
+                                <td style="width: 100%; height: 30px;"><b>Orden Compra</b></td>
+                                <td style="width: 100%; height: 30px;"></td>
+                                <td style="width: 100%; height: 30px;"><b>Tipo Producto</b></td>
+                                <td style="width: 100%; height: 30px;"> </td>
+                            </tr>
+                            <tr style="text-align: left;">
+                                <td style="width: 100%; height: 30px;"><b>Observación</b></td>
+                                <td style="width: 100%; height: 30px;"></td>
+                            </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </nav>
+</body>
