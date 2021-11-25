@@ -49,7 +49,7 @@ const routes: Routes = [
   //Rutas guías de remision
 
   {
-    path: 'ordenTrabajo/guiasRemision',
+    path: 'ordenTrabajo/guiasRemision/:id',
     component: GuiaListComponent
   },
 
@@ -60,7 +60,7 @@ const routes: Routes = [
   },
 
   {
-    path: 'ordenTrabajo/ver',
+    path: 'ordenTrabajo/ver/:id',
     component: VerOTComponent
   }
 

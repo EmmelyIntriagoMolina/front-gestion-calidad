@@ -30,6 +30,7 @@ import { GuiaFormComponent } from './componentes/guia-form/guia-form.component';
 import { AprobacionComponent } from './componentes/aprobacion/aprobacion.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { VerOTComponent } from './componentes/ver-ot/ver-ot.component';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -65,7 +66,10 @@ import { VerOTComponent } from './componentes/ver-ot/ver-ot.component';
     MatMenuModule,
     MatButtonModule,
     BrowserAnimationsModule,
-    MatIconModule
+    MatIconModule,
+    RouterModule.forRoot([
+      {path: 'ordenTrabajo/guiasRemision/:id', component: GuiaListComponent}
+    ])
   ],
   providers: [],
   entryComponents:[MatDialogModule],

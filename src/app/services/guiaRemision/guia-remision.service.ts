@@ -7,7 +7,8 @@ import { GuiaRemision } from 'src/app/models/guiaRemision';
 })
 export class GuiaRemisionService {
 
-  URL =`http://192.168.0.194:3333/guiasRemision`
+  URL =`http://192.168.0.238:3333/guiaRemision`
+  URL2 = `http://192.168.0.238:3333/ordenTrabajo`
 
   constructor(private http:HttpClient) { }
 
@@ -20,8 +21,8 @@ export class GuiaRemisionService {
       return this.http.post(`${this.URL}/ingresarGuiaRemision`, guiaRemision)
     }
   
-    getGuiaRemision(id:string){
-      return this.http.get(`${this.URL}/consultarGuiaRemision/${id}`);
+    getGuiaRemisionId(id:number){
+      return this.http.get(`${this.URL}/consultarGuiaRemisionId/${id}`);
     }
   
     putGuiaRemision(id:string | number, putGuiaRemision:GuiaRemision){
@@ -30,5 +31,10 @@ export class GuiaRemisionService {
   
     deleteGuiaRemision(id: string | number, deleteGuiaRemision:GuiaRemision){
       return this.http.put(`${this.URL}/eliminarGuiaRemision/${id}`, deleteGuiaRemision);
+    }
+
+
+    getOrdenTrabajoId(id:number){
+      return this.http.get(`${this.URL2}/consultarOrdenTrabajoId/${id}`);
     }
 }

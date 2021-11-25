@@ -1,9 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { MatDialogConfig } from '@angular/material/dialog';
-import { Router } from '@angular/router';
+import { ActivatedRoute, ParamMap, Params, Router } from '@angular/router';
 import { GuiaRemision } from 'src/app/models/guiaRemision';
+import { ordenTrabajo } from 'src/app/models/ordenTrabajo';
 import { GuiaRemisionService } from 'src/app/services/guiaRemision/guia-remision.service';
+import { OrdenTrabajoService } from 'src/app/services/orden-trabajo.service';
 import Swal from 'sweetalert2';
 import { GuiaFormComponent } from '../guia-form/guia-form.component';
 
@@ -23,12 +25,33 @@ export class GuiaListComponent implements OnInit {
   dialog: any;
   logService: any;
 
-  constructor(private guiaRemisionService:GuiaRemisionService, private router:Router, private http:HttpClient) { }
+  ordenesTrabajo:any = []; 
 
-  ngOnInit(): void {
+  constructor(private ordenTrabajoService:OrdenTrabajoService,private guiaRemisionService:GuiaRemisionService ,private router:Router, private http:HttpClient, private rutaActiva:ActivatedRoute) { }
 
-    this.getGuiasRemision;
+  ngOnInit() {
+
+    this.ordenesTrabajo = {
+      id: this.rutaActiva.snapshot.params.id
+    };
+    this.rutaActiva.params.subscribe(
+      (params: Params)=> {
+        this.ordenesTrabajo.id = params.id;
+        console.log(this.ordenesTrabajo.id)
+      }
+    )
+    this.getOrdenTrabajoId(this.ordenesTrabajo.id)
     
+  }
+
+  getOrdenTrabajoId(id:number){
+    this.ordenTrabajoService.getOrdenTrabajoId(id)
+    .subscribe(
+      (res:any)=>{
+      this.ordenesTrabajo = res.ordenTrabajo
+      console.log(res.ordenTrabajo)
+    }),
+    (err:any)=> console.log(err)
   }
 
   getGuiasRemision(){

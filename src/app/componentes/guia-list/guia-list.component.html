@@ -19,56 +19,83 @@
     <nav class="navbar navbar-expand-lg ">
         <div class="content">
             <div>
-                <div class="card card-header" style="width: 100%;">
+                <div class="card card-header" style="width: 150%;">
                     <div style="float: left;">
                         <h4>Guías de Remisión</h4>
                     </div>
                     <div style="text-align: right;">
-                        <a href="/"><button class="btn btn-danger" style="margin-right: 7px;">
-                            <i class="fas fa-chevron-left"> </i>
-                            Regresar
-                        </button></a>
-                        <a href="/ordenTrabajo/aprobacion"><button class="btn btn-warning" style="margin-right: 7px; color: white;;">
-                            Aprobación de Calidad
-                            <i class="fas fa-flask"></i>
-                        </button></a>
-                        <a><button class="btn btn-success" (click)="openDialog()" style="margin-right: 7px;">
-                            Nueva Guía
-                            <i class="far fa-file-alt"></i>
-                        </button></a>
+                        <table>
+                            <tr *ngFor="let ordenTrabajo of ordenesTrabajo">
+                                <td>
+                                    <a href="/"><button class="btn btn-danger" style="margin-right: 7px;">
+                                        <i class="fas fa-chevron-left"> </i>
+                                        Regresar
+                                    </button></a>
+                                    <a [routerLink]="['/ordenTrabajo/aprobacion', ordenTrabajo.id]"><button class="btn btn-warning" style="margin-right: 7px; color: white;;">
+                                        Aprobación de Calidad
+                                        <i class="fas fa-flask"></i>
+                                    </button></a>
+                                    <a><button class="btn btn-success" (click)="openDialog()" style="margin-right: 7px;">
+                                        Nueva Guía
+                                        <i class="far fa-file-alt"></i>
+                                    </button></a>
+
+                                </td>
+                            </tr>
+                        </table>
                     </div>
                    
                 </div>
                 
-                <div class="card-body">
-                    <table  style="width: 100%;">
-                        <tr>
-                            <td><b> FECHA:</b></td>
-                            <td><b> COLOR CAMARON: </b></td>
-                            <td rowspan="3" style="vertical-align: text-top; "><b>Calidad</b></td>
+                
+                    <table class="table table-bordered" style="width: 150%; height: 20%; font-size: 14px;">
+                        <tr *ngFor="let ordenTrabajo of ordenesTrabajo">
+                            <td><b> FECHA:</b>
+                                {{ordenTrabajo.fechaRegistro}}
+                            </td>
+                            <td><b> COLOR CAMARON: </b>
+                                {{ordenTrabajo.colorCamaron}}
+                            </td>
+                            <td rowspan="4" style="vertical-align: text-top; text-align: center; "><b>Calidad:</b>
+                                <br>
+                                <label for="calidad" style="font-size: 22px;"> {{ordenTrabajo.calidad}} </label>
+                            </td>
+                            
                         </tr>
-                        <tr>
-                            <td><b> LOTE: </b></td>
-                            <td><b> PROCEDENCIA: </b></td>
+                        <tr *ngFor="let ordenTrabajo of ordenesTrabajo">
+                            <td><b> LOTE: </b>
+                                {{ordenTrabajo.lote}}
+                            </td>
+                            <td><b> PROCEDENCIA: </b>
+                                {{ordenTrabajo.procedencia}}
+                            </td>
                         </tr>
-                        <tr>
-                            <td><b>PROVEEDOR:</b></td>
-                            <td><b>PISCINA:</b></td>
+                        <tr *ngFor="let ordenTrabajo of ordenesTrabajo">
+                            <td><b>PROVEEDOR:</b>
+                                {{ordenTrabajo.proveedor}}
+                            </td>
+                            <td><b>PISCINA:</b>
+                                {{ordenTrabajo.piscina}}
+                            </td>
                         </tr>
-                        <tr>
-                            <td><b>MATERIA PRIMA: </b></td>
-                            <td>TIPO CAMARON</td>
+                        <tr *ngFor="let ordenTrabajo of ordenesTrabajo">
+                            <td><b>MATERIA PRIMA: </b>
+                                {{ordenTrabajo.producto}}
+                            </td>
+                            <td>
+                                {{ordenTrabajo.tipoProducto}}
+                            </td>
                         </tr>
                         
                     </table>
                     <br>
                     <b><label for="guias">GUÍAS:</label></b>
-                    <div style="text-align: right; margin-bottom: 20px;">
+                    <div style="text-align: right; margin-bottom: 20px; width: 150%;">
                         <button class="btn btn-outline-secondary btn-sm" style="font-size: 12px;">
                             Reporte Calidad por O/T <i class="far fa-file-pdf"></i>
                         </button>
                     </div>
-                    <table class="table table-hover" style="width: 100%; margin: 0 auto;">
+                    <table class="table table-hover" style="width: 150%; margin: 0 auto;">
                         <thead style="text-align: left;">
                             <tr style="text-align: left;">
                                 <th style="color:steelblue; width: 90px;">Folio</th>
@@ -91,7 +118,7 @@
                                     {{guiaRemision.horaIngreso}}
                                     <br>
                                     Placa: 
-                                        {{guiaRemision.placa}}
+                                    {{guiaRemision.placa}}
                                     <br>
                                     Chofer:
                                     {{guiaRemision.Chofer}}
@@ -129,7 +156,7 @@
                             </tr>
                         </tbody>
                     </table>
-                </div>
+                
             </div>
         </div>
     </nav>

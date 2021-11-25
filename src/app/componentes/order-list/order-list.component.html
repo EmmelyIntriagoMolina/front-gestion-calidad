@@ -65,7 +65,7 @@
                                 </select>
                                 </td>
                            
-                            <tr class="text-center" *ngFor=" let ordenTrabajo of ordenesTrabajo
+                            <tr class="text-center" *ngFor=" let ordenTrabajo of ordenesTrabajo 
                             | paginate: {itemsPerPage: 15, currentPage: pageActual}">
                             
                                 <td style="text-align: left; width: 150px;">O/T-{{ordenTrabajo.codigo}}-2021</td>
@@ -88,26 +88,26 @@
                                 </td>
 
                                 <td>
-                                    <a href='/ordenTrabajo/aprobacion/`{ordenTrabajo.id}`'><button  class=" botones btn btn-outline-info btn-sm" style="width: 110px;  background-color: rgb(211, 230, 241); border-color: rgb(204, 228, 243);">
+                                    <a [routerLink]="['/ordenTrabajo/aprobacion', ordenTrabajo.id]"><button  class=" botones btn btn-outline-info btn-sm" style="width: 110px;  background-color: rgb(211, 230, 241); border-color: rgb(204, 228, 243);">
                                         <i class="fas fa-flask"></i>
                                         Aprobación
                                     </button> </a>
                                 </td>
  
                                 <td>
-                                    <a href="/ordenTrabajo/guiasRemision"><button  class="botones btn btn-outline-info btn-sm" style="width: 70px; background-color: rgb(245, 233, 233); border-color: rgb(245, 233, 233);">
+                                    <a [routerLink]="['/ordenTrabajo/guiasRemision', ordenTrabajo.id]"><button  class="botones btn btn-outline-info btn-sm" style="width: 70px; background-color: rgb(245, 233, 233); border-color: rgb(245, 233, 233);">
                                         <i class="far fa-file-alt"></i>
                                         Guías
                                     </button></a>
                                 </td>
 
                                 <td style="width:150px;">
-                                    <a href="/ordenTrabajo/ver"><button  class="btn btn-outline-secondary btn-sm">
+                                    <a [routerLink]="['/ordenTrabajo/ver', ordenTrabajo.id]"><button  class="btn btn-outline-secondary btn-sm">
                                         <i class="fas fa-eye"></i>
                                         Ver
                                     </button></a>
                                 
-                                    <a href="/ordenTrabajo/editar/:id"><button  class="btn btn-outline-secondary btn-sm" style="margin-right: 3px;">
+                                    <a [routerLink]="['/ordenTrabajo/editar', ordenTrabajo.id]"><button  class="btn btn-outline-secondary btn-sm" style="margin-right: 3px;">
                                         <i class="fas fa-pencil-alt"></i>
                                     </button> </a>
 

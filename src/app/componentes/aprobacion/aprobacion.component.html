@@ -31,7 +31,7 @@
                             </button></a>
                         </div>
                     </div>
-                    <table class="">
+                    <table class="table table-bordered">
                         <tr style="text-align: left;" *ngFor="let ordenTrabajo of ordenesTrabajo">
                             <td style="width: 300px;">
                                 <b>Fecha</b> 
@@ -56,20 +56,20 @@
                                 <br>
                                 {{ordenTrabajo.producto}}
                             </td>
-                            <td style="width: 300px;">
+                            
+                        </tr>
+                        <tr style="text-align: left;" >
+                            <td style="width: 300px;" *ngFor="let ordenTrabajo of ordenesTrabajo">
                                 <b>Piscina</b>
                                 <br>
                                 {{ordenTrabajo.piscina}}
                             </td>
-                        </tr>
-                        <tr style="text-align: left;" *ngFor="let guiaRemision of guiasRemision">
-                            
-                            <td style="width: 300px;">
+                            <td style="width: 300px" *ngFor="let guiaRemision of guiasRemision">
                                 <b>Libras reportadas</b>
                                 <br>
                                 
                             </td>
-                            <td colspan="2">
+                            <td colspan="2" *ngFor="let guiaRemision of guiasRemision">
                                     <b>N° gavetas reportadas</b>
                                     <br>
                                     {{guiaRemision.gavetas}}

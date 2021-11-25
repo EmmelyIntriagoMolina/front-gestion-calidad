@@ -18,56 +18,70 @@
     </div>
     <nav class="navbar navbar-expand-lg ">
         <div class="content">  
-            <div class="card text-center">
+            
                 
-                <div class="card card-header registrotitle text-left">
-                    <h3>Orden Trabajo O/T--2021 </h3>  
-                </div>
-                <div class="card-body ">
-                    
-                        <div style="text-align: left; margin-bottom: 10px;">
-                            <a class="btn btn-primary" href="ordenTrabajo/editar/:id" role="button" style="margin-right: 7px;">Actualizar</a>
-                            <a class="btn btn-danger" href="ordenTrabajo/" role="button" (click)="deleteOrdenTrabajo(ordenesTrabajo.codigo)">Eliminar</a> 
-                        </div>
+            <table>
+                <tr  *ngFor="let ordenTrabajo of ordenesTrabajo">
+                    <td class="card card-header registrotitle text-left" style="width: 300%;">
+                        
+                        <h3>Orden Trabajo O/T-{{ordenTrabajo.codigo}}-2021 </h3>
+
+                    </td>
+                </tr>
+            </table>
+                
+
+                <table>
+                    <tr *ngFor="let ordenTrabajo of ordenesTrabajo">
+                        <td>
+
+                            <div style="text-align: left; margin-bottom: 10px; width: 150%; margin-top: 10px;">
+                                <a class="btn btn-primary" [routerLink]="['/ordenTrabajo/editar', ordenTrabajo.id]" role="button" style="margin-right: 7px;">Actualizar</a>
+                                <a class="btn btn-danger" href="ordenTrabajo/" role="button" (click)="deleteOrdenTrabajo(ordenesTrabajo.id)">Eliminar</a> 
+                            </div>
+                        </td>
+                    </tr>
+
+                </table>        
                    
-                    <table style="width: 100%; margin: 0 auto; font-size: 14px;">
-                            <tr style="text-align: left;">
-                                <td style="width: 100%; height: 30px;"><b>Fecha Registro</b></td>
-                                <td style="width: 100%; height: 30px;"></td>
-                                <td style="width: 100%; height: 30px;"><b>Entidad</b></td>
-                                <td style="width: 100%; height: 30px;"></td>
+                    <table style="font-size: 14px; width: 300%;">
+                            <tr style="text-align: left;" *ngFor="let ordenTrabajo of ordenesTrabajo">
+                                <td><b>Fecha Registro</b></td>
+                                <td>{{ordenTrabajo.fechaRegistro}}</td>
+                                <td><b>Entidad</b></td>
+                                <td>{{ordenTrabajo.proveedor}}</td>
                             </tr>
-                            <tr style="text-align: left;">
-                                <td style="width: 100%; height: 30px;"><b>Hora Recepción</b></td>
-                                <td style="width: 100%; height: 30px;"></td>
-                                <td style="width: 100%; height: 30px;"><b>Procedencia</b></td>
-                                <td style="width: 100%; height: 30px;"></td>
+                            <tr style="text-align: left;" *ngFor="let ordenTrabajo of ordenesTrabajo">
+                                <td><b>Hora Recepción</b></td>
+                                <td>{{ordenTrabajo.horaRecepcion}}</td>
+                                <td><b>Procedencia</b></td>
+                                <td>{{ordenTrabajo.procedencia}} </td>
                             </tr>
-                            <tr style="text-align: left;">
-                                <td style="width: 100%; height: 30px;"><b>Estado Calidad</b></td>
-                                <td style="width: 100%; height: 30px;"></td>
-                                <td style="width: 100%; height: 30px;"><b>Piscna</b></td>
-                                <td style="width: 100%; height: 30px;"></td>
+                            <tr style="text-align: left;" *ngFor="let ordenTrabajo of ordenesTrabajo">
+                                <td><b>Estado Calidad</b></td>
+                                <td>{{ordenTrabajo.estadoCalidad}} </td>
+                                <td><b>Piscna</b></td>
+                                <td>{{ordenTrabajo.piscina}} </td>
                             </tr>
-                            <tr style="text-align: left;">
-                                <td style="width: 100%; height: 30px;"><b>Lote</b></td>
-                                <td style="width: 100%; height: 30px;"></td>
-                                <td style="width: 100%; height: 30px;"><b>Producto</b></td>
-                                <td style="width: 100%; height: 30px;"></td>
+                            <tr style="text-align: left;" *ngFor="let ordenTrabajo of ordenesTrabajo">
+                                <td><b>Lote</b></td>
+                                <td>{{ordenTrabajo.lote}} </td>
+                                <td><b>Producto</b></td>
+                                <td>{{ordenTrabajo.producto}} </td>
                             </tr>
-                            <tr style="text-align: left;">
-                                <td style="width: 100%; height: 30px;"><b>Orden Compra</b></td>
-                                <td style="width: 100%; height: 30px;"></td>
-                                <td style="width: 100%; height: 30px;"><b>Tipo Producto</b></td>
-                                <td style="width: 100%; height: 30px;"> </td>
+                            <tr style="text-align: left;" *ngFor="let ordenTrabajo of ordenesTrabajo">
+                                <td><b>Orden Compra</b></td>
+                                <td>{{ordenTrabajo.ordencompra}} </td>
+                                <td><b>Tipo Producto</b></td>
+                                <td>{{ordenTrabajo.tipoProducto}} </td>
                             </tr>
-                            <tr style="text-align: left;">
-                                <td style="width: 100%; height: 30px;"><b>Observación</b></td>
-                                <td style="width: 100%; height: 30px;"></td>
+                            <tr style="text-align: left;" *ngFor="let ordenTrabajo of ordenesTrabajo">
+                                <td><b>Observación</b></td>
+                                <td>{{ordenTrabajo.observacion}} </td>
                             </tr>
                     </table>
-                </div>
-            </div>
+                
+            
         </div>
     </nav>
 </body>

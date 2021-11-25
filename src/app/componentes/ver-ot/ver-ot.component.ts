@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
 import { OrdenTrabajoService } from 'src/app/services/orden-trabajo.service';
 import Swal from 'sweetalert2';
 
@@ -11,12 +12,32 @@ export class VerOTComponent implements OnInit {
 
   ordenesTrabajo: any = []; 
 
-  constructor(private ordenTrabajoService:OrdenTrabajoService) { }
+  constructor(private ordenTrabajoService:OrdenTrabajoService, private rutaActiva:ActivatedRoute) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+
+    this.ordenesTrabajo = {
+      id: this.rutaActiva.snapshot.params.id
+    };
+    this.rutaActiva.params.subscribe(
+      (params: Params)=> {
+        this.ordenesTrabajo.id = params.id;
+        console.log(this.ordenesTrabajo.id)
+      }
+    )
+    this.getOrdenTrabajoId(this.ordenesTrabajo.id)
     
   }
 
+  getOrdenTrabajoId(id:number){
+    this.ordenTrabajoService.getOrdenTrabajoId(id)
+    .subscribe(
+      (res:any)=>{
+      this.ordenesTrabajo = res.ordenTrabajo
+      console.log(res.ordenTrabajo)
+    }),
+    (err:any)=> console.log(err)
+  }
   deleteOrdenTrabajo(codigo:string){
     Swal.fire({
       title: '¿Deseas eliminar el registro?',
