@@ -33,6 +33,7 @@ import { VerOTComponent } from './componentes/ver-ot/ver-ot.component';
 import { RouterModule } from '@angular/router';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,

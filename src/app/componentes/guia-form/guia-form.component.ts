@@ -18,6 +18,7 @@ export class GuiaFormComponent implements OnInit {
 
   guiaRemision:GuiaRemision={
     id:0,
+    id_OT:0,
     codigo:0,
     horaingreso: '',
     placa: '',

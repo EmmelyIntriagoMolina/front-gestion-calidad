@@ -11,7 +11,7 @@
             </div>
             
             <form  [formGroup]="form" class="row g-3" style=" margin: 0 auto; width: 50%; height: 30%;" (ngSubmit)="save($event)" >
-                <table width="200" >
+                <table width="200">
                     <thead>
                         <tr>
                             <th>
@@ -22,9 +22,9 @@
                             </th>
                         </tr>
                     </thead>
-                    <tr>
-                        <td>
-                            <input type="text" style="width: 80%; height: 30px;" class="form-control" name="codigo" id="codigo" formControlName="codigo" autofocus [(ngModel)]="OrdenTrabajo.codigo" >
+                    <tr *ngFor="let ordenTrabajo of ordenesTrabajo">
+                        <td> 
+                            <input type="text" style="width: 80%; height: 30px;" class="form-control" name="codigo" id="codigo" formControlName="codigo" autofocus [(ngModel)]="OrdenTrabajo.codigo">
                         </td>
                         <td>
                             <ng-select type="text" style="width: 80%; height: 35px;" class="form-select" name="ordencompra" id="ordencompra"  autofocus  
@@ -48,7 +48,7 @@
                         </tr>
                     </thead>
                     <tr>
-                        <td>
+                        <td >
                             <input type="date" ui-date-format="yyyy-mm-dd" class="form-control" style="width: 80%; height: 30px;" name="fechaRegistro" id="fechaRegistro" value="aaaa-mm-dd" formControlName="fechaRegistro">
                         </td>
                         <td>
@@ -86,8 +86,8 @@
                             
                         </tr>
                     </thead>
-                    <tr>
-                        <td>
+                    <tr *ngFor="let ordenTrabajo of ordenesTrabajo">
+                        <td >
                             <input type="text" class="form-control" style="width: 80%; height: 30px;" name="procedencia" id="procedencia" formControlName="procedencia" [(ngModel)]="OrdenTrabajo.procedencia" required>  
                             <span *ngIf="this.form.get('procedencia')?.errors?.required" style="color: red;">
                               
@@ -96,11 +96,10 @@
                         <td>
                             <input type="text" class="form-control" style="width: 80%; height: 30px;" name="piscina" id="piscina" formControlName="piscina" [(ngModel)]="OrdenTrabajo.piscina" required>
                             <span *ngIf="this.form.get('piscina')?.errors?.required" style="color: red;">
-                                (El campo no puede ser enviado vacío)
+                            
                             </span>
                         </td>  
                     </tr>
-
                     <thead>
                         <tr>
                             <th>

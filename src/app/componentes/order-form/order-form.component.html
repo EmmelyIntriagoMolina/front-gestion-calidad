@@ -94,7 +94,7 @@
                     <td>
                         <input type="text" class="form-control" style="width: 80%; height: 30px;" name="piscina" id="piscina" formControlName="piscina" [(ngModel)]="OrdenTrabajo.piscina" required>
                         <span *ngIf="this.form.get('piscina')?.errors?.required" style="color: red;">
-                            (El campo no puede ser enviado vacío)
+                           
                         </span>
                     </td>  
                 </tr>
@@ -150,9 +150,9 @@
                 </thead>
                 <tr>
                     <td>
-                        <label for="tipoProducto"><input type="radio" [(ngModel)]="OrdenTrabajo.tipoProducto" formControlName="tipoProducto" value="clasificar" name="clasificar"> Camarón para Clasificar </label>
+                        <label for="tipoProducto"><input type="radio" [(ngModel)]="OrdenTrabajo.tipoProducto" formControlName="tipoProducto" value="Camaron para clasificar" name="clasificar"> Camarón para Clasificar </label>
                         <br/>
-                        <label for="tipoProducto"><input type="radio" [(ngModel)]="OrdenTrabajo.tipoProducto" formControlName="tipoProducto" value="descabezar" name="descabezar"> Camarón para Descabezar </label>
+                        <label for="tipoProducto"><input type="radio" [(ngModel)]="OrdenTrabajo.tipoProducto" formControlName="tipoProducto" value="Camaron para descabezar" name="descabezar"> Camarón para Descabezar </label>
                         <br>
                     </td>
                     <td>

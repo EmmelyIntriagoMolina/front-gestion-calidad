@@ -1,4 +1,5 @@
 import { HttpClient } from '@angular/common/http';
+import { ConditionalExpr } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { MatDialogConfig } from '@angular/material/dialog';
 import { ActivatedRoute, ParamMap, Params, Router } from '@angular/router';
@@ -14,6 +15,7 @@ import { GuiaFormComponent } from '../guia-form/guia-form.component';
   templateUrl: './guia-list.component.html',
   styleUrls: ['./guia-list.component.css']
 })
+
 export class GuiaListComponent implements OnInit {
 
   sum:any;
@@ -21,11 +23,12 @@ export class GuiaListComponent implements OnInit {
   pageActual: number = 1;
   sumaTotal:number = 0;
   guiaRemision:any;
-  guiasRemision:any = []
+
   dialog: any;
   logService: any;
 
   ordenesTrabajo:any = []; 
+  guiasRemision:any = []
 
   constructor(private ordenTrabajoService:OrdenTrabajoService,private guiaRemisionService:GuiaRemisionService ,private router:Router, private http:HttpClient, private rutaActiva:ActivatedRoute) { }
 
@@ -40,8 +43,9 @@ export class GuiaListComponent implements OnInit {
         console.log(this.ordenesTrabajo.id)
       }
     )
+
     this.getOrdenTrabajoId(this.ordenesTrabajo.id)
-    
+    this.getGuiasRemision()
   }
 
   getOrdenTrabajoId(id:number){
@@ -54,8 +58,8 @@ export class GuiaListComponent implements OnInit {
     (err:any)=> console.log(err)
   }
 
-  getGuiasRemision(){
-    this.guiaRemisionService.getGuiasRemision()
+  getGuiasRemisionId(id_OT:number){
+    this.guiaRemisionService.getGuiasRemisionId(id_OT)
     .subscribe(
       (res:any)=>{
       this.guiasRemision = res.guiaRemision
@@ -64,7 +68,17 @@ export class GuiaListComponent implements OnInit {
     (err:any)=> console.log(err)
   } 
 
-  eliminarGuiaRemision(id:number){
+  getGuiasRemision(){
+    this.guiaRemisionService.getGuiasRemision()
+    .subscribe(
+      (res:any)=>{
+      this.guiasRemision = res.guiaremision;
+      console.log('guias', res.guiaremision)
+    }),
+    (err: any)=> console.log(err);
+  }
+
+  deleteGuiaRemision(id:number){
     Swal.fire({
       title: '¿Deseas eliminar el registro?',
       text: "Al eliminar el registro no podrás visualizarlo",
@@ -74,9 +88,10 @@ export class GuiaListComponent implements OnInit {
       cancelButtonColor: '#d33',
       cancelButtonText: 'Cancelar',
       confirmButtonText: 'Sí, Eliminar'
-    }).then((result) => {
-      if (result.isConfirmed) {
-        this.guiaRemisionService.deleteGuiaRemision(id, this.guiasRemision).subscribe(
+    }).then((result)=>{
+      if(result.isConfirmed){
+        this.guiaRemisionService.deleteGuiaRemision(id, this.guiasRemision)
+        .subscribe(
           res => {
             console.log(res)
             this.getGuiasRemision();
