@@ -31,6 +31,7 @@ import { AprobacionComponent } from './componentes/aprobacion/aprobacion.compone
 import {MatDialogModule} from '@angular/material/dialog';
 import { VerOTComponent } from './componentes/ver-ot/ver-ot.component';
 import { RouterModule } from '@angular/router';
+import { RecepcionComponent } from './componentes/recepcion/recepcion.component';
 
 
 
@@ -54,7 +55,8 @@ import { RouterModule } from '@angular/router';
     GuiaListComponent,
     GuiaFormComponent,
     AprobacionComponent,
-    VerOTComponent
+    VerOTComponent,
+    RecepcionComponent
   ],
   imports: [
     BrowserModule, FormsModule,

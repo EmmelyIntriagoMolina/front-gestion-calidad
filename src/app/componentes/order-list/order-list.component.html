@@ -80,7 +80,7 @@
                         
                                 <td>
                                     <button  class="botones btn btn-outline-info btn-sm" style="width: 110px; background-color: rgb(215, 231, 233); border-color: rgb(215, 231, 233);" [disabled]="ordenTrabajo.estadoCalidad!=condicion">
-                                        <a href="/" ><i class="fas fa-boxes"></i> 
+                                        <a [routerLink]="['/ordenTrabajo/recepcion', ordenTrabajo.id]"><i class="fas fa-boxes"></i> 
                                         Recepción
                                         </a>
                                         

@@ -9,6 +9,7 @@ import { OrderClienteListComponent } from './componentes/order-cliente-list/orde
 import { OrderEditComponent } from './componentes/order-edit/order-edit.component';
 import { OrderFormComponent } from './componentes/order-form/order-form.component';
 import { OrderListComponent } from './componentes/order-list/order-list.component';
+import { RecepcionComponent } from './componentes/recepcion/recepcion.component';
 import { VerOTComponent } from './componentes/ver-ot/ver-ot.component';
 
 const routes: Routes = [
@@ -62,7 +63,13 @@ const routes: Routes = [
   {
     path: 'ordenTrabajo/ver/:id',
     component: VerOTComponent
+  },
+  {
+    path: 'ordenTrabajo/recepcion/:id',
+    component: RecepcionComponent
   }
+
+  
 
 ];
 

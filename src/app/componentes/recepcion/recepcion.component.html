@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <base href="./">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.css">
+</head>
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <div class="text-left" style="margin-bottom: 7px;">
+        <a href="/"> <button mat-button style="border-radius: 0%; margin-bottom: 10px;" class="btn btn-success"> Orden Trabajo </button></a>
+        
+        <a href="/ordenCliente"> <button mat-button style="border-radius: 0%; margin-bottom: 10px;" class="btn btn-success"> Orden Cliente</button> </a>
+    </div>
+    <nav class="navbar navbar-expand-lg ">
+        <div class="content">
+            <div>
+                <div class="card card-header" style="width: 100%;">
+                    <div style="float: left;">
+                        <h4>Control de Peso en Recepción</h4>
+                    </div>
+                </div>
+                <table class="table table-bordered">
+                    <tr *ngFor="let ordenTrabajo of ordenesTrabajo">
+                        <td style="width: 300px; text-align: left;">
+                            <b>#Orden de Trabajo:</b>
+                            <br>
+                            O/T-{{ordenTrabajo.codigo}}-2021
+                        </td>
+                        <td style="width: 300px;">
+                            <b>Entidad:</b>
+                            <br>
+                            {{ordenTrabajo.proveedor}}
+                        </td>
+                        <td style="width: 300px;">
+                            <b>Lote:</b>
+                            <br>
+                            {{ordenTrabajo.lote}}
+                        </td>
+                        <td style="width: 300px;">
+                            <b>Producto:</b>
+                            <br>
+                            {{ordenTrabajo.producto}}
+
+                        </td>
+                        <td style="width: 300px;">
+                            <b>Camaron de Mar:</b>
+                            <br>
+                            <span *ngIf="ordenTrabajo.camaronMar==false">NO</span>
+                            <span *ngIf="ordenTrabajo.camaronMar==true">SI</span>
+                        </td>
+                        <td style="width: 300px;">
+                            <b>Destino Producto:</b>
+                            <br>
+                            {{ordenTrabajo.tipoProducto}}
+                        </td>
+                    </tr>
+                </table>
+                <div class="card card-header" style="width: 100%;">
+                    <div style="float: left;">
+                        <h4>Guías/Carros</h4>
+                    </div>
+                    <div style="text-align: right;">
+                        <button class="btn btn-outline-secondary btn-sm">
+                            <i class="fas fa-plus"> </i>
+                                AGREGAR GUÍA
+                        </button>
+                    </div>
+                </div>
+                <table class="table table-bordered">
+                    <tr *ngFor="let guiaRemision of guiasRemision">
+                        <td  style="width: 300px; text-align: left;">
+                            <button class="btn btn-outline-primary" style="width: 200px; text-align: left;" >
+                                <i class="fas fa-truck"></i> #{{guiaRemision.placa}}
+                                <br>
+                                <b>({{guiaRemision.chofer}})</b>
+                            </button>
+                       </td>
+                    </tr>
+                </table>
+                
+                <!-- VALIDAR QUE SOLO SE MUESTRE LA INFORMACIÓN CORRESPONDIENTE A EL BOTÓN QUE SE SELECCIONA -->
+
+                <span *ngIf="">
+                <table>
+                    <tr *ngFor="let guiaRemision of guiasRemision">
+                        <td>
+                            <label for="guia" style="color: rgba(201, 17, 17, 0.774); font-size: 22px;">GUÍA #{{guiaRemision.codigo}}</label>
+                        </td>
+                        <td>
+                            <label for="config" style="color: royalblue; font-size: 14px;">
+                                <a href="">
+                                    Config
+                                </a> 
+                            </label>
+                        </td>
+                    </tr>
+                    <tr *ngFor="let ordenTrabajo of ordenesTrabajo">
+                        <td>
+                            <b><label for="guia" style="font-size: 16px;">FECHA</label></b>
+                        </td>
+                        <td>
+                            :{{ordenTrabajo.fechaRegistro}}
+                        </td>
+                    </tr>
+                    <tr *ngFor="let guiaRemision of guiasRemision">
+                        <td>
+                            <b><label for="guia" style="font-size: 16px;">PESO PROV</label></b>
+                        </td>
+                        <td>
+                            :{{guiaRemision.peso}}
+                        </td>
+                    </tr>
+                    <tr *ngFor="let guiaRemision of guiasRemision">
+                        <td>
+                            <b><label for="guia" style="font-size: 16px;">PLACA CARRO</label></b>
+                        </td>
+                        <td>
+                            :{{guiaRemision.placa}}
+                        </td>
+                    </tr>
+                    <tr *ngFor="let guiaRemision of guiasRemision">
+                        <td>
+                            <b><label for="guia" style="font-size: 16px;">CHOFER</label></b>
+                        </td>
+                        <td>
+                            :{{guiaRemision.chofer}}
+                        </td>
+                    </tr>
+                    <tr *ngFor="let ordenTrabajo of ordenesTrabajo">
+                        <td>
+                            <b><label for="guia" style="font-size: 16px;">PRODC ENVIADO</label></b>
+                        </td>
+                        <td>
+                            :{{ordenTrabajo.tipoProducto}}
+                        </td>
+                    </tr>
+                    <tr *ngFor="let guiaRemision of guiasRemision">
+                        <td>
+                            <b><label for="guia" style="font-size: 16px;">PESO RECEPCIÓN</label></b>
+                        </td>
+                        <td>
+                            :{{guiaRemision.peso}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button class="btn btn-outline-secondary btn-sm" style="height: 40px;">
+                                <i class="far fa-file-pdf"></i>
+                                PDF
+                            </button>
+                        </td>
+                        <td>
+                            <button class="btn btn-outline-secondary btn-sm " style="height: 40px;">
+                                <i class="fas fa-eye"></i>
+                                Ver Guía
+                            </button>
+                        </td>
+                        <td>
+                            <button class="btn btn-success" style="height: 40px;">
+                                Abrir
+                            </button>
+                        </td>
+                        <td>
+                            <button class="btn btn-info" style="height: 40px;">
+                                <i class="fas fa-pencil-alt"></i>
+                                Actualizar
+                            </button>
+                        </td>
+                        <td>
+                            <button class="btn btn-danger" style="height: 40px;"  (click)="deleteGuiaRemision(guiaRemision.id)">
+                                <i class="fas fa-trash-alt"></i>
+                                Eliminar
+                            </button>
+                        </td>
+                    </tr>
+                </table>
+
+            </span>
+                <table class="card card-header" style="margin-top: 20px;">
+                    <tr *ngFor="let ordenTrabajo of ordenesTrabajo">
+                        <td>
+                            <b>OBSERVACIÓN:</b>
+                        </td>
+                        <td>
+                            {{ordenTrabajo.producto}} / {{ordenTrabajo.tipoProducto}}
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </nav>
+</body>
