@@ -53,7 +53,9 @@ export class OrderFormComponent  {
     tipoProducto:'',
     camaronMar:'',
     observacion:'',
-    estadoCalidad:''
+    estadoCalidad:'',
+    calidad:'',
+    colorCamaron:''
   }
  
   edit : boolean = false;

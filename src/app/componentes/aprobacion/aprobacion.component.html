@@ -96,26 +96,36 @@
                                     <div class="input-group-prepend">
                                       <span class="input-group-text" id="basic-addon1" style="font-size: 12px;">C-</span>
                                     </div>
-                                    <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1" style="width: 50px; font-size: 12px;">
+                                    <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1" style="width: 50px; font-size: 12px;"  [(ngModel)]="OrdenTrabajo.lote">
                                 </div>
                             </td>
                             <td>
-                                <label for="aprobado" style="font-size: 18px;"> <input type="radio" name="estado" id="aprobado" value="aprobado">APROBADO</label>
-                                <label for="rechazado" style="font-size: 18px; margin-left: 7px;" ><input type="radio" name="estado" id="rechazado" value="rechazado">RECHAZADO</label>
+                                <label for="aprobado" style="font-size: 18px;"> <input type="radio" name="estado" id="aprobado" value="aprobado" [(ngModel)]="OrdenTrabajo.estadoCalidad">APROBADO</label>
+                                <label for="rechazado" style="font-size: 18px; margin-left: 7px;" ><input type="radio" name="estado" id="rechazado" value="rechazado" [(ngModel)]="OrdenTrabajo.estadoCalidad">RECHAZADO</label>
                             </td>
                             <td>
-                                <select name="colorcamaron" id="colorcamaron" class="form-select">
+                                <select name="colorcamaron" id="colorcamaron" class="form-select" style="width: 200px;" [(ngModel)]="OrdenTrabajo.colorCamaron">
                                     <option value="a2" name="colorcamaron">A2</option>
+                                    <option value="a3" name="colorcamaron">A3</option>
                                 </select>
+                            </td>
+                            <td>
+                                <div class="btn-group" >
+                                    <button type="button" class="btn btn-success" style="border-color: rgb(153, 150, 150);" value="A" name="calidad" [(ngModel)]="OrdenTrabajo.calidad">A</button>
+                                    <button type="button" class="btn btn-default" style="border-color: rgb(153, 150, 150);" value="B" name="calidad" [(ngModel)]="OrdenTrabajo.calidad">B</button>
+                                  </div>
+                            </td>
+                        </tr>
+                    
+                        <tr *ngFor="let ordenTrabajo of ordenesTrabajo" style="text-align: right;">
+                            <td>
+                                <button class="btn btn-info btn-sm" style="margin-top: 30px;" routerLink="/" (click)="actualizarOrdenTrabajoAprobacion(ordenTrabajo.id)">
+                                    <i class="far fa-save"></i>
+                                    Guardar Cambios
+                                </button>
                             </td>
                         </tr>
                     </table>
-                    <div style="text-align: right;">
-                        <button class="btn btn-info btn-sm" style="margin-top: 20px;">
-                            <i class="far fa-save"></i>
-                            Guardar Cambios
-                        </button>
-                    </div>
                 </div>
             </div>
         </div>

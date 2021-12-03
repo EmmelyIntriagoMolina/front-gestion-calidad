@@ -52,6 +52,7 @@
                             <br>
                             <span *ngIf="ordenTrabajo.camaronMar==false">NO</span>
                             <span *ngIf="ordenTrabajo.camaronMar==true">SI</span>
+                            <span *ngIf="ordenTrabajo.camaronMar=='null'">NO</span>
                         </td>
                         <td style="width: 300px;">
                             <b>Destino Producto:</b>
@@ -72,10 +73,10 @@
                     </div>
                 </div>
                 <table class="table table-bordered">
-                    <tr *ngFor="let guiaRemision of guiasRemision">
-                        <td  style="width: 300px; text-align: left;">
-                            <button class="btn btn-outline-primary" style="width: 200px; text-align: left;" >
-                                <i class="fas fa-truck"></i> #{{guiaRemision.placa}}
+                    <tr>
+                        <td style="text-align: left;">
+                            <button  *ngFor="let guiaRemision of guiasRemision" class="btn btn-outline-primary" style="width: 200px; text-align: left; margin-right: 70px;" >
+                                <i class="fas fa-truck"></i>  #{{guiaRemision.placa}}
                                 <br>
                                 <b>({{guiaRemision.chofer}})</b>
                             </button>
@@ -85,7 +86,6 @@
                 
                 <!-- VALIDAR QUE SOLO SE MUESTRE LA INFORMACIÓN CORRESPONDIENTE A EL BOTÓN QUE SE SELECCIONA -->
 
-                <span *ngIf="">
                 <table>
                     <tr *ngFor="let guiaRemision of guiasRemision">
                         <td>
@@ -94,7 +94,8 @@
                         <td>
                             <label for="config" style="color: royalblue; font-size: 14px;">
                                 <a href="">
-                                    Config
+                                    <i class="fas fa-cog"></i>
+                                     Config
                                 </a> 
                             </label>
                         </td>
@@ -162,6 +163,7 @@
                         </td>
                         <td>
                             <button class="btn btn-success" style="height: 40px;">
+                                <i class="fas fa-upload"></i>
                                 Abrir
                             </button>
                         </td>
@@ -171,7 +173,7 @@
                                 Actualizar
                             </button>
                         </td>
-                        <td>
+                        <td *ngFor="let guiaRemision of guiasRemision">
                             <button class="btn btn-danger" style="height: 40px;"  (click)="deleteGuiaRemision(guiaRemision.id)">
                                 <i class="fas fa-trash-alt"></i>
                                 Eliminar
@@ -180,13 +182,11 @@
                     </tr>
                 </table>
 
-            </span>
-                <table class="card card-header" style="margin-top: 20px;">
+                <table class="card card-header" style="margin-top: 30px;">
                     <tr *ngFor="let ordenTrabajo of ordenesTrabajo">
                         <td>
                             <b>OBSERVACIÓN:</b>
-                        </td>
-                        <td>
+                            <br>
                             {{ordenTrabajo.producto}} / {{ordenTrabajo.tipoProducto}}
                         </td>
                     </tr>

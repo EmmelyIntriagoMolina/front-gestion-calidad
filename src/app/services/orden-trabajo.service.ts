@@ -28,6 +28,10 @@ export class OrdenTrabajoService {
     return this.http.put(`${this.URL}/actualizarOrdenTrabajo/${id}`, putOrdenTrabajo);
   }
 
+  putOrdenTrabajoAprobacion(id:string | number, putOrdenTrabajoAprobacion:ordenTrabajo){
+    return this.http.put(`${this.URL}/actualizarOrdenTrabajoAprobacion/${id}`, putOrdenTrabajoAprobacion);
+  }
+
   deleteOrdenT(id: string, deleteOrdenTrabajo:ordenTrabajo){
     return this.http.put(`${this.URL}/eliminarOrdenTrabajo/${id}`, deleteOrdenTrabajo);
   }

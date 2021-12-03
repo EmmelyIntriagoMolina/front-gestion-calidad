@@ -81,7 +81,9 @@ export class OrderEditComponent implements OnInit {
     tipoProducto:'',
     camaronMar:'',
     observacion:'',
-    estadoCalidad:''
+    estadoCalidad:'',
+    calidad:'',
+    colorCamaron:'',
   }
   edit : boolean = false;
 

@@ -16,5 +16,7 @@ export interface ordenTrabajo{
     camaronMar:string;
     observacion:string;
     estadoCalidad:string;
+    calidad:string;
+    colorCamaron:string;
         
 }
