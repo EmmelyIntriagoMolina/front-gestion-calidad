@@ -27,8 +27,19 @@ export class RecepcionComponent implements OnInit {
         console.log(this.ordenesTrabajo.id)
       }
     )
+
+    this.guiasRemision = {
+      id_OT: this.rutaActiva.snapshot.params.id_OT
+    };
+    this.rutaActiva.params.subscribe(
+      (params: Params)=> {
+        this.guiasRemision.id_OT = params.id_OT;
+        this.guiasRemision.id_OT = this.ordenesTrabajo.id
+        console.log("Guia",this.guiasRemision.id_OT)
+      }
+    )
     this.getOrdenTrabajoId(this.ordenesTrabajo.id)
-    this.getGuiasRemision()
+    this.getGuiaRemisionId(this.guiasRemision.id_OT)
   }
 
   getOrdenTrabajoId(id:number){
@@ -37,6 +48,16 @@ export class RecepcionComponent implements OnInit {
       (res:any)=>{
       this.ordenesTrabajo = res.ordenTrabajo
       console.log(res.ordenTrabajo)
+    }),
+    (err:any)=> console.log(err)
+  }
+
+  getGuiaRemisionId(id_OT:number){
+    this.guiaRemisionService.getGuiasRemisionId(id_OT)
+    .subscribe(
+      (res:any)=>{
+      this.guiasRemision = res.guiaremision
+      console.log("guia id_OT", res.guiaremision)
     }),
     (err:any)=> console.log(err)
   }

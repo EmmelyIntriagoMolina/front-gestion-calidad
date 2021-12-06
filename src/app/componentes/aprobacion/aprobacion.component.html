@@ -36,42 +36,42 @@
                             <td style="width: 300px;">
                                 <b>Fecha</b> 
                                 <br>
-                                {{ordenTrabajo.fechaRegistro}}
-                            </td>
+                                <label for="fecharegistro"> {{ordenTrabajo.fechaRegistro}} </label>
+                             </td>
 
                             <td style="width: 300px;">
                                 <b>Proveedor</b>
                                 <br>
-                                {{ordenTrabajo.proveedor}}
+                                <label for="proveedor">{{ordenTrabajo.proveedor}} </label>
                             </td>
 
                             <td style="width: 300px;">
                                 <b>Procedencia</b>
                                 <br>
-                                {{ordenTrabajo.procedencia}}
+                                <label for="procedencia">{{ordenTrabajo.procedencia}}</label>
                             </td>
 
                             <td style="width: 300px;">
                                 <b>Producto</b>
                                 <br>
-                                {{ordenTrabajo.producto}}
+                                <label for="producto">{{ordenTrabajo.producto}}</label>
                             </td>
-                            
                         </tr>
                         <tr style="text-align: left;" >
                             <td style="width: 300px;" *ngFor="let ordenTrabajo of ordenesTrabajo">
                                 <b>Piscina</b>
                                 <br>
-                                {{ordenTrabajo.piscina}}
+                                <label for="piscina">{{ordenTrabajo.piscina}}</label>
+                                
                             </td>
                             <td style="width: 300px" *ngFor="let guiaRemision of guiasRemision">
                                 <b>Libras Reportadas</b>
                                 <br>
                             </td>
-                            <td colspan="2" *ngFor="let guiaRemision of guiasRemision">
-                                    <b>N° Gavetas Reportadas</b>
-                                    <br>
-                                    {{guiaRemision.gavetas}}
+                            <td colspan="2" *ngFor="let guiaremision of guiasRemision">
+                                <b>N° Gavetas Reportadas</b>
+                                <br>
+                                <label for="gavetas">{{guiaremision.gavetas}}</label>
                             </td>
                         </tr>
                     </table>
@@ -117,7 +117,7 @@
                             </td>
                         </tr>
                     
-                        <tr *ngFor="let ordenTrabajo of ordenesTrabajo" style="text-align: right;">
+                        <tr *ngFor="let ordenTrabajo of ordenesTrabajo" style="text-align: left;">
                             <td>
                                 <button class="btn btn-info btn-sm" style="margin-top: 30px;" routerLink="/" (click)="actualizarOrdenTrabajoAprobacion(ordenTrabajo.id)">
                                     <i class="far fa-save"></i>

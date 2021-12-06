@@ -29,35 +29,48 @@
                         <td style="width: 300px; text-align: left;">
                             <b>#Orden de Trabajo:</b>
                             <br>
-                            O/T-{{ordenTrabajo.codigo}}-2021
+                            <label for="codigo">
+                                O/T-{{ordenTrabajo.id}}-2021
+                            </label>
+                            
                         </td>
-                        <td style="width: 300px;">
+                        <td style="width: 300px;text-align: left;">
                             <b>Entidad:</b>
                             <br>
-                            {{ordenTrabajo.proveedor}}
+                            <label for="proveedor">
+                                {{ordenTrabajo.proveedor}}
+                            </label>
+                            
                         </td>
-                        <td style="width: 300px;">
+                        <td style="width: 150px;text-align: left;">
                             <b>Lote:</b>
                             <br>
-                            {{ordenTrabajo.lote}}
+                            <label for="lote">
+                                {{ordenTrabajo.lote}}
+                            </label>
+                            
                         </td>
-                        <td style="width: 300px;">
+                        <td style="width: 300px;text-align: left;">
                             <b>Producto:</b>
                             <br>
-                            {{ordenTrabajo.producto}}
-
+                            <label for="producto">
+                                {{ordenTrabajo.producto}}
+                            </label>
                         </td>
-                        <td style="width: 300px;">
+                        <td style="width: 300px;text-align: left;">
                             <b>Camaron de Mar:</b>
                             <br>
                             <span *ngIf="ordenTrabajo.camaronMar==false">NO</span>
                             <span *ngIf="ordenTrabajo.camaronMar==true">SI</span>
                             <span *ngIf="ordenTrabajo.camaronMar=='null'">NO</span>
                         </td>
-                        <td style="width: 300px;">
+                        <td style="width: 400px;text-align: left;">
                             <b>Destino Producto:</b>
                             <br>
-                            {{ordenTrabajo.tipoProducto}}
+                            <label for="tipoProducto">
+                                {{ordenTrabajo.tipoProducto}}
+                            </label>
+                            
                         </td>
                     </tr>
                 </table>
@@ -75,7 +88,7 @@
                 <table class="table table-bordered">
                     <tr>
                         <td style="text-align: left;">
-                            <button  *ngFor="let guiaRemision of guiasRemision" class="btn btn-outline-primary" style="width: 200px; text-align: left; margin-right: 70px;" >
+                            <button ng-click="" *ngFor="let guiaRemision of guiasRemision" class="btn btn-outline-primary" style="width: 200px; text-align: left; margin-right: 70px;" >
                                 <i class="fas fa-truck"></i>  #{{guiaRemision.placa}}
                                 <br>
                                 <b>({{guiaRemision.chofer}})</b>
@@ -87,9 +100,9 @@
                 <!-- VALIDAR QUE SOLO SE MUESTRE LA INFORMACIÓN CORRESPONDIENTE A EL BOTÓN QUE SE SELECCIONA -->
 
                 <table>
-                    <tr *ngFor="let guiaRemision of guiasRemision">
+                    <tr *ngFor="let guiaRemision of guiasRemision" >
                         <td>
-                            <label for="guia" style="color: rgba(201, 17, 17, 0.774); font-size: 22px;">GUÍA #{{guiaRemision.codigo}}</label>
+                            <label for="guia" style="color: rgb(156, 15, 15); font-size: 24px;">GUÍA# {{guiaRemision.codigo}}</label>
                         </td>
                         <td>
                             <label for="config" style="color: royalblue; font-size: 14px;">
@@ -102,7 +115,7 @@
                     </tr>
                     <tr *ngFor="let ordenTrabajo of ordenesTrabajo">
                         <td>
-                            <b><label for="guia" style="font-size: 16px;">FECHA</label></b>
+                            <b><label for="guia" style="font-size: 16px; color: gray;">FECHA</label></b>
                         </td>
                         <td>
                             :{{ordenTrabajo.fechaRegistro}}
@@ -110,7 +123,7 @@
                     </tr>
                     <tr *ngFor="let guiaRemision of guiasRemision">
                         <td>
-                            <b><label for="guia" style="font-size: 16px;">PESO PROV</label></b>
+                            <b><label for="guia" style="font-size: 16px; color: gray;">PESO PROV</label></b>
                         </td>
                         <td>
                             :{{guiaRemision.peso}}
@@ -118,7 +131,7 @@
                     </tr>
                     <tr *ngFor="let guiaRemision of guiasRemision">
                         <td>
-                            <b><label for="guia" style="font-size: 16px;">PLACA CARRO</label></b>
+                            <b><label for="guia" style="font-size: 16px; color: gray;">PLACA CARRO</label></b>
                         </td>
                         <td>
                             :{{guiaRemision.placa}}
@@ -126,7 +139,7 @@
                     </tr>
                     <tr *ngFor="let guiaRemision of guiasRemision">
                         <td>
-                            <b><label for="guia" style="font-size: 16px;">CHOFER</label></b>
+                            <b><label for="guia" style="font-size: 16px; color: gray;">CHOFER</label></b>
                         </td>
                         <td>
                             :{{guiaRemision.chofer}}
@@ -134,7 +147,7 @@
                     </tr>
                     <tr *ngFor="let ordenTrabajo of ordenesTrabajo">
                         <td>
-                            <b><label for="guia" style="font-size: 16px;">PRODC ENVIADO</label></b>
+                            <b><label for="guia" style="font-size: 16px;color: gray;">PRODC ENVIADO</label></b>
                         </td>
                         <td>
                             :{{ordenTrabajo.tipoProducto}}
@@ -142,7 +155,7 @@
                     </tr>
                     <tr *ngFor="let guiaRemision of guiasRemision">
                         <td>
-                            <b><label for="guia" style="font-size: 16px;">PESO RECEPCIÓN</label></b>
+                            <b><label for="guia" style="font-size: 16px;color: gray;">PESO RECEPCIÓN</label></b>
                         </td>
                         <td>
                             :{{guiaRemision.peso}}

@@ -21,10 +21,7 @@ export class OrderListComponent implements OnInit{
   filterEstadoCali = ''
  
   ordenesTrabajo: any = []; 
-
-  constructor(private ordenTrabajoService:OrdenTrabajoService, private http:HttpClient) { 
-
-  }
+  constructor(private ordenTrabajoService:OrdenTrabajoService, private http:HttpClient) {}
 
   ngOnInit(): void {
     this.getOrdenesTrabajo();

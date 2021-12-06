@@ -68,7 +68,7 @@
                             <tr class="text-center" *ngFor=" let ordenTrabajo of ordenesTrabajo 
                             | paginate: {itemsPerPage: 15, currentPage: pageActual}">
                             
-                                <td style="text-align: left; width: 150px;">O/T-{{ordenTrabajo.codigo}}-2021</td>
+                                <td style="text-align: left; width: 150px;">O/T-{{ordenTrabajo.id}}-2021</td>
                                 <td style="text-align: left;">{{ordenTrabajo.fechaRegistro}}</td>
                                 <td style="text-align: left;">{{ordenTrabajo.proveedor}}</td>
                                 <td style="text-align: left; width: 100px;">{{ordenTrabajo.lote}}</td>
@@ -83,7 +83,6 @@
                                         <a [routerLink]="['/ordenTrabajo/recepcion', ordenTrabajo.id]"><i class="fas fa-boxes"></i> 
                                         Recepción
                                         </a>
-                                        
                                     </button>
                                 </td>
 

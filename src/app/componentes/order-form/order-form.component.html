@@ -107,7 +107,7 @@
                 </thead>
                 <tr>
                     <td colspan="2">   
-                        <select type="text"class="form-control"  style="width: 92%; height: 35px;"  name="producto" id="producto" formControlName="producto" [(ngModel)]="OrdenTrabajo.producto">
+                        <select type="text"class="form-select"  style="width: 92%; height: 35px;"  name="producto" id="producto" formControlName="producto" [(ngModel)]="OrdenTrabajo.producto">
                             <option>CAMARON ENTERO</option>
                             <option>CAMARON COLA</option>
                             <option>CAMARON PYD</option>
@@ -145,14 +145,14 @@
                     <tr>
                         <th>
                             <label for="tipoProducto" style="margin-top: 13px;" class="form-label">Tipo Producto</label>
-                        </th>
+                        </th> 
                     </tr>
                 </thead>
-                <tr>
+                <tr> 
                     <td>
-                        <label for="tipoProducto"><input type="radio" [(ngModel)]="OrdenTrabajo.tipoProducto" formControlName="tipoProducto" value="Camaron para clasificar" name="clasificar"> Camarón para Clasificar </label>
+                        <label for="tipoProducto"><input type="radio" [(ngModel)]="OrdenTrabajo.tipoProductoC" formControlName="tipoProducto" value="Camaron para clasificar" name="clasificar"> Camarón para Clasificar </label>
                         <br/>
-                        <label for="tipoProducto"><input type="radio" [(ngModel)]="OrdenTrabajo.tipoProducto" formControlName="tipoProducto" value="Camaron para descabezar" name="descabezar"> Camarón para Descabezar </label>
+                        <label for="tipoProducto"><input type="radio" [(ngModel)]="OrdenTrabajo.tipoProductoD" formControlName="tipoProducto" value="Camaron para descabezar" name="descabezar"> Camarón para Descabezar </label>
                         <br>
                     </td>
                     <td>

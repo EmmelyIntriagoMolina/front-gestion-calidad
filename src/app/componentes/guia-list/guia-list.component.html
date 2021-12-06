@@ -109,10 +109,10 @@
                             <tr *ngFor="let guiaRemision of guiasRemision
                             | paginate: {itemsPerPage: 15, currentPage: pageActual}">
                                 <td>{{guiaRemision.id}}</td>
-                                <td>{{guiaRemision.codigo}}</td>
+                                <td style="text-align: center;">{{guiaRemision.codigo}}</td>
                                 <td>
                                     Hora Ing: 
-                                    {{guiaRemision.horaIngreso}}
+                                    {{guiaRemision.horaingreso}}
                                     <br>
                                     Placa: 
                                     {{guiaRemision.placa}}
@@ -120,22 +120,22 @@
                                     Chofer:
                                     {{guiaRemision.chofer}}
                                 </td>
-                                <td>{{guiaRemision.peso}}</td>
-                                <td>{{guiaRemision.gavetas}}</td>
-                                <td>{{guiaRemision.muestras}}</td>
-                                <td>
+                                <td style="text-align: center;">{{guiaRemision.peso}}</td>
+                                <td style="text-align: center;">{{guiaRemision.gavetas}}</td>
+                                <td style="text-align: center;">{{guiaRemision.muestras}}</td>
+                                <td style="text-align: center;">
                                     <span style="color: seagreen;" *ngIf="guiaRemision.estado==1"><i class="fas fa-lock-open"></i></span>
                                 </td>
-                                <td>
+                                <td style="text-align: center;">
                                     <button class="btn btn-outline-primary"> <i class="fas fa-flask"></i> Análisis</button>
                                 </td>
-                                <td>
+                                <td style="text-align: center;">
                                     <button style="border-color: white; font-size: 30px;" class="btn btn-outline-secondary">
                                         <i class="far fa-file-image"></i>
                                     </button>
                                     
                                 </td>
-                                <td style="width: 150px;">
+                                <td style="width: 150px; text-align: center;">
                                     <button class="btn btn-outline-secondary btn-sm" style="margin-bottom: 7px;">
                                         <i class="far fa-file-pdf"></i> PDF
                                     </button>
@@ -145,7 +145,7 @@
                                     </button>
                                     
                                 </td>
-                                <td>
+                                <td style="text-align: center;">
                                     <a><button class="btn btn-primary btn-sm" style="margin-bottom: 7px;">
                                         <i class="fas fa-pencil-alt"></i>
                                     </button></a>

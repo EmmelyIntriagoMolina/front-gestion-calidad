@@ -11,7 +11,9 @@ import { CommonModule } from '@angular/common';
   templateUrl: './order-edit.component.html',
   styleUrls: ['./order-edit.component.css']
 })
+
 export class OrderEditComponent implements OnInit {
+  
   rt:any=[];
   rta:any=[];
 
@@ -78,7 +80,8 @@ export class OrderEditComponent implements OnInit {
     horaRecepcion:'',
     piscina:'',
     producto:'',
-    tipoProducto:'',
+    tipoProductoC:'',
+    tipoProductoD:'',
     camaronMar:'',
     observacion:'',
     estadoCalidad:'',

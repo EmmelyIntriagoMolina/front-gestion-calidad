@@ -12,7 +12,8 @@ export interface ordenTrabajo{
     producto:string;
     horaRecepcion:string;
     fechaRegistro:String;
-    tipoProducto:string;
+    tipoProductoC:string;
+    tipoProductoD:string;
     camaronMar:string;
     observacion:string;
     estadoCalidad:string;

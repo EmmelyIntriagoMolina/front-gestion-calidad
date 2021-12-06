@@ -16,6 +16,8 @@ export class AprobacionComponent implements OnInit {
 
   constructor(private ordenTrabajoService:OrdenTrabajoService,private guiaRemisionService:GuiaRemisionService,  private router:Router, private rutaActiva:ActivatedRoute, private rutaActiva2:ActivatedRoute) { }
 
+
+  cantidad:number=0;
   ordenesTrabajo: any = []; 
   guiasRemision: any = []; 
 
@@ -24,13 +26,14 @@ export class AprobacionComponent implements OnInit {
     codigo: '',
     ordenCompra: '',
     proveedor: '',
-    lote: 0,
+    lote: this.cantidad,
     procedencia: '',
     piscina:'',
     producto:'',
     fechaRegistro:'',
     horaRecepcion:'',
-    tipoProducto:'',
+    tipoProductoC:'',
+    tipoProductoD:'',
     camaronMar:'',
     observacion:'',
     estadoCalidad:'',
@@ -76,12 +79,12 @@ export class AprobacionComponent implements OnInit {
     (err:any)=> console.log(err)
   }
 
-  getGuiaRemisionId(id:number){
-    this.guiaRemisionService.getGuiasRemisionId(id)
+  getGuiaRemisionId(id_OT:number){
+    this.guiaRemisionService.getGuiasRemisionId(id_OT)
     .subscribe(
       (res:any)=>{
-      this.guiasRemision = res.guiaRemision
-      console.log("prueba", res.guiaRemision)
+      this.guiasRemision = res.guiaremision
+      console.log("guia id_OT", res.guiaremision)
     }),
     (err:any)=> console.log(err)
   }
