@@ -1,5 +1,6 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AnalisisCalidadComponent } from './componentes/analisis-calidad/analisis-calidad.component';
 import { AprobacionComponent } from './componentes/aprobacion/aprobacion.component';
 import { GuiaFormComponent } from './componentes/guia-form/guia-form.component';
 import { GuiaListComponent } from './componentes/guia-list/guia-list.component';
@@ -67,7 +68,12 @@ const routes: Routes = [
   {
     path: 'ordenTrabajo/recepcion/:id',
     component: RecepcionComponent
-  }
+  },
+
+  {
+    path: 'ordenTrabajo/guiasRemision/:id/analisisCalidad',
+    component: AnalisisCalidadComponent
+  },
 
   
 

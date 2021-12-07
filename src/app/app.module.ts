@@ -32,6 +32,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { VerOTComponent } from './componentes/ver-ot/ver-ot.component';
 import { RouterModule } from '@angular/router';
 import { RecepcionComponent } from './componentes/recepcion/recepcion.component';
+import { AnalisisCalidadComponent } from './componentes/analisis-calidad/analisis-calidad.component';
 
 
 
@@ -56,7 +57,8 @@ import { RecepcionComponent } from './componentes/recepcion/recepcion.component'
     GuiaFormComponent,
     AprobacionComponent,
     VerOTComponent,
-    RecepcionComponent
+    RecepcionComponent,
+    AnalisisCalidadComponent
   ],
   imports: [
     BrowserModule, FormsModule,

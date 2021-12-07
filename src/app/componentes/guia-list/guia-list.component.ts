@@ -18,6 +18,7 @@ import { GuiaFormComponent } from '../guia-form/guia-form.component';
 
 export class GuiaListComponent implements OnInit {
 
+  totalPeso:any;
   sum:any;
   total:number = 0;
   pageActual: number = 1;

@@ -38,7 +38,7 @@ export class OrderListComponent implements OnInit{
   }
   
   
-  deleteOrdenTrabajo(codigo:string){
+  deleteOrdenTrabajo(id:number){
     Swal.fire({
       title: '¿Deseas eliminar el registro?',
       text: "Al eliminar el registro no podrás visualizarlo",
@@ -50,7 +50,7 @@ export class OrderListComponent implements OnInit{
       confirmButtonText: 'Sí, Eliminar'
     }).then((result)=>{
       if(result.isConfirmed){
-        this.ordenTrabajoService.deleteOrdenT(codigo, this.ordenesTrabajo)
+        this.ordenTrabajoService.deleteOrdenT(id, this.ordenesTrabajo)
         .subscribe(
           res => {
             console.log(res)

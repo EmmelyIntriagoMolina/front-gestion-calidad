@@ -19,12 +19,12 @@
     <nav class="navbar navbar-expand-lg ">
         <div class="content">
             <div>
-                <div class="card card-header" style="width: 100%;">
+                <div class="card card-header" style="width: 100%; height: 60px;">
                     <div style="float: left;">
-                        <h4>Control de Peso en Recepción</h4>
+                        <h3>Control de Peso en Recepción</h3>
                     </div>
                 </div>
-                <table class="table table-bordered">
+                <table class="table table-bordered" style="height: 30px;">
                     <tr *ngFor="let ordenTrabajo of ordenesTrabajo">
                         <td style="width: 300px; text-align: left;">
                             <b>#Orden de Trabajo:</b>
@@ -60,8 +60,8 @@
                         <td style="width: 300px;text-align: left;">
                             <b>Camaron de Mar:</b>
                             <br>
-                            <span *ngIf="ordenTrabajo.camaronMar==false">NO</span>
-                            <span *ngIf="ordenTrabajo.camaronMar==true">SI</span>
+                            <span *ngIf="ordenTrabajo.camaronMar=='false'">NO</span>
+                            <span *ngIf="ordenTrabajo.camaronMar=='true'">SI</span>
                             <span *ngIf="ordenTrabajo.camaronMar=='null'">NO</span>
                         </td>
                         <td style="width: 400px;text-align: left;">
@@ -74,9 +74,9 @@
                         </td>
                     </tr>
                 </table>
-                <div class="card card-header" style="width: 100%;">
+                <div class="card card-header" style="width: 100%; height: 90px;">
                     <div style="float: left;">
-                        <h4>Guías/Carros</h4>
+                        <h3>Guías/Carros</h3>
                     </div>
                     <div style="text-align: right;">
                         <button class="btn btn-outline-secondary btn-sm">
@@ -85,10 +85,10 @@
                         </button>
                     </div>
                 </div>
-                <table class="table table-bordered">
+                <table class="table">
                     <tr>
                         <td style="text-align: left;">
-                            <button ng-click="" *ngFor="let guiaRemision of guiasRemision" class="btn btn-outline-primary" style="width: 200px; text-align: left; margin-right: 70px;" >
+                            <button  *ngFor="let guiaRemision of guiasRemision" class="btn btn-outline-secondary" style="width: 200px; text-align: left; margin-right: 70px; height: 60px;" >
                                 <i class="fas fa-truck"></i>  #{{guiaRemision.placa}}
                                 <br>
                                 <b>({{guiaRemision.chofer}})</b>
@@ -99,22 +99,22 @@
                 
                 <!-- VALIDAR QUE SOLO SE MUESTRE LA INFORMACIÓN CORRESPONDIENTE A EL BOTÓN QUE SE SELECCIONA -->
 
-                <table>
+                <table style="height: 50px;">
                     <tr *ngFor="let guiaRemision of guiasRemision" >
-                        <td>
-                            <label for="guia" style="color: rgb(156, 15, 15); font-size: 24px;">GUÍA# {{guiaRemision.codigo}}</label>
+                        <td style="margin-bottom: 2px;">
+                            <label for="guia" style="color: rgb(156, 15, 15); font-size: 26px;">GUÍA# {{guiaRemision.codigo}}</label>
                         </td>
-                        <td>
+                        <td style="margin-bottom: 0px;">
                             <label for="config" style="color: royalblue; font-size: 14px;">
                                 <a href="">
-                                    <i class="fas fa-cog"></i>
-                                     Config
+                                      <i class="fas fa-cog"></i>
+                                      Config
                                 </a> 
                             </label>
                         </td>
                     </tr>
                     <tr *ngFor="let ordenTrabajo of ordenesTrabajo">
-                        <td>
+                        <td >
                             <b><label for="guia" style="font-size: 16px; color: gray;">FECHA</label></b>
                         </td>
                         <td>

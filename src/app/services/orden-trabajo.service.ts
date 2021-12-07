@@ -7,7 +7,7 @@ import { ordenTrabajo } from '../models/ordenTrabajo';
 })
 export class OrdenTrabajoService {
 
-  URL =`http://192.168.0.220:3333/ordenTrabajo`
+  URL =`http://192.168.0.235:3333/ordenTrabajo`
 
   constructor(private http:HttpClient) { }
 
@@ -32,7 +32,7 @@ export class OrdenTrabajoService {
     return this.http.put(`${this.URL}/actualizarOrdenTrabajoAprobacion/${id}`, putOrdenTrabajoAprobacion);
   }
 
-  deleteOrdenT(id: string, deleteOrdenTrabajo:ordenTrabajo){
+  deleteOrdenT(id: number, deleteOrdenTrabajo:ordenTrabajo){
     return this.http.put(`${this.URL}/eliminarOrdenTrabajo/${id}`, deleteOrdenTrabajo);
   }
 
