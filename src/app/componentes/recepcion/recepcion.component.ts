@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { GuiaRemisionService } from 'src/app/services/guiaRemision/guia-remision.service';
 import { OrdenTrabajoService } from 'src/app/services/orden-trabajo.service';
 import Swal from 'sweetalert2';
@@ -14,7 +14,7 @@ export class RecepcionComponent implements OnInit {
   ordenesTrabajo: any = []
   guiasRemision: any = []
 
-  constructor(private rutaActiva:ActivatedRoute, private ordenTrabajoService:OrdenTrabajoService, private guiaRemisionService:GuiaRemisionService) { }
+  constructor(private rutaActiva:ActivatedRoute, private ordenTrabajoService:OrdenTrabajoService, private guiaRemisionService:GuiaRemisionService, private router:Router) { }
 
   ngOnInit(): void {
 
@@ -92,6 +92,24 @@ export class RecepcionComponent implements OnInit {
           },
           err => console.log(err)
         )
+      }
+    })
+  }
+
+  abrirGuiaRemision(id:number){
+    Swal.fire({
+      title: 'Confirmar',
+      text: "¿Estás seguro de abrir la guía?",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      cancelButtonText: 'Cancelar',
+      confirmButtonText: 'De acuerdo'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.router.navigate(['/']);
+        
       }
     })
   }

@@ -62,6 +62,8 @@
                             <br>
                             <span *ngIf="ordenTrabajo.camaronMar=='false'">NO</span>
                             <span *ngIf="ordenTrabajo.camaronMar=='true'">SI</span>
+                            <span *ngIf="ordenTrabajo.camaronMar=='1'">SI</span>
+                            <span *ngIf="ordenTrabajo.camaronMar=='0'">NO</span>
                             <span *ngIf="ordenTrabajo.camaronMar=='null'">NO</span>
                         </td>
                         <td style="width: 400px;text-align: left;">
@@ -99,112 +101,112 @@
                 
                 <!-- VALIDAR QUE SOLO SE MUESTRE LA INFORMACIÓN CORRESPONDIENTE A EL BOTÓN QUE SE SELECCIONA -->
 
-                <table style="height: 50px;">
-                    <tr *ngFor="let guiaRemision of guiasRemision" >
-                        <td style="margin-bottom: 2px;">
-                            <label for="guia" style="color: rgb(156, 15, 15); font-size: 26px;">GUÍA# {{guiaRemision.codigo}}</label>
-                        </td>
-                        <td style="margin-bottom: 0px;">
-                            <label for="config" style="color: royalblue; font-size: 14px;">
-                                <a href="">
-                                      <i class="fas fa-cog"></i>
-                                      Config
-                                </a> 
-                            </label>
-                        </td>
-                    </tr>
-                    <tr *ngFor="let ordenTrabajo of ordenesTrabajo">
-                        <td >
-                            <b><label for="guia" style="font-size: 16px; color: gray;">FECHA</label></b>
-                        </td>
-                        <td>
-                            :{{ordenTrabajo.fechaRegistro}}
-                        </td>
-                    </tr>
-                    <tr *ngFor="let guiaRemision of guiasRemision">
-                        <td>
-                            <b><label for="guia" style="font-size: 16px; color: gray;">PESO PROV</label></b>
-                        </td>
-                        <td>
-                            :{{guiaRemision.peso}}
-                        </td>
-                    </tr>
-                    <tr *ngFor="let guiaRemision of guiasRemision">
-                        <td>
-                            <b><label for="guia" style="font-size: 16px; color: gray;">PLACA CARRO</label></b>
-                        </td>
-                        <td>
-                            :{{guiaRemision.placa}}
-                        </td>
-                    </tr>
-                    <tr *ngFor="let guiaRemision of guiasRemision">
-                        <td>
-                            <b><label for="guia" style="font-size: 16px; color: gray;">CHOFER</label></b>
-                        </td>
-                        <td>
-                            :{{guiaRemision.chofer}}
-                        </td>
-                    </tr>
-                    <tr *ngFor="let ordenTrabajo of ordenesTrabajo">
-                        <td>
-                            <b><label for="guia" style="font-size: 16px;color: gray;">PRODC ENVIADO</label></b>
-                        </td>
-                        <td>
-                            :{{ordenTrabajo.tipoProducto}}
-                        </td>
-                    </tr>
-                    <tr *ngFor="let guiaRemision of guiasRemision">
-                        <td>
-                            <b><label for="guia" style="font-size: 16px;color: gray;">PESO RECEPCIÓN</label></b>
-                        </td>
-                        <td>
-                            :{{guiaRemision.peso}}
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <button class="btn btn-outline-secondary btn-sm" style="height: 40px;">
-                                <i class="far fa-file-pdf"></i>
-                                PDF
-                            </button>
-                        </td>
-                        <td>
-                            <button class="btn btn-outline-secondary btn-sm " style="height: 40px;">
-                                <i class="fas fa-eye"></i>
-                                Ver Guía
-                            </button>
-                        </td>
-                        <td>
-                            <button class="btn btn-success" style="height: 40px;">
-                                <i class="fas fa-upload"></i>
-                                Abrir
-                            </button>
-                        </td>
-                        <td>
-                            <button class="btn btn-info" style="height: 40px;">
-                                <i class="fas fa-pencil-alt"></i>
-                                Actualizar
-                            </button>
-                        </td>
-                        <td *ngFor="let guiaRemision of guiasRemision">
-                            <button class="btn btn-danger" style="height: 40px;"  (click)="deleteGuiaRemision(guiaRemision.id)">
-                                <i class="fas fa-trash-alt"></i>
-                                Eliminar
-                            </button>
-                        </td>
-                    </tr>
-                </table>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div>
+                            <div class="col-sm-5" *ngFor="let guiaRemision of guiasRemision">
+                                <span class="h3" style="color: #cc330c;">GUÍA# {{guiaRemision.codigo}} </span>
+                                <span style="color: rgb(66, 140, 209);"><i class="fas fa-cog"></i></span>
+                                <span style="color: rgb(66, 140, 209);"> Config</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-9">
+                                <table style="font-size: 15px;">
+                                    <tbody>
+                                        <tr *ngFor="let ordenTrabajo of ordenesTrabajo">
+                                            <td class="text-muted">FECHA:</td>
+                                            <td>:</td>
+                                            <td>
+                                                {{ordenTrabajo.fechaRegistro}}
+                                            </td>
+                                        </tr>
+                                        <tr *ngFor="let guiaRemision of guiasRemision" >
+                                            <td class="text-muted">PESO PROV:</td>
+                                            <td>:</td>
+                                            <td>
+                                                {{guiaRemision.peso}}
+                                            </td>
+                                        </tr>
+                                        <tr *ngFor="let guiaRemision of guiasRemision" >
+                                            <td class="text-muted">PLACA CARRO:</td>
+                                            <td>:</td>
+                                            <td>
+                                                {{guiaRemision.placa}}
+                                            </td>
+                                        </tr>
+                                        <tr *ngFor="let guiaRemision of guiasRemision" >
+                                            <td class="text-muted">CHOFER CARRO:</td>
+                                            <td>:</td>
+                                            <td>
+                                                {{guiaRemision.chofer}}
+                                            </td>
+                                        </tr>
+                                        <tr *ngFor="let ordenTrabajo of ordenesTrabajo">
+                                            <td class="text-muted">PRODC ENVIADO</td>
+                                            <td>:</td>
+                                            <td>
+                                                {{ordenTrabajo.tipoProducto}}
+                                            </td>
+                                        </tr>
+                                        <tr *ngFor="let guiaRemision of guiasRemision" >
+                                            <td class="text-muted">PESO RECEPCIÓN:</td>
+                                            <td>:</td>
+                                            <td>
+                                                {{guiaRemision.peso}}
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div style="margin-top: 10px; margin-bottom: 12px;">
+                                    <a class="btn btn-flat btn-default" target="_blank">
+                                        <i class="far fa-file-pdf"></i>
+                                        <br>
+                                        <label>PDF</label>
+                                    </a>
+                                    <a class="btn btn-flat btn-default" target="_blank">
+                                        <i class="fas fa-eye"></i>
+                                        <br>
+                                        <label>Ver Guía</label>
+                                    </a>
+                                    <a class="btn btn-success btn-flat">
+                                        <i class="fas fa-upload"></i>
+                                        <br>
+                                        <label>Abrir</label>
+                                    </a>
+                                    <a class="btn btn-info btn-flat">
+                                        <i class="fas fa-pencil-alt"></i>
+                                        <br>
+                                        <label>Actualizar</label>
+                                    </a>
+                                    <a class="btn btn-danger btn-flat">
+                                        <i class="fas fa-trash"></i>
+                                        <br>
+                                        <label>Eliminar</label>
+                                    </a>
+                                </div>
 
-                <table class="card card-header" style="margin-top: 30px;">
-                    <tr *ngFor="let ordenTrabajo of ordenesTrabajo">
-                        <td>
-                            <b>OBSERVACIÓN:</b>
-                            <br>
-                            {{ordenTrabajo.producto}} / {{ordenTrabajo.tipoProducto}}
-                        </td>
-                    </tr>
-                </table>
+                            </div>
+                        </div>
+
+                        <!--Último Peso-->
+                        <div class="col-md-2 col-sm-3 col-xs-4 col-md-offset text-center">
+                            <label class="text-center" style="padding-left: 0px; padding-right: 0px;"> ÚLTIMO PESO</label>
+                            <div class="fomr-group has-feedback" >
+                                <input type="text" class="form-control" name="ultimopeso" value="0" readonly style="text-align: center; font-size: 35px; height: 45px; color: darkblue; padding-right: 10px; padding-left: 0px;"> 
+                            </div>
+                            <span class="text-muted">
+                                TANQUE #
+                                <span></span>
+                            </span>
+                        </div>
+                    <div>
+                </div>
+                </div>
+
+            </div>
             </div>
         </div>
+    
     </nav>
 </body>

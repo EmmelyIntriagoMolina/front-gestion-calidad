@@ -23,11 +23,11 @@
                     <div style="float: left;">
                         <h3>Análisis de Calidad</h3>
                     </div>
-                    <div style="text-align: right;">
-                        <button class="btn btn-danger" style="margin-right: 4px;">
+                    <div style="text-align: right;" *ngFor="let ordenTrabajo of ordenesTrabajo">
+                        <a [routerLink]="['/ordenTrabajo/guiasRemision', ordenTrabajo.id]"><button class="btn btn-danger" style="margin-right: 4px;">
                             <i class="fas fa-chevron-left"></i>
                             Cancelar
-                        </button>
+                        </button></a>
                         <button class="btn btn-info" style="margin-right: 4px;">
                             Guardar
                             <i class="fas fa-save"></i>
@@ -162,22 +162,1597 @@
                                 </td>
                                 <td class="touchpin">
                                     <div class="input-group bootstrap-touchspin bootstrap-touchspin-injected">
-                                        <input type="tel" class="numero form-control unidades_calidad text-center">
+                                        <span class="input-group-btn input-group-prepend">
+                                            <button class="btn btn-info bootstrap-touchspin-down" type="button">
+                                                <i class="fas fa-minus-circle"></i>
+                                            </button>
+                                        </span>
+                                        <input type="tel" class="numero form-control unidades_calidad text-center" style="width: 20px;">
+                                        <span class="input-group-btn input-group-append">
+                                            <button class="btn btn-primary bootstrap-touchspin-up" type="button">
+                                                <i class="fas fa-plus-circle"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="form-group highlight-addon field-calidadmuestras-0-peso">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: -10px; ">
+                                       
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: -10px; " >
+                                        
                                     </div>
                                 </td>
                             </tr>
+                            <tr>
+                                <td style="vertical-align: middle;" class="peso_gramos">
+                                    20.5
+                                </td>
+                                <td style="vertical-align: middle;">
+                                    22
+                                </td>
+                                <td class="touchpin">
+                                    <div class="input-group bootstrap-touchspin bootstrap-touchspin-injected">
+                                        <span class="input-group-btn input-group-prepend">
+                                            <button class="btn btn-info bootstrap-touchspin-down" type="button">
+                                                <i class="fas fa-minus-circle"></i>
+                                            </button>
+                                        </span>
+                                        <input type="tel" class="numero form-control unidades_calidad text-center">
+                                        <span class="input-group-btn input-group-append">
+                                            <button class="btn btn-primary bootstrap-touchspin-up" type="button">
+                                                <i class="fas fa-plus-circle"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+
+                                </td>
+                                <td>
+                                    <div class="form-group highlight-addon field-calidadmuestras-0-peso">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: -10px;">
+                                       
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: -10px;">
+                                        
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="vertical-align: middle;" class="peso_gramos">
+                                    20.2
+                                </td>
+                                <td style="vertical-align: middle;">
+                                    23
+                                </td>
+                                <td class="touchpin">
+                                    <div class="input-group bootstrap-touchspin bootstrap-touchspin-injected">
+                                        <span class="input-group-btn input-group-prepend">
+                                            <button class="btn btn-info bootstrap-touchspin-down" type="button">
+                                                <i class="fas fa-minus-circle"></i>
+                                            </button>
+                                        </span>
+                                        <input type="tel" class="numero form-control unidades_calidad text-center">
+                                        <span class="input-group-btn input-group-append">
+                                            <button class="btn btn-primary bootstrap-touchspin-up" type="button">
+                                                <i class="fas fa-plus-circle"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+
+                                </td>
+                                <td>
+                                    <div class="form-group highlight-addon field-calidadmuestras-0-peso">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: -10px;">
+                                       
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: -10px;">
+                                        
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="vertical-align: middle;" class="peso_gramos">
+                                    19.5
+                                </td>
+                                <td style="vertical-align: middle;">
+                                    23
+                                </td>
+                                <td class="touchpin">
+                                    <div class="input-group bootstrap-touchspin bootstrap-touchspin-injected">
+                                        <span class="input-group-btn input-group-prepend">
+                                            <button class="btn btn-info bootstrap-touchspin-down" type="button">
+                                                <i class="fas fa-minus-circle"></i>
+                                            </button>
+                                        </span>
+                                        <input type="tel" class="numero form-control unidades_calidad text-center">
+                                        <span class="input-group-btn input-group-append">
+                                            <button class="btn btn-primary bootstrap-touchspin-up" type="button">
+                                                <i class="fas fa-plus-circle"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+
+                                </td>
+                                <td>
+                                    <div class="form-group highlight-addon field-calidadmuestras-0-peso">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: -10px;">
+                                       
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: -10px;">
+                                        
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="vertical-align: middle;" class="peso_gramos">
+                                    18.9
+                                </td>
+                                <td style="vertical-align: middle;">
+                                    24
+                                </td>
+                                <td class="touchpin">
+                                    <div class="input-group bootstrap-touchspin bootstrap-touchspin-injected">
+                                        <span class="input-group-btn input-group-prepend">
+                                            <button class="btn btn-info bootstrap-touchspin-down" type="button">
+                                                <i class="fas fa-minus-circle"></i>
+                                            </button>
+                                        </span>
+                                        <input type="tel" class="numero form-control unidades_calidad text-center">
+                                        <span class="input-group-btn input-group-append">
+                                            <button class="btn btn-primary bootstrap-touchspin-up" type="button">
+                                                <i class="fas fa-plus-circle"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+
+                                </td>
+                                <td>
+                                    <div class="form-group highlight-addon field-calidadmuestras-0-peso">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: -10px;">
+                                       
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: -10px;">
+                                        
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="vertical-align: middle;" class="peso_gramos">
+                                    18.2
+                                </td>
+                                <td style="vertical-align: middle;">
+                                    25
+                                </td>
+                                <td class="touchpin">
+                                    <div class="input-group bootstrap-touchspin bootstrap-touchspin-injected">
+                                        <span class="input-group-btn input-group-prepend">
+                                            <button class="btn btn-info bootstrap-touchspin-down" type="button">
+                                                <i class="fas fa-minus-circle"></i>
+                                            </button>
+                                        </span>
+                                        <input type="tel" class="numero form-control unidades_calidad text-center">
+                                        <span class="input-group-btn input-group-append">
+                                            <button class="btn btn-primary bootstrap-touchspin-up" type="button">
+                                                <i class="fas fa-plus-circle"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+
+                                </td>
+                                <td>
+                                    <div class="form-group highlight-addon field-calidadmuestras-0-peso">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: -10px;">
+                                       
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: -10px;">
+                                        
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td rowspan="5" style="vertical-align: middle;" class="text-center">
+                                    26-30
+                                </td>
+                                <td style="vertical-align: middle;" class="peso_gramos">
+                                    17.6
+                                </td>
+                                <td style="vertical-align: middle;">
+                                    26
+                                </td>
+                                <td class="touchpin">
+                                    <div class="input-group bootstrap-touchspin bootstrap-touchspin-injected">
+                                        <span class="input-group-btn input-group-prepend">
+                                            <button class="btn btn-info bootstrap-touchspin-down" type="button">
+                                                <i class="fas fa-minus-circle"></i>
+                                            </button>
+                                        </span>
+                                        <input type="tel" class="numero form-control unidades_calidad text-center">
+                                        <span class="input-group-btn input-group-append">
+                                            <button class="btn btn-primary bootstrap-touchspin-up" type="button">
+                                                <i class="fas fa-plus-circle"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+
+                                </td>
+                                <td>
+                                    <div class="form-group highlight-addon field-calidadmuestras-0-peso">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: -10px;">
+                                       
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: -10px;">
+                                        
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="vertical-align: middle;" class="peso_gramos">
+                                    16.9
+                                </td>
+                                <td style="vertical-align: middle;">
+                                    27
+                                </td>
+                                <td class="touchpin">
+                                    <div class="input-group bootstrap-touchspin bootstrap-touchspin-injected">
+                                        <span class="input-group-btn input-group-prepend">
+                                            <button class="btn btn-info bootstrap-touchspin-down" type="button">
+                                                <i class="fas fa-minus-circle"></i>
+                                            </button>
+                                        </span>
+                                        <input type="tel" class="numero form-control unidades_calidad text-center">
+                                        <span class="input-group-btn input-group-append">
+                                            <button class="btn btn-primary bootstrap-touchspin-up" type="button">
+                                                <i class="fas fa-plus-circle"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+
+                                </td>
+                                <td>
+                                    <div class="form-group highlight-addon field-calidadmuestras-0-peso">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: -10px;">
+                                       
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: -10px;">
+                                        
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="vertical-align: middle;" class="peso_gramos">
+                                    16.3
+                                </td>
+                                <td style="vertical-align: middle;">
+                                    28
+                                </td>
+                                <td class="touchpin">
+                                    <div class="input-group bootstrap-touchspin bootstrap-touchspin-injected">
+                                        <span class="input-group-btn input-group-prepend">
+                                            <button class="btn btn-info bootstrap-touchspin-down" type="button">
+                                                <i class="fas fa-minus-circle"></i>
+                                            </button>
+                                        </span>
+                                        <input type="tel" class="numero form-control unidades_calidad text-center">
+                                        <span class="input-group-btn input-group-append">
+                                            <button class="btn btn-primary bootstrap-touchspin-up" type="button">
+                                                <i class="fas fa-plus-circle"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+
+                                </td>
+                                <td>
+                                    <div class="form-group highlight-addon field-calidadmuestras-0-peso">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: -10px;">
+                                       
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: -10px;">
+                                        
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="vertical-align: middle;" class="peso_gramos">
+                                    15.5
+                                </td>
+                                <td style="vertical-align: middle;">
+                                    29
+                                </td>
+                                <td class="touchpin">
+                                    <div class="input-group bootstrap-touchspin bootstrap-touchspin-injected">
+                                        <span class="input-group-btn input-group-prepend">
+                                            <button class="btn btn-info bootstrap-touchspin-down" type="button">
+                                                <i class="fas fa-minus-circle"></i>
+                                            </button>
+                                        </span>
+                                        <input type="tel" class="numero form-control unidades_calidad text-center">
+                                        <span class="input-group-btn input-group-append">
+                                            <button class="btn btn-primary bootstrap-touchspin-up" type="button">
+                                                <i class="fas fa-plus-circle"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+
+                                </td>
+                                <td>
+                                    <div class="form-group highlight-addon field-calidadmuestras-0-peso">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: -10px;">
+                                       
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: -10px;">
+                                        
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="vertical-align: middle;" class="peso_gramos">
+                                    15
+                                </td>
+                                <td style="vertical-align: middle;">
+                                    30
+                                </td>
+                                <td class="touchpin">
+                                    <div class="input-group bootstrap-touchspin bootstrap-touchspin-injected">
+                                        <span class="input-group-btn input-group-prepend">
+                                            <button class="btn btn-info bootstrap-touchspin-down" type="button">
+                                                <i class="fas fa-minus-circle"></i>
+                                            </button>
+                                        </span>
+                                        <input type="tel" class="numero form-control unidades_calidad text-center">
+                                        <span class="input-group-btn input-group-append">
+                                            <button class="btn btn-primary bootstrap-touchspin-up" type="button">
+                                                <i class="fas fa-plus-circle"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+
+                                </td>
+                                <td>
+                                    <div class="form-group highlight-addon field-calidadmuestras-0-peso">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: -10px;">
+                                       
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: -10px;">
+                                        
+                                    </div>
+                                </td> 
+                            </tr>
+                            <tr>
+                                <td rowspan="3" style="vertical-align: middle;" class="text-center">
+                                    31-35
+                                </td>
+                                
+                                    <td style="vertical-align: middle;" class="peso_gramos">
+                                        14.3
+                                    </td>
+                                    <td style="vertical-align: middle;">
+                                        32
+                                    </td>
+                                    <td class="touchpin">
+                                        <div class="input-group bootstrap-touchspin bootstrap-touchspin-injected">
+                                            <span class="input-group-btn input-group-prepend">
+                                                <button class="btn btn-info bootstrap-touchspin-down" type="button">
+                                                    <i class="fas fa-minus-circle"></i>
+                                                </button>
+                                            </span>
+                                            <input type="tel" class="numero form-control unidades_calidad text-center">
+                                            <span class="input-group-btn input-group-append">
+                                                <button class="btn btn-primary bootstrap-touchspin-up" type="button">
+                                                    <i class="fas fa-plus-circle"></i>
+                                                </button>
+                                            </span>
+                                        </div>
+    
+                                    </td>
+                                    <td>
+                                        <div class="form-group highlight-addon field-calidadmuestras-0-peso">
+                                            <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: -10px;">
+                                           
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
+                                            <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: -10px;">
+                                            
+                                        </div>
+                                    </td>
+                            </tr>
+                            <tr>
+                                    <td style="vertical-align: middle;" class="peso_gramos">
+                                        13.7
+                                    </td>
+                                    <td style="vertical-align: middle;">
+                                        33
+                                    </td>
+                                    <td class="touchpin">
+                                        <div class="input-group bootstrap-touchspin bootstrap-touchspin-injected">
+                                            <span class="input-group-btn input-group-prepend">
+                                                <button class="btn btn-info bootstrap-touchspin-down" type="button">
+                                                    <i class="fas fa-minus-circle"></i>
+                                                </button>
+                                            </span>
+                                            <input type="tel" class="numero form-control unidades_calidad text-center">
+                                            <span class="input-group-btn input-group-append">
+                                                <button class="btn btn-primary bootstrap-touchspin-up" type="button">
+                                                    <i class="fas fa-plus-circle"></i>
+                                                </button>
+                                            </span>
+                                        </div>
+    
+                                    </td>
+                                    <td>
+                                        <div class="form-group highlight-addon field-calidadmuestras-0-peso">
+                                            <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: -10px;">
+                                           
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
+                                            <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: -10px;">
+                                            
+                                        </div>
+                                    </td>
+                               
+                                
+                        </tr>
+                        <tr>
+                                <td style="vertical-align: middle;" class="peso_gramos">
+                                    13
+                                </td>
+                                <td style="vertical-align: middle;">
+                                    35
+                                </td>
+                                <td class="touchpin">
+                                    <div class="input-group bootstrap-touchspin bootstrap-touchspin-injected">
+                                        <span class="input-group-btn input-group-prepend">
+                                            <button class="btn btn-info bootstrap-touchspin-down" type="button">
+                                                <i class="fas fa-minus-circle"></i>
+                                            </button>
+                                        </span>
+                                        <input type="tel" class="numero form-control unidades_calidad text-center">
+                                        <span class="input-group-btn input-group-append">
+                                            <button class="btn btn-primary bootstrap-touchspin-up" type="button">
+                                                <i class="fas fa-plus-circle"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+
+                                </td>
+                                <td>
+                                    <div class="form-group highlight-addon field-calidadmuestras-0-peso">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: -10px;">
+                                       
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: -10px;">
+                                        
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2" style="vertical-align: middle;" class="text-center">
+                                    36-40
+                                </td>
+                                
+                                    <td style="vertical-align: middle;" class="peso_gramos">
+                                        12.4
+                                    </td>
+                                    <td style="vertical-align: middle;">
+                                        37
+                                    </td>
+                                    <td class="touchpin">
+                                        <div class="input-group bootstrap-touchspin bootstrap-touchspin-injected">
+                                            <span class="input-group-btn input-group-prepend">
+                                                <button class="btn btn-info bootstrap-touchspin-down" type="button">
+                                                    <i class="fas fa-minus-circle"></i>
+                                                </button>
+                                            </span>
+                                            <input type="tel" class="numero form-control unidades_calidad text-center">
+                                            <span class="input-group-btn input-group-append">
+                                                <button class="btn btn-primary bootstrap-touchspin-up" type="button">
+                                                    <i class="fas fa-plus-circle"></i>
+                                                </button>
+                                            </span>
+                                        </div>
+    
+                                    </td>
+                                    <td>
+                                        <div class="form-group highlight-addon field-calidadmuestras-0-peso">
+                                            <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: -10px;">
+                                           
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
+                                            <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: -10px;">
+                                            
+                                        </div>
+                                    </td>
+                            </tr>
+                            <tr>
+                                    <td style="vertical-align: middle;" class="peso_gramos">
+                                        11.7
+                                    </td>
+                                    <td style="vertical-align: middle;">
+                                        39
+                                    </td>
+                                    <td class="touchpin">
+                                        <div class="input-group bootstrap-touchspin bootstrap-touchspin-injected">
+                                            <span class="input-group-btn input-group-prepend">
+                                                <button class="btn btn-info bootstrap-touchspin-down" type="button">
+                                                    <i class="fas fa-minus-circle"></i>
+                                                </button>
+                                            </span>
+                                            <input type="tel" class="numero form-control unidades_calidad text-center">
+                                            <span class="input-group-btn input-group-append">
+                                                <button class="btn btn-primary bootstrap-touchspin-up" type="button">
+                                                    <i class="fas fa-plus-circle"></i>
+                                                </button>
+                                            </span>
+                                        </div>
+    
+                                    </td>
+                                    <td>
+                                        <div class="form-group highlight-addon field-calidadmuestras-0-peso">
+                                            <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: -10px;">
+                                           
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
+                                            <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: -10px;">
+                                            
+                                        </div>
+                                    </td>
+                            </tr>
+                            <tr>
+                                <td rowspan="4"  style="vertical-align: middle;" class="text-center">
+                                    41-50
+                                </td>
+                                <td style="vertical-align: middle;" class="peso_gramos">
+                                    11.1
+                                </td>
+                                <td style="vertical-align: middle;">
+                                    41
+                                </td>
+                                <td class="touchpin">
+                                    <div class="input-group bootstrap-touchspin bootstrap-touchspin-injected">
+                                        <span class="input-group-btn input-group-prepend">
+                                            <button class="btn btn-info bootstrap-touchspin-down" type="button">
+                                                <i class="fas fa-minus-circle"></i>
+                                            </button>
+                                        </span>
+                                        <input type="tel" class="numero form-control unidades_calidad text-center">
+                                        <span class="input-group-btn input-group-append">
+                                            <button class="btn btn-primary bootstrap-touchspin-up" type="button">
+                                                <i class="fas fa-plus-circle"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+
+                                </td>
+                                <td>
+                                    <div class="form-group highlight-addon field-calidadmuestras-0-peso">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: -10px;">
+                                       
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: -10px;">
+                                        
+                                    </div>
+                                </td>
+                            <tr>
+                                <td style="vertical-align: middle;" class="peso_gramos">
+                                    10.4
+                                </td>
+                                <td style="vertical-align: middle;">
+                                    44
+                                </td>
+                                <td class="touchpin">
+                                    <div class="input-group bootstrap-touchspin bootstrap-touchspin-injected">
+                                        <span class="input-group-btn input-group-prepend">
+                                            <button class="btn btn-info bootstrap-touchspin-down" type="button">
+                                                <i class="fas fa-minus-circle"></i>
+                                            </button>
+                                        </span>
+                                        <input type="tel" class="numero form-control unidades_calidad text-center">
+                                        <span class="input-group-btn input-group-append">
+                                            <button class="btn btn-primary bootstrap-touchspin-up" type="button">
+                                                <i class="fas fa-plus-circle"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+
+                                </td>
+                                <td>
+                                    <div class="form-group highlight-addon field-calidadmuestras-0-peso">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: -10px;">
+                                       
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: -10px;">
+                                        
+                                    </div>
+                                </td>
+                            
+                            </tr>
+                            <tr>
+                                
+                                <td style="vertical-align: middle;" class="peso_gramos">
+                                    9.6
+                                </td>
+                                <td style="vertical-align: middle;">
+                                    47
+                                </td>
+                                <td class="touchpin">
+                                    <div class="input-group bootstrap-touchspin bootstrap-touchspin-injected">
+                                        <span class="input-group-btn input-group-prepend">
+                                            <button class="btn btn-info bootstrap-touchspin-down" type="button">
+                                                <i class="fas fa-minus-circle"></i>
+                                            </button>
+                                        </span>
+                                        <input type="tel" class="numero form-control unidades_calidad text-center">
+                                        <span class="input-group-btn input-group-append">
+                                            <button class="btn btn-primary bootstrap-touchspin-up" type="button">
+                                                <i class="fas fa-plus-circle"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+
+                                </td>
+                                <td>
+                                    <div class="form-group highlight-addon field-calidadmuestras-0-peso">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: -10px;">
+                                       
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: -10px;">
+                                        
+                                    </div>
+                                </td>
+                            
+                            </tr>
+                            <tr>
+                                
+                                <td style="vertical-align: middle;" class="peso_gramos">
+                                    9.1
+                                </td>
+                                <td style="vertical-align: middle;">
+                                    50
+                                </td>
+                                <td class="touchpin">
+                                    <div class="input-group bootstrap-touchspin bootstrap-touchspin-injected">
+                                        <span class="input-group-btn input-group-prepend">
+                                            <button class="btn btn-info bootstrap-touchspin-down" type="button">
+                                                <i class="fas fa-minus-circle"></i>
+                                            </button>
+                                        </span>
+                                        <input type="tel" class="numero form-control unidades_calidad text-center">
+                                        <span class="input-group-btn input-group-append">
+                                            <button class="btn btn-primary bootstrap-touchspin-up" type="button">
+                                                <i class="fas fa-plus-circle"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+
+                                </td>
+                                <td>
+                                    <div class="form-group highlight-addon field-calidadmuestras-0-peso">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: -10px;">
+                                       
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: -10px;">
+                                        
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2"style="vertical-align: middle;" class="text-center">
+                                    51-60
+                                </td>
+                                <td style="vertical-align: middle;" class="peso_gramos">
+                                    8.5
+                                </td>
+                                <td style="vertical-align: middle;">
+                                    54
+                                </td>
+                                <td class="touchpin">
+                                    <div class="input-group bootstrap-touchspin bootstrap-touchspin-injected">
+                                        <span class="input-group-btn input-group-prepend">
+                                            <button class="btn btn-info bootstrap-touchspin-down" type="button">
+                                                <i class="fas fa-minus-circle"></i>
+                                            </button>
+                                        </span>
+                                        <input type="tel" class="numero form-control unidades_calidad text-center">
+                                        <span class="input-group-btn input-group-append">
+                                            <button class="btn btn-primary bootstrap-touchspin-up" type="button">
+                                                <i class="fas fa-plus-circle"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+
+                                </td>
+                                <td>
+                                    <div class="form-group highlight-addon field-calidadmuestras-0-peso">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: -10px;">
+                                       
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: -10px;">
+                                        
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="vertical-align: middle;" class="peso_gramos">
+                                    7.8
+                                </td>
+                                <td style="vertical-align: middle;">
+                                    58
+                                </td>
+                                <td class="touchpin">
+                                    <div class="input-group bootstrap-touchspin bootstrap-touchspin-injected">
+                                        <span class="input-group-btn input-group-prepend">
+                                            <button class="btn btn-info bootstrap-touchspin-down" type="button">
+                                                <i class="fas fa-minus-circle"></i>
+                                            </button>
+                                        </span>
+                                        <input type="tel" class="numero form-control unidades_calidad text-center">
+                                        <span class="input-group-btn input-group-append">
+                                            <button class="btn btn-primary bootstrap-touchspin-up" type="button">
+                                                <i class="fas fa-plus-circle"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+
+                                </td>
+                                <td>
+                                    <div class="form-group highlight-addon field-calidadmuestras-0-peso">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: -10px;">
+                                       
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: -10px;">
+                                        
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2"style="vertical-align: middle;" class="text-center">
+                                    61-70
+                                </td>
+                                <td style="vertical-align: middle;" class="peso_gramos">
+                                    7.2
+                                </td>
+                                <td style="vertical-align: middle;">
+                                    63
+                                </td>
+                                <td class="touchpin">
+                                    <div class="input-group bootstrap-touchspin bootstrap-touchspin-injected">
+                                        <span class="input-group-btn input-group-prepend">
+                                            <button class="btn btn-info bootstrap-touchspin-down" type="button">
+                                                <i class="fas fa-minus-circle"></i>
+                                            </button>
+                                        </span>
+                                        <input type="tel" class="numero form-control unidades_calidad text-center">
+                                        <span class="input-group-btn input-group-append">
+                                            <button class="btn btn-primary bootstrap-touchspin-up" type="button">
+                                                <i class="fas fa-plus-circle"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+
+                                </td>
+                                <td>
+                                    <div class="form-group highlight-addon field-calidadmuestras-0-peso">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: -10px;">
+                                       
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: -10px;">
+                                        
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="vertical-align: middle;" class="peso_gramos">
+                                    6.5
+                                </td>
+                                <td style="vertical-align: middle;">
+                                    70
+                                </td>
+                                <td class="touchpin">
+                                    <div class="input-group bootstrap-touchspin bootstrap-touchspin-injected">
+                                        <span class="input-group-btn input-group-prepend">
+                                            <button class="btn btn-info bootstrap-touchspin-down" type="button">
+                                                <i class="fas fa-minus-circle"></i>
+                                            </button>
+                                        </span>
+                                        <input type="tel" class="numero form-control unidades_calidad text-center">
+                                        <span class="input-group-btn input-group-append">
+                                            <button class="btn btn-primary bootstrap-touchspin-up" type="button">
+                                                <i class="fas fa-plus-circle"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+
+                                </td>
+                                <td>
+                                    <div class="form-group highlight-addon field-calidadmuestras-0-peso">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: -10px;">
+                                       
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: -10px;">
+                                        
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2"style="vertical-align: middle;" class="text-center">
+                                    71-90
+                                </td>
+                                <td style="vertical-align: middle;" class="peso_gramos">
+                                    5.9
+                                </td>
+                                <td style="vertical-align: middle;">
+                                    78
+                                </td>
+                                <td class="touchpin">
+                                    <div class="input-group bootstrap-touchspin bootstrap-touchspin-injected">
+                                        <span class="input-group-btn input-group-prepend">
+                                            <button class="btn btn-info bootstrap-touchspin-down" type="button">
+                                                <i class="fas fa-minus-circle"></i>
+                                            </button>
+                                        </span>
+                                        <input type="tel" class="numero form-control unidades_calidad text-center">
+                                        <span class="input-group-btn input-group-append">
+                                            <button class="btn btn-primary bootstrap-touchspin-up" type="button">
+                                                <i class="fas fa-plus-circle"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+
+                                </td>
+                                <td>
+                                    <div class="form-group highlight-addon field-calidadmuestras-0-peso">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: -10px;">
+                                       
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: -10px;">
+                                        
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="vertical-align: middle;" class="peso_gramos">
+                                    5.2
+                                </td>
+                                <td style="vertical-align: middle;">
+                                    87
+                                </td>
+                                <td class="touchpin">
+                                    <div class="input-group bootstrap-touchspin bootstrap-touchspin-injected">
+                                        <span class="input-group-btn input-group-prepend">
+                                            <button class="btn btn-info bootstrap-touchspin-down" type="button">
+                                                <i class="fas fa-minus-circle"></i>
+                                            </button>
+                                        </span>
+                                        <input type="tel" class="numero form-control unidades_calidad text-center">
+                                        <span class="input-group-btn input-group-append">
+                                            <button class="btn btn-primary bootstrap-touchspin-up" type="button">
+                                                <i class="fas fa-plus-circle"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+
+                                </td>
+                                <td>
+                                    <div class="form-group highlight-addon field-calidadmuestras-0-peso">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: -10px;">
+                                       
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: -10px;">
+                                        
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="vertical-align: middle;" class="text-center">
+                                    91-110
+                                </td>
+                                <td style="vertical-align: middle;" class="peso_gramos">
+                                    4.6
+                                </td>
+                                <td style="vertical-align: middle;">
+                                    100
+                                </td>
+                                <td class="touchpin">
+                                    <div class="input-group bootstrap-touchspin bootstrap-touchspin-injected">
+                                        <span class="input-group-btn input-group-prepend">
+                                            <button class="btn btn-info bootstrap-touchspin-down" type="button">
+                                                <i class="fas fa-minus-circle"></i>
+                                            </button>
+                                        </span>
+                                        <input type="tel" class="numero form-control unidades_calidad text-center">
+                                        <span class="input-group-btn input-group-append">
+                                            <button class="btn btn-primary bootstrap-touchspin-up" type="button">
+                                                <i class="fas fa-plus-circle"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+
+                                </td>
+                                <td>
+                                    <div class="form-group highlight-addon field-calidadmuestras-0-peso">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: -10px;">
+                                       
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: -10px;">
+                                        
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="vertical-align: middle;" class="text-center">
+                                    130-150
+                                </td>
+                                <td style="vertical-align: middle;" class="peso_gramos">
+                                    3.3
+                                </td>
+                                <td style="vertical-align: middle;">
+                                    140
+                                </td>
+                                <td class="touchpin">
+                                    <div class="input-group bootstrap-touchspin bootstrap-touchspin-injected">
+                                        <span class="input-group-btn input-group-prepend">
+                                            <button class="btn btn-info bootstrap-touchspin-down" type="button">
+                                                <i class="fas fa-minus-circle"></i>
+                                            </button>
+                                        </span>
+                                        <input type="tel" class="numero form-control unidades_calidad text-center">
+                                        <span class="input-group-btn input-group-append">
+                                            <button class="btn btn-primary bootstrap-touchspin-up" type="button">
+                                                <i class="fas fa-plus-circle"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+
+                                </td>
+                                <td>
+                                    <div class="form-group highlight-addon field-calidadmuestras-0-peso">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: -10px;">
+                                       
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: -10px;">
+                                        
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td rowspan="4"style="vertical-align: middle;" class="text-center">
+                                    150 UP
+                                </td>
+                                <td style="vertical-align: middle;" class="peso_gramos">
+                                    2.6
+                                </td>
+                                <td style="vertical-align: middle;">
+                                    175
+                                </td>
+                                <td class="touchpin">
+                                    <div class="input-group bootstrap-touchspin bootstrap-touchspin-injected">
+                                        <span class="input-group-btn input-group-prepend">
+                                            <button class="btn btn-info bootstrap-touchspin-down" type="button">
+                                                <i class="fas fa-minus-circle"></i>
+                                            </button>
+                                        </span>
+                                        <input type="tel" class="numero form-control unidades_calidad text-center">
+                                        <span class="input-group-btn input-group-append">
+                                            <button class="btn btn-primary bootstrap-touchspin-up" type="button">
+                                                <i class="fas fa-plus-circle"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+
+                                </td>
+                                <td>
+                                    <div class="form-group highlight-addon field-calidadmuestras-0-peso">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: -10px;">
+                                       
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: -10px;">
+                                        
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="vertical-align: middle;" class="peso_gramos">
+                                    2
+                                </td>
+                                <td style="vertical-align: middle;">
+                                    233
+                                </td>
+                                <td class="touchpin">
+                                    <div class="input-group bootstrap-touchspin bootstrap-touchspin-injected">
+                                        <span class="input-group-btn input-group-prepend">
+                                            <button class="btn btn-info bootstrap-touchspin-down" type="button">
+                                                <i class="fas fa-minus-circle"></i>
+                                            </button>
+                                        </span>
+                                        <input type="tel" class="numero form-control unidades_calidad text-center">
+                                        <span class="input-group-btn input-group-append">
+                                            <button class="btn btn-primary bootstrap-touchspin-up" type="button">
+                                                <i class="fas fa-plus-circle"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+
+                                </td>
+                                <td>
+                                    <div class="form-group highlight-addon field-calidadmuestras-0-peso">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: -10px;">
+                                       
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: -10px;">
+                                        
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="vertical-align: middle;" class="peso_gramos">
+                                    1.3
+                                </td>
+                                <td style="vertical-align: middle;">
+                                    349
+                                </td>
+                                <td class="touchpin">
+                                    <div class="input-group bootstrap-touchspin bootstrap-touchspin-injected">
+                                        <span class="input-group-btn input-group-prepend">
+                                            <button class="btn btn-info bootstrap-touchspin-down" type="button">
+                                                <i class="fas fa-minus-circle"></i>
+                                            </button>
+                                        </span>
+                                        <input type="tel" class="numero form-control unidades_calidad text-center">
+                                        <span class="input-group-btn input-group-append">
+                                            <button class="btn btn-primary bootstrap-touchspin-up" type="button">
+                                                <i class="fas fa-plus-circle"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+
+                                </td>
+                                <td>
+                                    <div class="form-group highlight-addon field-calidadmuestras-0-peso">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: -10px;">
+                                       
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: -10px;">
+                                        
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="vertical-align: middle;" class="peso_gramos">
+                                    0.7
+                                </td>
+                                <td style="vertical-align: middle;">
+                                    698
+                                </td>
+                                <td class="touchpin">
+                                    <div class="input-group bootstrap-touchspin bootstrap-touchspin-injected">
+                                        <span class="input-group-btn input-group-prepend">
+                                            <button class="btn btn-info bootstrap-touchspin-down" type="button">
+                                                <i class="fas fa-minus-circle"></i>
+                                            </button>
+                                        </span>
+                                        <input type="tel" class="numero form-control unidades_calidad text-center">
+                                        <span class="input-group-btn input-group-append">
+                                            <button class="btn btn-primary bootstrap-touchspin-up" type="button">
+                                                <i class="fas fa-plus-circle"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+
+                                </td>
+                                <td>
+                                    <div class="form-group highlight-addon field-calidadmuestras-0-peso">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: -10px;">
+                                       
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: -10px;">
+                                        
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="vertical-align: middle;" class="text-center">
+                                    110-130
+                                </td>
+                                <td colspan="2" style="vertical-align: middle;" class="peso_gramos">
+                                    3.9
+                                </td>
+                                
+                                <td class="touchpin">
+                                    <div class="input-group bootstrap-touchspin bootstrap-touchspin-injected">
+                                        <span class="input-group-btn input-group-prepend">
+                                            <button class="btn btn-info bootstrap-touchspin-down" type="button">
+                                                <i class="fas fa-minus-circle"></i>
+                                            </button>
+                                        </span>
+                                        <input type="tel" class="numero form-control unidades_calidad text-center">
+                                        <span class="input-group-btn input-group-append">
+                                            <button class="btn btn-primary bootstrap-touchspin-up" type="button">
+                                                <i class="fas fa-plus-circle"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+
+                                </td>
+                                <td>
+                                    <div class="form-group highlight-addon field-calidadmuestras-0-peso">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: -10px;">
+                                       
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-"name="CalidadMuestras[0][porcentaje]" readonly style="top: -10px;">
+                                        
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    Total
+                                </td>
+                                <td>
+
+                                </td>
+
+                            </tr>
                         </tbody>
-
-
                     </table>
 
                 </div>
+                
                 <div class="col-md-4">
+                    <br><b><label for="analisisorganoleptico">Análisis Organoléptico</label></b>
+                    <table class="table table-responsive">
+                        <tbody>
+                            <tr>
+                                <td>Color:</td>
+                                <td class="text-center">
+                                    <input type="hidden" name="CalidadOrganoleptico[color]" value="0">
+                                    <input type="checkbox" class="checkbox-size"  checked>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Olor:</td>
+                                <td class="text-center">
+                                    <input type="hidden" name="CalidadOrganoleptico[olor]" value="0">
+                                    <input type="checkbox" class="checkbox-size"  checked>
+                                </td>
 
-                </div>
+                            </tr>
+                            <tr>
+                                <td>Sabor:</td>
+                                <td class="text-center">
+                                    <input type="hidden" name="CalidadOrganoleptico[sabor]" value="0">
+                                    <input type="checkbox" class="checkbox-size" checked>
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td rowspan="6" style="vertical-align: inherit;">
+                                    Temperaturas: 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <input type="tel" class="text-right form-control" name="CalidadOrganoleptico[temperaturas][0]" placeholder="TEMP 1">
+                                                </td>
+                                                <td>
+                                                    <input type="tel" class="text-right form-control" name="CalidadOrganoleptico[temperaturas][1]" placeholder="TEMP 2">
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <input type="tel" class="text-right form-control" name="CalidadOrganoleptico[temperaturas][2]"  placeholder="TEMP 3">
+                                                </td>
+                                                <td>
+                                                    <input type="tel" class="text-right form-control" name="CalidadOrganoleptico[temperaturas][3]"  placeholder="TEMP 4" >
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <input type="tel" class="text-right form-control" name="CalidadOrganoleptico[temperaturas][4]" placeholder="TEMP 5">
+                                                </td>
+                                                <td>
+                                                    <input type="tel" class="text-right form-control" name="CalidadOrganoleptico[temperaturas][5]"  placeholder="TEMP 6">
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <input type="tel" class="text-right form-control" name="CalidadOrganoleptico[temperaturas][6]"  placeholder="TEMP 7">
+                                                </td>
+                                                <td>
+                                                    <input type="tel" class="text-right form-control" name="CalidadOrganoleptico[temperaturas][7]"  placeholder="TEMP 8">
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <input type="tel" class="text-right form-control" name="CalidadOrganoleptico[temperaturas][8]" placeholder="TEMP 9">
+                                                </td>
+                                                <td>
+                                                    <input type="tel" class="text-right form-control" name="CalidadOrganoleptico[temperaturas][9]" placeholder="TEMP 10">
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Peso Muestra:
+                                </td>
+                                <td>
+                                    <input type="tel" class="text-right form-control" name="CalidadOrganoleptico[pesomuestra]" placeholder="0.00" readonly>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    N° Camarones:
+                                </td>
+                                <td>
+                                    <input type="tel" class="text-right form-control" name="CalidadOrganoleptico[numeropiezas]" placeholder="0" readonly>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Grs Promedio:
+                                </td>
+                                <td>
+                                    <input type="tel" class="numero text-right form-control" name="CalidadOrganoleptico[pesopromedio]" placeholder="0.00" readonly>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    OTROS SO2 100(ppm):
+                                </td>
+                                <td>
+                                    <input type="tel" class="numero text-right form-control" name="CalidadOrganoleptico[otros_so2]">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    OTROS SO2 < 10 (ppm):
+                                </td>
+                                <td>
+                                    <input type="tel" class="numero text-right form-control" name="CalidadOrganoleptico[sysco_so2]">
+                                </td>
+                            </tr>
 
+                        </tbody>
+
+                    </table>
+                    <br>
+                    <b><label for="analisisdefectos">Análisis de Defectos</label></b>
+                    <table class="table table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>Muestra</th>
+                                <th>Unidades</th>
+                                <th>Porc(%)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Deshidratado:</td>
+                                <td style="padding: 2px;">
+                                    <input type="number" class="solonumero numero_defectos form-control text-center" name="CalidadAnalisisdefectos[numerodeshidratado]" style="color:darkblue;">
+                                </td>
+                                <td style="padding: 2px;">
+                                    <input type="text" class="porcentaje_defectos form-control text-center" name="CalidadAnalisisdefectos[porcentajedeshidratado]" readonly>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Blandos:</td>
+                                <td style="padding: 2px;">
+                                    <input type="number" class="solonumero numero_defectos form-control text-center" name="CalidadAnalisisdefectos[numeroblandos]" style="color:darkblue;">
+                                </td>
+                                <td style="padding: 2px;">
+                                    <input type="text" class="porcentaje_defectos form-control text-center" name="CalidadAnalisisdefectos[porcentajeblandos]" readonly>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Mudados:</td>
+                                <td style="padding: 2px;">
+                                    <input type="number" class="solonumero numero_defectos form-control text-center" name="CalidadAnalisisdefectos[numeromudados]" style="color:darkblue;">
+                                </td>
+                                <td style="padding: 2px;">
+                                    <input type="text" class="porcentaje_defectos form-control text-center" name="CalidadAnalisisdefectos[porcentajemudados]" readonly>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Cabeza Baja:</td>
+                                <td style="padding: 2px;">
+                                    <input type="number" class="solonumero numero_defectos form-control text-center" name="CalidadAnalisisdefectos[numerocabezabaja]" style="color:darkblue;">
+                                </td>
+                                <td style="padding: 2px;">
+                                    <input type="text" class="porcentaje_defectos form-control text-center" name="CalidadAnalisisdefectos[porcentajecabezabaja]" readonly>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Cabeza Negra:</td>
+                                <td style="padding: 2px;">
+                                    <input type="number" class="solonumero numero_defectos form-control text-center" name="CalidadAnalisisdefectos[numerocabezanegra]" style="color:darkblue;">
+                                </td>
+                                <td style="padding: 2px;">
+                                    <input type="text" class="porcentaje_defectos form-control text-center" name="CalidadAnalisisdefectos[borcentajecabezanegra]" readonly>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Cabeza Roja:</td>
+                                <td style="padding: 2px;">
+                                    <input type="number" class="solonumero numero_defectos form-control text-center" name="CalidadAnalisisdefectos[numerocabezaroja]" style="color:darkblue;">
+                                </td>
+                                <td style="padding: 2px;">
+                                    <input type="text" class="porcentaje_defectos form-control text-center" name="CalidadAnalisisdefectos[porcentajecabezaroja]" readonly>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Hep. Reventado:</td>
+                                <td style="padding: 2px;">
+                                    <input type="number" class="solonumero numero_defectos form-control text-center" name="CalidadAnalisisdefectos[numerohep_reventado]" style="color:darkblue;">
+                                </td>
+                                <td style="padding: 2px;">
+                                    <input type="text" class="porcentaje_defectos form-control text-center" name="CalidadAnalisisdefectos[porcentajehep_reventado]" readonly>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Membrana Rota:</td>
+                                <td style="padding: 2px;">
+                                    <input type="number" class="solonumero numero_defectos form-control text-center" name="CalidadAnalisisdefectos[numeromembranarota]" style="color:darkblue;">
+                                </td>
+                                <td style="padding: 2px;">
+                                    <input type="text" class="porcentaje_defectos form-control text-center" name="CalidadAnalisisdefectos[porcentajemembranarota]" readonly>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>1er Segmento:</td>
+                                <td style="padding: 2px;">
+                                    <input type="number" class="solonumero numero_defectos form-control text-center" name="CalidadAnalisisdefectos[numeroprimersegmento]" style="color:darkblue;">
+                                </td>
+                                <td style="padding: 2px;">
+                                    <input type="text" class="porcentaje_defectos form-control text-center" name="CalidadAnalisisdefectos[porcentajeprimersegmento]" readonly>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Necrosis Leve:</td>
+                                <td style="padding: 2px;">
+                                    <input type="number" class="solonumero numero_defectos form-control text-center" name="CalidadAnalisisdefectos[numeronecrosisleve]" style="color:darkblue;">
+                                </td>
+                                <td style="padding: 2px;">
+                                    <input type="text" class="porcentaje_defectos form-control text-center" name="CalidadAnalisisdefectos[porcentajenecrosisleve]" readonly>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Necrosis Fuerte:</td>
+                                <td style="padding: 2px;">
+                                    <input type="number" class="solonumero numero_defectos form-control text-center" name="CalidadAnalisisdefectos[numeronecrosisfuerte]" style="color:darkblue;">
+                                </td>
+                                <td style="padding: 2px;">
+                                    <input type="text" class="porcentaje_defectos form-control text-center" name="CalidadAnalisisdefectos[porcentajenecrosisfuerte]" readonly>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Melanosis:</td>
+                                <td style="padding: 2px;">
+                                    <input type="number" class="solonumero numero_defectos form-control text-center" name="CalidadAnalisisdefectos[numeromelanosis]" style="color:darkblue;">
+                                </td>
+                                <td style="padding: 2px;">
+                                    <input type="text" class="porcentaje_defectos form-control text-center" name="CalidadAnalisisdefectos[porcentajemelanosis]" readonly>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Quebrados:</td>
+                                <td style="padding: 2px;">
+                                    <input type="number" class="solonumero numero_defectos form-control text-center" name="CalidadAnalisisdefectos[numeroquebrados]" style="color:darkblue;">
+                                </td>
+                                <td style="padding: 2px;">
+                                    <input type="text" class="porcentaje_defectos form-control text-center" name="CalidadAnalisisdefectos[porcentajequebrados]" readonly>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Deformes:</td>
+                                <td style="padding: 2px;">
+                                    <input type="number" class="solonumero numero_defectos form-control text-center" name="CalidadAnalisisdefectos[numerodeformes]" style="color:darkblue;">
+                                </td>
+                                <td style="padding: 2px;">
+                                    <input type="text" class="porcentaje_defectos form-control text-center" name="CalidadAnalisisdefectos[porcentajedeformes]" readonly>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Corbata:</td>
+                                <td style="padding: 2px;">
+                                    <input type="number" class="solonumero numero_defectos form-control text-center" name="CalidadAnalisisdefectos[numerocorbata]" style="color:darkblue;">
+                                </td>
+                                <td style="padding: 2px;">
+                                    <input type="text" class="porcentaje_defectos form-control text-center" name="CalidadAnalisisdefectos[porcentajecorbata]" readonly>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Patas:</td>
+                                <td style="padding: 2px;">
+                                    <input type="number" class="solonumero numero_defectos form-control text-center" name="CalidadAnalisisdefectos[numeropatas]" style="color:darkblue;">
+                                </td>
+                                <td style="padding: 2px;">
+                                    <input type="text" class="porcentaje_defectos form-control text-center" name="CalidadAnalisisdefectos[porcentajepatas]" readonly>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Cáscara:</td>
+                                <td style="padding: 2px;">
+                                    <input type="number" class="solonumero numero_defectos form-control text-center" name="CalidadAnalisisdefectos[numerocascara]" style="color:darkblue;">
+                                </td>
+                                <td style="padding: 2px;">
+                                    <input type="text" class="porcentaje_defectos form-control text-center" name="CalidadAnalisisdefectos[porcentajecascara]" readonly>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Antenas:</td>
+                                <td style="padding: 2px;">
+                                    <input type="number" class="solonumero numero_defectos form-control text-center" name="CalidadAnalisisdefectos[numeroantenas]" style="color:darkblue;">
+                                </td>
+                                <td style="padding: 2px;">
+                                    <input type="text" class="porcentaje_defectos form-control text-center" name="CalidadAnalisisdefectos[porcentajeantenas]" readonly>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Deterioro(Rojo):</td>
+                                <td style="padding: 2px;">
+                                    <input type="number" class="solonumero numero_defectos form-control text-center" name="CalidadAnalisisdefectos[numerodeterioro]" style="color:darkblue;">
+                                </td>
+                                <td style="padding: 2px;">
+                                    <input type="text" class="porcentaje_defectos form-control text-center" name="CalidadAnalisisdefectos[porcentajedeterioro]" readonly>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Total:</td>
+                                <td style="padding: 2px;">
+                                    <input type="number" class="form-control col-md-12 col-xs total_numero_defectos text-right" placeholder="0" readonly>
+                                </td>
+                                <td style="padding: 2px;">
+                                    <input type="text" class="form-control col-md-col-xs-8 total_porcentaje_defectos text-right" placeholder="0" readonly>
+                                </td> 
+                            </tr>
+                        </tbody>
+                    </table>
+                 </div>
+            </div>
+            <div class="form-group highlight-addon field-calidadorganoleptico-observacion">
+                <b><label class="control-label has-star" for="calidadorganoleptico-observacion">
+                    Observación
+                </label></b>
+                <textarea class="form-control text-uppercase" name="CalidadOrganoleptico[Observación]" maxlength="100">
+
+                </textarea>
             </div>
         </div>
+
     </nav>
 </body>
 </html>

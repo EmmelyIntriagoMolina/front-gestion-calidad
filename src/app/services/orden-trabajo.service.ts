@@ -7,7 +7,7 @@ import { ordenTrabajo } from '../models/ordenTrabajo';
 })
 export class OrdenTrabajoService {
 
-  URL =`http://192.168.0.235:3333/ordenTrabajo`
+  URL =`http://192.168.0.228:3333/ordenTrabajo`
 
   constructor(private http:HttpClient) { }
 

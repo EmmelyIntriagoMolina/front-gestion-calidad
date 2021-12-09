@@ -71,7 +71,7 @@ const routes: Routes = [
   },
 
   {
-    path: 'ordenTrabajo/guiasRemision/:id/analisisCalidad',
+    path: 'ordenTrabajo/guiasRemision/:id/analisisCalidad/:id',
     component: AnalisisCalidadComponent
   },
 

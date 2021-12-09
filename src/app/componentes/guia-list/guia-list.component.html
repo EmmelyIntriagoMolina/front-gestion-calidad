@@ -39,78 +39,85 @@
                                         Nueva Guía
                                         <i class="far fa-file-alt"></i>
                                     </button></a>
-
                                 </td>
                             </tr>
                         </table>
                     </div>
                 </div>
-                    <table class="table table-bordered" style="width: 100%; height: 20%; font-size: 14px;">
-                        <tr *ngFor="let ordenTrabajo of ordenesTrabajo">
-                            <td><b> FECHA:</b>
-                                {{ordenTrabajo.fechaRegistro}}
-                            </td>
-                            <td><b> COLOR CAMARON: </b>
-                                {{ordenTrabajo.colorCamaron}}
-                            </td>
-                            <td rowspan="4" style="vertical-align: text-top; text-align: center; "><b>Calidad:</b>
-                                <br>
-                                <label for="calidad" style="font-size: 50px;"> {{ordenTrabajo.calidad}} </label>
-                            </td>
-                            
-                        </tr>
-                        <tr *ngFor="let ordenTrabajo of ordenesTrabajo">
-                            <td><b> LOTE: </b>
-                                {{ordenTrabajo.lote}}
-                            </td>
-                            <td><b> PROCEDENCIA: </b>
-                                {{ordenTrabajo.procedencia}}
-                            </td>
-                        </tr>
-                        <tr *ngFor="let ordenTrabajo of ordenesTrabajo">
-                            <td><b>PROVEEDOR:</b>
-                                {{ordenTrabajo.proveedor}}
-                            </td>
-                            <td><b>PISCINA:</b>
-                                {{ordenTrabajo.piscina}}
-                            </td>
-                        </tr>
-                        <tr *ngFor="let ordenTrabajo of ordenesTrabajo">
-                            <td><b>MATERIA PRIMA: </b>
-                                {{ordenTrabajo.producto}}
-                            </td>
-                            <td>
-                                {{ordenTrabajo.tipoProducto}}
-                            </td>
-                        </tr>
-                        
+                    <table class="pure-table pure-table-condensed-x table-bordered" style="width: 100%; height: 20%; font-size: 14px; margin-bottom: 10px;">
+                        <tbody>
+                            <tr *ngFor="let ordenTrabajo of ordenesTrabajo">
+                                <td><b> FECHA:</b>
+                                    {{ordenTrabajo.fechaRegistro}}
+                                </td>
+                                <td><b> COLOR CAMARON: </b>
+                                    {{ordenTrabajo.colorCamaron}}
+                                </td>
+                                <td rowspan="4" style="vertical-align: text-top; text-align: center; "><b>Calidad:</b>
+                                    <br>
+                                    <label for="calidad" style="font-size: 50px;"> {{ordenTrabajo.calidad}} </label>
+                                </td>
+                                
+                            </tr>
+                            <tr *ngFor="let ordenTrabajo of ordenesTrabajo">
+                                <td><b> LOTE: </b>
+                                    {{ordenTrabajo.lote}}
+                                </td>
+                                <td><b> PROCEDENCIA: </b>
+                                    {{ordenTrabajo.procedencia}}
+                                </td>
+                            </tr>
+                            <tr *ngFor="let ordenTrabajo of ordenesTrabajo">
+                                <td><b>PROVEEDOR:</b>
+                                    {{ordenTrabajo.proveedor}}
+                                </td>
+                                <td><b>PISCINA:</b>
+                                    {{ordenTrabajo.piscina}}
+                                </td>
+                            </tr>
+                            <tr *ngFor="let ordenTrabajo of ordenesTrabajo">
+                                <td><b>MATERIA PRIMA: </b>
+                                    {{ordenTrabajo.producto}}
+                                </td>
+                                <td>
+                                    {{ordenTrabajo.tipoProducto}}
+                                </td>
+                            </tr>
+                        </tbody>
                     </table>
-                    <br>
-                    <b><label for="guias">GUÍAS:</label></b>
-                    <div style="text-align: right; margin-bottom: 20px; width: 100%;">
-                        <button class="btn btn-outline-secondary btn-sm" style="font-size: 12px;">
-                            Reporte Calidad por O/T <i class="far fa-file-pdf"></i>
-                        </button>
+                    <div style="margin-bottom: 50px;">
+                        <b><label>GUÍAS:</label></b>
+                        <div class="pull-right">
+                            <button class="btn btn-outline-secondary btn-sm" style="font-size: 12px; float: right;">
+                                Reporte Calidad por O/T <i class="far fa-file-pdf"></i>
+                            </button>
+                        </div>
                     </div>
-                    <table class="table table-hover" style="width: 100%; margin: 0 auto; text-align: left;">
-                        <thead style="text-align: left;">
-                            <tr style="text-align: left;">
-                                <th style="color:steelblue; width: 90px;">Folio</th>
-                                <th style="width: 120;">N° Guia Prov</th>
-                                <th style="width: 180px;">Vehiculo</th>
-                                <th style="width: 50px;">Peso</th>
-                                <th style="width: 50px;">Gavetas</th>
-                                <th >Muestras(Lb)</th>
-                                <th >Estado</th>
-                                <th colspan="4"></th>                             
+                    <div style="text-align: right; margin-bottom: 20px; width: 100%;">
+                        
+                    </div>
+                    <table class="table table-bordered " style="width: 100%; margin: 0 auto; text-align: left;">
+                        <thead>
+                            <tr style="text-align: left; background-color: #ddd; ">
+                                <th data-col-seq="0" style="color:steelblue; width: 11.12%;">Folio</th>
+                                <th class="text-center" data-col-seq="1" style="width: 17.94%;">N° Guia Prov</th>
+                                <th data-col-seq="2"  style="width: 23.68%;">Vehiculo</th>
+                                <th class="text-center" data-col-seq="3" style="width: 9.87%;">Peso</th>
+                                <th style="width: 12.56%;" data-col-seq="4">Gavetas</th>
+                                <th style="width: 16.98%;">Muestras(Lb)</th>
+                                <th style="width: 11.21%;" >Estado</th>
+                                <th style="width: 17.49%;" ></th>
+                                <th style="width: 10.96%;" ></th>
+                                <th style="width: 14.23%;" ></th>
+                                <th style="width: 10.52%;" ></th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody> 
                             <tr *ngFor="let guiaRemision of guiasRemision
-                            | paginate: {itemsPerPage: 15, currentPage: pageActual}">
-                                <td>{{guiaRemision.id}}</td>
-                                <td style="text-align: center;">{{guiaRemision.codigo}}</td>
-                                <td>
+                            | paginate: {itemsPerPage: 15, currentPage: pageActual}" class="w0">
+                                <td style="width: 30px;">{{guiaRemision.id}}</td>
+                                <td style="text-align: center;width: 100px">{{guiaRemision.codigo}}</td>
+                                <td style="width: 150px;">
                                     Hora Ing: 
                                     {{guiaRemision.horaingreso}}
                                     <br>
@@ -120,23 +127,23 @@
                                     Chofer:
                                     {{guiaRemision.chofer}}
                                 </td>
-                                <td style="text-align: center;">
+                                <td  style="text-align: center; width: 80px;">
                                     {{guiaRemision.peso}}
                                 </td>
-                                <td style="text-align: center;">
+                                <td  style="text-align: center; width: 80px;">
                                     {{guiaRemision.gavetas}}
                                 </td>
-                                <td style="text-align: center;">
+                                <td  style="text-align: center; width: 80px;">
                                     {{guiaRemision.muestras}}
                                 </td>
-                                <td style="text-align: center;">
+                                <td  style="text-align: center; width: 150px;">
                                     <span style="color: seagreen;" *ngIf="guiaRemision.estado==1"><i class="fas fa-lock-open"></i></span>
                                 </td>
-                                <td style="text-align: center;">
-                                    <a [routerLink]="['/ordenTrabajo/guiasRemision/', guiaRemision.id, 'analisisCalidad']"><button class="btn btn-outline-primary"> <i class="fas fa-flask"></i> Análisis</button></a>
+                                <td  style="text-align: center; width: 150px;" *ngFor="let ordenTrabajo of ordenesTrabajo">
+                                    <a [routerLink]="['/ordenTrabajo/guiasRemision/', ordenTrabajo.id ,'analisisCalidad', guiaRemision.id ]"><button class="btn btn-outline-primary"> <i class="fas fa-flask"></i> Análisis</button></a>
                                 </td>
-                                <td style="text-align: center;">
-                                    <button style="border-color: white; font-size: 30px;" class="btn btn-outline-secondary">
+                                <td  style="text-align: center; width: 100px;">
+                                    <button style="border-color: white; font-size: 30px;" class="btn btn-link btn-outline-secondary">
                                         <i class="far fa-file-image"></i>
                                     </button>
                                 </td>
@@ -150,7 +157,7 @@
                                     </button>
                                     
                                 </td>
-                                <td style="text-align: center;">
+                                <td style="text-align: center; width: 100px;">
                                     <a><button class="btn btn-primary btn-sm" style="margin-bottom: 7px;">
                                         <i class="fas fa-pencil-alt"></i>
                                     </button></a>
@@ -177,8 +184,7 @@
                         </tbody>
                     </table>
                     <pagination-controls (pageChange)="pageActual = $event"></pagination-controls>
-                
-            </div>
+               </div>
         </div>
     </nav>
 </body>

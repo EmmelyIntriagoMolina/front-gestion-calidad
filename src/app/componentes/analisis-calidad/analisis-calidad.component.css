@@ -1,0 +1,16 @@
+.checkbox-size {
+    width: 25px !important;
+    height: 25px !important;
+    position: relative !important;
+}
+input, button, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+
+table#tabla_analisis_organoleptico {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
