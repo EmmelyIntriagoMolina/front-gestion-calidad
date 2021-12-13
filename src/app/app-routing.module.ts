@@ -2,6 +2,7 @@ import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AnalisisCalidadComponent } from './componentes/analisis-calidad/analisis-calidad.component';
 import { AprobacionComponent } from './componentes/aprobacion/aprobacion.component';
+import { GuiaConfigComponent } from './componentes/guia-config/guia-config.component';
 import { GuiaFormComponent } from './componentes/guia-form/guia-form.component';
 import { GuiaListComponent } from './componentes/guia-list/guia-list.component';
 import { OrderClienteEditComponent } from './componentes/order-cliente-edit/order-cliente-edit.component';
@@ -12,6 +13,7 @@ import { OrderFormComponent } from './componentes/order-form/order-form.componen
 import { OrderListComponent } from './componentes/order-list/order-list.component';
 import { RecepcionComponent } from './componentes/recepcion/recepcion.component';
 import { VerOTComponent } from './componentes/ver-ot/ver-ot.component';
+
 
 const routes: Routes = [
 
@@ -73,6 +75,10 @@ const routes: Routes = [
   {
     path: 'ordenTrabajo/guiasRemision/:id/analisisCalidad/:id',
     component: AnalisisCalidadComponent
+  },
+  {
+    path: 'ordenTrabajo/recepcion/guiaRemision/config/:id',
+    component: GuiaConfigComponent
   },
 
   

@@ -9,6 +9,7 @@ import { CommonModule } from '@angular/common';
 import { NgSelectConfig } from '@ng-select/ng-select';
 import { OrdenCompra } from 'src/app/models/ordenCompra';
 
+
 @Component({
   selector: 'app-order-form',
   templateUrl: './order-form.component.html',
@@ -16,6 +17,7 @@ import { OrdenCompra } from 'src/app/models/ordenCompra';
 })
 
 export class OrderFormComponent  {
+
 
   rta:any = [];
   rt:any = [];
@@ -97,6 +99,8 @@ export class OrderFormComponent  {
       err => console.log(err)
     )
   }
+
+  
 
 }
 

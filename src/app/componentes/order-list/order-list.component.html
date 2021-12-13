@@ -56,25 +56,33 @@
                         
                         <tbody>
                                 <td><input class="form-control me-2" type="text" name="filterCodigo" placeholder="Código" [(ngModel)]="filterCodigo"></td>
-                                <td><input class="form-control me-2" type="date" name="filterFecha"></td>
+                                <td><input class="form-control me-2" type="date" name="filterFecha" [(ngModel)]="filterF"></td>
                                 <td><input class="form-control me-2" type="text" name="filterProv" placeholder="Proveedor" [(ngModel)]="filterProv"></td>
                                 <td><input class="form-control me-2" type="text" name="filterLot" placeholder="Lote" [(ngModel)]="filterLot"></td>
                                 <td><select style="width: 110px;" class="form-select" name="filterEstadoCali" id="estadoCalidad" [(ngModel)]="filterEstadoCali">
-                                    <option value="estado">Aprobado</option>
-                                    <option value="estado">Rechazado</option>
+                                    <option value="estado"></option>
+                                    <option value="estado">APROBADO</option>
+                                    <option value="estado">RECHAZADO</option>
                                 </select>
                                 </td>
                            
                             <tr class="text-center" *ngFor=" let ordenTrabajo of ordenesTrabajo 
-                            | paginate: {itemsPerPage: 15, currentPage: pageActual}">
+                            | paginate: {itemsPerPage: 15, currentPage: pageActual}
+                            | filterProveedor: filterProv
+                            | filterFecha: filterF
+                            | filterEstadoCalidad: filterEstadoCali">
                             
                                 <td style="text-align: left; width: 150px;">O/T-{{ordenTrabajo.id}}-2021</td>
-                                <td style="text-align: left;">{{ordenTrabajo.fechaRegistro}}</td>
+                                <td style="text-align: left;">
+                                    {{ordenTrabajo.fechaRegistro}}
+                                    <br>
+                                    {{ordenTrabajo.horaRecepcion}}
+                                </td>
                                 <td style="text-align: left;">{{ordenTrabajo.proveedor}}</td>
                                 <td style="text-align: left; width: 100px;">{{ordenTrabajo.lote}}</td>
                                 <td style="text-align: left;">
                                     <span style="color: seagreen;" *ngIf="ordenTrabajo.estadoCalidad=='APROBADO'">{{ordenTrabajo.estadoCalidad}}</span>
-                                    <span style="color: steelblue;" *ngIf="ordenTrabajo.estadoCalidad=='EN ESPERA'">{{ordenTrabajo.estadoCalidad}}</span>
+                                    <span style="color: steelblue;" *ngIf="ordenTrabajo.estadoCalidad=='SIN ATENDER'">{{ordenTrabajo.estadoCalidad}}</span>
                                     <span style="color: rgb(255, 32, 32);" *ngIf="ordenTrabajo.estadoCalidad=='RECHAZADO'">{{ordenTrabajo.estadoCalidad}}</span>
                                 </td>
                         

@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <base href="./">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.css">
+</head>
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <div class="text-left" style="margin-bottom: 7px;">
+        <a href="/"> <button mat-button style="border-radius: 0%; margin-bottom: 10px;" class="btn btn-success"> Orden Trabajo </button></a>
+        
+        <a href="/ordenCliente"> <button mat-button style="border-radius: 0%; margin-bottom: 10px;" class="btn btn-success"> Orden Cliente</button> </a>
+    </div>
+    <nav class="navbar navbar-expand-lg ">
+        <div class="content">
+            <div class="card card-header" style="width: 100%;">
+                <div style="float: left;" *ngFor="let guiaRemision of guiasRemision">
+                    <h4>Guía #{{guiaRemision.id}}</h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-5" *ngFor="let guiaRemision of guiasRemision">
+                    <label>
+                        PROVEEDOR:
+                    </label> 
+                    <label >
+                       <!-- {{ordenTrabajo.proveedor}} -->
+                    </label>
+                    
+                    <br>
+                    <label>
+                        CHOFER:
+                    </label>
+                    {{guiaRemision.chofer}}
+                    <br>
+                    <label> 
+                        PLACA:
+                    </label>
+                    {{guiaRemision.placa}}
+                </div>
+                <div class="col-sm-3" *ngFor="let ordenTrabajo of ordenesTrabajo">
+                    <label>
+                        OT:
+                    </label>
+                    O/T-{{ordenTrabajo.id}}-2021
+                    <br>
+                    <label>
+                        LOTE:
+                    </label>
+                    {{ordenTrabajo.lote}}
+                    <br>
+                    <label>
+                        MP:
+                    </label>
+                    {{ordenTrabajo.producto}}
+                </div>
+                <div class="col-sm-4 text-right">
+                    <a><button class="btn btn-info">
+                        <i class="fas fa-arrow-left"></i>
+                        <label> Regresar a ventana de recepción</label>
+                    </button></a>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+
+            </div>
+
+        </div>
+    </nav>
+</body>
+</html>

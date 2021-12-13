@@ -8,7 +8,7 @@ export class FilterEstadoCalidadPipe implements PipeTransform {
   transform(value: any, ...arg: any[]): any {
     const resultadoEstadoC = [];
     for (const post of value){
-      if(post.estadoCalidad.toUpperCase().indexof(arg)> -1){
+      if(post.estadoCalidad.indexOf(arg)> -1){
         resultadoEstadoC.push(post)
       }
     }

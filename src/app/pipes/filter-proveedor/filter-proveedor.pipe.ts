@@ -8,7 +8,7 @@ export class FilterProveedorPipe implements PipeTransform {
   transform(value: any, ...arg: any[]): any {
     const resultadoProveedor = [];
     for (const post of value){
-      if(post.proveedor.toUpperCase().indexof(arg)> -1){
+      if(post.proveedor.toLowerCase().indexOf(arg)> -1){
         resultadoProveedor.push(post)
       }
     }

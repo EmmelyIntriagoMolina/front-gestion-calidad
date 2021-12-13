@@ -38,45 +38,45 @@
                         <tbody>
                             <tr style="text-align: left;" *ngFor="let ordenTrabajo of ordenesTrabajo">
                             <td style="width: 300px;">
-                                <b>Fecha</b> 
+                                <b style="margin-left: 5px;">Fecha </b> 
                                 <br>
-                                <label for="fecharegistro"> {{ordenTrabajo.fechaRegistro}} </label>
+                                <label for="fecharegistro" style="margin-left: 5px;"> {{ordenTrabajo.fechaRegistro}} </label>
                              </td>
 
                             <td style="width: 300px;">
-                                <b>Proveedor</b>
+                                <b style="margin-left: 5px;"> Proveedor </b>
                                 <br>
-                                <label for="proveedor">{{ordenTrabajo.proveedor}} </label>
+                                <label for="proveedor" style="margin-left: 5px;"> {{ordenTrabajo.proveedor}} </label>
                             </td>
 
                             <td style="width: 300px;">
-                                <b>Procedencia</b>
+                                <b style="margin-left: 5px;">Procedencia </b>
                                 <br>
-                                <label for="procedencia">{{ordenTrabajo.procedencia}}</label>
+                                <label for="procedencia" style="margin-left: 5px;"> {{ordenTrabajo.procedencia}}</label>
                             </td>
 
                             <td style="width: 300px;">
-                                <b>Producto</b>
+                                <b style="margin-left: 5px;">Producto </b>
                                 <br>
-                                <label for="producto">{{ordenTrabajo.producto}}</label>
+                                <label for="producto" style="margin-left: 5px;"> {{ordenTrabajo.producto}}</label>
                             </td>
                         </tr>
                         <tr style="text-align: left;" >
                             <td style="width: 300px;" *ngFor="let ordenTrabajo of ordenesTrabajo">
-                                <b>Piscina</b>
+                                <b style="margin-left: 5px;">Piscina </b>
                                 <br>
-                                <label for="piscina">{{ordenTrabajo.piscina}}</label>
+                                <label for="piscina" style="margin-left: 5px;"> {{ordenTrabajo.piscina}}</label>
                                 
                             </td>
                             <td style="width: 300px" *ngFor="let guiaRemision of guiasRemision">
-                                <b>Libras Reportadas</b>
+                                <b style="margin-left: 5px;">Libras Reportadas</b>
                                 <br>
-                                <label>{{guiaRemision.peso}}</label> 
+                                <label style="margin-left: 5px;"> {{guiaRemision.peso}}</label> 
                             </td>
                             <td colspan="2" *ngFor="let guiaremision of guiasRemision">
-                                <b>N° Gavetas Reportadas</b>
+                                <b style="margin-left: 5px;">N° Gavetas Reportadas</b>
                                 <br>
-                                <label for="gavetas">{{guiaremision.gavetas}}</label>
+                                <label for="gavetas" style="margin-left: 5px;"> {{guiaremision.gavetas}}</label>
                             </td>
                         </tr>
                         </tbody>
@@ -102,7 +102,7 @@
                                     <div class="input-group-prepend">
                                       <span class="input-group-text" id="basic-addon1" style="font-size: 12px;">C-</span>
                                     </div>
-                                    <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1" style="width: 50px; font-size: 12px;"  [(ngModel)]="OrdenTrabajo.lote">
+                                    <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1" style="width: 50px; font-size: 12px;"  [(ngModel)]="OrdenTrabajo.lote" readonly>
                                 </div>
                             </td>
                             <td>

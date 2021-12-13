@@ -19,6 +19,7 @@ export class OrderListComponent implements OnInit{
   filterProv = '';
   filterLot = '';
   filterEstadoCali = ''
+  filterF = ''
  
   ordenesTrabajo: any = []; 
   constructor(private ordenTrabajoService:OrdenTrabajoService, private http:HttpClient) {}

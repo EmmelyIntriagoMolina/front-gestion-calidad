@@ -33,8 +33,10 @@ import { VerOTComponent } from './componentes/ver-ot/ver-ot.component';
 import { RouterModule } from '@angular/router';
 import { RecepcionComponent } from './componentes/recepcion/recepcion.component';
 import { AnalisisCalidadComponent } from './componentes/analisis-calidad/analisis-calidad.component';
-
-
+import { GuiaConfigComponent } from './componentes/guia-config/guia-config.component';
+import { FilterFechaPipe } from './pipes/filter-fecha/filter-fecha.pipe';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 @NgModule({
   declarations: [
@@ -58,7 +60,9 @@ import { AnalisisCalidadComponent } from './componentes/analisis-calidad/analisi
     AprobacionComponent,
     VerOTComponent,
     RecepcionComponent,
-    AnalisisCalidadComponent
+    AnalisisCalidadComponent,
+    GuiaConfigComponent,
+    FilterFechaPipe
   ],
   imports: [
     BrowserModule, FormsModule,
@@ -72,6 +76,8 @@ import { AnalisisCalidadComponent } from './componentes/analisis-calidad/analisi
     MatButtonModule,
     BrowserAnimationsModule,
     MatIconModule,
+    MatFormFieldModule,
+    MatDatepickerModule,
     RouterModule.forRoot([
       {path: 'ordenTrabajo/guiasRemision/:id', component: GuiaListComponent}
     ])

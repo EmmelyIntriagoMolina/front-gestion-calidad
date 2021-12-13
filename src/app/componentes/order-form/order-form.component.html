@@ -22,16 +22,14 @@
                 </thead>
                 <tr>
                         <td>
-                            <input type="text" style="width: 80%; height: 30px;" class="form-control" name="codigo" id="codigo" formControlName="codigo" autofocus [(ngModel)]="OrdenTrabajo.codigo" >
+                            <input type="text" style="width: 80%; height: 30px;" class="form-control" name="codigo" id="codigo" formControlName="codigo" autofocus [(ngModel)]="OrdenTrabajo.codigo" placeholder="O/T-245-2021" readonly value="245">
                         </td>
                         <td>
-                            <ng-select type="text" style="width: 80%; height: 35px;" class="form-select" name="ordencompra" id="ordencompra"  autofocus  
-                                [items]="rta"
-                                bindLabel="codigo"
-                                bindValue="codigo"
-                                [(ngModel)]="ordenCompra.codigo"
-                                [ngModelOptions]="{standalone: true}">
-                            </ng-select>
+                            <select type="text" style="width: 90%; height: 35px;" class="form-select" name="ordencompra" id="ordencompra" [(ngModel)]="OrdenTrabajo.ordenCompra">
+                                <option value="ordencompra">001-002-0000000001</option>
+                                <option value="ordencompra">001-002-0000000002</option>
+                                <option value="ordencompra">001-002-0000000003</option>
+                            </select>
                         </td>
                 </tr>
 
@@ -46,13 +44,16 @@
                         </tr>
                 </thead>
                 <tr>
-                        <td>
-                            <input type="date" ui-date-format="yyyy-mm-dd" class="form-control" style="width: 80%; height: 30px;" name="fechaRegistro" id="fechaRegistro" value="aaaa-mm-dd" formControlName="fechaRegistro" [(ngModel)]="OrdenTrabajo.fechaRegistro">
-                        </td>
-                        <td>
-                            <input type="time" class="form-control" style="width: 80%; height: 30px;" name="horaRecepcion" value="hh:mm:ss" id="horaRecepcion" formControlName="horaRecepcion" [(ngModel)]="OrdenTrabajo.horaRecepcion">
+                    
+                    <td>
+                        <input type="date" ui-date-format="yyyy-mm-dd" class="form-control input-sm krajee-datepicker" style="width: 80%; height: 30px;" name="fechaRegistro" id="fechaRegistro" value="aaaa-mm-dd" formControlName="fechaRegistro" [(ngModel)]="OrdenTrabajo.fechaRegistro" data-dataepicker-source="ordentrabajo-fecha-kvdate" data-datepicker-type="2" data-krajee-kvdatepicker="kvDatepicker_a2be5271">
+                            
+                            
+                    </td>
+                    <td>
+                        <input type="time" class="form-control" style="width: 80%; height: 30px;" name="horaRecepcion" value="hh:mm:ss" id="horaRecepcion" formControlName="horaRecepcion" [(ngModel)]="OrdenTrabajo.horaRecepcion">
         
-                        </td>
+                    </td>
                 </tr>
 
                 <thead>
