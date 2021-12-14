@@ -17,6 +17,26 @@ export class OrderEditComponent implements OnInit {
   rt:any=[];
   rta:any=[];
 
+  OrdenTrabajo:ordenTrabajo = {
+    id: 0,
+    codigo: '',
+    ordenCompra: '',
+    proveedor: '',
+    lote: 0,
+    procedencia: '',
+    fechaRegistro:'',
+    horaRecepcion:'',
+    piscina:'',
+    producto:'',
+    tipoProductoC:'',
+    tipoProductoD:'',
+    camaronMar:'',
+    observacion:'',
+    estadoCalidad:'',
+    calidad:'',
+    colorCamaron:'',
+  }
+
   ordenesTrabajo: any = []
 
   form: FormGroup = new FormGroup({
@@ -67,26 +87,6 @@ export class OrderEditComponent implements OnInit {
 
   ordenCompra:OrdenCompra = {
     codigo: 0
-  }
-
-  OrdenTrabajo:ordenTrabajo = {
-    id: 0,
-    codigo: '',
-    ordenCompra: '',
-    proveedor: '',
-    lote: 0,
-    procedencia: '',
-    fechaRegistro:'',
-    horaRecepcion:'',
-    piscina:'',
-    producto:'',
-    tipoProductoC:'',
-    tipoProductoD:'',
-    camaronMar:'',
-    observacion:'',
-    estadoCalidad:'',
-    calidad:'',
-    colorCamaron:'',
   }
   edit : boolean = false;
 

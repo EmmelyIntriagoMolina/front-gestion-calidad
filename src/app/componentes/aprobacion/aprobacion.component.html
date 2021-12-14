@@ -81,6 +81,7 @@
                         </tr>
                         </tbody>
                     </table>
+                    
                     <table style="text-align: left; width: 100%; margin-top: 30px">
                         <tr>
                             <td style="width: 100px;">
@@ -102,7 +103,7 @@
                                     <div class="input-group-prepend">
                                       <span class="input-group-text" id="basic-addon1" style="font-size: 12px;">C-</span>
                                     </div>
-                                    <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1" style="width: 50px; font-size: 12px;"  [(ngModel)]="OrdenTrabajo.lote" readonly>
+                                    <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1" style="width: 50px; font-size: 12px;"  [(ngModel)]="OrdenTrabajo.lote"readonly>
                                 </div>
                             </td>
                             <td>
@@ -119,7 +120,7 @@
                             </td>
                             <td>
                                 <div class="btn-group" >
-                                    <input type="checkbox" checked data-toggle="toggle" data-on="A" data-off="B" data-onstyle="success" data-offstyle="danger">
+                                    <input type="checkbox" checked data-toggle="toggle" data-on="A" data-off="B" data-onstyle="success" data-offstyle="danger" value="A" [(ngModel)]="OrdenTrabajo.calidad">
 
                                 </div>
                             </td>

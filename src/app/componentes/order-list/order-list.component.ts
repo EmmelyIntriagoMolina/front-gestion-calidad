@@ -11,7 +11,7 @@ import Swal from 'sweetalert2';
 
 export class OrderListComponent implements OnInit{
 
-  condicion = 'APROBADO'
+  condicion = 'SIN ATENDER'
   
   pageActual: number = 1;
   filterCodigo = '';

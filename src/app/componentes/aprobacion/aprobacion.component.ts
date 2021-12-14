@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { GuiaRemision } from 'src/app/models/guiaRemision';
 import { ordenTrabajo } from 'src/app/models/ordenTrabajo';
 import { GuiaRemisionService } from 'src/app/services/guiaRemision/guia-remision.service';
 import { OrdenTrabajoService } from 'src/app/services/orden-trabajo.service';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -14,19 +16,37 @@ import { OrdenTrabajoService } from 'src/app/services/orden-trabajo.service';
 
 export class AprobacionComponent implements OnInit {
 
-  constructor(private ordenTrabajoService:OrdenTrabajoService,private guiaRemisionService:GuiaRemisionService,  private router:Router, private rutaActiva:ActivatedRoute, private rutaActiva2:ActivatedRoute) { }
-
+  
 
   cantidad:number=0;
   ordenesTrabajo: any = []; 
   guiasRemision: any = []; 
+
+
+  constructor(private ordenTrabajoService:OrdenTrabajoService,private guiaRemisionService:GuiaRemisionService,  private router:Router, private rutaActiva:ActivatedRoute, private rutaActiva2:ActivatedRoute) { }
+
+  save(event: Event){
+    event.preventDefault();
+    if (this.form.valid) {
+      const value=this.form.value;
+      console.log(value)
+    }
+  }
+
+
+  form: FormGroup = new FormGroup({
+    lote : new FormControl(),
+    colorCamaron : new FormControl(),
+    calidad : new FormControl()
+
+  })
 
   OrdenTrabajo:ordenTrabajo = {
     id: 0,
     codigo: '',
     ordenCompra: '',
     proveedor: '',
-    lote: this.cantidad,
+    lote: 0,
     procedencia: '',
     piscina:'',
     producto:'',
@@ -90,6 +110,13 @@ export class AprobacionComponent implements OnInit {
   }
 
   actualizarOrdenTrabajoAprobacion(id:number){
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: '¡Registro Actualizado!',
+      showConfirmButton: false,
+      timer: 1500
+    })
     this.ordenTrabajoService.putOrdenTrabajoAprobacion(this.OrdenTrabajo.id, this.OrdenTrabajo)
     .subscribe(
       res=> {
