@@ -79,7 +79,7 @@
                                     {{ordenTrabajo.horaRecepcion}}
                                 </td>
                                 <td style="text-align: left;">{{ordenTrabajo.proveedor}}</td>
-                                <td style="text-align: left; width: 100px;">{{ordenTrabajo.lote}}</td>
+                                <td style="text-align: left; width: 100px;">C-{{ordenTrabajo.lote}}</td>
                                 <td style="text-align: left;">
                                     <span style="color: seagreen;" *ngIf="ordenTrabajo.estadoCalidad=='APROBADO'">{{ordenTrabajo.estadoCalidad}}</span>
                                     <span style="color: steelblue;" *ngIf="ordenTrabajo.estadoCalidad=='SIN ATENDER'">{{ordenTrabajo.estadoCalidad}}</span>
@@ -133,7 +133,7 @@
                                         Reporte Recepción
                                     </button> </a>
                                     <br>
-                                    <a href="/"><button class="btn btn-outline-secondary btn-sm">
+                                    <a [routerLink]="['/ordenTrabajo/trazabilidad', ordenTrabajo.id]" ><button class="btn btn-outline-secondary btn-sm">
                                         <i class="far fa-file-pdf"></i>
                                         Trazabilidad
                                     </button> </a>

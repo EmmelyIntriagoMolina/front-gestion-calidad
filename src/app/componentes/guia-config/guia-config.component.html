@@ -18,15 +18,26 @@
     </div>
     <nav class="navbar navbar-expand-lg ">
         <div class="content">
-            <div class="card card-header" style="width: 100%;">
-                <div style="float: left;" *ngFor="let guiaRemision of guiasRemision">
-                    <h4>Guía #{{guiaRemision.id}}</h4>
+            <div class="card card-header">
+                <div class="row">
+                    <div style="float: left;" class="col-sm-5" *ngFor="let guiaRemision of guiasRemision">
+                        <h4>Guía #{{guiaRemision.id}}</h4>
+                    </div>
+                    <div style="float: right;" class="col-sm-3">
+                        <a><button class="btn btn-info">
+                            <i class="fas fa-arrow-left"></i>
+                            <label> Regresar a ventana de recepción</label>
+                        </button></a>
+                    </div>
                 </div>
-            </div>
+             </div>
             <div class="row">
-                <div class="col-sm-5" *ngFor="let guiaRemision of guiasRemision">
+                <div class="col-sm-5" *ngFor="let guiaRemision of guiasRemision" style="margin-top: 30px;">
                     <label>
-                        PROVEEDOR:
+                        <b>
+                            PROVEEDOR:
+                        </b>
+                        
                     </label> 
                     <label >
                        <!-- {{ordenTrabajo.proveedor}} -->
@@ -34,40 +45,55 @@
                     
                     <br>
                     <label>
-                        CHOFER:
+                        <b>
+                            CHOFER:
+                        </b>
+                        
                     </label>
                     {{guiaRemision.chofer}}
                     <br>
                     <label> 
-                        PLACA:
+                        <b>
+                            PLACA:
+                        </b>
                     </label>
                     {{guiaRemision.placa}}
                 </div>
-                <div class="col-sm-3" *ngFor="let ordenTrabajo of ordenesTrabajo">
+                <div class="col-sm-3" *ngFor="let ordenTrabajo of ordenesTrabajo" style="margin-top: 30px;">
                     <label>
-                        OT:
+                        <b>
+                            OT:
+                        </b>
                     </label>
                     O/T-{{ordenTrabajo.id}}-2021
                     <br>
                     <label>
-                        LOTE:
+                        <b>
+                            LOTE:
+                        </b>
                     </label>
                     {{ordenTrabajo.lote}}
                     <br>
                     <label>
-                        MP:
+                        <b>
+                            MP:
+                        </b>
                     </label>
                     {{ordenTrabajo.producto}}
-                </div>
-                <div class="col-sm-4 text-right">
-                    <a><button class="btn btn-info">
-                        <i class="fas fa-arrow-left"></i>
-                        <label> Regresar a ventana de recepción</label>
-                    </button></a>
                 </div>
             </div>
             <hr>
             <div class="row">
+                <div class="col-sm-5">
+                    <table>
+
+                    </table>
+                </div>
+                <div class="col-sm-3">
+                    <table>
+                        
+                    </table>
+                </div>
 
             </div>
 

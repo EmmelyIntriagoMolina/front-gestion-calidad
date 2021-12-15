@@ -37,6 +37,7 @@ import { GuiaConfigComponent } from './componentes/guia-config/guia-config.compo
 import { FilterFechaPipe } from './pipes/filter-fecha/filter-fecha.pipe';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import { TrazabilidadComponent } from './componentes/trazabilidad/trazabilidad.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +63,8 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
     RecepcionComponent,
     AnalisisCalidadComponent,
     GuiaConfigComponent,
-    FilterFechaPipe
+    FilterFechaPipe,
+    TrazabilidadComponent
   ],
   imports: [
     BrowserModule, FormsModule,

@@ -4,19 +4,19 @@ import { GuiaRemisionService } from 'src/app/services/guiaRemision/guia-remision
 import { OrdenTrabajoService } from 'src/app/services/orden-trabajo.service';
 
 @Component({
-  selector: 'app-analisis-calidad',
-  templateUrl: './analisis-calidad.component.html',
-  styleUrls: ['./analisis-calidad.component.css']
+  selector: 'app-trazabilidad',
+  templateUrl: './trazabilidad.component.html',
+  styleUrls: ['./trazabilidad.component.css']
 })
-export class AnalisisCalidadComponent implements OnInit {
+export class TrazabilidadComponent implements OnInit {
 
-  ordenesTrabajo:any = []; 
+  ordenesTrabajo:any = []
   guiasRemision:any = []
+  pageActual: number = 1;
 
   constructor(private rutaActiva:ActivatedRoute, private ordenTrabajoService:OrdenTrabajoService, private guiaRemisionService:GuiaRemisionService) { }
 
   ngOnInit(): void {
-
     this.ordenesTrabajo = {
       id: this.rutaActiva.snapshot.params.id
     };
@@ -28,19 +28,18 @@ export class AnalisisCalidadComponent implements OnInit {
     )
 
     this.guiasRemision = {
-      id: this.rutaActiva.snapshot.params.id
+      id_OT: this.rutaActiva.snapshot.params.id_OT
     };
     this.rutaActiva.params.subscribe(
       (params: Params)=> {
-        this.guiasRemision.id = params.id;
-        this.guiasRemision.id = this.ordenesTrabajo.id
-        console.log("Guia",this.guiasRemision.id)
+        this.guiasRemision.id_OT = params.id_OT;
+        this.guiasRemision.id_OT = this.ordenesTrabajo.id
+        console.log("Guia",this.guiasRemision.id_OT)
       }
     )
 
     this.getOrdenTrabajoId(this.ordenesTrabajo.id)
-    this.getGuiaRemisionIdd(this.guiasRemision.id)
-
+    this.getGuiaRemisionId(this.guiasRemision.id_OT)
   }
 
   getOrdenTrabajoId(id:number){
@@ -53,8 +52,8 @@ export class AnalisisCalidadComponent implements OnInit {
     (err:any)=> console.log(err)
   }
 
-  getGuiaRemisionIdd(id:number){
-    this.guiaRemisionService.getGuiasRemisionIdd(id)
+  getGuiaRemisionId(id_OT:number){
+    this.guiaRemisionService.getGuiasRemisionId(id_OT)
     .subscribe(
       (res:any)=>{
       this.guiasRemision = res.guiaremision
@@ -62,7 +61,5 @@ export class AnalisisCalidadComponent implements OnInit {
     }),
     (err:any)=> console.log(err)
   }
-
-  
 
 }

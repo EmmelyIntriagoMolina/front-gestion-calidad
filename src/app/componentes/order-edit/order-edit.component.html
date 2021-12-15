@@ -153,20 +153,20 @@
                             <br>
                         </td>
                         <td>
-                            <input name="camaronMar" type="checkbox" value="mar" [(ngModel)]="OrdenTrabajo.camaronMar" formControlName="camaronMar"/> Camarón de mar
+                            <input name="camaronMar" type="checkbox" value="camaronMar" [(ngModel)]="OrdenTrabajo.camaronMar" formControlName="camaronMar"/> Camarón de mar
                         </td>
                     </tr>
 
                     <thead>
                         <tr>
                             <th>
-                                <label for="observacion" style="margin-top: 13px;" class="form-label" [(ngModel)]="OrdenTrabajo.observacion">Observación</label>
+                                <label for="observacion" style="margin-top: 13px;" class="form-label">Observación</label>
                             </th>
                         </tr>
                     </thead>
                     <tr>
                         <td >
-                            <textarea name="textarea" class="form-control" rows="2" cols="40" formControlName="observacion"></textarea>
+                            <textarea name="textarea" class="form-control" rows="2" cols="40" formControlName="observacion" [(ngModel)]="OrdenTrabajo.observacion"></textarea>
                         </td>
                     </tr>
                 </table>

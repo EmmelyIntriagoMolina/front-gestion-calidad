@@ -7,7 +7,7 @@ import { ordenTrabajo } from '../models/ordenTrabajo';
 })
 export class OrdenTrabajoService {
 
-  URL =`http://192.168.0.222:3333/ordenTrabajo`
+  URL =`http://192.168.0.142:3333/ordenTrabajo`
 
   constructor(private http:HttpClient) { }
 
@@ -24,8 +24,8 @@ export class OrdenTrabajoService {
     return this.http.post(`${this.URL}/ingresarOrdenTrabajo`, ordenTrabajo)
   }
 
-  putOrdenTrabajo(id:string | number, putOrdenTrabajo:ordenTrabajo){
-    return this.http.put(`${this.URL}/actualizarOrdenTrabajo/${id}`, putOrdenTrabajo);
+  putOrdenTrabajo(id:string | number, putOrdenT:ordenTrabajo){
+    return this.http.put(`${this.URL}/actualizarOrdenTrabajo/${id}`, putOrdenT);
   }
 
   putOrdenTrabajoAprobacion(id:string | number, putOrdenTrabajoAprobacion:ordenTrabajo){

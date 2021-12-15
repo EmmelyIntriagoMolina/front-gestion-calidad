@@ -12,6 +12,7 @@ import { OrderEditComponent } from './componentes/order-edit/order-edit.componen
 import { OrderFormComponent } from './componentes/order-form/order-form.component';
 import { OrderListComponent } from './componentes/order-list/order-list.component';
 import { RecepcionComponent } from './componentes/recepcion/recepcion.component';
+import { TrazabilidadComponent } from './componentes/trazabilidad/trazabilidad.component';
 import { VerOTComponent } from './componentes/ver-ot/ver-ot.component';
 
 
@@ -80,6 +81,11 @@ const routes: Routes = [
     path: 'ordenTrabajo/recepcion/guiaRemision/config/:id',
     component: GuiaConfigComponent
   },
+  {
+    path: 'ordenTrabajo/trazabilidad/:id',
+    component: TrazabilidadComponent
+  }
+  
 
   
 

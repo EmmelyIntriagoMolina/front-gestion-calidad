@@ -84,7 +84,6 @@ export class OrderEditComponent implements OnInit {
       console.log(value)
     }
   }
-
   ordenCompra:OrdenCompra = {
     codigo: 0
   }
