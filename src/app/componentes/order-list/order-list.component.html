@@ -56,8 +56,8 @@
                         
                         <tbody>
                                 <td><input class="form-control me-2" type="text" name="filterCodigo" placeholder="Código" [(ngModel)]="filterCodigo"></td>
-                                <td><input class="form-control me-2" type="date" name="filterFecha" [(ngModel)]="filterF"></td>
-                                <td><input class="form-control me-2" type="text" name="filterProv" placeholder="Proveedor" [(ngModel)]="filterProv"></td>
+                                <td><input class="form-control me-2" type="date" name="filterFecha" [(ngModel)]="filterF" style="width: 150px;"></td>
+                                <td><input class="form-control me-2" type="text" name="filterProv" placeholder="Proveedor" [(ngModel)]="filterProv" style="width: 170px;"></td>
                                 <td><input class="form-control me-2" type="text" name="filterLot" placeholder="Lote" [(ngModel)]="filterLot"></td>
                                 <td><select style="width: 110px;" class="form-select" name="filterEstadoCali" id="estadoCalidad" [(ngModel)]="filterEstadoCali">
                                     <option value="estado"></option>
@@ -72,8 +72,8 @@
                             | filterFecha: filterF
                             | filterEstadoCalidad: filterEstadoCali">
                             
-                                <td style="text-align: left; width: 150px;">O/T-{{ordenTrabajo.id}}-2021</td>
-                                <td style="text-align: left;">
+                                <td style="text-align: left; width: 100px;">O/T-{{ordenTrabajo.id}}-2021</td>
+                                <td style="text-align: left; width: 50px;">
                                     {{ordenTrabajo.fechaRegistro}}
                                     <br>
                                     {{ordenTrabajo.horaRecepcion}}

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { GuiaRemisionService } from 'src/app/services/guiaRemision/guia-remision.service';
 import { OrdenTrabajoService } from 'src/app/services/orden-trabajo.service';
 
@@ -13,7 +13,7 @@ export class AnalisisCalidadComponent implements OnInit {
   ordenesTrabajo:any = []; 
   guiasRemision:any = []
 
-  constructor(private rutaActiva:ActivatedRoute, private ordenTrabajoService:OrdenTrabajoService, private guiaRemisionService:GuiaRemisionService) { }
+  constructor(private rutaActiva:ActivatedRoute, private ordenTrabajoService:OrdenTrabajoService, private guiaRemisionService:GuiaRemisionService, private router:Router) { }
 
   ngOnInit(): void {
 
@@ -62,7 +62,5 @@ export class AnalisisCalidadComponent implements OnInit {
     }),
     (err:any)=> console.log(err)
   }
-
-  
 
 }

@@ -24,7 +24,7 @@
                         <h3>Análisis de Calidad</h3>
                     </div>
                     <div style="text-align: right;" *ngFor="let ordenTrabajo of ordenesTrabajo">
-                        <a [routerLink]="['/ordenTrabajo/guiasRemision', ordenTrabajo.id]"><button class="btn btn-danger" style="margin-right: 4px;">
+                        <a href="/"><button class="btn btn-danger" style="margin-right: 4px;">
                             <i class="fas fa-chevron-left"></i>
                             Cancelar
                         </button></a>
@@ -32,10 +32,11 @@
                             Guardar
                             <i class="fas fa-save"></i>
                         </button>
-                        <button class="btn btn-warning" style="color: white;">
+
+                        <a href="/"><button class="btn btn-warning" style="color: white;">
                             <i class="fas fa-check"></i>
                             Cerrar y Guardar Formulario
-                        </button>
+                        </button></a>
                     </div>
                 </div>
                 <table class="table table-bordered">
@@ -126,7 +127,7 @@
                             <b>T. Producto</b>
                             <br>
                             <label for="tipoProducto">
-                                {{ordenTrabajo.tipoProducto}}
+                                {{ordenTrabajo.calidad}}
                             </label>
                         </td>
                     </tr>

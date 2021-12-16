@@ -4,8 +4,7 @@
     <base href="./">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.css">
-</head>
-<body>
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.js"></script>
@@ -13,6 +12,12 @@
     <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+
+
+</head>
+<body>
+    
     <div class="text-left" style="margin-bottom: 7px;">
         <a href="/"> <button mat-button style="border-radius: 0%; margin-bottom: 10px;" class="btn btn-success"> Orden Trabajo </button></a>
         
@@ -43,7 +48,7 @@
                                 <label for="fecharegistro" style="margin-left: 5px;"> {{ordenTrabajo.fechaRegistro}} </label>
                              </td>
 
-                            <td style="width: 300px;">
+                            <td style="width: 500px;">
                                 <b style="margin-left: 5px;"> Proveedor </b>
                                 <br>
                                 <label for="proveedor" style="margin-left: 5px;"> {{ordenTrabajo.proveedor}} </label>
@@ -55,7 +60,7 @@
                                 <label for="procedencia" style="margin-left: 5px;"> {{ordenTrabajo.procedencia}}</label>
                             </td>
 
-                            <td style="width: 300px;">
+                            <td style="width: 400px;">
                                 <b style="margin-left: 5px;">Producto </b>
                                 <br>
                                 <label for="producto" style="margin-left: 5px;"> {{ordenTrabajo.producto}}</label>
@@ -80,60 +85,51 @@
                         </tr>
                         </tbody>
                     </table>
-                    
-                    <table style="text-align: left; width: 100%; margin-top: 30px">
-                        <tr>
-                            <td style="width: 100px;">
-                                <b><label for="numerolote" style="font-size: 18px;">N° Lote</label></b>
-                            </td>
-                            <td>
-                                <b><label for="estado" style="font-size: 18px;">Estado</label></b>
-                            </td>
-                            <td>
-                                <b><label for="colorcamaron" style="font-size: 18px;">Color del camarón</label></b>
-                            </td>
-                            <td>
-                                <b><label for="producto" style="font-size: 18px;">Producto</label></b>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="width: 150px;">
-                                <div class="input-group mb-3">
-                                    <div class="input-group-prepend">
-                                      <span class="input-group-text" id="basic-addon1" style="font-size: 12px;">C-</span>
-                                    </div>
-                                    <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1" style="width: 50px; font-size: 12px;"  [(ngModel)]="OrdenTrabajo.lote"readonly>
-                                </div>
-                            </td>
-                            <td>
-                                <label for="aprobado" style="font-size: 18px;"> <input type="radio" name="estado" id="aprobado" value="aprobado" [(ngModel)]="OrdenTrabajo.estadoCalidad">APROBADO</label>
-                                <label for="rechazado" style="font-size: 18px; margin-left: 7px;" ><input type="radio" name="estado" id="rechazado" value="rechazado" [(ngModel)]="OrdenTrabajo.estadoCalidad">RECHAZADO</label>
-                            </td>
-                            <td>
-                                <select name="colorcamaron" id="colorcamaron" class="form-select" style="width: 200px;" [(ngModel)]="OrdenTrabajo.colorCamaron">
-                                    <option value="a1" name="colorcamaron">A1</option>
-                                    <option value="a2" name="colorcamaron">A2</option>
-                                    <option value="a3" name="colorcamaron">A3</option>
-                                    <option value="a4" name="colorcamaron">A4</option>
-                                </select>
-                            </td>
-                            <td>
-                                <div class="btn-group" >
-                                    <input type="checkbox" checked data-toggle="toggle" data-on="A" data-off="B" data-onstyle="success" data-offstyle="danger" value="A" [(ngModel)]="OrdenTrabajo.calidad">
 
+                    <div class="row" style="margin-top: 40px;">
+                        <div class="col-sm-2 text-left" >
+                            <b><label style="font-size: 18px;">N° Lote</label></b>
+                            <br>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text" id="basic-addon1" style="font-size: 12px;">C-</span>
                                 </div>
-                            </td>
-                        </tr>
-                    
-                        <tr *ngFor="let ordenTrabajo of ordenesTrabajo" style="text-align: left;">
-                            <td>
-                                <button class="btn btn-info btn-sm" style="margin-top: 30px;" routerLink="/" (click)="actualizarOrdenTrabajoAprobacion(ordenTrabajo.id)">
-                                    <i class="far fa-save"></i>
-                                    Guardar Cambios
-                                </button>
-                            </td>
-                        </tr>
-                    </table>
+                                <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1" style="width: 50px; font-size: 12px;"  [(ngModel)]="OrdenTrabajo.lote"readonly>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 text-left">
+                            <b><label for="estado" style="font-size: 18px;">Estado</label></b>
+                            <br>
+                            <label for="aprobado" style="font-size: 18px; margin-right: 7px;"> <input type="radio" name="estado" id="aprobado" value="aprobado" [(ngModel)]="OrdenTrabajo.estadoCalidad">APROBADO</label>
+                            <label for="rechazado" style="font-size: 18px; margin-left: 7px;" ><input type="radio" name="estado" id="rechazado" value="rechazado" [(ngModel)]="OrdenTrabajo.estadoCalidad">RECHAZADO</label>
+                        </div>
+
+                        <div class="col-sm-3 text-left">
+                            <b><label for="colorcamaron" style="font-size: 18px;">Color del camarón</label></b>
+                            <br>
+                            <select name="colorcamaron" id="colorcamaron" class="form-select" style="width: 200px;" [(ngModel)]="OrdenTrabajo.colorCamaron">
+                                <option value="a1" name="colorcamaron">A1</option>
+                                <option value="a2" name="colorcamaron">A2</option>
+                                <option value="a3" name="colorcamaron">A3</option>
+                                <option value="a4" name="colorcamaron">A4</option>
+                            </select>
+                        </div>
+                        
+                        <div class="col-sm-3 text-left">
+                            <b><label for="producto" style="font-size: 18px;">Producto</label></b>
+                            <br>
+                            <input type="checkbox" data-on="A" data-off="B" checked data-toggle="toggle" data-onstyle="success" data-offstyle="danger" [(ngModel)]="OrdenTrabajo.calidad">
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="text-right" *ngFor="let ordenTrabajo of ordenesTrabajo">
+                            <button class="btn btn-info btn-sm" style="margin-top: 30px;" routerLink="/" (click)="actualizarOrdenTrabajoAprobacion(ordenTrabajo.id)">
+                                <i class="far fa-save"></i>
+                                Guardar Cambios
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

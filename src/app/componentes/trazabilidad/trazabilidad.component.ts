@@ -62,4 +62,6 @@ export class TrazabilidadComponent implements OnInit {
     (err:any)=> console.log(err)
   }
 
+  
+
 }

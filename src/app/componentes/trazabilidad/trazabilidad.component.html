@@ -86,20 +86,22 @@
                         </tbody>
                     </table>
                     <div class="row">
-                        <div class="col-sm-6" >
+                        <div class="col-sm-6" *ngFor="let ordenTrabajo of ordenesTrabajo" >
                             <label style="margin-top: 20px;">
                                 <i class="fas fa-chevron-right" style="color: rgb(31, 115, 141);"></i>
                                 Aprobación Calidad
-                                <button class="btn btn-primary btn-sm">
+                                <a [routerLink]="['/ordenTrabajo/aprobacion', ordenTrabajo.id]"><button class="btn btn-primary btn-sm">
                                     Ver
                                     <i class="fas fa-eye"></i>
-                                </button>
+                                </button> </a>
                             </label>
                         </div>
                     </div>
-                    <div style="margin-bottom: 50px;">
-                        <b><label>GUÍAS DE REMISIÓN:</label></b>
-                        <div class="pull-right">
+                    <div class="row" style="margin-bottom: 20px;">
+                        <div class="col-sm-6">
+                            <b><label>GUÍAS:</label></b>
+                        </div>
+                        <div class="col-sm-6">
                             <button class="btn btn-outline-secondary btn-sm" style="font-size: 12px; float: right;">
                                 Reporte Calidad por O/T <i class="far fa-file-pdf"></i>
                             </button>
@@ -108,24 +110,24 @@
                     <table class="table table-bordered " style="width: 100%; margin: 0 auto; text-align: left;">
                         <thead>
                             <tr style="text-align: left; background-color: #ddd; ">
-                                <th data-col-seq="0" style="color:steelblue; width: 11.12%;">Folio</th>
-                                <th class="text-center" data-col-seq="1" style="width: 17.94%;">N° Guia Prov</th>
-                                <th data-col-seq="2"  style="width: 23.68%;">Vehiculo</th>
-                                <th class="text-center" data-col-seq="3" style="width: 9.87%;">Peso</th>
-                                <th style="width: 12.56%;" data-col-seq="4">Gavetas</th>
-                                <th style="width: 16.98%;">Muestras(Lb)</th>
-                                <th style="width: 11.21%;" >Estado</th>
-                                <th style="width: 20.49%;" ></th>
-                                <th style="width: 10.96%;" ></th>
-                                <th style="width: 14.23%;" ></th>
+                                <th style="color:steelblue;">Folio</th>
+                                <th class="text-center">N° Guia Prov</th>
+                                <th >Vehiculo</th>
+                                <th class="text-center">Peso</th>
+                                <th >Gavetas</th>
+                                <th>Muestras(Lb)</th>
+                                <th style="text-align: center;" >Estado</th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
                             </tr>
                         </thead>
                         <tbody> 
                             <tr *ngFor="let guiaRemision of guiasRemision
-                            | paginate: {itemsPerPage: 15, currentPage: pageActual}" class="w0">
-                                <td style="width: 30px;">{{guiaRemision.id}}</td>
-                                <td style="text-align: center;width: 100px">{{guiaRemision.codigo}}</td>
-                                <td style="width: 150px;">
+                            | paginate: {itemsPerPage: 15, currentPage: pageActual}">
+                                <td style="width: 100px;">{{guiaRemision.id}}</td>
+                                <td style="text-align: center;width: 130px">{{guiaRemision.codigo}}</td>
+                                <td style="width: 250px;">
                                     Hora Ing: 
                                     {{guiaRemision.horaingreso}}
                                     <br>
@@ -142,26 +144,29 @@
                                     {{guiaRemision.gavetas}}
                                 </td>
                                 <td  style="text-align: center; width: 80px;">
-                                    {{guiaRemision.muestras}}
+                                    {{guiaRemision.muestra}}
                                 </td>
                                 <td  style="text-align: center; width: 150px;">
                                     <span style="color: seagreen;" *ngIf="guiaRemision.estado==1"><i class="fas fa-lock-open"></i></span>
                                 </td>
-                                <td  style="text-align: center; width: 150px;" *ngFor="let ordenTrabajo of ordenesTrabajo">
-                                    <a [routerLink]="['/ordenTrabajo/guiasRemision/', ordenTrabajo.id ,'analisisCalidad', guiaRemision.id ]"><button class="btn btn-outline-primary"> <i class="fas fa-flask"></i> Visualizar Análisis</button></a>
+                                <td  style="text-align: center; width: 250px;" *ngFor="let ordenTrabajo of ordenesTrabajo">
+                                    <a [routerLink]="['/ordenTrabajo/guiasRemision/', ordenTrabajo.id ,'analisisCalidad', guiaRemision.id ]"><button class="btn btn-outline-primary"> <i class="fas fa-flask"></i>Visualizar Análisis</button></a>
                                 </td>
-                                <td  style="text-align: center; width: 100px;">
+                                <td  style="text-align: center; width: 80px;">
                                     <button style="border-color: white; font-size: 30px;" class="btn btn-link btn-outline-secondary">
                                         <i class="far fa-file-image"></i>
                                     </button>
                                 </td>
-                                <td style="width: 150px; text-align: center;">
+                                <td style="width: 150px; text-align: left;">
                                     <button class="btn btn-outline-secondary btn-sm" style="margin-bottom: 7px;">
                                         <i class="far fa-file-pdf"></i> PDF
                                     </button>
+                                    <br>
+                                    <button class="btn btn-outline-secondary btn-sm">
+                                        <i class="far fa-file-excel"></i> XLS
+                                    </button>
                                     
                                 </td>
-                                
                             </tr>
                             <tr>
                                 <td colspan="3" style="text-align: right;">
@@ -179,6 +184,15 @@
                             </tr>
                         </tbody>
                     </table>
+                    <label style="margin-top: 50px;"> 
+                        <b>
+                            PROCESOS:
+                        </b>
+                    </label>
+                    <div class="col-sm-9 text-center" style="background-color: rgb(66, 211, 216); color: blue;">
+                        <i class="fas fa-arrow-circle-right"></i>
+                        RECEPCIÓN
+                    </div>
                     
             
         </div>
