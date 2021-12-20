@@ -18,85 +18,233 @@
     </div>
     <nav class="navbar navbar-expand-lg ">
         <div class="content">
-            <div class="card card-header">
+            <div>
+
                 <div class="row">
-                    <div style="float: left;" class="col-sm-5" *ngFor="let guiaRemision of guiasRemision">
-                        <h4>Guía #{{guiaRemision.id}}</h4>
+                    <div class="col-sm-5" style="float: left; margin-bottom: 15px;" *ngFor="let guiaRemision of guiasRemision">
+                        <label style="font-size: 30px;">Guía #{{guiaRemision.id}}</label>
                     </div>
-                    <div style="float: right;" class="col-sm-3">
-                        <a><button class="btn btn-info">
-                            <i class="fas fa-arrow-left"></i>
-                            <label> Regresar a ventana de recepción</label>
-                        </button></a>
+                    <table class="pure-table pure-table-condensed-x " style="width: 95%; margin-left: 10px;">
+                        <tr>
+                            <td *ngFor="let ordenTrabajo of ordenesTrabajo">
+                                <label>
+                                    <b>
+                                        PROVEEDOR: 
+                                    </b> 
+                                    {{ordenTrabajo.proveedor}}  
+                                </label>
+                            </td>
+
+                            <td *ngFor="let ordenTrabajo of ordenesTrabajo">
+                                <label>
+                                    <b>
+                                        OT: 
+                                    </b> 
+                                    O/T-{{ordenTrabajo.id}}-2021
+                                </label>
+                            </td>
+                            <td rowspan="3" *ngFor="let ordenTrabajo of ordenesTrabajo">
+                                <a [routerLink]="['/ordenTrabajo/recepcion', ordenTrabajo.id]"><button class="btn btn-info ">
+                                    <i class="fas fa-arrow-left"></i>
+                                    <label style="margin-left: 2px;">Regresar a ventana de recepción</label>
+                                </button></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td *ngFor="let guiaRemision of guiasRemision">
+                                <label>
+                                    <b>
+                                        CHOFER: 
+                                    </b> 
+                                    {{guiaRemision.chofer}}  
+                                </label>
+                            </td>
+
+                            <td *ngFor="let ordenTrabajo of ordenesTrabajo">
+                                <label>
+                                    <b>
+                                        LOTE: 
+                                    </b> 
+                                    {{ordenTrabajo.lote}}
+                                </label>
+                            </td>
+                            
+                        </tr>
+
+                        <tr>
+                            <td *ngFor="let guiaRemision of guiasRemision">
+                                <label>
+                                    <b>
+                                        PLACA: 
+                                    </b> 
+                                    {{guiaRemision.placa}}  
+                                </label>
+                            </td>
+
+                            <td *ngFor="let ordenTrabajo of ordenesTrabajo">
+                                <label>
+                                    <b>
+                                        MP: 
+                                    </b> 
+                                    {{ordenTrabajo.producto}}
+                                </label>
+                            </td>
+                        </tr>
+                    </table>
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="card card-header" style="margin-top: 15px; margin-bottom: 15px;">
+                                <div class="row">
+                                    <div class="col-sm-5" style="text-align: left; font-size: 30px;" >
+                                        #T1
+                                    </div>
+                                    <div class="col-sm-5" style="text-align: right;">
+                                        CP:
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="btn btn-danger btn-sm" style="margin-bottom: 15px;">
+                                <i class="fas fa-trash-alt"></i>
+                                Eliminar seleccionados
+                            </button>
+                            <table style="width: 100%;" class="pure-table pure-table-condensed-x table-hover">
+                                <thead>
+                                    <th>
+                                        <input type="checkbox">
+                                    </th>
+                                    <th>
+                                        #
+                                    </th>
+                                    <th>
+                                        P.Bruto
+                                    </th>
+                                    <th>
+                                        Peso Neto
+                                    </th>
+                                    <th>
+                                        Creado
+                                    </th>
+                                    <th>
+                                        Ingreso
+                                    </th>
+                                    <th>
+
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <input type="checkbox">
+                                        </td>
+                                        <td>
+                                            #
+                                        </td>
+                                        <td>
+                                            <div class="input-group bootstrap-touchspin bootstrap-touchspin-injected">
+                                                <input type="tel" class="peso form-control text-center" style="width: 75px;">
+                                                <button class="btn btn-success btn-sm" type="button">
+                                                    <i class="fas fa-save"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            peso neto
+                                        </td>
+                                        <td style="width: 150px;">
+                                            fecha
+                                        </td>
+                                        <td style="color: rgb(148, 12, 12);">
+                                            Manual
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-danger btn-sm" type="button">
+                                                <i class="fas fa-trash-alt"></i>
+                                                Eliminar
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="card card-header" style="margin-top: 15px; margin-bottom: 15px;">
+                                <div class="row">
+                                    <div class="col-sm-5" style="text-align: left; font-size: 30px;">
+                                        #T2
+                                    </div>
+                                    <div class="col-sm-5" style="text-align: right;">
+                                        CP:
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="btn btn-danger btn-sm" style="margin-bottom: 15px;">
+                                <i class="fas fa-trash-alt"></i>
+                                Eliminar seleccionados
+                            </button>
+                            <table style="width: 100%;" class="pure-table pure-table-condensed-x table-hover">
+                                <thead>
+                                    <th>
+                                        <input type="checkbox">
+                                    </th>
+                                    <th>
+                                        #
+                                    </th>
+                                    <th>
+                                        P.Bruto
+                                    </th>
+                                    <th>
+                                        Peso Neto
+                                    </th>
+                                    <th>
+                                        Creado
+                                    </th>
+                                    <th>
+                                        Ingreso
+                                    </th>
+                                    <th>
+
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <input type="checkbox">
+                                        </td>
+                                        <td>
+                                            #
+                                        </td>
+                                        <td>
+                                            <div class="input-group bootstrap-touchspin bootstrap-touchspin-injected">
+                                                <input type="tel" class="peso form-control text-center" style="width: 75px;">
+                                                <button class="btn btn-success btn-sm" type="button">
+                                                    <i class="fas fa-save"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            peso neto
+                                        </td>
+                                        <td style="width: 150px;">
+                                            fecha
+                                        </td>
+                                        <td style="color: rgb(148, 12, 12);">
+                                            Manual
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-danger btn-sm" type="button">
+                                                <i class="fas fa-trash-alt"></i>
+                                                Eliminar
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
                     </div>
-                </div>
-             </div>
-            <div class="row">
-                <div class="col-sm-5" *ngFor="let guiaRemision of guiasRemision" style="margin-top: 30px;">
-                    <label>
-                        <b>
-                            PROVEEDOR:
-                        </b>
-                        
-                    </label> 
-                    <label >
-                       <!-- {{ordenTrabajo.proveedor}} -->
-                    </label>
-                    
-                    <br>
-                    <label>
-                        <b>
-                            CHOFER:
-                        </b>
-                        
-                    </label>
-                    {{guiaRemision.chofer}}
-                    <br>
-                    <label> 
-                        <b>
-                            PLACA:
-                        </b>
-                    </label>
-                    {{guiaRemision.placa}}
-                </div>
-                <div class="col-sm-3" *ngFor="let ordenTrabajo of ordenesTrabajo" style="margin-top: 30px;">
-                    <label>
-                        <b>
-                            OT:
-                        </b>
-                    </label>
-                    O/T-{{ordenTrabajo.id}}-2021
-                    <br>
-                    <label>
-                        <b>
-                            LOTE:
-                        </b>
-                    </label>
-                    {{ordenTrabajo.lote}}
-                    <br>
-                    <label>
-                        <b>
-                            MP:
-                        </b>
-                    </label>
-                    {{ordenTrabajo.producto}}
                 </div>
             </div>
-            <hr>
-            <div class="row">
-                <div class="col-sm-5">
-                    <table>
-
-                    </table>
-                </div>
-                <div class="col-sm-3">
-                    <table>
-                        
-                    </table>
-                </div>
-
-            </div>
-
         </div>
     </nav>
 </body>

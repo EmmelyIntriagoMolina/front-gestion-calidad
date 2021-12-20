@@ -11,7 +11,9 @@ import { OrdenTrabajoService } from 'src/app/services/orden-trabajo.service';
 export class AnalisisCalidadComponent implements OnInit {
 
   ordenesTrabajo:any = []; 
-  guiasRemision:any = []
+  guiasRemision:any = [];
+
+
 
   constructor(private rutaActiva:ActivatedRoute, private ordenTrabajoService:OrdenTrabajoService, private guiaRemisionService:GuiaRemisionService, private router:Router) { }
 

@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import { OrdenCompra } from 'src/app/models/ordenCompra';
 import { ordenTrabajo } from 'src/app/models/ordenTrabajo';
 import { OrdenTrabajoService } from 'src/app/services/orden-trabajo.service';
-import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-order-edit',
@@ -51,6 +49,8 @@ export class OrderEditComponent implements OnInit {
     camaronMar: new FormControl()
   })
 
+  id:any;
+  editing:boolean = false;
   constructor(private ordenTrabajoService: OrdenTrabajoService, private router:Router, private rutaActiva:ActivatedRoute) { }
 
   ngOnInit() {
@@ -65,7 +65,28 @@ export class OrderEditComponent implements OnInit {
       }
     )
 
-    this.getOrdenTrabajoId(this.ordenesTrabajo.id)
+    this.getOrdenTrabajoId(this.ordenesTrabajo.id);
+
+    this.id = this.rutaActiva.snapshot.params['id'];
+
+  /*
+    if (this.id) {
+      this.editing = true;
+      this.ordenTrabajoService.getOrdenesTrabajo().subscribe(
+        (data:ordenTrabajo[])=>{
+          this.ordenesTrabajo = data;
+          this.ordenesTrabajo = this.ordenesTrabajo.find((m)=>{return m.OrdenTrabajo_id == this.id});
+        }, (error)=>{
+          console.log(error)
+        }
+        
+      )
+    }
+    else {
+      this.editing = false;
+    }
+
+  */
   }
 
   getOrdenTrabajoId(id:number){
@@ -77,6 +98,7 @@ export class OrderEditComponent implements OnInit {
     }),
     (err:any)=> console.log(err)
   }
+  
   save(event: Event){
     event.preventDefault();
     if (this.form.valid) {
@@ -84,10 +106,6 @@ export class OrderEditComponent implements OnInit {
       console.log(value)
     }
   }
-  ordenCompra:OrdenCompra = {
-    codigo: 0
-  }
-  edit : boolean = false;
 
   actualizarOrdenTrabajo(){
     this.ordenTrabajoService.putOrdenTrabajo(this.OrdenTrabajo.id, this.OrdenTrabajo)
