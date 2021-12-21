@@ -28,6 +28,7 @@ export class OrderListComponent implements OnInit{
     this.getOrdenesTrabajo();
   }
 
+  //Método para listar las órdenes de trabajo
   getOrdenesTrabajo(){
     this.ordenTrabajoService.getOrdenesTrabajo()
     .subscribe(
@@ -38,7 +39,7 @@ export class OrderListComponent implements OnInit{
     (err: any)=> console.log(err);
   }
   
-  
+  //eliminar una orden de trabajo de la lista
   deleteOrdenTrabajo(id:number){
     Swal.fire({
       title: '¿Deseas eliminar el registro?',

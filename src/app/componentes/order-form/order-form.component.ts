@@ -39,8 +39,6 @@ export class OrderFormComponent  {
 
   @HostBinding('class') classes = 'row'
 
- 
-
   OrdenTrabajo:ordenTrabajo = {
     id: 0,
     codigo: '',
@@ -82,6 +80,7 @@ export class OrderFormComponent  {
    
   }
 
+  //Guardar una nueva orden de trabajo
   guardarOrdenTrabajo() {
     Swal.fire({
       position: 'top-end',

@@ -19,8 +19,9 @@ import { GuiaFormComponent } from '../guia-form/guia-form.component';
 export class GuiaListComponent implements OnInit {
 
   totalPeso:any;
+  totalMuestras:number = 0;
   sum:any;
-  total:number = 0;
+  totalGavetas:number = 0;
   pageActual: number = 1;
   sumaTotal:number = 0;
   guiaRemision:any;
@@ -29,12 +30,34 @@ export class GuiaListComponent implements OnInit {
   logService: any;
 
   ordenesTrabajo:any = []; 
-  guiasRemision:any = []
+  guiasRemision:any = [];
+
+  GuiaRemision:GuiaRemision = {
+    id: 0,
+    id_OT:0,
+    codigo:0,
+    horaingreso: '',
+    placa: '',
+    chofer:'',
+    peso:8000,
+    gavetas:0,
+    muestra:0,
+    estado:true
+  }
 
   constructor(private ordenTrabajoService:OrdenTrabajoService,private guiaRemisionService:GuiaRemisionService ,private router:Router, private http:HttpClient, private rutaActiva:ActivatedRoute) { }
 
   ngOnInit() {
 
+     //Calculo del total de peso
+    this.totalPeso = this.guiasRemision.reduce((
+      acc: any,
+    )=> acc + (this.GuiaRemision.peso),
+    0);
+    console.log("Total: ", this.totalPeso); 
+
+
+    //Traer ID de las ordenes de trabajo
     this.ordenesTrabajo = {
       id: this.rutaActiva.snapshot.params.id
     };
@@ -44,10 +67,12 @@ export class GuiaListComponent implements OnInit {
         console.log(this.ordenesTrabajo.id)
       }
     )
-
     this.guiasRemision = {
       id_OT: this.rutaActiva.snapshot.params.id_OT
     };
+
+
+    //Traer ID de las guias de remision
     this.rutaActiva.params.subscribe(
       (params: Params)=> {
         this.guiasRemision.id_OT = params.id_OT;
@@ -56,10 +81,20 @@ export class GuiaListComponent implements OnInit {
       }
     )
 
-    this.getOrdenTrabajoId(this.ordenesTrabajo.id)
-    this.getGuiaRemisionId(this.guiasRemision.id_OT)
+    this.getOrdenTrabajoId(this.ordenesTrabajo.id);
+    this.getGuiaRemisionId(this.guiasRemision.id_OT); 
   }
 
+  getSumaPeso(): number {  
+    let suma=0; 
+    
+    //se recorre elementos y se va acumulando en suma;  
+    return suma;
+  } 
+    
+    
+
+  //listar la orden de trabajo de acuerdo al id 
   getOrdenTrabajoId(id:number){
     this.ordenTrabajoService.getOrdenTrabajoId(id)
     .subscribe(
@@ -70,6 +105,7 @@ export class GuiaListComponent implements OnInit {
     (err:any)=> console.log(err)
   }
 
+  //listar la guía de remision de acuerdo al ID
   getGuiaRemisionId(id_OT:number){
     this.guiaRemisionService.getGuiasRemisionId(id_OT)
     .subscribe(
@@ -80,16 +116,8 @@ export class GuiaListComponent implements OnInit {
     (err:any)=> console.log(err)
   }
 
-  getGuiasRemision(){
-    this.guiaRemisionService.getGuiasRemision()
-    .subscribe(
-      (res:any)=>{
-      this.guiasRemision = res.guiaremision;
-      console.log('guias', res.guiaremision)
-    }),
-    (err: any)=> console.log(err);
-  }
 
+  //eliminar una guía de remisión 
   deleteGuiaRemision(id:number){
     Swal.fire({
       title: '¿Deseas eliminar el registro?',
@@ -118,6 +146,7 @@ export class GuiaListComponent implements OnInit {
 
   }
 
+  //Abrir cuadro de diálogo para crear nueva guía
   openDialog() {
 
     const dialogConfig = new MatDialogConfig();
@@ -131,6 +160,7 @@ export class GuiaListComponent implements OnInit {
       
     }
     
+    //Método para guardar la guía creada
     private guardarGuia(guiaToInsert: GuiaRemision) {
     this.guiaRemisionService.postGuiaRemision(guiaToInsert).subscribe();
   }

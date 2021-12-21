@@ -16,11 +16,10 @@ import Swal from 'sweetalert2';
 
 export class AprobacionComponent implements OnInit {
 
-  
-
   cantidad:number=0;
   ordenesTrabajo: any = []; 
   guiasRemision: any = []; 
+  total:number = 0;
 
 
   constructor(private ordenTrabajoService:OrdenTrabajoService,private guiaRemisionService:GuiaRemisionService,  private router:Router, private rutaActiva:ActivatedRoute, private rutaActiva2:ActivatedRoute) { }
@@ -63,6 +62,7 @@ export class AprobacionComponent implements OnInit {
 
   ngOnInit() {
 
+    //Traer ID de las ordenes de trabajo
     this.ordenesTrabajo = {
       id: this.rutaActiva.snapshot.params.id
     };
@@ -73,6 +73,7 @@ export class AprobacionComponent implements OnInit {
       }
     )
 
+    //Traer ID de las guías de remisión
     this.guiasRemision = {
       id_OT: this.rutaActiva.snapshot.params.id_OT
     };
@@ -89,6 +90,7 @@ export class AprobacionComponent implements OnInit {
     
   }
 
+  //listar la orden de trabajo de acuerdo al id 
   getOrdenTrabajoId(id:number){
     this.ordenTrabajoService.getOrdenTrabajoId(id)
     .subscribe(
@@ -99,6 +101,7 @@ export class AprobacionComponent implements OnInit {
     (err:any)=> console.log(err)
   }
 
+  //listar la guía de remisión de acuerdo al id 
   getGuiaRemisionId(id_OT:number){
     this.guiaRemisionService.getGuiasRemisionId(id_OT)
     .subscribe(
@@ -109,6 +112,7 @@ export class AprobacionComponent implements OnInit {
     (err:any)=> console.log(err)
   }
 
+  //actualizar los campos de aprobación en la orden de trabajo
   actualizarOrdenTrabajoAprobacion(id:number){
     Swal.fire({
       position: 'top-end',
@@ -126,5 +130,7 @@ export class AprobacionComponent implements OnInit {
       err => console.log(err)
     )
   }
+
+
 
 }

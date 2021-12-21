@@ -45,7 +45,7 @@ import { TrazabilidadComponent } from './componentes/trazabilidad/trazabilidad.c
     OrderListComponent,
     OrderFormComponent,
     FilterPipe,
-    FilterProveedorPipe,
+    FilterProveedorPipe, 
     FilterLotePipe,
     OrderClienteListComponent,
     FilterNumeroPipe,
@@ -68,7 +68,7 @@ import { TrazabilidadComponent } from './componentes/trazabilidad/trazabilidad.c
   ],
   imports: [
     BrowserModule, FormsModule,
-    AppRoutingModule,
+    AppRoutingModule, 
     NgxPaginationModule,
     ReactiveFormsModule,
     HttpClientModule,

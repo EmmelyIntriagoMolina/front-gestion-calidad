@@ -18,6 +18,7 @@ export class RecepcionComponent implements OnInit {
 
   ngOnInit(): void {
 
+    //Tomar el id de la orden de trabajo    
     this.ordenesTrabajo = {
       id: this.rutaActiva.snapshot.params.id
     };
@@ -28,6 +29,7 @@ export class RecepcionComponent implements OnInit {
       }
     )
 
+    //Tomar el id de la guía de remisiOn    
     this.guiasRemision = {
       id_OT: this.rutaActiva.snapshot.params.id_OT
     };
@@ -42,6 +44,7 @@ export class RecepcionComponent implements OnInit {
     this.getGuiaRemisionId(this.guiasRemision.id_OT)
   }
 
+  //
   getOrdenTrabajoId(id:number){
     this.ordenTrabajoService.getOrdenTrabajoId(id)
     .subscribe(
