@@ -1,182 +1,198 @@
-<div class="text-left" style="margin-bottom: 7px;">
-    <a href="/"> <button mat-button style="border-radius: 0%;" class="btn btn-success" > Orden Trabajo </button></a>
+<!doctype html>
+<html lang="en">
+<head>
+    <base href="./">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.css">
+</head>
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     
-    <a href="/ordenCliente"> <button mat-button style="border-radius: 0%;" class="btn btn-success"> Orden Cliente</button> </a>
-</div>
-<div class="col-md-10 offset-md-1">
-    <div class="card-body">
-        <div class="registrotitle text-left">
-            <h2>Nueva Orden Trabajo</h2>
-        </div>
-        <form  [formGroup]="form" class="row g-3" style=" margin: 0 auto; width: 50%; height: 30%;" (ngSubmit)="save($event)" >
-            <table>
-                <thead>
-                        <tr>
-                            <th>
-                                <label for="codigo" class="form-label">Código</label> 
-                            </th>
-                            <th>
-                                <label for="ordenCompra" class="form-label">Orden de Compra</label>
-                            </th>
-                        </tr>
-                </thead>
-                <tr>
+    <div class="text-left" style="margin-bottom: 7px;">
+        <a href="/"> <button mat-button style="border-radius: 0%;" class="btn btn-success" > Orden Trabajo </button></a>
+        
+        <a href="/ordenCliente"> <button mat-button style="border-radius: 0%;" class="btn btn-success"> Orden Cliente</button> </a>
+    </div>
+    <div class="col-md-10 offset-md-1">
+        <div class="card-body">
+            <div class="registrotitle text-left">
+                <h2>Nueva Orden Trabajo</h2>
+            </div>
+            <form  [formGroup]="form" class="row g-3" style=" margin: 0 auto; width: 50%; height: 30%;" (ngSubmit)="save($event)" >
+                <table>
+                    <thead>
+                            <tr>
+                                <th>
+                                    <label for="codigo" class="form-label">Código</label> 
+                                </th>
+                                <th>
+                                    <label for="ordenCompra" class="form-label">Orden de Compra</label>
+                                </th>
+                            </tr>
+                    </thead>
+                    <tr>
+                            <td>
+                                <input type="text" style="width: 80%; height: 30px;" class="form-control" name="codigo" id="codigo" formControlName="codigo" autofocus [(ngModel)]="OrdenTrabajo.codigo" placeholder="O/T-245-2021" readonly value="245">
+                            </td>
+                            <td>
+                                <select type="text" style="width: 90%; height: 35px;" class="form-select" name="ordencompra" id="ordencompra" [(ngModel)]="OrdenTrabajo.ordenCompra">
+                                    <option value="ordencompra">001-002-0000000001</option>
+                                    <option value="ordencompra">001-002-0000000002</option>
+                                    <option value="ordencompra">001-002-0000000003</option>
+                                </select>
+                            </td>
+                    </tr>
+
+                    <thead>
+                            <tr>
+                                <th>
+                                    <label for="fechaRegistro" style="margin-top: 12px;" class="form-label">Fecha Registro</label>
+                                </th>
+                                <th>
+                                    <label for="horaRecepcion" style="margin-top: 12px;" class="form-label">Hora Recepción</label>
+                                </th>
+                            </tr>
+                    </thead>
+                    <tr>
+                        
                         <td>
-                            <input type="text" style="width: 80%; height: 30px;" class="form-control" name="codigo" id="codigo" formControlName="codigo" autofocus [(ngModel)]="OrdenTrabajo.codigo" placeholder="O/T-245-2021" readonly value="245">
+                            <input type="date" ui-date-format="yyyy-mm-dd" class="form-control input-sm krajee-datepicker" style="width: 80%; height: 30px;" name="fechaRegistro" id="fechaRegistro" value="aaaa-mm-dd" formControlName="fechaRegistro" [(ngModel)]="OrdenTrabajo.fechaRegistro" data-dataepicker-source="ordentrabajo-fecha-kvdate" data-datepicker-type="2" data-krajee-kvdatepicker="kvDatepicker_a2be5271">
+                                
+                                
                         </td>
                         <td>
-                            <select type="text" style="width: 90%; height: 35px;" class="form-select" name="ordencompra" id="ordencompra" [(ngModel)]="OrdenTrabajo.ordenCompra">
-                                <option value="ordencompra">001-002-0000000001</option>
-                                <option value="ordencompra">001-002-0000000002</option>
-                                <option value="ordencompra">001-002-0000000003</option>
+                            <input type="time" class="form-control" style="width: 80%; height: 30px;" name="horaRecepcion" value="hh:mm:ss" id="horaRecepcion" formControlName="horaRecepcion" [(ngModel)]="OrdenTrabajo.horaRecepcion">
+            
+                        </td>
+                    </tr>
+
+                    <thead>
+                            <tr>
+                                <th>
+                                    <label for="proveedor" style="margin-top: 12px;" class="form-label">Proveedor</label>
+                                </th>
+                            </tr>
+                    </thead>
+                    <tr>
+                        <td colspan="2">
+                            <ng-select type="text" style="width: 92%; height: 35px;" class="form-select" name="proveedor" id="proveedor"  
+                                [items]="rt"
+                                bindLabel="proveedor"
+                                bindValue="id"
+                                [(ngModel)]="OrdenTrabajo.proveedor"
+                                [ngModelOptions]="{standalone: true}">
+                            </ng-select>
+                        </td>
+                    </tr>
+                    <thead>
+                        <tr>
+                            <th>
+                                <label for="procedencia" style="margin-top: 12px;" class="form-label">Procedencia</label>
+                            </th>
+                            <th>
+                                <label for="piscina" style="margin-top: 12px;" class="form-label">Piscina</label>
+                            </th>
+                                
+                        </tr>
+                    </thead>
+                    <tr>
+                        <td>
+                            <input type="text" class="form-control" style="width: 80%; height: 30px;" name="procedencia" id="procedencia" formControlName="procedencia" [(ngModel)]="OrdenTrabajo.procedencia" required>  
+                            <span *ngIf="this.form.get('procedencia')?.errors?.required" style="color: red;">
+                                
+                            </span>
+                        </td>
+                        <td>
+                            <input type="text" class="form-control" style="width: 80%; height: 30px;" name="piscina" id="piscina" formControlName="piscina" [(ngModel)]="OrdenTrabajo.piscina" required>
+                            <span *ngIf="this.form.get('piscina')?.errors?.required" style="color: red;">
+                            
+                            </span>
+                        </td>  
+                    </tr>
+                    <thead>
+                        <tr>
+                            <th>
+                                <label for="producto" style="margin-top: 12px; color: red;" class="form-label">Producto</label>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tr>
+                        <td colspan="2">   
+                            <select type="text"class="form-select"  style="width: 92%; height: 35px;"  name="producto" id="producto" formControlName="producto" [(ngModel)]="OrdenTrabajo.producto">
+                                <option>CAMARON ENTERO</option>
+                                <option>CAMARON COLA</option>
+                                <option>CAMARON PYD</option>
+                                <option>CAMARON IQF</option>
+                                <option>LANGOSTA ROJA</option>
+                                <option>CALAMAR</option>  
+                                <option>CORVINA PLATEADA</option>
+                                <option>DORADO</option>
+                                <option>ESCOLAR</option>
+                                <option>ESPADA</option>
+                                <option>WAHOO</option>
+                                <option>TINTO</option>
+                                <option>RABON</option>
+                                <option>PICUDO</option>
+                                <option>BOTELLA</option>
+                                <option>CARITA</option>
+                                <option>CORBATA</option>
+                                <option>CORNETA</option>
+                                <option>MERLUZA</option>
+                                <option>PAMPANO</option>
+                                <option>PINCHAGUA</option>
+                                <option>TROMPETA</option>
+                                <option>SARDINA</option>
+                                <option>HOJITA</option>
+                                <option>CORVINA ROCA</option>
+                                <option>MURICO</option>
+                                <option>LANGOSTINO ENTERO</option>
+                                <option>ESPECIES VARIAS</option>
+
                             </select>
                         </td>
-                </tr>
+                    </tr>
 
-                <thead>
+                    <thead>
                         <tr>
                             <th>
-                                <label for="fechaRegistro" style="margin-top: 12px;" class="form-label">Fecha Registro</label>
-                            </th>
-                            <th>
-                                <label for="horaRecepcion" style="margin-top: 12px;" class="form-label">Hora Recepción</label>
-                            </th>
+                                <label for="tipoProducto" style="margin-top: 13px;" class="form-label">Tipo Producto</label>
+                            </th> 
                         </tr>
-                </thead>
-                <tr>
-                    
-                    <td>
-                        <input type="date" ui-date-format="yyyy-mm-dd" class="form-control input-sm krajee-datepicker" style="width: 80%; height: 30px;" name="fechaRegistro" id="fechaRegistro" value="aaaa-mm-dd" formControlName="fechaRegistro" [(ngModel)]="OrdenTrabajo.fechaRegistro" data-dataepicker-source="ordentrabajo-fecha-kvdate" data-datepicker-type="2" data-krajee-kvdatepicker="kvDatepicker_a2be5271">
-                            
-                            
-                    </td>
-                    <td>
-                        <input type="time" class="form-control" style="width: 80%; height: 30px;" name="horaRecepcion" value="hh:mm:ss" id="horaRecepcion" formControlName="horaRecepcion" [(ngModel)]="OrdenTrabajo.horaRecepcion">
-        
-                    </td>
-                </tr>
-
-                <thead>
+                    </thead>
+                    <tr> 
+                        <td>
+                            <label for="tipoProducto"><input type="radio" [(ngModel)]="OrdenTrabajo.tipoProductoC" formControlName="tipoProducto" value="Camaron para clasificar" name="clasificar"> Camarón para Clasificar </label>
+                            <br/>
+                            <label for="tipoProducto"><input type="radio" [(ngModel)]="OrdenTrabajo.tipoProductoD" formControlName="tipoProducto" value="Camaron para descabezar" name="descabezar"> Camarón para Descabezar </label>
+                            <br>
+                        </td>
+                        <td>
+                            <label for="camaronMar"><input name="camaronMar" type="checkbox" value="mar" [(ngModel)]="OrdenTrabajo.camaronMar" formControlName="camaronMar"/> Camarón de mar </label>
+                        </td>
+                    </tr>
+                    <thead>
                         <tr>
                             <th>
-                                <label for="proveedor" style="margin-top: 12px;" class="form-label">Proveedor</label>
+                                <label for="observacion" style="margin-top: 13px;" class="form-label">Observación</label>
                             </th>
                         </tr>
-                </thead>
-                <tr>
-                    <td colspan="2">
-                        <ng-select type="text" style="width: 92%; height: 35px;" class="form-select" name="proveedor" id="proveedor"  
-                            [items]="rt"
-                            bindLabel="proveedor"
-                            bindValue="id"
-                            [(ngModel)]="OrdenTrabajo.proveedor"
-                            [ngModelOptions]="{standalone: true}">
-                        </ng-select>
-                    </td>
-                </tr>
-                <thead>
+                    </thead>
                     <tr>
-                        <th>
-                            <label for="procedencia" style="margin-top: 12px;" class="form-label">Procedencia</label>
-                        </th>
-                        <th>
-                            <label for="piscina" style="margin-top: 12px;" class="form-label">Piscina</label>
-                        </th>
-                            
+                        <td>
+                            <textarea name="textarea" class="form-control" rows="2" cols="40" [(ngModel)]="OrdenTrabajo.observacion" formControlName="observacion"></textarea>
+                        </td>
                     </tr>
-                </thead>
-                <tr>
-                    <td>
-                        <input type="text" class="form-control" style="width: 80%; height: 30px;" name="procedencia" id="procedencia" formControlName="procedencia" [(ngModel)]="OrdenTrabajo.procedencia" required>  
-                        <span *ngIf="this.form.get('procedencia')?.errors?.required" style="color: red;">
-                               
-                        </span>
-                    </td>
-                    <td>
-                        <input type="text" class="form-control" style="width: 80%; height: 30px;" name="piscina" id="piscina" formControlName="piscina" [(ngModel)]="OrdenTrabajo.piscina" required>
-                        <span *ngIf="this.form.get('piscina')?.errors?.required" style="color: red;">
-                           
-                        </span>
-                    </td>  
-                </tr>
-                <thead>
-                    <tr>
-                        <th>
-                            <label for="producto" style="margin-top: 12px; color: red;" class="form-label">Producto</label>
-                        </th>
-                    </tr>
-                </thead>
-                <tr>
-                    <td colspan="2">   
-                        <select type="text"class="form-select"  style="width: 92%; height: 35px;"  name="producto" id="producto" formControlName="producto" [(ngModel)]="OrdenTrabajo.producto">
-                            <option>CAMARON ENTERO</option>
-                            <option>CAMARON COLA</option>
-                            <option>CAMARON PYD</option>
-                            <option>CAMARON IQF</option>
-                            <option>LANGOSTA ROJA</option>
-                            <option>CALAMAR</option>  
-                            <option>CORVINA PLATEADA</option>
-                            <option>DORADO</option>
-                            <option>ESCOLAR</option>
-                            <option>ESPADA</option>
-                            <option>WAHOO</option>
-                            <option>TINTO</option>
-                            <option>RABON</option>
-                            <option>PICUDO</option>
-                            <option>BOTELLA</option>
-                            <option>CARITA</option>
-                            <option>CORBATA</option>
-                            <option>CORNETA</option>
-                            <option>MERLUZA</option>
-                            <option>PAMPANO</option>
-                            <option>PINCHAGUA</option>
-                            <option>TROMPETA</option>
-                            <option>SARDINA</option>
-                            <option>HOJITA</option>
-                            <option>CORVINA ROCA</option>
-                            <option>MURICO</option>
-                            <option>LANGOSTINO ENTERO</option>
-                            <option>ESPECIES VARIAS</option>
-
-                        </select>
-                    </td>
-                </tr>
-
-                <thead>
-                    <tr>
-                        <th>
-                            <label for="tipoProducto" style="margin-top: 13px;" class="form-label">Tipo Producto</label>
-                        </th> 
-                    </tr>
-                </thead>
-                <tr> 
-                    <td>
-                        <label for="tipoProducto"><input type="radio" [(ngModel)]="OrdenTrabajo.tipoProductoC" formControlName="tipoProducto" value="Camaron para clasificar" name="clasificar"> Camarón para Clasificar </label>
-                        <br/>
-                        <label for="tipoProducto"><input type="radio" [(ngModel)]="OrdenTrabajo.tipoProductoD" formControlName="tipoProducto" value="Camaron para descabezar" name="descabezar"> Camarón para Descabezar </label>
-                        <br>
-                    </td>
-                    <td>
-                        <label for="camaronMar"><input name="camaronMar" type="checkbox" value="mar" [(ngModel)]="OrdenTrabajo.camaronMar" formControlName="camaronMar"/> Camarón de mar </label>
-                    </td>
-                </tr>
-                <thead>
-                    <tr>
-                        <th>
-                            <label for="observacion" style="margin-top: 13px;" class="form-label">Observación</label>
-                        </th>
-                    </tr>
-                </thead>
-                <tr>
-                    <td>
-                        <textarea name="textarea" class="form-control" rows="2" cols="40" [(ngModel)]="OrdenTrabajo.observacion" formControlName="observacion"></textarea>
-                    </td>
-                </tr>
-            </table>
-            <div>
-                <button class="btn btn-success"  style="margin-top: 30px;" type="button" routerLink="/" (click)="guardarOrdenTrabajo()"  [disabled]="form.invalid">Crear Orden</button>
-                <button class="btn btn-success "  style="margin-left: 10px; margin-top: 30px;" routerLink="/">Cancelar</button>
-            </div>
-        </form>
+                </table>
+                <div>
+                    <button class="btn btn-success"  style="margin-top: 30px;" type="button" routerLink="/" (click)="guardarOrdenTrabajo()"  [disabled]="form.invalid">Crear Orden</button>
+                    <button class="btn btn-success "  style="margin-left: 10px; margin-top: 30px;" routerLink="/">Cancelar</button>
+                </div>
+            </form>
+        </div>
     </div>
-</div>
+</body>
+</html>

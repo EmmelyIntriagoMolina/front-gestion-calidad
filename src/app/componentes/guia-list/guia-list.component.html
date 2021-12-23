@@ -166,29 +166,24 @@
                                     </button>
                                 </td>
                             </tr>
+                            <tr >
+                                <td colspan="3" style="text-align: right;">
+                                    <b>Total</b>
+
+                                </td>
+                                <td style="text-align: center; width: 82px;">
+                                    <!-- {{getSumaPeso()}} -->
+                                </td>
+                                <td style="text-align: center; width: 82px;">
+                                    <!-- {{getSumaGavetas()}}-->
+                                </td>
+                                <td style="text-align: center; width: 82px;">
+                                    <!-- {{getSumaMuestras()}}-->
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
-                    <table class="table table-bordered">
-                        <tr>
-                            <td style="width: 96px;"></td>
-                            <td style="width: 124px"></td>
-                            <td style="width: 233px;"></td>
-                            <td style="text-align: center; width: 82px;">
-                                {{ getSumaPeso() }}
-                            </td>
-                            <td style="text-align: center; width: 82px;">
-                                {{GuiaRemision.gavetas}}
-                            </td>
-                            <td style="text-align: center; width: 82px;">
-                                {{GuiaRemision.muestra}}
-                            </td>
-                            <td style="width: 150px;"></td>
-                            <td style="width: 150px;"></td>
-                            <td style="width: 100px;"></td>
-                            <td style="width: 150px;"></td>
-                            <td style="width: 50px;"></td>
-                        </tr>
-                    </table>
+                    
                     <pagination-controls (pageChange)="pageActual = $event"></pagination-controls>
                </div>
         </div>

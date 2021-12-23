@@ -86,14 +86,48 @@ export class GuiaListComponent implements OnInit {
   }
 
   getSumaPeso(): number {  
+    
     let suma=0; 
     
+    for (let i = 0; i < this.guiasRemision.length; i++) {
+      const element = this.guiasRemision.peso[i];
+      console.log("suma" , +element)
+      suma = suma + element
+      
+    }
+    //se recorre elementos y se va acumulando en suma;  
+    return suma;
+  } 
+
+  getSumaGavetas(): number {  
+
+    let suma=0; 
+    
+    for (let i = 0; i < this.guiasRemision.length; i++) {
+      const element = this.guiasRemision.peso[i];
+      console.log("suma" , +element)
+      suma = suma + element
+      
+    }
+    //se recorre elementos y se va acumulando en suma;  
+    return suma;
+  } 
+
+  getSumaMuestras() {  
+    
+    let suma=0; 
+    
+    for (let i = 0; i < this.guiasRemision.length; i++) {
+      const element = this.guiasRemision.peso[i];
+      console.log("suma" , +element)
+      suma = suma + element
+      
+    }
     //se recorre elementos y se va acumulando en suma;  
     return suma;
   } 
     
     
-
   //listar la orden de trabajo de acuerdo al id 
   getOrdenTrabajoId(id:number){
     this.ordenTrabajoService.getOrdenTrabajoId(id)
@@ -115,7 +149,6 @@ export class GuiaListComponent implements OnInit {
     }),
     (err:any)=> console.log(err)
   }
-
 
   //eliminar una guía de remisión 
   deleteGuiaRemision(id:number){
@@ -142,10 +175,6 @@ export class GuiaListComponent implements OnInit {
     })
   }
 
-  open(){
-
-  }
-
   //Abrir cuadro de diálogo para crear nueva guía
   openDialog() {
 
@@ -164,6 +193,4 @@ export class GuiaListComponent implements OnInit {
     private guardarGuia(guiaToInsert: GuiaRemision) {
     this.guiaRemisionService.postGuiaRemision(guiaToInsert).subscribe();
   }
-
-
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { GuiaRemision } from 'src/app/models/guiaRemision';
+import { lote } from 'src/app/models/lote';
 import { ordenTrabajo } from 'src/app/models/ordenTrabajo';
 import { GuiaRemisionService } from 'src/app/services/guiaRemision/guia-remision.service';
 import { OrdenTrabajoService } from 'src/app/services/orden-trabajo.service';
@@ -32,7 +33,6 @@ export class AprobacionComponent implements OnInit {
     }
   }
 
-
   form: FormGroup = new FormGroup({
     lote : new FormControl(),
     colorCamaron : new FormControl(),
@@ -58,6 +58,14 @@ export class AprobacionComponent implements OnInit {
     estadoCalidad:'',
     calidad:'',
     colorCamaron:''
+  }
+
+  Lote:lote = {
+    nlote:0,
+    estadoCalidad:'',
+    colorCamaron:'',
+    calidad:'',
+    id_OT:0
   }
 
   ngOnInit() {
@@ -113,7 +121,7 @@ export class AprobacionComponent implements OnInit {
   }
 
   //actualizar los campos de aprobación en la orden de trabajo
-  actualizarOrdenTrabajoAprobacion(id:number){
+  putOrdenTrabajoAprobacion(id:number){
     Swal.fire({
       position: 'top-end',
       icon: 'success',
@@ -123,14 +131,14 @@ export class AprobacionComponent implements OnInit {
     })
     this.ordenTrabajoService.putOrdenTrabajoAprobacion(this.OrdenTrabajo.id, this.OrdenTrabajo)
     .subscribe(
-      res=> {
-        console.log(res);
+      res => {
+        console.log(res)
+        this.getOrdenTrabajoId(id); 
+        console.log("actualizado")
         this.router.navigate(['/']);
       },
       err => console.log(err)
     )
   }
-
-
 
 }

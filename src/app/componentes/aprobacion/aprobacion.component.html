@@ -25,7 +25,7 @@
         <div class="content"> 
             <div class="card text-center">
                 <div class="card card-header registrotitle text-left">
-                    <h3>Aprobación de Lote</h3>  
+                    <label style="font-size: 30px;">Aprobación de Lote</label>  
                     <div style="text-align: right; margin-bottom: 20px;">
                         <div>
                             <a href="/"><button class="btn btn-danger" style="margin-right: 7px;">
@@ -83,7 +83,7 @@
                         </tr>
                         </tbody>
                     </table>
-
+                    <!--GUARDAR EN TABLA LOTE-->
                     <div class="row" style="margin-top: 40px;">
                         <div class="col-sm-2 text-left" >
                             <b><label style="font-size: 18px;">N° Lote</label></b>
@@ -92,20 +92,20 @@
                                 <div class="input-group-prepend">
                                   <span class="input-group-text" id="basic-addon1" style="font-size: 12px;">C-</span>
                                 </div>
-                                <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1" style="width: 50px; font-size: 12px;"  [(ngModel)]="OrdenTrabajo.lote"readonly>
+                                <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1" style="width: 50px; font-size: 12px;"  [(ngModel)]="Lote.nlote"readonly>
                             </div>
                         </div>
                         <div class="col-sm-4 text-left">
                             <b><label for="estado" style="font-size: 18px;">Estado</label></b>
                             <br>
-                            <label for="aprobado" style="font-size: 18px; margin-right: 7px;"> <input type="radio" name="estado" id="aprobado" value="aprobado" [(ngModel)]="OrdenTrabajo.estadoCalidad">APROBADO</label>
-                            <label for="rechazado" style="font-size: 18px; margin-left: 7px;" ><input type="radio" name="estado" id="rechazado" value="rechazado" [(ngModel)]="OrdenTrabajo.estadoCalidad">RECHAZADO</label>
+                            <label for="aprobado" style="font-size: 18px; margin-right: 7px;"> <input type="radio" name="estado" id="aprobado" value="aprobado" [(ngModel)]="Lote.estadoCalidad">APROBADO</label>
+                            <label for="rechazado" style="font-size: 18px; margin-left: 7px;" ><input type="radio" name="estado" id="rechazado" value="rechazado" [(ngModel)]="Lote.estadoCalidad">RECHAZADO</label>
                         </div>
 
                         <div class="col-sm-3 text-left">
                             <b><label for="colorcamaron" style="font-size: 18px;">Color del camarón</label></b>
                             <br>
-                            <select name="colorcamaron" id="colorcamaron" class="form-select" style="width: 200px;" [(ngModel)]="OrdenTrabajo.colorCamaron">
+                            <select name="colorcamaron" id="colorcamaron" class="form-select" style="width: 200px;" [(ngModel)]="Lote.colorCamaron">
                                 <option value="a1" name="colorcamaron">A1</option>
                                 <option value="a2" name="colorcamaron">A2</option>
                                 <option value="a3" name="colorcamaron">A3</option>
@@ -116,13 +116,13 @@
                         <div class="col-sm-3 text-left">
                             <b><label for="producto" style="font-size: 18px;">Producto</label></b>
                             <br>
-                            <input type="checkbox" data-on="A" data-off="B" checked data-toggle="toggle" data-onstyle="success" data-offstyle="danger" [(ngModel)]="OrdenTrabajo.calidad">
+                            <input type="checkbox" data-on="A" data-off="B" checked data-toggle="toggle" data-onstyle="success" data-offstyle="danger" [(ngModel)]="Lote.calidad">
                         </div>
 
                     </div>
                     <div class="row">
                         <div class="text-right" *ngFor="let ordenTrabajo of ordenesTrabajo">
-                            <button class="btn btn-info btn-sm" style="margin-top: 30px;" routerLink="/" (click)="actualizarOrdenTrabajoAprobacion(ordenTrabajo.id)">
+                            <button class="btn btn-info btn-sm" style="margin-top: 30px;" routerLink="/" (click)="putOrdenTrabajoAprobacion(ordenTrabajo.id)">
                                 <i class="far fa-save"></i>
                                 Guardar Cambios
                             </button>

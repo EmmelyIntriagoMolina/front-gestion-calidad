@@ -19,9 +19,9 @@
         <div class="content">  
             
             <table>
-                <tr  *ngFor="let ordenTrabajo of ordenesTrabajo">
-                    <td class="card card-header registrotitle text-left" style="width: 300%;">
-                        <h3>Orden Trabajo O/T-{{ordenTrabajo.codigo}}-2021 </h3>
+                <tr>
+                    <td class="card card-header registrotitle text-left" style="width: 300%;" *ngFor="let ordenTrabajo of ordenesTrabajo">
+                        <label style="font-size: 30px;">Orden Trabajo O/T-{{ordenTrabajo.id}}-2021 </label>
                     </td>
                 </tr>
             </table>
