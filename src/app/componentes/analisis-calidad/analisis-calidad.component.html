@@ -19,7 +19,7 @@
     <nav class="navbar navbar-expand-lg ">
         <div class="content">
             <div>
-                <div class="card card-header" style="width: 100%; height: 110px;">
+                <div class="card card-header" style="width: 100%; height: 120px;">
                     <div style="float: left;">
                         <label style="font-size: 30px;">Análisis de Calidad</label>
                     </div>
@@ -151,7 +151,7 @@
                                 <th class="col-md-3 col-xs-4">Peso Total</th>
                                 <th class="col-md-3 col-xs-4">%</th>
                             </tr>
-                            <tr>
+                            <tr >
                                 <td rowspan="6" style="vertical-align: middle;" class="text-center">
                                     21-25
                                 </td>
@@ -164,13 +164,13 @@
                                 <td class="touchpin">
                                     <div class="input-group bootstrap-touchspin bootstrap-touchspin-injected">
                                         <span class="input-group-btn input-group-prepend">
-                                            <button class="btn btn-info bootstrap-touchspin-down" type="button">
+                                            <button class="btn btn-info bootstrap-touchspin-down btn-sm" type="button">
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
-                                        <input type="tel" class="numero form-control unidades_calidad text-center" style="width: 20px;">
+                                        <input type="number" class="numero form-control unidades_calidad text-center" style="width: 20px;" value="{{totalCamaron1}}"> 
                                         <span class="input-group-btn input-group-append">
-                                            <button class="btn btn-primary bootstrap-touchspin-up" type="button">
+                                            <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
                                             </button>
                                         </span>
@@ -178,13 +178,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: -10px; ">
-                                       
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal1}}">
+                                        
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: -10px; " >
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc1}}">
                                         
                                     </div>
                                 </td>
@@ -199,13 +199,13 @@
                                 <td class="touchpin">
                                     <div class="input-group bootstrap-touchspin bootstrap-touchspin-injected">
                                         <span class="input-group-btn input-group-prepend">
-                                            <button class="btn btn-info bootstrap-touchspin-down" type="button">
+                                            <button class="btn btn-info bootstrap-touchspin-down btn-sm" type="button">
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
                                         <input type="tel" class="numero form-control unidades_calidad text-center">
                                         <span class="input-group-btn input-group-append">
-                                            <button class="btn btn-primary bootstrap-touchspin-up" type="button">
+                                            <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
                                             </button>
                                         </span>
@@ -214,13 +214,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: -10px;">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal2}}">
                                        
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: -10px;">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc2}}">
                                         
                                     </div>
                                 </td>
@@ -235,13 +235,13 @@
                                 <td class="touchpin">
                                     <div class="input-group bootstrap-touchspin bootstrap-touchspin-injected">
                                         <span class="input-group-btn input-group-prepend">
-                                            <button class="btn btn-info bootstrap-touchspin-down" type="button">
+                                            <button class="btn btn-info bootstrap-touchspin-down btn-sm" type="button">
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
                                         <input type="tel" class="numero form-control unidades_calidad text-center">
                                         <span class="input-group-btn input-group-append">
-                                            <button class="btn btn-primary bootstrap-touchspin-up" type="button">
+                                            <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
                                             </button>
                                         </span>
@@ -250,13 +250,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: -10px;">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal3}}">
                                        
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: -10px;">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc3}}">
                                         
                                     </div>
                                 </td>
@@ -271,13 +271,13 @@
                                 <td class="touchpin">
                                     <div class="input-group bootstrap-touchspin bootstrap-touchspin-injected">
                                         <span class="input-group-btn input-group-prepend">
-                                            <button class="btn btn-info bootstrap-touchspin-down" type="button">
+                                            <button class="btn btn-info bootstrap-touchspin-down btn-sm" type="button">
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
                                         <input type="tel" class="numero form-control unidades_calidad text-center">
                                         <span class="input-group-btn input-group-append">
-                                            <button class="btn btn-primary bootstrap-touchspin-up" type="button">
+                                            <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
                                             </button>
                                         </span>
@@ -286,13 +286,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: -10px;">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal4}}">
                                        
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: -10px;">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc4}}">
                                         
                                     </div>
                                 </td>
@@ -307,13 +307,13 @@
                                 <td class="touchpin">
                                     <div class="input-group bootstrap-touchspin bootstrap-touchspin-injected">
                                         <span class="input-group-btn input-group-prepend">
-                                            <button class="btn btn-info bootstrap-touchspin-down" type="button">
+                                            <button class="btn btn-info bootstrap-touchspin-down btn-sm" type="button">
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
                                         <input type="tel" class="numero form-control unidades_calidad text-center">
                                         <span class="input-group-btn input-group-append">
-                                            <button class="btn btn-primary bootstrap-touchspin-up" type="button">
+                                            <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
                                             </button>
                                         </span>
@@ -322,13 +322,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: -10px;">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal5}}">
                                        
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: -10px;">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc5}}">
                                         
                                     </div>
                                 </td>
@@ -343,13 +343,13 @@
                                 <td class="touchpin">
                                     <div class="input-group bootstrap-touchspin bootstrap-touchspin-injected">
                                         <span class="input-group-btn input-group-prepend">
-                                            <button class="btn btn-info bootstrap-touchspin-down" type="button">
+                                            <button class="btn btn-info bootstrap-touchspin-down btn-sm" type="button">
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
                                         <input type="tel" class="numero form-control unidades_calidad text-center">
                                         <span class="input-group-btn input-group-append">
-                                            <button class="btn btn-primary bootstrap-touchspin-up" type="button">
+                                            <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
                                             </button>
                                         </span>
@@ -358,13 +358,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: -10px;">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal6}}">
                                        
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: -10px;">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc6}}">
                                         
                                     </div>
                                 </td>
@@ -382,13 +382,13 @@
                                 <td class="touchpin">
                                     <div class="input-group bootstrap-touchspin bootstrap-touchspin-injected">
                                         <span class="input-group-btn input-group-prepend">
-                                            <button class="btn btn-info bootstrap-touchspin-down" type="button">
+                                            <button class="btn btn-info bootstrap-touchspin-down btn-sm" type="button">
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
                                         <input type="tel" class="numero form-control unidades_calidad text-center">
                                         <span class="input-group-btn input-group-append">
-                                            <button class="btn btn-primary bootstrap-touchspin-up" type="button">
+                                            <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
                                             </button>
                                         </span>
@@ -397,13 +397,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: -10px;">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal7}}">
                                        
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: -10px;">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc7}}">
                                         
                                     </div>
                                 </td>
@@ -418,13 +418,13 @@
                                 <td class="touchpin">
                                     <div class="input-group bootstrap-touchspin bootstrap-touchspin-injected">
                                         <span class="input-group-btn input-group-prepend">
-                                            <button class="btn btn-info bootstrap-touchspin-down" type="button">
+                                            <button class="btn btn-info bootstrap-touchspin-down btn-sm" type="button">
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
                                         <input type="tel" class="numero form-control unidades_calidad text-center">
                                         <span class="input-group-btn input-group-append">
-                                            <button class="btn btn-primary bootstrap-touchspin-up" type="button">
+                                            <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
                                             </button>
                                         </span>
@@ -433,13 +433,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: -10px;">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal8}}">
                                        
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: -10px;">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc8}}">
                                         
                                     </div>
                                 </td>
@@ -454,13 +454,13 @@
                                 <td class="touchpin">
                                     <div class="input-group bootstrap-touchspin bootstrap-touchspin-injected">
                                         <span class="input-group-btn input-group-prepend">
-                                            <button class="btn btn-info bootstrap-touchspin-down" type="button">
+                                            <button class="btn btn-info bootstrap-touchspin-down btn-sm" type="button">
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
                                         <input type="tel" class="numero form-control unidades_calidad text-center">
                                         <span class="input-group-btn input-group-append">
-                                            <button class="btn btn-primary bootstrap-touchspin-up" type="button">
+                                            <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
                                             </button>
                                         </span>
@@ -469,13 +469,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: -10px;">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal9}}">
                                        
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: -10px;">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc9}}">
                                         
                                     </div>
                                 </td>
@@ -490,13 +490,13 @@
                                 <td class="touchpin">
                                     <div class="input-group bootstrap-touchspin bootstrap-touchspin-injected">
                                         <span class="input-group-btn input-group-prepend">
-                                            <button class="btn btn-info bootstrap-touchspin-down" type="button">
+                                            <button class="btn btn-info bootstrap-touchspin-down btn-sm" type="button">
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
                                         <input type="tel" class="numero form-control unidades_calidad text-center">
                                         <span class="input-group-btn input-group-append">
-                                            <button class="btn btn-primary bootstrap-touchspin-up" type="button">
+                                            <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
                                             </button>
                                         </span>
@@ -505,13 +505,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: -10px;">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal10}}">
                                        
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: -10px;">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc10}}">
                                         
                                     </div>
                                 </td>
@@ -526,13 +526,13 @@
                                 <td class="touchpin">
                                     <div class="input-group bootstrap-touchspin bootstrap-touchspin-injected">
                                         <span class="input-group-btn input-group-prepend">
-                                            <button class="btn btn-info bootstrap-touchspin-down" type="button">
+                                            <button class="btn btn-info bootstrap-touchspin-down btn-sm" type="button">
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
                                         <input type="tel" class="numero form-control unidades_calidad text-center">
                                         <span class="input-group-btn input-group-append">
-                                            <button class="btn btn-primary bootstrap-touchspin-up" type="button">
+                                            <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
                                             </button>
                                         </span>
@@ -541,13 +541,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: -10px;">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal11}}">
                                        
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: -10px;">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc11}}">
                                         
                                     </div>
                                 </td> 
@@ -566,13 +566,13 @@
                                     <td class="touchpin">
                                         <div class="input-group bootstrap-touchspin bootstrap-touchspin-injected">
                                             <span class="input-group-btn input-group-prepend">
-                                                <button class="btn btn-info bootstrap-touchspin-down" type="button">
+                                                <button class="btn btn-info bootstrap-touchspin-down btn-sm" type="button">
                                                     <i class="fas fa-minus-circle"></i>
                                                 </button>
                                             </span>
                                             <input type="tel" class="numero form-control unidades_calidad text-center">
                                             <span class="input-group-btn input-group-append">
-                                                <button class="btn btn-primary bootstrap-touchspin-up" type="button">
+                                                <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                     <i class="fas fa-plus-circle"></i>
                                                 </button>
                                             </span>
@@ -581,13 +581,13 @@
                                     </td>
                                     <td>
                                         <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                            <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: -10px;">
+                                            <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal12}}">
                                            
                                         </div>
                                     </td>
                                     <td>
                                         <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                            <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: -10px;">
+                                            <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc12}}">
                                             
                                         </div>
                                     </td>
@@ -602,13 +602,13 @@
                                     <td class="touchpin">
                                         <div class="input-group bootstrap-touchspin bootstrap-touchspin-injected">
                                             <span class="input-group-btn input-group-prepend">
-                                                <button class="btn btn-info bootstrap-touchspin-down" type="button">
+                                                <button class="btn btn-info bootstrap-touchspin-down btn-sm" type="button">
                                                     <i class="fas fa-minus-circle"></i>
                                                 </button>
                                             </span>
                                             <input type="tel" class="numero form-control unidades_calidad text-center">
                                             <span class="input-group-btn input-group-append">
-                                                <button class="btn btn-primary bootstrap-touchspin-up" type="button">
+                                                <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                     <i class="fas fa-plus-circle"></i>
                                                 </button>
                                             </span>
@@ -617,13 +617,13 @@
                                     </td>
                                     <td>
                                         <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                            <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: -10px;">
+                                            <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal13}}">
                                            
                                         </div>
                                     </td>
                                     <td>
                                         <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                            <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: -10px;">
+                                            <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc13}}">
                                             
                                         </div>
                                     </td>
@@ -640,13 +640,13 @@
                                 <td class="touchpin">
                                     <div class="input-group bootstrap-touchspin bootstrap-touchspin-injected">
                                         <span class="input-group-btn input-group-prepend">
-                                            <button class="btn btn-info bootstrap-touchspin-down" type="button">
+                                            <button class="btn btn-info bootstrap-touchspin-down btn-sm" type="button">
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
                                         <input type="tel" class="numero form-control unidades_calidad text-center">
                                         <span class="input-group-btn input-group-append">
-                                            <button class="btn btn-primary bootstrap-touchspin-up" type="button">
+                                            <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
                                             </button>
                                         </span>
@@ -655,13 +655,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: -10px;">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal14}}">
                                        
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: -10px;">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc14}}">
                                         
                                     </div>
                                 </td>
@@ -680,13 +680,13 @@
                                     <td class="touchpin">
                                         <div class="input-group bootstrap-touchspin bootstrap-touchspin-injected">
                                             <span class="input-group-btn input-group-prepend">
-                                                <button class="btn btn-info bootstrap-touchspin-down" type="button">
+                                                <button class="btn btn-info bootstrap-touchspin-down btn-sm" type="button">
                                                     <i class="fas fa-minus-circle"></i>
                                                 </button>
                                             </span>
                                             <input type="tel" class="numero form-control unidades_calidad text-center">
                                             <span class="input-group-btn input-group-append">
-                                                <button class="btn btn-primary bootstrap-touchspin-up" type="button">
+                                                <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                     <i class="fas fa-plus-circle"></i>
                                                 </button>
                                             </span>
@@ -695,13 +695,13 @@
                                     </td>
                                     <td>
                                         <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                            <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: -10px;">
+                                            <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal15}}">
                                            
                                         </div>
                                     </td>
                                     <td>
                                         <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                            <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: -10px;">
+                                            <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc15}}">
                                             
                                         </div>
                                     </td>
@@ -716,13 +716,13 @@
                                     <td class="touchpin">
                                         <div class="input-group bootstrap-touchspin bootstrap-touchspin-injected">
                                             <span class="input-group-btn input-group-prepend">
-                                                <button class="btn btn-info bootstrap-touchspin-down" type="button">
+                                                <button class="btn btn-info bootstrap-touchspin-down btn-sm" type="button">
                                                     <i class="fas fa-minus-circle"></i>
                                                 </button>
                                             </span>
                                             <input type="tel" class="numero form-control unidades_calidad text-center">
                                             <span class="input-group-btn input-group-append">
-                                                <button class="btn btn-primary bootstrap-touchspin-up" type="button">
+                                                <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                     <i class="fas fa-plus-circle"></i>
                                                 </button>
                                             </span>
@@ -731,13 +731,13 @@
                                     </td>
                                     <td>
                                         <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                            <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: -10px;">
+                                            <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal16}}">
                                            
                                         </div>
                                     </td>
                                     <td>
                                         <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                            <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: -10px;">
+                                            <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc16}}">
                                             
                                         </div>
                                     </td>
@@ -755,13 +755,13 @@
                                 <td class="touchpin">
                                     <div class="input-group bootstrap-touchspin bootstrap-touchspin-injected">
                                         <span class="input-group-btn input-group-prepend">
-                                            <button class="btn btn-info bootstrap-touchspin-down" type="button">
+                                            <button class="btn btn-info bootstrap-touchspin-down btn-sm" type="button">
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
                                         <input type="tel" class="numero form-control unidades_calidad text-center">
                                         <span class="input-group-btn input-group-append">
-                                            <button class="btn btn-primary bootstrap-touchspin-up" type="button">
+                                            <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
                                             </button>
                                         </span>
@@ -770,13 +770,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: -10px;">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal17}}">
                                        
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: -10px;">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc17}}">
                                         
                                     </div>
                                 </td>
@@ -790,13 +790,13 @@
                                 <td class="touchpin">
                                     <div class="input-group bootstrap-touchspin bootstrap-touchspin-injected">
                                         <span class="input-group-btn input-group-prepend">
-                                            <button class="btn btn-info bootstrap-touchspin-down" type="button">
+                                            <button class="btn btn-info bootstrap-touchspin-down btn-sm" type="button">
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
                                         <input type="tel" class="numero form-control unidades_calidad text-center">
                                         <span class="input-group-btn input-group-append">
-                                            <button class="btn btn-primary bootstrap-touchspin-up" type="button">
+                                            <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
                                             </button>
                                         </span>
@@ -805,13 +805,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: -10px;">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal18}}">
                                        
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: -10px;">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc18}}">
                                         
                                     </div>
                                 </td>
@@ -828,13 +828,13 @@
                                 <td class="touchpin">
                                     <div class="input-group bootstrap-touchspin bootstrap-touchspin-injected">
                                         <span class="input-group-btn input-group-prepend">
-                                            <button class="btn btn-info bootstrap-touchspin-down" type="button">
+                                            <button class="btn btn-info bootstrap-touchspin-down btn-sm" type="button">
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
                                         <input type="tel" class="numero form-control unidades_calidad text-center">
                                         <span class="input-group-btn input-group-append">
-                                            <button class="btn btn-primary bootstrap-touchspin-up" type="button">
+                                            <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
                                             </button>
                                         </span>
@@ -843,13 +843,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: -10px;">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal19}}">
                                        
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: -10px;">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc19}}">
                                         
                                     </div>
                                 </td>
@@ -866,13 +866,13 @@
                                 <td class="touchpin">
                                     <div class="input-group bootstrap-touchspin bootstrap-touchspin-injected">
                                         <span class="input-group-btn input-group-prepend">
-                                            <button class="btn btn-info bootstrap-touchspin-down" type="button">
+                                            <button class="btn btn-info bootstrap-touchspin-down btn-sm" type="button">
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
                                         <input type="tel" class="numero form-control unidades_calidad text-center">
                                         <span class="input-group-btn input-group-append">
-                                            <button class="btn btn-primary bootstrap-touchspin-up" type="button">
+                                            <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
                                             </button>
                                         </span>
@@ -881,13 +881,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: -10px;">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal20}}">
                                        
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: -10px;">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc20}}">
                                         
                                     </div>
                                 </td>
@@ -905,13 +905,13 @@
                                 <td class="touchpin">
                                     <div class="input-group bootstrap-touchspin bootstrap-touchspin-injected">
                                         <span class="input-group-btn input-group-prepend">
-                                            <button class="btn btn-info bootstrap-touchspin-down" type="button">
+                                            <button class="btn btn-info bootstrap-touchspin-down btn-sm" type="button">
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
                                         <input type="tel" class="numero form-control unidades_calidad text-center">
                                         <span class="input-group-btn input-group-append">
-                                            <button class="btn btn-primary bootstrap-touchspin-up" type="button">
+                                            <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
                                             </button>
                                         </span>
@@ -920,13 +920,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: -10px;">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal21}}">
                                        
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: -10px;">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc21}}">
                                         
                                     </div>
                                 </td>
@@ -941,13 +941,13 @@
                                 <td class="touchpin">
                                     <div class="input-group bootstrap-touchspin bootstrap-touchspin-injected">
                                         <span class="input-group-btn input-group-prepend">
-                                            <button class="btn btn-info bootstrap-touchspin-down" type="button">
+                                            <button class="btn btn-info bootstrap-touchspin-down btn-sm" type="button">
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
                                         <input type="tel" class="numero form-control unidades_calidad text-center">
                                         <span class="input-group-btn input-group-append">
-                                            <button class="btn btn-primary bootstrap-touchspin-up" type="button">
+                                            <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
                                             </button>
                                         </span>
@@ -956,13 +956,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: -10px;">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal22}}">
                                        
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: -10px;">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc22}}">
                                         
                                     </div>
                                 </td>
@@ -980,13 +980,13 @@
                                 <td class="touchpin">
                                     <div class="input-group bootstrap-touchspin bootstrap-touchspin-injected">
                                         <span class="input-group-btn input-group-prepend">
-                                            <button class="btn btn-info bootstrap-touchspin-down" type="button">
+                                            <button class="btn btn-info bootstrap-touchspin-down btn-sm" type="button">
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
                                         <input type="tel" class="numero form-control unidades_calidad text-center">
                                         <span class="input-group-btn input-group-append">
-                                            <button class="btn btn-primary bootstrap-touchspin-up" type="button">
+                                            <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
                                             </button>
                                         </span>
@@ -995,13 +995,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: -10px;">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal23}}">
                                        
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: -10px;">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc23}}">
                                         
                                     </div>
                                 </td>
@@ -1016,13 +1016,13 @@
                                 <td class="touchpin">
                                     <div class="input-group bootstrap-touchspin bootstrap-touchspin-injected">
                                         <span class="input-group-btn input-group-prepend">
-                                            <button class="btn btn-info bootstrap-touchspin-down" type="button">
+                                            <button class="btn btn-info bootstrap-touchspin-down btn-sm" type="button">
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
                                         <input type="tel" class="numero form-control unidades_calidad text-center">
                                         <span class="input-group-btn input-group-append">
-                                            <button class="btn btn-primary bootstrap-touchspin-up" type="button">
+                                            <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
                                             </button>
                                         </span>
@@ -1031,13 +1031,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: -10px;">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal24}}">
                                        
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: -10px;">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc24}}">
                                         
                                     </div>
                                 </td>
@@ -1055,13 +1055,13 @@
                                 <td class="touchpin">
                                     <div class="input-group bootstrap-touchspin bootstrap-touchspin-injected">
                                         <span class="input-group-btn input-group-prepend">
-                                            <button class="btn btn-info bootstrap-touchspin-down" type="button">
+                                            <button class="btn btn-info bootstrap-touchspin-down btn-sm" type="button">
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
                                         <input type="tel" class="numero form-control unidades_calidad text-center">
                                         <span class="input-group-btn input-group-append">
-                                            <button class="btn btn-primary bootstrap-touchspin-up" type="button">
+                                            <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
                                             </button>
                                         </span>
@@ -1070,13 +1070,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: -10px;">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal25}}">
                                        
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: -10px;">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc25}}">
                                         
                                     </div>
                                 </td>
@@ -1091,13 +1091,13 @@
                                 <td class="touchpin">
                                     <div class="input-group bootstrap-touchspin bootstrap-touchspin-injected">
                                         <span class="input-group-btn input-group-prepend">
-                                            <button class="btn btn-info bootstrap-touchspin-down" type="button">
+                                            <button class="btn btn-info bootstrap-touchspin-down btn-sm" type="button">
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
                                         <input type="tel" class="numero form-control unidades_calidad text-center">
                                         <span class="input-group-btn input-group-append">
-                                            <button class="btn btn-primary bootstrap-touchspin-up" type="button">
+                                            <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
                                             </button>
                                         </span>
@@ -1106,13 +1106,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: -10px;">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal26}}">
                                        
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: -10px;">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc26}}">
                                         
                                     </div>
                                 </td>
@@ -1130,13 +1130,13 @@
                                 <td class="touchpin">
                                     <div class="input-group bootstrap-touchspin bootstrap-touchspin-injected">
                                         <span class="input-group-btn input-group-prepend">
-                                            <button class="btn btn-info bootstrap-touchspin-down" type="button">
+                                            <button class="btn btn-info bootstrap-touchspin-down btn-sm" type="button">
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
                                         <input type="tel" class="numero form-control unidades_calidad text-center">
                                         <span class="input-group-btn input-group-append">
-                                            <button class="btn btn-primary bootstrap-touchspin-up" type="button">
+                                            <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
                                             </button>
                                         </span>
@@ -1145,13 +1145,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: -10px;">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal27}}">
                                        
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: -10px;">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc27}}">
                                         
                                     </div>
                                 </td>
@@ -1169,13 +1169,13 @@
                                 <td class="touchpin">
                                     <div class="input-group bootstrap-touchspin bootstrap-touchspin-injected">
                                         <span class="input-group-btn input-group-prepend">
-                                            <button class="btn btn-info bootstrap-touchspin-down" type="button">
+                                            <button class="btn btn-info bootstrap-touchspin-down btn-sm" type="button">
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
                                         <input type="tel" class="numero form-control unidades_calidad text-center">
                                         <span class="input-group-btn input-group-append">
-                                            <button class="btn btn-primary bootstrap-touchspin-up" type="button">
+                                            <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
                                             </button>
                                         </span>
@@ -1184,13 +1184,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: -10px;">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal28}}">
                                        
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: -10px;">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc28}}">
                                         
                                     </div>
                                 </td>
@@ -1208,13 +1208,13 @@
                                 <td class="touchpin">
                                     <div class="input-group bootstrap-touchspin bootstrap-touchspin-injected">
                                         <span class="input-group-btn input-group-prepend">
-                                            <button class="btn btn-info bootstrap-touchspin-down" type="button">
+                                            <button class="btn btn-info bootstrap-touchspin-down btn-sm" type="button">
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
                                         <input type="tel" class="numero form-control unidades_calidad text-center">
                                         <span class="input-group-btn input-group-append">
-                                            <button class="btn btn-primary bootstrap-touchspin-up" type="button">
+                                            <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
                                             </button>
                                         </span>
@@ -1223,13 +1223,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: -10px;">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal29}}">
                                        
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: -10px;">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc29}}">
                                         
                                     </div>
                                 </td>
@@ -1244,13 +1244,13 @@
                                 <td class="touchpin">
                                     <div class="input-group bootstrap-touchspin bootstrap-touchspin-injected">
                                         <span class="input-group-btn input-group-prepend">
-                                            <button class="btn btn-info bootstrap-touchspin-down" type="button">
+                                            <button class="btn btn-info bootstrap-touchspin-down btn-sm" type="button">
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
                                         <input type="tel" class="numero form-control unidades_calidad text-center">
                                         <span class="input-group-btn input-group-append">
-                                            <button class="btn btn-primary bootstrap-touchspin-up" type="button">
+                                            <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
                                             </button>
                                         </span>
@@ -1259,13 +1259,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: -10px;">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal30}}">
                                        
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: -10px;">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc30}}">
                                         
                                     </div>
                                 </td>
@@ -1280,13 +1280,13 @@
                                 <td class="touchpin">
                                     <div class="input-group bootstrap-touchspin bootstrap-touchspin-injected">
                                         <span class="input-group-btn input-group-prepend">
-                                            <button class="btn btn-info bootstrap-touchspin-down" type="button">
+                                            <button class="btn btn-info bootstrap-touchspin-down btn-sm" type="button">
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
                                         <input type="tel" class="numero form-control unidades_calidad text-center">
                                         <span class="input-group-btn input-group-append">
-                                            <button class="btn btn-primary bootstrap-touchspin-up" type="button">
+                                            <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
                                             </button>
                                         </span>
@@ -1295,13 +1295,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: -10px;">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal31}}">
                                        
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: -10px;">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc31}}">
                                         
                                     </div>
                                 </td>
@@ -1316,13 +1316,13 @@
                                 <td class="touchpin">
                                     <div class="input-group bootstrap-touchspin bootstrap-touchspin-injected">
                                         <span class="input-group-btn input-group-prepend">
-                                            <button class="btn btn-info bootstrap-touchspin-down" type="button">
+                                            <button class="btn btn-info bootstrap-touchspin-down btn-sm" type="button">
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
                                         <input type="tel" class="numero form-control unidades_calidad text-center">
                                         <span class="input-group-btn input-group-append">
-                                            <button class="btn btn-primary bootstrap-touchspin-up" type="button">
+                                            <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
                                             </button>
                                         </span>
@@ -1331,13 +1331,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: -10px;">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal32}}">
                                        
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: -10px;">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc32}}">
                                         
                                     </div>
                                 </td>
@@ -1353,13 +1353,13 @@
                                 <td class="touchpin">
                                     <div class="input-group bootstrap-touchspin bootstrap-touchspin-injected">
                                         <span class="input-group-btn input-group-prepend">
-                                            <button class="btn btn-info bootstrap-touchspin-down" type="button">
+                                            <button class="btn btn-info bootstrap-touchspin-down btn-sm" type="button">
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
                                         <input type="tel" class="numero form-control unidades_calidad text-center">
                                         <span class="input-group-btn input-group-append">
-                                            <button class="btn btn-primary bootstrap-touchspin-up" type="button">
+                                            <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
                                             </button>
                                         </span>
@@ -1368,13 +1368,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: -10px;">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal33}}">
                                        
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-"name="CalidadMuestras[0][porcentaje]" readonly style="top: -10px;">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-"name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc33}}">
                                         
                                     </div>
                                 </td>
@@ -1385,6 +1385,15 @@
                                 </td>
                                 <td>
 
+                                </td>
+                                <td style="text-align: center;">
+                                    {{totalCamarones}}
+                                </td> 
+                                <td>
+                                    {{totalPesoTotal}}
+                                </td>
+                                <td>
+                                    {{totalPorc}}
                                 </td>
 
                             </tr>
@@ -1734,7 +1743,7 @@
                             <tr>
                                 <td>Total:</td>
                                 <td style="padding: 2px;">
-                                    <input type="number" class="form-control col-md-12 col-xs total_numero_defectos text-right" placeholder="0" readonly>
+                                    <input type="number" class="form-control col-md-12 col-xs total_numero_defectos text-right" placeholder="0" readonly value="{{totalUni}}">
                                 </td>
                                 <td style="padding: 2px;">
                                     <input type="text" class="form-control col-md-col-xs-8 total_porcentaje_defectos text-right" placeholder="0" readonly>
