@@ -88,43 +88,44 @@ export class GuiaListComponent implements OnInit {
   getSumaPeso(): number {  
     
     let suma=0; 
-    
-    for (let i = 0; i < this.guiasRemision.length; i++) {
-      const element = this.guiasRemision.peso[i];
-      console.log("suma" , +element)
-      suma = suma + element
-      
-    }
-    //se recorre elementos y se va acumulando en suma;  
-    return suma;
-  } 
+    let valorPeso;
+
+    this.guiasRemision.forEach((valor: any) => {
+      valorPeso = valor.peso
+      suma = suma + valorPeso;
+      console.log("Valor enviado", valor.peso)
+    });
+
+    return suma
+  }
+
 
   getSumaGavetas(): number {  
 
-    let suma=0; 
+    let sumaGavetas=0; 
+    let valorGavetas
     
-    for (let i = 0; i < this.guiasRemision.length; i++) {
-      const element = this.guiasRemision.peso[i];
-      console.log("suma" , +element)
-      suma = suma + element
-      
-    }
-    //se recorre elementos y se va acumulando en suma;  
-    return suma;
+    this.guiasRemision.forEach((valor: any) => {
+      valorGavetas = valor.gavetas
+      sumaGavetas = sumaGavetas + valorGavetas;
+      console.log("Valor enviado", valor.gavetas)
+    });
+
+    return sumaGavetas
   } 
 
   getSumaMuestras() {  
     
-    let suma=0; 
+    let sumaMuestras=0; 
+    let valorMuestras
     
-    for (let i = 0; i < this.guiasRemision.length; i++) {
-      const element = this.guiasRemision.peso[i];
-      console.log("suma" , +element)
-      suma = suma + element
-      
-    }
-    //se recorre elementos y se va acumulando en suma;  
-    return suma;
+    this.guiasRemision.forEach((valor: any) => {
+      valorMuestras = valor.muestras
+      sumaMuestras = sumaMuestras + valorMuestras;
+      console.log("Valor enviado muestras", valor.muestras)
+    });
+
+    return sumaMuestras
   } 
     
     

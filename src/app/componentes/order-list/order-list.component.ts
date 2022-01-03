@@ -12,6 +12,7 @@ import Swal from 'sweetalert2';
 export class OrderListComponent implements OnInit{
 
   condicion = 'SIN ATENDER'
+  today:any;
   
   pageActual: number = 1;
   filterCodigo = '';

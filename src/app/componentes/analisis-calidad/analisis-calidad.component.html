@@ -168,7 +168,7 @@
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
-                                        <input type="number" class="numero form-control unidades_calidad text-center" style="width: 20px;" value="{{totalCamaron1}}"> 
+                                        <input type="number" id="numerouno" class="numero form-control unidades_calidad text-center" value="{{totalCamaron1}}"> 
                                         <span class="input-group-btn input-group-append">
                                             <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
@@ -178,13 +178,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal1}}">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal1Redondeado}}">
                                         
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc1}}">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc1Redondeado}}">
                                         
                                     </div>
                                 </td>
@@ -203,7 +203,7 @@
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
-                                        <input type="tel" class="numero form-control unidades_calidad text-center">
+                                        <input type="number" class="numero form-control unidades_calidad text-center" value="{{totalCamaron2}}">
                                         <span class="input-group-btn input-group-append">
                                             <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
@@ -214,13 +214,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal2}}">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal2Redondeado}}">
                                        
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc2}}">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc2Redondeado}}">
                                         
                                     </div>
                                 </td>
@@ -239,7 +239,7 @@
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
-                                        <input type="tel" class="numero form-control unidades_calidad text-center">
+                                        <input type="tel" class="numero form-control unidades_calidad text-center" value="{{totalCamaron3}}">
                                         <span class="input-group-btn input-group-append">
                                             <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
@@ -250,13 +250,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal3}}">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal3Redondeado}}">
                                        
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc3}}">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc3Redondeado}}">
                                         
                                     </div>
                                 </td>
@@ -275,7 +275,7 @@
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
-                                        <input type="tel" class="numero form-control unidades_calidad text-center">
+                                        <input type="tel" class="numero form-control unidades_calidad text-center" value="{{totalCamaron4}}">
                                         <span class="input-group-btn input-group-append">
                                             <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
@@ -286,13 +286,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal4}}">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal4Redondeado}}">
                                        
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc4}}">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc4Redondeado}}">
                                         
                                     </div>
                                 </td>
@@ -311,7 +311,7 @@
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
-                                        <input type="tel" class="numero form-control unidades_calidad text-center">
+                                        <input type="tel" class="numero form-control unidades_calidad text-center" value="{{totalCamaron5}}">
                                         <span class="input-group-btn input-group-append">
                                             <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
@@ -322,13 +322,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal5}}">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal5Redondeado}}">
                                        
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc5}}">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc5Redondeado}}">
                                         
                                     </div>
                                 </td>
@@ -347,7 +347,7 @@
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
-                                        <input type="tel" class="numero form-control unidades_calidad text-center">
+                                        <input type="tel" class="numero form-control unidades_calidad text-center" value="{{totalCamaron6}}">
                                         <span class="input-group-btn input-group-append">
                                             <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
@@ -358,13 +358,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal6}}">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal6Redondeado}}">
                                        
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc6}}">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc6Redondeado}}">
                                         
                                     </div>
                                 </td>
@@ -386,7 +386,7 @@
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
-                                        <input type="tel" class="numero form-control unidades_calidad text-center">
+                                        <input type="tel" class="numero form-control unidades_calidad text-center" value="{{totalCamaron7}}">
                                         <span class="input-group-btn input-group-append">
                                             <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
@@ -397,13 +397,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal7}}">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal7Redondeado}}">
                                        
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc7}}">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc7Redondeado}}">
                                         
                                     </div>
                                 </td>
@@ -422,7 +422,7 @@
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
-                                        <input type="tel" class="numero form-control unidades_calidad text-center">
+                                        <input type="tel" class="numero form-control unidades_calidad text-center" value="{{totalCamaron8}}">
                                         <span class="input-group-btn input-group-append">
                                             <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
@@ -433,13 +433,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal8}}">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal8Redondeado}}">
                                        
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc8}}">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc8Redondeado}}">
                                         
                                     </div>
                                 </td>
@@ -458,7 +458,7 @@
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
-                                        <input type="tel" class="numero form-control unidades_calidad text-center">
+                                        <input type="tel" class="numero form-control unidades_calidad text-center" value="{{totalCamaron9}}">
                                         <span class="input-group-btn input-group-append">
                                             <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
@@ -469,13 +469,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal9}}">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal9Redondeado}}">
                                        
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc9}}">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc9Redondeado}}">
                                         
                                     </div>
                                 </td>
@@ -494,7 +494,7 @@
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
-                                        <input type="tel" class="numero form-control unidades_calidad text-center">
+                                        <input type="tel" class="numero form-control unidades_calidad text-center" value="{{totalCamaron10}}">
                                         <span class="input-group-btn input-group-append">
                                             <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
@@ -505,13 +505,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal10}}">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal10Redondeado}}">
                                        
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc10}}">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc10Redondeado}}">
                                         
                                     </div>
                                 </td>
@@ -530,7 +530,7 @@
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
-                                        <input type="tel" class="numero form-control unidades_calidad text-center">
+                                        <input type="tel" class="numero form-control unidades_calidad text-center" value="{{totalCamaron11}}">
                                         <span class="input-group-btn input-group-append">
                                             <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
@@ -541,13 +541,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal11}}">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal11Redondeado}}">
                                        
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc11}}">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc11Redondeado}}">
                                         
                                     </div>
                                 </td> 
@@ -570,7 +570,7 @@
                                                     <i class="fas fa-minus-circle"></i>
                                                 </button>
                                             </span>
-                                            <input type="tel" class="numero form-control unidades_calidad text-center">
+                                            <input type="tel" class="numero form-control unidades_calidad text-center" value="{{totalCamaron12}}">
                                             <span class="input-group-btn input-group-append">
                                                 <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                     <i class="fas fa-plus-circle"></i>
@@ -581,13 +581,13 @@
                                     </td>
                                     <td>
                                         <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                            <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal12}}">
+                                            <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal12Redondeado}}">
                                            
                                         </div>
                                     </td>
                                     <td>
                                         <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                            <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc12}}">
+                                            <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc12Redondeado}}">
                                             
                                         </div>
                                     </td>
@@ -606,7 +606,7 @@
                                                     <i class="fas fa-minus-circle"></i>
                                                 </button>
                                             </span>
-                                            <input type="tel" class="numero form-control unidades_calidad text-center">
+                                            <input type="tel" class="numero form-control unidades_calidad text-center" value="{{totalCamaron13}}">
                                             <span class="input-group-btn input-group-append">
                                                 <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                     <i class="fas fa-plus-circle"></i>
@@ -617,13 +617,13 @@
                                     </td>
                                     <td>
                                         <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                            <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal13}}">
+                                            <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal13Redondeado}}">
                                            
                                         </div>
                                     </td>
                                     <td>
                                         <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                            <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc13}}">
+                                            <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc13Redondeado}}">
                                             
                                         </div>
                                     </td>
@@ -644,7 +644,7 @@
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
-                                        <input type="tel" class="numero form-control unidades_calidad text-center">
+                                        <input type="tel" class="numero form-control unidades_calidad text-center" value="{{totalCamaron14}}">
                                         <span class="input-group-btn input-group-append">
                                             <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
@@ -655,13 +655,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal14}}">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal14Redondeado}}">
                                        
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc14}}">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc14Redondeado}}">
                                         
                                     </div>
                                 </td>
@@ -684,7 +684,7 @@
                                                     <i class="fas fa-minus-circle"></i>
                                                 </button>
                                             </span>
-                                            <input type="tel" class="numero form-control unidades_calidad text-center">
+                                            <input type="tel" class="numero form-control unidades_calidad text-center" value="{{totalCamaron15}}">
                                             <span class="input-group-btn input-group-append">
                                                 <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                     <i class="fas fa-plus-circle"></i>
@@ -695,13 +695,13 @@
                                     </td>
                                     <td>
                                         <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                            <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal15}}">
+                                            <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal15Redondeado}}">
                                            
                                         </div>
                                     </td>
                                     <td>
                                         <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                            <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc15}}">
+                                            <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc15Redondeado}}">
                                             
                                         </div>
                                     </td>
@@ -720,7 +720,7 @@
                                                     <i class="fas fa-minus-circle"></i>
                                                 </button>
                                             </span>
-                                            <input type="tel" class="numero form-control unidades_calidad text-center">
+                                            <input type="tel" class="numero form-control unidades_calidad text-center" value="{{totalCamaron16}}">
                                             <span class="input-group-btn input-group-append">
                                                 <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                     <i class="fas fa-plus-circle"></i>
@@ -731,13 +731,13 @@
                                     </td>
                                     <td>
                                         <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                            <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal16}}">
+                                            <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal16Redondeado}}">
                                            
                                         </div>
                                     </td>
                                     <td>
                                         <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                            <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc16}}">
+                                            <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc16Redondeado}}">
                                             
                                         </div>
                                     </td>
@@ -759,7 +759,7 @@
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
-                                        <input type="tel" class="numero form-control unidades_calidad text-center">
+                                        <input type="tel" class="numero form-control unidades_calidad text-center" value="{{totalCamaron17}}">
                                         <span class="input-group-btn input-group-append">
                                             <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
@@ -770,13 +770,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal17}}">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal17Redondeado}}">
                                        
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc17}}">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc17Redondeado}}">
                                         
                                     </div>
                                 </td>
@@ -794,7 +794,7 @@
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
-                                        <input type="tel" class="numero form-control unidades_calidad text-center">
+                                        <input type="tel" class="numero form-control unidades_calidad text-center" value="{{totalCamaron18}}">
                                         <span class="input-group-btn input-group-append">
                                             <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
@@ -805,13 +805,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal18}}">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal18Redondeado}}">
                                        
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc18}}">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc18Redondeado}}">
                                         
                                     </div>
                                 </td>
@@ -832,7 +832,7 @@
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
-                                        <input type="tel" class="numero form-control unidades_calidad text-center">
+                                        <input type="tel" class="numero form-control unidades_calidad text-center" value="{{totalCamaron19}}">
                                         <span class="input-group-btn input-group-append">
                                             <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
@@ -843,13 +843,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal19}}">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal19Redondeado}}">
                                        
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc19}}">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc19Redondeado}}">
                                         
                                     </div>
                                 </td>
@@ -870,7 +870,7 @@
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
-                                        <input type="tel" class="numero form-control unidades_calidad text-center">
+                                        <input type="tel" class="numero form-control unidades_calidad text-center" value="{{totalCamaron20}}">
                                         <span class="input-group-btn input-group-append">
                                             <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
@@ -881,13 +881,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal20}}">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal20Redondeado}}">
                                        
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc20}}">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc20Redondeado}}">
                                         
                                     </div>
                                 </td>
@@ -909,7 +909,7 @@
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
-                                        <input type="tel" class="numero form-control unidades_calidad text-center">
+                                        <input type="tel" class="numero form-control unidades_calidad text-center" value="{{totalCamaron21}}">
                                         <span class="input-group-btn input-group-append">
                                             <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
@@ -920,13 +920,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal21}}">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal21Redondeado}}">
                                        
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc21}}">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc21Redondeado}}">
                                         
                                     </div>
                                 </td>
@@ -945,7 +945,7 @@
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
-                                        <input type="tel" class="numero form-control unidades_calidad text-center">
+                                        <input type="tel" class="numero form-control unidades_calidad text-center" value="{{totalCamaron22}}">
                                         <span class="input-group-btn input-group-append">
                                             <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
@@ -956,13 +956,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal22}}">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal22Redondeado}}">
                                        
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc22}}">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc22Redondeado}}">
                                         
                                     </div>
                                 </td>
@@ -984,7 +984,7 @@
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
-                                        <input type="tel" class="numero form-control unidades_calidad text-center">
+                                        <input type="tel" class="numero form-control unidades_calidad text-center" value="{{totalCamaron23}}">
                                         <span class="input-group-btn input-group-append">
                                             <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
@@ -995,13 +995,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal23}}">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal23Redondeado}}">
                                        
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc23}}">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc23Redondeado}}">
                                         
                                     </div>
                                 </td>
@@ -1020,7 +1020,7 @@
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
-                                        <input type="tel" class="numero form-control unidades_calidad text-center">
+                                        <input type="tel" class="numero form-control unidades_calidad text-center" value="{{totalCamaron24}}">
                                         <span class="input-group-btn input-group-append">
                                             <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
@@ -1031,13 +1031,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal24}}">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal24Redondeado}}">
                                        
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc24}}">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc24Redondeado}}">
                                         
                                     </div>
                                 </td>
@@ -1059,7 +1059,7 @@
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
-                                        <input type="tel" class="numero form-control unidades_calidad text-center">
+                                        <input type="tel" class="numero form-control unidades_calidad text-center" value="{{totalCamaron25}}">
                                         <span class="input-group-btn input-group-append">
                                             <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
@@ -1070,13 +1070,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal25}}">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal25Redondeado}}">
                                        
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc25}}">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc25Redondeado}}">
                                         
                                     </div>
                                 </td>
@@ -1095,7 +1095,7 @@
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
-                                        <input type="tel" class="numero form-control unidades_calidad text-center">
+                                        <input type="tel" class="numero form-control unidades_calidad text-center" value="{{totalCamaron26}}">
                                         <span class="input-group-btn input-group-append">
                                             <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
@@ -1106,13 +1106,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal26}}">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal26Redondeado}}">
                                        
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc26}}">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc26Redondeado}}">
                                         
                                     </div>
                                 </td>
@@ -1134,7 +1134,7 @@
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
-                                        <input type="tel" class="numero form-control unidades_calidad text-center">
+                                        <input type="tel" class="numero form-control unidades_calidad text-center" value="{{totalCamaron27}}">
                                         <span class="input-group-btn input-group-append">
                                             <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
@@ -1145,13 +1145,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal27}}">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal27Redondeado}}">
                                        
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc27}}">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc27Redondeado}}">
                                         
                                     </div>
                                 </td>
@@ -1173,7 +1173,7 @@
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
-                                        <input type="tel" class="numero form-control unidades_calidad text-center">
+                                        <input type="tel" class="numero form-control unidades_calidad text-center" value="{{totalCamaron28}}">
                                         <span class="input-group-btn input-group-append">
                                             <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
@@ -1184,13 +1184,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal28}}">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal28Redondeado}}">
                                        
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc28}}">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc28Redondeado}}">
                                         
                                     </div>
                                 </td>
@@ -1212,7 +1212,7 @@
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
-                                        <input type="tel" class="numero form-control unidades_calidad text-center">
+                                        <input type="tel" class="numero form-control unidades_calidad text-center" value="{{totalCamaron29}}">
                                         <span class="input-group-btn input-group-append">
                                             <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
@@ -1223,13 +1223,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal29}}">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal29Redondeado}}">
                                        
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc29}}">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc29Redondeado}}">
                                         
                                     </div>
                                 </td>
@@ -1248,7 +1248,7 @@
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
-                                        <input type="tel" class="numero form-control unidades_calidad text-center">
+                                        <input type="tel" class="numero form-control unidades_calidad text-center" value="{{totalCamaron30}}">
                                         <span class="input-group-btn input-group-append">
                                             <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
@@ -1259,13 +1259,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal30}}">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal30Redondeado}}">
                                        
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc30}}">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc30Redondeado}}">
                                         
                                     </div>
                                 </td>
@@ -1284,7 +1284,7 @@
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
-                                        <input type="tel" class="numero form-control unidades_calidad text-center">
+                                        <input type="tel" class="numero form-control unidades_calidad text-center" value="{{totalCamaron31}}">
                                         <span class="input-group-btn input-group-append">
                                             <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
@@ -1295,13 +1295,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal31}}">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal31Redondeado}}">
                                        
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc31}}">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc31Redondeado}}">
                                         
                                     </div>
                                 </td>
@@ -1320,7 +1320,7 @@
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
-                                        <input type="tel" class="numero form-control unidades_calidad text-center">
+                                        <input type="tel" class="numero form-control unidades_calidad text-center" value="{{totalCamaron32}}">
                                         <span class="input-group-btn input-group-append">
                                             <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
@@ -1331,13 +1331,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal32}}">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal32Redondeado}}">
                                        
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc32}}">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc32Redondeado}}">
                                         
                                     </div>
                                 </td>
@@ -1357,7 +1357,7 @@
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
-                                        <input type="tel" class="numero form-control unidades_calidad text-center">
+                                        <input type="tel" class="numero form-control unidades_calidad text-center" value="{{totalCamaron33}}">
                                         <span class="input-group-btn input-group-append">
                                             <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
@@ -1368,13 +1368,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal33}}">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal33Redondeado}}">
                                        
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-"name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc33}}">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-"name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc33Redondeado}}">
                                         
                                     </div>
                                 </td>
@@ -1519,7 +1519,7 @@
                                     Peso Muestra:
                                 </td>
                                 <td>
-                                    <input type="tel" class="text-right form-control" name="CalidadOrganoleptico[pesomuestra]" placeholder="0.00" readonly>
+                                    <input type="tel" class="text-right form-control" name="CalidadOrganoleptico[pesomuestra]" placeholder="0.00" readonly value="{{resultadoPesoMuestra}}">
                                 </td>
                             </tr>
                             <tr>
@@ -1527,7 +1527,7 @@
                                     N° Camarones:
                                 </td>
                                 <td>
-                                    <input type="tel" class="text-right form-control" name="CalidadOrganoleptico[numeropiezas]" placeholder="0" readonly>
+                                    <input type="tel" class="text-right form-control" name="CalidadOrganoleptico[numeropiezas]" placeholder="0" readonly value="{{numeroCamarones}}">
                                 </td>
                             </tr>
                             <tr>
@@ -1535,7 +1535,7 @@
                                     Grs Promedio:
                                 </td>
                                 <td>
-                                    <input type="tel" class="numero text-right form-control" name="CalidadOrganoleptico[pesopromedio]" placeholder="0.00" readonly>
+                                    <input type="tel" class="numero text-right form-control" name="CalidadOrganoleptico[pesopromedio]" placeholder="0.00" readonly value="{{grsPromedio}}">
                                 </td>
                             </tr>
                             <tr>
@@ -1572,172 +1572,172 @@
                             <tr>
                                 <td>Deshidratado:</td>
                                 <td style="padding: 2px;">
-                                    <input type="number" class="solonumero numero_defectos form-control text-center" name="CalidadAnalisisdefectos[numerodeshidratado]" style="color:darkblue;">
+                                    <input type="number" class="solonumero numero_defectos form-control text-center" name="CalidadAnalisisdefectos[numerodeshidratado]" style="color:darkblue;" value="{{deshidratado}}">
                                 </td>
                                 <td style="padding: 2px;">
-                                    <input type="text" class="porcentaje_defectos form-control text-center" name="CalidadAnalisisdefectos[porcentajedeshidratado]" readonly>
+                                    <input type="text" class="porcentaje_defectos form-control text-center" name="CalidadAnalisisdefectos[porcentajedeshidratado]" readonly value="{{totalPorcDeshidratadoRedondeado}}"> 
                                 </td>
                             </tr>
                             <tr>
                                 <td>Blandos:</td>
                                 <td style="padding: 2px;">
-                                    <input type="number" class="solonumero numero_defectos form-control text-center" name="CalidadAnalisisdefectos[numeroblandos]" style="color:darkblue;">
+                                    <input type="number" class="solonumero numero_defectos form-control text-center" name="CalidadAnalisisdefectos[numeroblandos]" style="color:darkblue;" value="{{blandos}}">
                                 </td>
                                 <td style="padding: 2px;">
-                                    <input type="text" class="porcentaje_defectos form-control text-center" name="CalidadAnalisisdefectos[porcentajeblandos]" readonly>
+                                    <input type="text" class="porcentaje_defectos form-control text-center" name="CalidadAnalisisdefectos[porcentajeblandos]" readonly value="{{totalPorcBlandosRedondeado}}">
                                 </td>
                             </tr>
                             <tr>
                                 <td>Mudados:</td>
                                 <td style="padding: 2px;">
-                                    <input type="number" class="solonumero numero_defectos form-control text-center" name="CalidadAnalisisdefectos[numeromudados]" style="color:darkblue;">
+                                    <input type="number" class="solonumero numero_defectos form-control text-center" name="CalidadAnalisisdefectos[numeromudados]" style="color:darkblue;" value="{{mudados}}">
                                 </td>
                                 <td style="padding: 2px;">
-                                    <input type="text" class="porcentaje_defectos form-control text-center" name="CalidadAnalisisdefectos[porcentajemudados]" readonly>
+                                    <input type="text" class="porcentaje_defectos form-control text-center" name="CalidadAnalisisdefectos[porcentajemudados]" readonly value="{{totalPorcMudadosRedondeado}}">
                                 </td>
                             </tr>
                             <tr>
                                 <td>Cabeza Baja:</td>
                                 <td style="padding: 2px;">
-                                    <input type="number" class="solonumero numero_defectos form-control text-center" name="CalidadAnalisisdefectos[numerocabezabaja]" style="color:darkblue;">
+                                    <input type="number" class="solonumero numero_defectos form-control text-center" name="CalidadAnalisisdefectos[numerocabezabaja]" style="color:darkblue;" value="{{cabezaBaja}}">
                                 </td>
                                 <td style="padding: 2px;">
-                                    <input type="text" class="porcentaje_defectos form-control text-center" name="CalidadAnalisisdefectos[porcentajecabezabaja]" readonly>
+                                    <input type="text" class="porcentaje_defectos form-control text-center" name="CalidadAnalisisdefectos[porcentajecabezabaja]" readonly value="{{totalPorcCabezaBajaRedondeado}}">
                                 </td>
                             </tr>
                             <tr>
                                 <td>Cabeza Negra:</td>
                                 <td style="padding: 2px;">
-                                    <input type="number" class="solonumero numero_defectos form-control text-center" name="CalidadAnalisisdefectos[numerocabezanegra]" style="color:darkblue;">
+                                    <input type="number" class="solonumero numero_defectos form-control text-center" name="CalidadAnalisisdefectos[numerocabezanegra]" style="color:darkblue;" value="{{cabezaNegra}}">
                                 </td>
                                 <td style="padding: 2px;">
-                                    <input type="text" class="porcentaje_defectos form-control text-center" name="CalidadAnalisisdefectos[borcentajecabezanegra]" readonly>
+                                    <input type="text" class="porcentaje_defectos form-control text-center" name="CalidadAnalisisdefectos[borcentajecabezanegra]" readonly value="{{totalPorcCabezaNegraRedondeado}}">
                                 </td>
                             </tr>
                             <tr>
                                 <td>Cabeza Roja:</td>
                                 <td style="padding: 2px;">
-                                    <input type="number" class="solonumero numero_defectos form-control text-center" name="CalidadAnalisisdefectos[numerocabezaroja]" style="color:darkblue;">
+                                    <input type="number" class="solonumero numero_defectos form-control text-center" name="CalidadAnalisisdefectos[numerocabezaroja]" style="color:darkblue;" value="{{cabezaRoja}}">
                                 </td>
                                 <td style="padding: 2px;">
-                                    <input type="text" class="porcentaje_defectos form-control text-center" name="CalidadAnalisisdefectos[porcentajecabezaroja]" readonly>
+                                    <input type="text" class="porcentaje_defectos form-control text-center" name="CalidadAnalisisdefectos[porcentajecabezaroja]" readonly value="{{totalPorcCabezaRojaRedondeado}}">
                                 </td>
                             </tr>
                             <tr>
                                 <td>Hep. Reventado:</td>
                                 <td style="padding: 2px;">
-                                    <input type="number" class="solonumero numero_defectos form-control text-center" name="CalidadAnalisisdefectos[numerohep_reventado]" style="color:darkblue;">
+                                    <input type="number" class="solonumero numero_defectos form-control text-center" name="CalidadAnalisisdefectos[numerohep_reventado]" style="color:darkblue;" value="{{hepReventado}}">
                                 </td>
                                 <td style="padding: 2px;">
-                                    <input type="text" class="porcentaje_defectos form-control text-center" name="CalidadAnalisisdefectos[porcentajehep_reventado]" readonly>
+                                    <input type="text" class="porcentaje_defectos form-control text-center" name="CalidadAnalisisdefectos[porcentajehep_reventado]" readonly value="{{totalPorcHepReventadoRedondeado}}">
                                 </td>
                             </tr>
                             <tr>
                                 <td>Membrana Rota:</td>
                                 <td style="padding: 2px;">
-                                    <input type="number" class="solonumero numero_defectos form-control text-center" name="CalidadAnalisisdefectos[numeromembranarota]" style="color:darkblue;">
+                                    <input type="number" class="solonumero numero_defectos form-control text-center" name="CalidadAnalisisdefectos[numeromembranarota]" style="color:darkblue;" value="{{membranaRota}}">
                                 </td>
                                 <td style="padding: 2px;">
-                                    <input type="text" class="porcentaje_defectos form-control text-center" name="CalidadAnalisisdefectos[porcentajemembranarota]" readonly>
+                                    <input type="text" class="porcentaje_defectos form-control text-center" name="CalidadAnalisisdefectos[porcentajemembranarota]" readonly value="{{totalPorcMembranaRotaRedondeado}}">
                                 </td>
                             </tr>
                             <tr>
                                 <td>1er Segmento:</td>
                                 <td style="padding: 2px;">
-                                    <input type="number" class="solonumero numero_defectos form-control text-center" name="CalidadAnalisisdefectos[numeroprimersegmento]" style="color:darkblue;">
+                                    <input type="number" class="solonumero numero_defectos form-control text-center" name="CalidadAnalisisdefectos[numeroprimersegmento]" style="color:darkblue;" value="{{perSegmento}}">
                                 </td>
                                 <td style="padding: 2px;">
-                                    <input type="text" class="porcentaje_defectos form-control text-center" name="CalidadAnalisisdefectos[porcentajeprimersegmento]" readonly>
+                                    <input type="text" class="porcentaje_defectos form-control text-center" name="CalidadAnalisisdefectos[porcentajeprimersegmento]" readonly value="{{totalPorcPrimerSegmentoRedondeado}}">
                                 </td>
                             </tr>
                             <tr>
                                 <td>Necrosis Leve:</td>
                                 <td style="padding: 2px;">
-                                    <input type="number" class="solonumero numero_defectos form-control text-center" name="CalidadAnalisisdefectos[numeronecrosisleve]" style="color:darkblue;">
+                                    <input type="number" class="solonumero numero_defectos form-control text-center" name="CalidadAnalisisdefectos[numeronecrosisleve]" style="color:darkblue;" value="{{necrosisLeve}}">
                                 </td>
                                 <td style="padding: 2px;">
-                                    <input type="text" class="porcentaje_defectos form-control text-center" name="CalidadAnalisisdefectos[porcentajenecrosisleve]" readonly>
+                                    <input type="text" class="porcentaje_defectos form-control text-center" name="CalidadAnalisisdefectos[porcentajenecrosisleve]" readonly value="{{totalPorcNecrosisLeveRedondeado}}">
                                 </td>
                             </tr>
                             <tr>
                                 <td>Necrosis Fuerte:</td>
                                 <td style="padding: 2px;">
-                                    <input type="number" class="solonumero numero_defectos form-control text-center" name="CalidadAnalisisdefectos[numeronecrosisfuerte]" style="color:darkblue;">
+                                    <input type="number" class="solonumero numero_defectos form-control text-center" name="CalidadAnalisisdefectos[numeronecrosisfuerte]" style="color:darkblue;" value="{{necrosisFuerte}}">
                                 </td>
                                 <td style="padding: 2px;">
-                                    <input type="text" class="porcentaje_defectos form-control text-center" name="CalidadAnalisisdefectos[porcentajenecrosisfuerte]" readonly>
+                                    <input type="text" class="porcentaje_defectos form-control text-center" name="CalidadAnalisisdefectos[porcentajenecrosisfuerte]" readonly value="{{totalPorcNecrosisFuerteRedondeado}}">
                                 </td>
                             </tr>
                             <tr>
                                 <td>Melanosis:</td>
                                 <td style="padding: 2px;">
-                                    <input type="number" class="solonumero numero_defectos form-control text-center" name="CalidadAnalisisdefectos[numeromelanosis]" style="color:darkblue;">
+                                    <input type="number" class="solonumero numero_defectos form-control text-center" name="CalidadAnalisisdefectos[numeromelanosis]" style="color:darkblue;" value="{{melanosis}}">
                                 </td>
                                 <td style="padding: 2px;">
-                                    <input type="text" class="porcentaje_defectos form-control text-center" name="CalidadAnalisisdefectos[porcentajemelanosis]" readonly>
+                                    <input type="text" class="porcentaje_defectos form-control text-center" name="CalidadAnalisisdefectos[porcentajemelanosis]" readonly value="{{totalPorcMelanosisRedondeado}}">
                                 </td>
                             </tr>
                             <tr>
                                 <td>Quebrados:</td>
                                 <td style="padding: 2px;">
-                                    <input type="number" class="solonumero numero_defectos form-control text-center" name="CalidadAnalisisdefectos[numeroquebrados]" style="color:darkblue;">
+                                    <input type="number" class="solonumero numero_defectos form-control text-center" name="CalidadAnalisisdefectos[numeroquebrados]" style="color:darkblue;" value="{{quebrados}}">
                                 </td>
                                 <td style="padding: 2px;">
-                                    <input type="text" class="porcentaje_defectos form-control text-center" name="CalidadAnalisisdefectos[porcentajequebrados]" readonly>
+                                    <input type="text" class="porcentaje_defectos form-control text-center" name="CalidadAnalisisdefectos[porcentajequebrados]" readonly value="{{totalPorcQuebradosRedondeado}}">
                                 </td>
                             </tr>
                             <tr>
                                 <td>Deformes:</td>
                                 <td style="padding: 2px;">
-                                    <input type="number" class="solonumero numero_defectos form-control text-center" name="CalidadAnalisisdefectos[numerodeformes]" style="color:darkblue;">
+                                    <input type="number" class="solonumero numero_defectos form-control text-center" name="CalidadAnalisisdefectos[numerodeformes]" style="color:darkblue;" value="{{deformes}}">
                                 </td>
                                 <td style="padding: 2px;">
-                                    <input type="text" class="porcentaje_defectos form-control text-center" name="CalidadAnalisisdefectos[porcentajedeformes]" readonly>
+                                    <input type="text" class="porcentaje_defectos form-control text-center" name="CalidadAnalisisdefectos[porcentajedeformes]" readonly value="{{totalPorcDeformesRedondeado}}">
                                 </td>
                             </tr>
                             <tr>
                                 <td>Corbata:</td>
                                 <td style="padding: 2px;">
-                                    <input type="number" class="solonumero numero_defectos form-control text-center" name="CalidadAnalisisdefectos[numerocorbata]" style="color:darkblue;">
+                                    <input type="number" class="solonumero numero_defectos form-control text-center" name="CalidadAnalisisdefectos[numerocorbata]" style="color:darkblue;" value="{{corbata}}">
                                 </td>
                                 <td style="padding: 2px;">
-                                    <input type="text" class="porcentaje_defectos form-control text-center" name="CalidadAnalisisdefectos[porcentajecorbata]" readonly>
+                                    <input type="text" class="porcentaje_defectos form-control text-center" name="CalidadAnalisisdefectos[porcentajecorbata]" readonly value="{{totalPorcCorbataRedondeado}}">
                                 </td>
                             </tr>
                             <tr>
                                 <td>Patas:</td>
                                 <td style="padding: 2px;">
-                                    <input type="number" class="solonumero numero_defectos form-control text-center" name="CalidadAnalisisdefectos[numeropatas]" style="color:darkblue;">
+                                    <input type="number" class="solonumero numero_defectos form-control text-center" name="CalidadAnalisisdefectos[numeropatas]" style="color:darkblue;" value="{{patas}}">
                                 </td>
                                 <td style="padding: 2px;">
-                                    <input type="text" class="porcentaje_defectos form-control text-center" name="CalidadAnalisisdefectos[porcentajepatas]" readonly>
+                                    <input type="text" class="porcentaje_defectos form-control text-center" name="CalidadAnalisisdefectos[porcentajepatas]" readonly value="{{totalPorcPatasRedondeado}}">
                                 </td>
                             </tr>
                             <tr>
                                 <td>Cáscara:</td>
                                 <td style="padding: 2px;">
-                                    <input type="number" class="solonumero numero_defectos form-control text-center" name="CalidadAnalisisdefectos[numerocascara]" style="color:darkblue;">
+                                    <input type="number" class="solonumero numero_defectos form-control text-center" name="CalidadAnalisisdefectos[numerocascara]" style="color:darkblue;" value="{{cascara}}">
                                 </td>
                                 <td style="padding: 2px;">
-                                    <input type="text" class="porcentaje_defectos form-control text-center" name="CalidadAnalisisdefectos[porcentajecascara]" readonly>
+                                    <input type="text" class="porcentaje_defectos form-control text-center" name="CalidadAnalisisdefectos[porcentajecascara]" readonly value="{{totalPorcCascaraRedondeado}}">
                                 </td>
                             </tr>
                             <tr>
                                 <td>Antenas:</td>
                                 <td style="padding: 2px;">
-                                    <input type="number" class="solonumero numero_defectos form-control text-center" name="CalidadAnalisisdefectos[numeroantenas]" style="color:darkblue;">
+                                    <input type="number" class="solonumero numero_defectos form-control text-center" name="CalidadAnalisisdefectos[numeroantenas]" style="color:darkblue;" value="{{antenas}}">
                                 </td>
                                 <td style="padding: 2px;">
-                                    <input type="text" class="porcentaje_defectos form-control text-center" name="CalidadAnalisisdefectos[porcentajeantenas]" readonly>
+                                    <input type="text" class="porcentaje_defectos form-control text-center" name="CalidadAnalisisdefectos[porcentajeantenas]" readonly value="{{totalPorcAntenasRedondeado}}">
                                 </td>
                             </tr>
                             <tr>
                                 <td>Deterioro(Rojo):</td>
                                 <td style="padding: 2px;">
-                                    <input type="number" class="solonumero numero_defectos form-control text-center" name="CalidadAnalisisdefectos[numerodeterioro]" style="color:darkblue;">
+                                    <input type="number" class="solonumero numero_defectos form-control text-center" name="CalidadAnalisisdefectos[numerodeterioro]" style="color:darkblue;" value="{{deterioroRojo}}">
                                 </td>
                                 <td style="padding: 2px;">
-                                    <input type="text" class="porcentaje_defectos form-control text-center" name="CalidadAnalisisdefectos[porcentajedeterioro]" readonly>
+                                    <input type="text" class="porcentaje_defectos form-control text-center" name="CalidadAnalisisdefectos[porcentajedeterioro]" readonly value="{{totalPorcDeterioroRedondeado}}">
                                 </td>
                             </tr>
                             <tr>
@@ -1746,7 +1746,7 @@
                                     <input type="number" class="form-control col-md-12 col-xs total_numero_defectos text-right" placeholder="0" readonly value="{{totalUni}}">
                                 </td>
                                 <td style="padding: 2px;">
-                                    <input type="text" class="form-control col-md-col-xs-8 total_porcentaje_defectos text-right" placeholder="0" readonly>
+                                    <input type="text" class="form-control col-md-col-xs-8 total_porcentaje_defectos text-right" placeholder="0" readonly value="{{totalPorcRedondeado}}">
                                 </td> 
                             </tr>
                         </tbody>
