@@ -14,6 +14,8 @@ export class RecepcionComponent implements OnInit {
   ordenesTrabajo: any = []
   guiasRemision: any = []
 
+  goCats = true;
+
   constructor(private rutaActiva:ActivatedRoute, private ordenTrabajoService:OrdenTrabajoService, private guiaRemisionService:GuiaRemisionService, private router:Router) { }
 
   ngOnInit(): void {

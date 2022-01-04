@@ -39,26 +39,44 @@
                         </button></a>
                     </div>
                 </div>
+
+                <!--NO
+                <div class = 'row'>
+                    <div class = 'col-4'>
+                    
+                      <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <button  *ngIf='textoDeInput' class="btn btn-outline-secondary" type="button">Aqui toy</button>
+                      </div>
+                      <input [(ngModel)]='textoDeInput' type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
+                    </div>
+                    
+                    </div>
+                    
+                    <pre>Valor de variable: </pre>
+                    
+                </div> -->
+
                 <table class="pure-table pure-table-condensed-x table-bordered" style="width: 100%;">
                     <tr style="height: 30px;">
                         <td *ngFor="let ordenTrabajo of ordenesTrabajo" style="width: 200px; text-align: left;">
-                            <b>Número de Lote</b>
+                            <b style="margin-left: 5px;">Número de Lote</b>
                             <br>
-                            <label for="lote">
+                            <label for="lote" style="margin-left: 5px;">
                                 {{ordenTrabajo.lote}}
                             </label>
                         </td>
                         <td *ngFor="let guiaRemision of guiasRemision" style="width: 300px;">
-                            <b>Número de Guía</b>
+                            <b style="margin-left: 5px;">Número de Guía</b>
                             <br>
-                            <label for="guia">
+                            <label for="guia" style="margin-left: 5px;">
                                 {{guiaRemision.codigo}}
                             </label>
                         </td>
                         <td *ngFor="let guiaRemision of guiasRemision" style="width: 300px;" colspan="3">
-                            <b>Placa/Chofer</b>
+                            <b style="margin-left: 5px;">Placa/Chofer</b>
                             <br>
-                            <label for="placa">
+                            <label for="placa" style="margin-left: 5px;">
                                 {{guiaRemision.placa}} / 
                                 {{guiaRemision.chofer}}
                             </label>
@@ -66,67 +84,67 @@
                     </tr>
                     <tr style="height: 30x;" *ngFor="let ordenTrabajo of ordenesTrabajo">
                         <td>
-                            <b>Fecha</b>
+                            <b style="margin-left: 5px;">Fecha</b>
                             <br>
-                            <label for="fecha">
+                            <label for="fecha" style="margin-left: 5px;">
                                 {{ordenTrabajo.fechaRegistro}}
                             </label>
                         </td>
                         <td>
-                            <b>Proveedor</b>
+                            <b style="margin-left: 5px;">Proveedor</b>
                             <br>
-                            <label for="proveedor">
+                            <label for="proveedor" style="margin-left: 5px;">
                                 {{ordenTrabajo.proveedor}}
                             </label>
                         </td>
                         <td>
-                            <b>Procedencia</b>
+                            <b style="margin-left: 5px;">Procedencia</b>
                             <br>
-                            <label for="procedencia">
+                            <label for="procedencia" style="margin-left: 5px;">
                                 {{ordenTrabajo.procedencia}}
                             </label>
                         </td>
                         <td colspan="2">
-                            <b>Producto</b>
+                            <b style="margin-left: 5px;">Producto</b>
                             <br>
-                            <label for="producto">
+                            <label for="producto" style="margin-left: 5px;">
                                 {{ordenTrabajo.producto}}
                             </label>
                         </td>
                     </tr>
                     <tr>
                         <td style="height: 30px;" *ngFor="let ordenTrabajo of ordenesTrabajo">
-                            <b>Piscina</b>
+                            <b style="margin-left: 5px;">Piscina</b>
                             <br>
-                            <label for="piscina">
+                            <label for="piscina" style="margin-left: 5px;">
                                 {{ordenTrabajo.piscina}}
                             </label>
                         </td>
                         <td *ngFor="let guiaRemision of guiasRemision">
-                            <b>Libras Reportadas</b>
+                            <b style="margin-left: 5px;">Libras Reportadas</b>
                             <br>
-                            <label for="peso">
+                            <label for="peso" style="margin-left: 5px;">
                                 {{guiaRemision.peso}}
                             </label>
                         </td>
                         <td *ngFor="let guiaRemision of guiasRemision">
-                            <b>N° Gavetas Reportadas</b>
+                            <b style="margin-left: 5px;">N° Gavetas Reportadas</b>
                             <br>
-                            <label for="gavetas">
+                            <label for="gavetas" style="margin-left: 5px;">
                                 {{guiaRemision.gavetas}}
                             </label>
                         </td>
                         <td *ngFor="let ordenTrabajo of ordenesTrabajo">
-                            <b>Color del Camarón</b>
+                            <b style="margin-left: 5px;">Color del Camarón</b>
                             <br>
-                            <label for="colorCamaron">
+                            <label for="colorCamaron" style="margin-left: 5px;">
                                 {{ordenTrabajo.colorCamaron}}
                             </label>
                         </td>
                         <td *ngFor="let ordenTrabajo of ordenesTrabajo" style="width: 300px;">
-                            <b>T. Producto</b>
+                            <b style="margin-left: 5px;">T. Producto</b>
                             <br>
-                            <label for="tipoProducto">
+                            <label for="tipoProducto" style="margin-left: 5px;">
                                 {{ordenTrabajo.calidad}}
                             </label>
                         </td>
@@ -168,7 +186,7 @@
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
-                                        <input type="number" id="numerouno" class="numero form-control unidades_calidad text-center" value="{{totalCamaron1}}"> 
+                                        <input type="number" id="numerouno" [(ngModel)]='totalCamaron1' class="numero form-control unidades_calidad text-center" value="{{totalCamaron1}}">
                                         <span class="input-group-btn input-group-append">
                                             <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
@@ -203,7 +221,7 @@
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
-                                        <input type="number" class="numero form-control unidades_calidad text-center" value="{{totalCamaron2}}">
+                                        <input type="number" class="numero form-control unidades_calidad text-center" [(ngModel)]='totalCamaron2' value="{{totalCamaron2}}" ngModel="totalCamaron2">
                                         <span class="input-group-btn input-group-append">
                                             <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
@@ -239,7 +257,7 @@
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
-                                        <input type="tel" class="numero form-control unidades_calidad text-center" value="{{totalCamaron3}}">
+                                        <input matInput type="number" class="numero form-control unidades_calidad text-center" value="{{totalCamaron3}}">
                                         <span class="input-group-btn input-group-append">
                                             <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>

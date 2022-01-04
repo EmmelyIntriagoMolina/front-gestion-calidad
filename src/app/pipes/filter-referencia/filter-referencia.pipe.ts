@@ -8,7 +8,7 @@ export class FilterReferenciaPipe implements PipeTransform {
   transform(value: any, ...arg: any[]): any {
     const resultadoReferencia = [];
     for (const post of value){
-      if(post.referencia.toUpperCase().indexof(arg)> -1){
+      if(post.referencia.toLowerCase().indexOf(arg)> -1){
         resultadoReferencia.push(post)
       }
     }

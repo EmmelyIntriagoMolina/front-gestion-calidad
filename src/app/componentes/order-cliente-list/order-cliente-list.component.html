@@ -44,13 +44,15 @@
                         <tbody>
                             <td style="text-align: left; width: 60px;"><input class="form-control me-2" type="text" name="filterNum" placeholder="#" [(ngModel)]="filterNum"></td>
                             <td style="text-align: left;"><input class="form-control me-2" type="date" name="filterFecha" ></td>
-                            <td style="text-align: left;"><input class="form-control me-2" type="text" name="filterRef" placeholder="Referencia"></td>
-                            <td colspan="2" style="text-align: left; width: 25%;"><input class="form-control me-2" type="text" name="filterClient" placeholder="Cliente"></td>
-                            <td style="text-align: left;"><input class="form-control me-2" type="text" name="filterDest" placeholder="Destino"></td>
+                            <td style="text-align: left;"><input class="form-control me-2" type="text" name="filterRef" placeholder="Referencia" [(ngModel)]="filterRef"></td>
+                            <td colspan="2" style="text-align: left; width: 25%;"><input class="form-control me-2" type="text" name="filterClient" placeholder="Cliente" [(ngModel)]="filterClient"></td>
+                            <td style="text-align: left;"><input class="form-control me-2" type="text" name="filterDest" placeholder="Destino" [(ngModel)]="filterDest"></td>
                             
 
                             <tr class="text-center" *ngFor=" let ordenCliente of ordenesCliente
-                            
+                            | filterDestino: filterDest
+                            | filterCliente: filterClient
+                            | filterReferencia: filterRef
                             | paginate: {itemsPerPage: 15, currentPage: pageActual}">
                        
                                 <td style="text-align: left;">#{{ordenCliente.numero}}</td>

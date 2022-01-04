@@ -23,7 +23,7 @@ export class OrderClienteListComponent implements OnInit {
   ]
 
   constructor(private ordenClienteService:OrdenClienteService, private http:HttpClient) { }
-
+ 
   ngOnInit(): void {
     this.getOrdenesCliente();
   } 

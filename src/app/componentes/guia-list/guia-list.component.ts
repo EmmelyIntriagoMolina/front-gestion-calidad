@@ -71,7 +71,7 @@ export class GuiaListComponent implements OnInit {
       id_OT: this.rutaActiva.snapshot.params.id_OT
     };
 
-
+    
     //Traer ID de las guias de remision
     this.rutaActiva.params.subscribe(
       (params: Params)=> {
@@ -93,7 +93,7 @@ export class GuiaListComponent implements OnInit {
     this.guiasRemision.forEach((valor: any) => {
       valorPeso = valor.peso
       suma = suma + valorPeso;
-      console.log("Valor enviado", valor.peso)
+      console.log("Valor enviado Peso", valor.peso)
     });
 
     return suma
@@ -108,7 +108,7 @@ export class GuiaListComponent implements OnInit {
     this.guiasRemision.forEach((valor: any) => {
       valorGavetas = valor.gavetas
       sumaGavetas = sumaGavetas + valorGavetas;
-      console.log("Valor enviado", valor.gavetas)
+      console.log("Valor enviado Gavetas", valor.gavetas)
     });
 
     return sumaGavetas
@@ -120,9 +120,9 @@ export class GuiaListComponent implements OnInit {
     let valorMuestras
     
     this.guiasRemision.forEach((valor: any) => {
-      valorMuestras = valor.muestras
+      valorMuestras = valor.muestra
       sumaMuestras = sumaMuestras + valorMuestras;
-      console.log("Valor enviado muestras", valor.muestras)
+      console.log("Valor enviado muestras", valor.muestra)
     });
 
     return sumaMuestras

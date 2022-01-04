@@ -18,8 +18,8 @@ export class AnalisisCalidadComponent implements OnInit {
   guiasRemision:any = [];
 
   //Tabla de datos
-  totalCamaron1:number = 0;
-  totalCamaron2:number = 0;
+  totalCamaron1: number = 0;
+  totalCamaron2: number = 0;
   totalCamaron3: number = 0;   
   totalCamaron4: number = 0;   
   totalCamaron5: number = 0;   
@@ -65,7 +65,7 @@ export class AnalisisCalidadComponent implements OnInit {
 
   //Total N° Camarones
   totalCamarones = (this.totalCamaron1 + this.totalCamaron2 + this.totalCamaron3 + this.totalCamaron4 + this.totalCamaron5 + this.totalCamaron6 + this.totalCamaron7 + this.totalCamaron8 + this.totalCamaron9 + this.totalCamaron10 + this.totalCamaron11 + this.totalCamaron12 + this.totalCamaron13 + this.totalCamaron14 + this.totalCamaron15 + this.totalCamaron16 + this.totalCamaron17 + this.totalCamaron18 + this.totalCamaron19 + this.totalCamaron20 + this.totalCamaron21 + this.totalCamaron22 + this.totalCamaron23 + this.totalCamaron24 + this.totalCamaron25 + this.totalCamaron26 + this.totalCamaron27 + this.totalCamaron28 + this.totalCamaron29 + this.totalCamaron30 + this.totalCamaron31 + this.totalCamaron32 + this.totalCamaron33 )
-
+  
 
   // Calculo Peso Total = N° Camaron * Gr
   pesoTotal1 = this.totalCamaron1 * this.gramo1;
@@ -210,6 +210,7 @@ export class AnalisisCalidadComponent implements OnInit {
   //Total porcentaje
   totalPorc = (this.porc1 + this.porc2 + this.porc3 + this.porc4 + this.porc5 + this.porc6 + this.porc7 + this.porc8 + this.porc9 + this.porc10 + this.porc11 + this.porc12 + this.porc13 + this.porc14 + this.porc15 + this.porc16 + this.porc17 + this.porc18 + this.porc19 + this.porc20 + this.porc21 + this.porc22 + this.porc23 + this.porc24 + this.porc25 + this.porc26 + this.porc27 + this.porc28 + this.porc29 + this.porc30 + this.porc31 + this.porc32 + this.porc33)
 
+
   //Análiss Organoléptico
   
   //Peso muestra
@@ -302,7 +303,6 @@ export class AnalisisCalidadComponent implements OnInit {
         console.log(this.ordenesTrabajo.id)
       }
     )
-
     this.guiasRemision = {
       id: this.rutaActiva.snapshot.params.id
     };
