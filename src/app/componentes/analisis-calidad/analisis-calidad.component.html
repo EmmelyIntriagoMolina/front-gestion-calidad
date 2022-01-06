@@ -28,12 +28,12 @@
                             <i class="fas fa-chevron-left"></i>
                             Cancelar
                         </button></a>
-                        <button class="btn btn-info" style="margin-right: 4px;">
+                        <button class="btn btn-info" style="margin-right: 4px;" (click)="postAnalisisCalidad(AnalisisProducto.id)">
                             Guardar
                             <i class="fas fa-save"></i>
                         </button>
 
-                        <a href="/"><button class="btn btn-warning" style="color: white;">
+                        <a href="/"><button class="btn btn-warning" style="color: white;" (click)="postAnalisisCalidadCerrar(AnalisisProducto.id)">
                             <i class="fas fa-check"></i>
                             Cerrar y Guardar Formulario
                         </button></a>
@@ -186,7 +186,7 @@
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
-                                        <input type="number" id="numerouno" [(ngModel)]='totalCamaron1' class="numero form-control unidades_calidad text-center" value="{{totalCamaron1}}">
+                                        <input type="number" id="numerouno" [(ngModel)]='AnalisisProducto.ncamarones215' class="numero form-control unidades_calidad text-center" value="{{AnalisisProducto.ncamarones215}}">
                                         <span class="input-group-btn input-group-append">
                                             <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
@@ -334,7 +334,7 @@
                                             <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
                                             </button>
-                                        </span>
+                                        </span> 
                                     </div>
 
                                 </td>
@@ -377,7 +377,6 @@
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
                                         <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal6Redondeado}}">
-                                       
                                     </div>
                                 </td>
                                 <td>

@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
+import { AnalisisCalidad } from 'src/app/models/analisisCalidad';
+import { AnalisisCalidadService } from 'src/app/services/analisis-calidad.service';
 import { GuiaRemisionService } from 'src/app/services/guiaRemision/guia-remision.service';
 import { OrdenTrabajoService } from 'src/app/services/orden-trabajo.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-analisis-calidad',
@@ -9,48 +12,179 @@ import { OrdenTrabajoService } from 'src/app/services/orden-trabajo.service';
   styleUrls: ['./analisis-calidad.component.css']
 })
 export class AnalisisCalidadComponent implements OnInit {
-
   
-  constructor(private rutaActiva:ActivatedRoute, private ordenTrabajoService:OrdenTrabajoService, private guiaRemisionService:GuiaRemisionService, private router:Router) { }
-
+  constructor(private rutaActiva:ActivatedRoute, private ordenTrabajoService:OrdenTrabajoService, private guiaRemisionService:GuiaRemisionService, private router:Router, private analisisCalidadService:AnalisisCalidadService) { }
 
   ordenesTrabajo:any = []; 
   guiasRemision:any = [];
+  analisissCalidad:any = [];
 
-  //Tabla de datos
-  totalCamaron1: number = 0;
-  totalCamaron2: number = 0;
-  totalCamaron3: number = 0;   
-  totalCamaron4: number = 0;   
-  totalCamaron5: number = 0;   
-  totalCamaron6: number = 0;   
-  totalCamaron7: number = 0;   
-  totalCamaron8: number = 0;   
-  totalCamaron9: number = 0;   
-  totalCamaron10: number = 0; 
-  totalCamaron11: number = 0;
-  totalCamaron12: number = 0;
-  totalCamaron13: number = 0;
-  totalCamaron14: number = 0;
-  totalCamaron15: number = 0;
-  totalCamaron16: number = 0;
-  totalCamaron17: number = 0;
-  totalCamaron18: number = 0;
-  totalCamaron19: number = 0;  
-  totalCamaron20: number = 0;  
-  totalCamaron21: number = 3;  
-  totalCamaron22: number = 0;  
-  totalCamaron23: number = 0;  
-  totalCamaron24: number = 9;  
-  totalCamaron25: number = 0;
-  totalCamaron26: number = 0;
-  totalCamaron27: number = 0;
-  totalCamaron28: number = 0;
-  totalCamaron29: number = 0;
-  totalCamaron30: number = 0;
-  totalCamaron31: number = 0;
-  totalCamaron32: number = 3;
-  totalCamaron33: number = 0;
+   //Tabla de datos
+   totalCamaron1: number = 0;
+   totalCamaron2: number = 0;
+   totalCamaron3: number = 0;   
+   totalCamaron4: number = 0;   
+   totalCamaron5: number = 0;   
+   totalCamaron6: number = 0;   
+   totalCamaron7: number = 0;   
+   totalCamaron8: number = 0;   
+   totalCamaron9: number = 0;   
+   totalCamaron10: number = 0; 
+   totalCamaron11: number = 0;
+   totalCamaron12: number = 0;
+   totalCamaron13: number = 0;
+   totalCamaron14: number = 0;
+   totalCamaron15: number = 0;
+   totalCamaron16: number = 0;
+   totalCamaron17: number = 0;
+   totalCamaron18: number = 0;
+   totalCamaron19: number = 0;  
+   totalCamaron20: number = 0;  
+   totalCamaron21: number = 3;  
+   totalCamaron22: number = 0;  
+   totalCamaron23: number = 0;  
+   totalCamaron24: number = 9;  
+   totalCamaron25: number = 0;
+   totalCamaron26: number = 0;
+   totalCamaron27: number = 0;
+   totalCamaron28: number = 0;
+   totalCamaron29: number = 0;
+   totalCamaron30: number = 0;
+   totalCamaron31: number = 0;
+   totalCamaron32: number = 3;
+   totalCamaron33: number = 0;
+
+  AnalisisProducto:AnalisisCalidad = {
+    id:0,
+    producto:'',
+    totalCamarones: 0,
+    observacion:'',
+    color:'',
+    olor:'',
+    sabor:'',
+    temp1:0,
+    temp2:0,
+    temp3:0,
+    temp4:0,
+    temp5:0,
+    temp6:0,
+    temp7:0,
+    temp8:0,
+    temp9:0,
+    temp10:0,
+    pesoMuestra:0,
+    numeroCamaronesAO:0,
+    grsPromedio:0,
+    otros100ppm:0,
+    otros10ppm:0,
+    deshidratadoUni:0,
+    deshidratadosPorc:0,
+    blandosUni:0,
+    blandosPorc :0,
+    mudadosUni:0,
+    mudadosPorc:0,
+    cabezaBajaUni :0,
+    cabezaBajaPorc:0,
+    cabezaNegraUni:0,
+    cabezaNegraPorc :0,
+    cabezaRojaUni:0,
+    cabezaRojaPorc:0,
+    hepReventadoUni:0,
+    hepReventadoPorc :0,
+    membranaRotaUni:0,
+    membranaRotaPorc:0,
+    primerSegmentoUni :0,
+    primerSegmentoPorc :0,
+    necrosisLeveUni :0,
+    necrosisLevePorc:0,
+    necrosisFuerteUni :0,
+    necrosisFuertePorc :0,
+    melanosisUni:0,
+    melanosisPorc :0,
+    quebradosUni:0,
+    quebradosPorc :0,
+    deformesUni :0,
+    deformesPorc:0,
+    corbataUni:0,
+    corbataPorc:0,
+    pataUni:0,
+    pataPorc:0,
+    cascarasUni:0,
+    cascarasPorc:0,
+    antenasUni:0,
+    antenasPorc:0,
+    deterioroRUni:0,
+    deterioroRPorc:0,
+    totalAnalisisDef:0,
+    ncamarones215:this.totalCamaron1,
+    ncamarones205:this.totalCamaron2,
+    ncamarones202:this.totalCamaron3,
+    ncamarones195:this.totalCamaron4,
+    ncamarones189:this.totalCamaron5,
+    ncamarones182:this.totalCamaron6,
+    ncamarones176:this.totalCamaron7,
+    ncamarones169:this.totalCamaron8,
+    ncamarones163:this.totalCamaron9,
+    ncamarones155:this.totalCamaron10,
+    ncamarones15:this.totalCamaron11,   
+    ncamarones143:this.totalCamaron12,
+    ncamarones137:this.totalCamaron13, 
+    ncamarones13 :this.totalCamaron14,
+    ncamarones124:this.totalCamaron15, 
+    ncamarones117:this.totalCamaron16, 
+    ncamarones111:this.totalCamaron17, 
+    ncamarones104:this.totalCamaron18, 
+    ncamarones96 :this.totalCamaron19,
+    ncamarones91:this.totalCamaron20,
+    ncamarones85:this.totalCamaron21,
+    ncamarones78:this.totalCamaron22,
+    ncamarones72:this.totalCamaron23,
+    ncamarones65:this.totalCamaron24,
+    ncamarones59:this.totalCamaron25,
+    ncamarones52:this.totalCamaron26,
+    ncamarones46:this.totalCamaron27,
+    ncamarones33:this.totalCamaron28,
+    ncamarones26:this.totalCamaron29,
+    ncamarones2:this.totalCamaron30,
+    ncamarones133:this.totalCamaron31,
+    ncamarones07:this.totalCamaron32,
+    ncamarones39:this.totalCamaron33,
+    pesoT215:0,
+    pesoT205:0,
+    pesoT202:0,
+    pesoT195:0,
+    pesoT189:0,
+    pesoT182:0,
+    pesoT176:0,
+    pesoT169:0,
+    pesoT163:0,
+    pesoT155:0,  
+    pesoT15 :0,
+    pesoT143:0,
+    pesoT137:0,
+    pesoT13 :0,
+    pesoT124:0,
+    pesoT117:0,
+    pesoT111:0,
+    pesoT104:0,
+    pesoT96:0,
+    pesoT91:0,
+    pesoT85:0,
+    pesoT78:0,
+    pesoT72 :0,
+    pesoT65 :0,
+    pesoT59:0, 
+    pesoT52:0, 
+    pesoT46:0, 
+    pesoT33:0, 
+    pesoT26:0, 
+    pesoT2 :0,
+    pesoT133:0,
+    pesoT07:0,
+    pesoT39:0
+  }
+
+ 
 
   gramo1 = 21.5;   gramo2 = 20.5;   gramo3 = 20.2;   gramo4 = 19.5;
   gramo5 = 18.9;   gramo6 = 18.2;   gramo7 = 17.6;   gramo8 = 16.9;
@@ -62,10 +196,8 @@ export class AnalisisCalidadComponent implements OnInit {
   gramo29 = 2.6;   gramo30 = 2;     gramo31 = 1.3;   gramo32 = 0.7;
   gramo33 = 3.9;   
 
-
   //Total N° Camarones
   totalCamarones = (this.totalCamaron1 + this.totalCamaron2 + this.totalCamaron3 + this.totalCamaron4 + this.totalCamaron5 + this.totalCamaron6 + this.totalCamaron7 + this.totalCamaron8 + this.totalCamaron9 + this.totalCamaron10 + this.totalCamaron11 + this.totalCamaron12 + this.totalCamaron13 + this.totalCamaron14 + this.totalCamaron15 + this.totalCamaron16 + this.totalCamaron17 + this.totalCamaron18 + this.totalCamaron19 + this.totalCamaron20 + this.totalCamaron21 + this.totalCamaron22 + this.totalCamaron23 + this.totalCamaron24 + this.totalCamaron25 + this.totalCamaron26 + this.totalCamaron27 + this.totalCamaron28 + this.totalCamaron29 + this.totalCamaron30 + this.totalCamaron31 + this.totalCamaron32 + this.totalCamaron33 )
-  
 
   // Calculo Peso Total = N° Camaron * Gr
   pesoTotal1 = this.totalCamaron1 * this.gramo1;
@@ -206,13 +338,10 @@ export class AnalisisCalidadComponent implements OnInit {
   porc33 = ((this.pesoTotal33/this.totalPesoTotal) * 100);
    porc33Redondeado = this.porc33.toFixed(4);
 
-
   //Total porcentaje
   totalPorc = (this.porc1 + this.porc2 + this.porc3 + this.porc4 + this.porc5 + this.porc6 + this.porc7 + this.porc8 + this.porc9 + this.porc10 + this.porc11 + this.porc12 + this.porc13 + this.porc14 + this.porc15 + this.porc16 + this.porc17 + this.porc18 + this.porc19 + this.porc20 + this.porc21 + this.porc22 + this.porc23 + this.porc24 + this.porc25 + this.porc26 + this.porc27 + this.porc28 + this.porc29 + this.porc30 + this.porc31 + this.porc32 + this.porc33)
 
-
-  //Análiss Organoléptico
-  
+  //Análiss Organoléptico  
   //Peso muestra
   pesoMuestra = (this.totalPesoTotal / 1000 )
   resultadoPesoMuestra = ( this.pesoMuestra * 2.20462 ).toFixed(2);
@@ -223,7 +352,6 @@ export class AnalisisCalidadComponent implements OnInit {
   //Grs Promedio
   grsPromedio = (this.totalPesoTotal / this.totalCamarones).toFixed(2);
   
-
   //Analisis de defectos
   deshidratado: number = 1;
   blandos: number = 0;
@@ -339,4 +467,52 @@ export class AnalisisCalidadComponent implements OnInit {
     (err:any)=> console.log(err)
   }
 
+  //get analisis calidad por ID
+  getAnalisisCalidad(id:number){
+    this.analisisCalidadService.getAnalisisCalidadID(id)
+    .subscribe(
+      (res:any)=>{
+        this.analisissCalidad = res.analisisCalidad
+        console.log("Analisis Calidad Id", res.analisisCalidad)
+      }
+    ),
+    (err:any)=>console.log(err)
+  }
+
+  //guardar analisis calidad y cerrar
+  postAnalisisCalidadCerrar(id:number) {
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: '¡Registro Guardado!',
+      showConfirmButton: false,
+      timer: 1500
+    })
+    this.analisisCalidadService.postAnalisisCalidad(this.AnalisisProducto, id)
+    .subscribe(
+      res=> {
+        console.log(res);
+        this.router.navigate(['/ordenTrabajo']);
+      },
+      err => console.log(err)
+    ) 
+  }
+
+  //ingresar analisis calidad
+  postAnalisisCalidad(id:number) {
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: '¡Registro Guardado!',
+      showConfirmButton: false,
+      timer: 1500
+    })
+    this.analisisCalidadService.postAnalisisCalidad(this.AnalisisProducto, id)
+    .subscribe(
+      res=> {
+        console.log(res);
+      },
+      err => console.log(err)
+    ) 
+  }
 }
