@@ -85,6 +85,7 @@ export class GuiaListComponent implements OnInit {
     this.getGuiaRemisionId(this.guiasRemision.id_OT); 
   }
 
+  //suma de los pesos
   getSumaPeso(): number {  
     
     let suma=0; 
@@ -100,6 +101,7 @@ export class GuiaListComponent implements OnInit {
   }
 
 
+  //suma de la sgavetas
   getSumaGavetas(): number {  
 
     let sumaGavetas=0; 
@@ -114,6 +116,7 @@ export class GuiaListComponent implements OnInit {
     return sumaGavetas
   } 
 
+  //suma de las muestras
   getSumaMuestras() {  
     
     let sumaMuestras=0; 

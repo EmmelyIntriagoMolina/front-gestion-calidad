@@ -40,22 +40,19 @@
                     </div>
                 </div>
 
-                <!--NO
+                
                 <div class = 'row'>
                     <div class = 'col-4'>
                     
                       <div class="input-group mb-3">
-                      <div class="input-group-prepend">
-                        <button  *ngIf='textoDeInput' class="btn btn-outline-secondary" type="button">Aqui toy</button>
-                      </div>
-                      <input [(ngModel)]='textoDeInput' type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
+                      <input [(ngModel)]='totalcamarones111' type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
                     </div>
                     
                     </div>
                     
-                    <pre>Valor de variable: </pre>
+                    <pre>Valor de variable: {{totalcamarones111}}</pre>
                     
-                </div> -->
+                </div> 
 
                 <table class="pure-table pure-table-condensed-x table-bordered" style="width: 100%;">
                     <tr style="height: 30px;">
@@ -186,7 +183,7 @@
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
-                                        <input type="number" id="numerouno" [(ngModel)]='AnalisisProducto.ncamarones215' class="numero form-control unidades_calidad text-center" value="{{AnalisisProducto.ncamarones215}}">
+                                        <input type="number" id="numerouno" [(ngModel)]='AnalisisProducto.ncamarones215' class="numero form-control unidades_calidad text-center">
                                         <span class="input-group-btn input-group-append">
                                             <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
@@ -196,13 +193,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal1Redondeado}}">
+                                        <input type="text" [(ngModel)]="AnalisisProducto.pesoT215" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;"  value="{{AnalisisProducto.ncamarones215 * gramo1}}">
                                         
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc1Redondeado}}">
+                                        <input type="text" [(ngModel)]="AnalisisProducto.porc1" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{((AnalisisProducto.ncamarones215 * gramo1)/totalPesoTotal)*100}}">
                                         
                                     </div>
                                 </td>
@@ -221,7 +218,7 @@
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
-                                        <input type="number" class="numero form-control unidades_calidad text-center" [(ngModel)]='totalCamaron2' value="{{totalCamaron2}}" ngModel="totalCamaron2">
+                                        <input type="number" class="numero form-control unidades_calidad text-center" [(ngModel)]='AnalisisProducto.ncamarones205'>
                                         <span class="input-group-btn input-group-append">
                                             <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
@@ -232,13 +229,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal2Redondeado}}">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total"  [(ngModel)]="AnalisisProducto.pesoT205" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{AnalisisProducto.ncamarones205 * gramo2}}">
                                        
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc2Redondeado}}">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" [(ngModel)]="AnalisisProducto.porc2" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{((AnalisisProducto.ncamarones205 * gramo2)/totalPesoTotal)*100}}">
                                         
                                     </div>
                                 </td>
@@ -257,7 +254,7 @@
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
-                                        <input matInput type="number" class="numero form-control unidades_calidad text-center" value="{{totalCamaron3}}">
+                                        <input matInput type="number" class="numero form-control unidades_calidad text-center" [(ngModel)]="AnalisisProducto.ncamarones202">
                                         <span class="input-group-btn input-group-append">
                                             <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
@@ -268,13 +265,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal3Redondeado}}">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" [(ngModel)]="AnalisisProducto.pesoT202" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{AnalisisProducto.ncamarones202 * gramo3}}">
                                        
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc3Redondeado}}">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" [(ngModel)]="AnalisisProducto.porc3" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{((AnalisisProducto.ncamarones202 * gramo3)/totalPesoTotal)*100}}">
                                         
                                     </div>
                                 </td>
@@ -293,7 +290,7 @@
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
-                                        <input type="tel" class="numero form-control unidades_calidad text-center" value="{{totalCamaron4}}">
+                                        <input type="tel" class="numero form-control unidades_calidad text-center" [(ngModel)]="AnalisisProducto.ncamarones195">
                                         <span class="input-group-btn input-group-append">
                                             <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
@@ -304,13 +301,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal4Redondeado}}">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" [(ngModel)]="AnalisisProducto.pesoT195" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{AnalisisProducto.ncamarones195 * gramo4}}">
                                        
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc4Redondeado}}">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" [(ngModel)]="AnalisisProducto.porc4"  value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{((AnalisisProducto.ncamarones195 * gramo4)/totalPesoTotal)*100}}">
                                         
                                     </div>
                                 </td>
@@ -329,7 +326,7 @@
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
-                                        <input type="tel" class="numero form-control unidades_calidad text-center" value="{{totalCamaron5}}">
+                                        <input type="tel" class="numero form-control unidades_calidad text-center" [(ngModel)]="AnalisisProducto.ncamarones189">
                                         <span class="input-group-btn input-group-append">
                                             <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
@@ -340,13 +337,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal5Redondeado}}">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" [(ngModel)]="AnalisisProducto.pesoT189" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{AnalisisProducto.ncamarones189 * gramo5}}">
                                        
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc5Redondeado}}">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" [(ngModel)]="AnalisisProducto.porc5" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{((AnalisisProducto.ncamarones189 * gramo5)/totalPesoTotal)*100}}">
                                         
                                     </div>
                                 </td>
@@ -365,7 +362,7 @@
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
-                                        <input type="tel" class="numero form-control unidades_calidad text-center" value="{{totalCamaron6}}">
+                                        <input type="tel" class="numero form-control unidades_calidad text-center" [(ngModel)]="AnalisisProducto.ncamarones182">
                                         <span class="input-group-btn input-group-append">
                                             <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
@@ -376,12 +373,12 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal6Redondeado}}">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" [(ngModel)]="AnalisisProducto.pesoT182" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{AnalisisProducto.ncamarones182 * gramo6}}">
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc6Redondeado}}">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" [(ngModel)]="AnalisisProducto.porc6"  name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{((AnalisisProducto.ncamarones182 * gramo6)/totalPesoTotal)*100}}">
                                         
                                     </div>
                                 </td>
@@ -403,7 +400,7 @@
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
-                                        <input type="tel" class="numero form-control unidades_calidad text-center" value="{{totalCamaron7}}">
+                                        <input type="tel" class="numero form-control unidades_calidad text-center" [(ngModel)]="AnalisisProducto.ncamarones176">
                                         <span class="input-group-btn input-group-append">
                                             <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
@@ -414,13 +411,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal7Redondeado}}">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" [(ngModel)]="AnalisisProducto.pesoT176" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{AnalisisProducto.ncamarones176 * gramo7}}">
                                        
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc7Redondeado}}">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" [(ngModel)]="AnalisisProducto.porc7" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{((AnalisisProducto.ncamarones176 * gramo7)/totalPesoTotal)*100}}">
                                         
                                     </div>
                                 </td>
@@ -439,7 +436,7 @@
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
-                                        <input type="tel" class="numero form-control unidades_calidad text-center" value="{{totalCamaron8}}">
+                                        <input type="tel" class="numero form-control unidades_calidad text-center" [(ngModel)]="AnalisisProducto.ncamarones169">
                                         <span class="input-group-btn input-group-append">
                                             <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
@@ -450,13 +447,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal8Redondeado}}">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" [(ngModel)]="AnalisisProducto.pesoT169" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{AnalisisProducto.ncamarones169 * gramo8}}">
                                        
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc8Redondeado}}">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" [(ngModel)]="AnalisisProducto.porc8" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{((AnalisisProducto.ncamarones169 * gramo8)/totalPesoTotal)*100}}">
                                         
                                     </div>
                                 </td>
@@ -475,7 +472,7 @@
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
-                                        <input type="tel" class="numero form-control unidades_calidad text-center" value="{{totalCamaron9}}">
+                                        <input type="tel" class="numero form-control unidades_calidad text-center" [(ngModel)]="AnalisisProducto.ncamarones163">
                                         <span class="input-group-btn input-group-append">
                                             <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
@@ -486,13 +483,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal9Redondeado}}">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" [(ngModel)]="AnalisisProducto.pesoT163" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{AnalisisProducto.ncamarones163 * gramo9}}">
                                        
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc9Redondeado}}">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" [(ngModel)]="AnalisisProducto.porc9" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{((AnalisisProducto.ncamarones163 * gramo9)/totalPesoTotal)*100}}">
                                         
                                     </div>
                                 </td>
@@ -511,7 +508,7 @@
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
-                                        <input type="tel" class="numero form-control unidades_calidad text-center" value="{{totalCamaron10}}">
+                                        <input type="tel" class="numero form-control unidades_calidad text-center" [(ngModel)]="AnalisisProducto.ncamarones155">
                                         <span class="input-group-btn input-group-append">
                                             <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
@@ -522,13 +519,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal10Redondeado}}">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" [(ngModel)]="AnalisisProducto.pesoT155" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{AnalisisProducto.ncamarones155 * gramo10}}">
                                        
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc10Redondeado}}">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" [(ngModel)]="AnalisisProducto.porc10" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{((AnalisisProducto.ncamarones155 * gramo10)/totalPesoTotal)*100}}">
                                         
                                     </div>
                                 </td>
@@ -547,7 +544,7 @@
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
-                                        <input type="tel" class="numero form-control unidades_calidad text-center" value="{{totalCamaron11}}">
+                                        <input type="tel" class="numero form-control unidades_calidad text-center" [(ngModel)]="AnalisisProducto.ncamarones15">
                                         <span class="input-group-btn input-group-append">
                                             <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
@@ -558,13 +555,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal11Redondeado}}">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" [(ngModel)]="AnalisisProducto.pesoT15" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{AnalisisProducto.ncamarones15 * gramo11}}">
                                        
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc11Redondeado}}">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" [(ngModel)]="AnalisisProducto.porc11" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{((AnalisisProducto.ncamarones15 * gramo11)/totalPesoTotal)*100}}">
                                         
                                     </div>
                                 </td> 
@@ -587,7 +584,7 @@
                                                     <i class="fas fa-minus-circle"></i>
                                                 </button>
                                             </span>
-                                            <input type="tel" class="numero form-control unidades_calidad text-center" value="{{totalCamaron12}}">
+                                            <input type="tel" class="numero form-control unidades_calidad text-center" [(ngModel)]="AnalisisProducto.ncamarones143">
                                             <span class="input-group-btn input-group-append">
                                                 <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                     <i class="fas fa-plus-circle"></i>
@@ -598,13 +595,13 @@
                                     </td>
                                     <td>
                                         <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                            <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal12Redondeado}}">
+                                            <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" [(ngModel)]="AnalisisProducto.pesoT143" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{AnalisisProducto.ncamarones143 * gramo12}}">
                                            
                                         </div>
                                     </td>
                                     <td>
                                         <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                            <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc12Redondeado}}">
+                                            <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" [(ngModel)]="AnalisisProducto.porc12" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{((AnalisisProducto.ncamarones143 * gramo12)/totalPesoTotal)*100}}">
                                             
                                         </div>
                                     </td>
@@ -623,7 +620,7 @@
                                                     <i class="fas fa-minus-circle"></i>
                                                 </button>
                                             </span>
-                                            <input type="tel" class="numero form-control unidades_calidad text-center" value="{{totalCamaron13}}">
+                                            <input type="tel" class="numero form-control unidades_calidad text-center" [(ngModel)]="AnalisisProducto.ncamarones137">
                                             <span class="input-group-btn input-group-append">
                                                 <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                     <i class="fas fa-plus-circle"></i>
@@ -634,20 +631,18 @@
                                     </td>
                                     <td>
                                         <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                            <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal13Redondeado}}">
+                                            <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" [(ngModel)]="AnalisisProducto.pesoT137" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{AnalisisProducto.ncamarones137 * gramo13}}">
                                            
                                         </div>
                                     </td>
                                     <td>
                                         <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                            <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc13Redondeado}}">
+                                            <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" [(ngModel)]="AnalisisProducto.porc13" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{((AnalisisProducto.ncamarones137 * gramo13)/totalPesoTotal)*100}}">
                                             
                                         </div>
                                     </td>
-                               
-                                
-                        </tr>
-                        <tr>
+                            </tr>
+                            <tr>
                                 <td style="vertical-align: middle;" class="peso_gramos">
                                     13
                                 </td>
@@ -661,7 +656,7 @@
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
-                                        <input type="tel" class="numero form-control unidades_calidad text-center" value="{{totalCamaron14}}">
+                                        <input type="tel" class="numero form-control unidades_calidad text-center" [(ngModel)]="AnalisisProducto.ncamarones13">
                                         <span class="input-group-btn input-group-append">
                                             <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
@@ -672,13 +667,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal14Redondeado}}">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" [(ngModel)]="AnalisisProducto.pesoT13" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{AnalisisProducto.ncamarones13 * gramo14}}">
                                        
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc14Redondeado}}">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad"[(ngModel)]="AnalisisProducto.porc14" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{((AnalisisProducto.ncamarones13 * gramo14)/totalPesoTotal)*100}}">
                                         
                                     </div>
                                 </td>
@@ -701,7 +696,7 @@
                                                     <i class="fas fa-minus-circle"></i>
                                                 </button>
                                             </span>
-                                            <input type="tel" class="numero form-control unidades_calidad text-center" value="{{totalCamaron15}}">
+                                            <input type="tel" class="numero form-control unidades_calidad text-center" [(ngModel)]="AnalisisProducto.ncamarones124">
                                             <span class="input-group-btn input-group-append">
                                                 <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                     <i class="fas fa-plus-circle"></i>
@@ -712,13 +707,13 @@
                                     </td>
                                     <td>
                                         <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                            <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal15Redondeado}}">
+                                            <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" [(ngModel)]="AnalisisProducto.pesoT124" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{AnalisisProducto.ncamarones124 * gramo15}}">
                                            
                                         </div>
                                     </td>
                                     <td>
                                         <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                            <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc15Redondeado}}">
+                                            <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" [(ngModel)]="AnalisisProducto.porc15" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{((AnalisisProducto.ncamarones124 * gramo15)/totalPesoTotal)*100}}">
                                             
                                         </div>
                                     </td>
@@ -737,7 +732,7 @@
                                                     <i class="fas fa-minus-circle"></i>
                                                 </button>
                                             </span>
-                                            <input type="tel" class="numero form-control unidades_calidad text-center" value="{{totalCamaron16}}">
+                                            <input type="tel" class="numero form-control unidades_calidad text-center" [(ngModel)]="AnalisisProducto.ncamarones117">
                                             <span class="input-group-btn input-group-append">
                                                 <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                     <i class="fas fa-plus-circle"></i>
@@ -748,13 +743,13 @@
                                     </td>
                                     <td>
                                         <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                            <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal16Redondeado}}">
+                                            <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" [(ngModel)]="AnalisisProducto.pesoT117" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{AnalisisProducto.ncamarones117 * gramo16}}">
                                            
                                         </div>
                                     </td>
                                     <td>
                                         <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                            <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc16Redondeado}}">
+                                            <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" [(ngModel)]="AnalisisProducto.porc16" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{((AnalisisProducto.ncamarones117 * gramo16)/totalPesoTotal)*100}}">
                                             
                                         </div>
                                     </td>
@@ -776,7 +771,7 @@
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
-                                        <input type="tel" class="numero form-control unidades_calidad text-center" value="{{totalCamaron17}}">
+                                        <input type="tel" class="numero form-control unidades_calidad text-center" [(ngModel)]="AnalisisProducto.ncamarones111">
                                         <span class="input-group-btn input-group-append">
                                             <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
@@ -787,13 +782,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal17Redondeado}}">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" [(ngModel)]="AnalisisProducto.pesoT111" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{AnalisisProducto.ncamarones111 * gramo17}}">
                                        
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc17Redondeado}}">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" [(ngModel)]="AnalisisProducto.porc17" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{((AnalisisProducto.ncamarones111 * gramo17)/totalPesoTotal)*100}}">
                                         
                                     </div>
                                 </td>
@@ -811,7 +806,7 @@
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
-                                        <input type="tel" class="numero form-control unidades_calidad text-center" value="{{totalCamaron18}}">
+                                        <input type="tel" class="numero form-control unidades_calidad text-center" [(ngModel)]="AnalisisProducto.ncamarones104">
                                         <span class="input-group-btn input-group-append">
                                             <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
@@ -822,13 +817,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal18Redondeado}}">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" [(ngModel)]="AnalisisProducto.pesoT104" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{AnalisisProducto.pesoT104 * gramo18}}">
                                        
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc18Redondeado}}">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" [(ngModel)]="AnalisisProducto.porc18" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{((AnalisisProducto.pesoT104 * gramo18)/totalPesoTotal}*100}">
                                         
                                     </div>
                                 </td>
@@ -849,7 +844,7 @@
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
-                                        <input type="tel" class="numero form-control unidades_calidad text-center" value="{{totalCamaron19}}">
+                                        <input type="tel" class="numero form-control unidades_calidad text-center" [(ngModel)]="AnalisisProducto.ncamarones96">
                                         <span class="input-group-btn input-group-append">
                                             <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
@@ -860,13 +855,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal19Redondeado}}">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total"[(ngModel)]="AnalisisProducto.pesoT96" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{AnalisisProducto.ncamarones96 * gramo19}}">
                                        
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc19Redondeado}}">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" [(ngModel)]="AnalisisProducto.porc19" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{((AnalisisProducto.ncamarones96 * gramo19)/totalPesoTotal)*100}}">
                                         
                                     </div>
                                 </td>
@@ -887,7 +882,7 @@
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
-                                        <input type="tel" class="numero form-control unidades_calidad text-center" value="{{totalCamaron20}}">
+                                        <input type="tel" class="numero form-control unidades_calidad text-center" [(ngModel)]="AnalisisProducto.ncamarones91">
                                         <span class="input-group-btn input-group-append">
                                             <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
@@ -898,13 +893,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal20Redondeado}}">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" [(ngModel)]="AnalisisProducto.pesoT91" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{AnalisisProducto.ncamarones91 * gramo20}}">
                                        
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc20Redondeado}}">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" [(ngModel)]="AnalisisProducto.porc20" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{((AnalisisProducto.ncamarones91 * gramo20)/totalPesoTotal)*100}}">
                                         
                                     </div>
                                 </td>
@@ -926,7 +921,7 @@
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
-                                        <input type="tel" class="numero form-control unidades_calidad text-center" value="{{totalCamaron21}}">
+                                        <input type="tel" class="numero form-control unidades_calidad text-center" [(ngModel)]="AnalisisProducto.ncamarones85">
                                         <span class="input-group-btn input-group-append">
                                             <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
@@ -937,13 +932,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal21Redondeado}}">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" [(ngModel)]="AnalisisProducto.pesoT85" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{AnalisisProducto.ncamarones85 * gramo21}}">
                                        
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc21Redondeado}}">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" [(ngModel)]="AnalisisProducto.porc21" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{((AnalisisProducto.ncamarones85 * gramo21)/totalPesoTotal}*100}">
                                         
                                     </div>
                                 </td>
@@ -962,7 +957,7 @@
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
-                                        <input type="tel" class="numero form-control unidades_calidad text-center" value="{{totalCamaron22}}">
+                                        <input type="tel" class="numero form-control unidades_calidad text-center" [(ngModel)]="AnalisisProducto.ncamarones78">
                                         <span class="input-group-btn input-group-append">
                                             <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
@@ -973,13 +968,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal22Redondeado}}">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" [(ngModel)]="AnalisisProducto.pesoT78" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{AnalisisProducto.ncamarones78 * gramo22}}">
                                        
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc22Redondeado}}">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" [(ngModel)]="AnalisisProducto.porc22" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{((AnalisisProducto.ncamarones78 * gramo22)/totalPesoTotal)*100}}">
                                         
                                     </div>
                                 </td>
@@ -1001,7 +996,7 @@
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
-                                        <input type="tel" class="numero form-control unidades_calidad text-center" value="{{totalCamaron23}}">
+                                        <input type="tel" class="numero form-control unidades_calidad text-center" [(ngModel)]="AnalisisProducto.ncamarones72">
                                         <span class="input-group-btn input-group-append">
                                             <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
@@ -1012,13 +1007,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal23Redondeado}}">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" [(ngModel)]="AnalisisProducto.pesoT72" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{AnalisisProducto.ncamarones72 * gramo23}}">
                                        
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc23Redondeado}}">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" [(ngModel)]="AnalisisProducto.porc23" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{((AnalisisProducto.ncamarones72 * gramo23)/totalPesoTotal)*100}}">
                                         
                                     </div>
                                 </td>
@@ -1037,7 +1032,7 @@
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
-                                        <input type="tel" class="numero form-control unidades_calidad text-center" value="{{totalCamaron24}}">
+                                        <input type="tel" class="numero form-control unidades_calidad text-center" [(ngModel)]="AnalisisProducto.ncamarones65">
                                         <span class="input-group-btn input-group-append">
                                             <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
@@ -1048,13 +1043,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal24Redondeado}}">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" [(ngModel)]="AnalisisProducto.pesoT65" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{AnalisisProducto.ncamarones65 * gramo24}}">
                                        
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc24Redondeado}}">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" [(ngModel)]="AnalisisProducto.porc24" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{((AnalisisProducto.ncamarones65 * gramo24)/totalPesoTotal)*100}}">
                                         
                                     </div>
                                 </td>
@@ -1076,7 +1071,7 @@
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
-                                        <input type="tel" class="numero form-control unidades_calidad text-center" value="{{totalCamaron25}}">
+                                        <input type="tel" class="numero form-control unidades_calidad text-center" [(ngModel)]="AnalisisProducto.ncamarones59">
                                         <span class="input-group-btn input-group-append">
                                             <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
@@ -1087,13 +1082,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal25Redondeado}}">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" [(ngModel)]="AnalisisProducto.pesoT59" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{AnalisisProducto.ncamarones59 * gramo25}}">
                                        
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc25Redondeado}}">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" [(ngModel)]="AnalisisProducto.porc25" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{((AnalisisProducto.ncamarones59 * gramo25)/totalPesoTotal)*100}}">
                                         
                                     </div>
                                 </td>
@@ -1112,7 +1107,7 @@
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
-                                        <input type="tel" class="numero form-control unidades_calidad text-center" value="{{totalCamaron26}}">
+                                        <input type="tel" class="numero form-control unidades_calidad text-center" [(ngModel)]="AnalisisProducto.ncamarones52">
                                         <span class="input-group-btn input-group-append">
                                             <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
@@ -1123,13 +1118,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal26Redondeado}}">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" [(ngModel)]="AnalisisProducto.pesoT52" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{AnalisisProducto.ncamarones52 * gramo26}}">
                                        
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc26Redondeado}}">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" [(ngModel)]="AnalisisProducto.porc26" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{((AnalisisProducto.ncamarones52 * gramo26)/totalPesoTotal)*100}}">
                                         
                                     </div>
                                 </td>
@@ -1151,7 +1146,7 @@
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
-                                        <input type="tel" class="numero form-control unidades_calidad text-center" value="{{totalCamaron27}}">
+                                        <input type="tel" class="numero form-control unidades_calidad text-center" [(ngModel)]="AnalisisProducto.ncamarones46">
                                         <span class="input-group-btn input-group-append">
                                             <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
@@ -1162,13 +1157,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal27Redondeado}}">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" [(ngModel)]="AnalisisProducto.pesoT46" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{AnalisisProducto.ncamarones46 * gramo27}}">
                                        
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc27Redondeado}}">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" [(ngModel)]="AnalisisProducto.porc27" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{((AnalisisProducto.ncamarones46 * gramo27)/totalPesoTotal)*100}}">
                                         
                                     </div>
                                 </td>
@@ -1190,7 +1185,7 @@
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
-                                        <input type="tel" class="numero form-control unidades_calidad text-center" value="{{totalCamaron28}}">
+                                        <input type="tel" class="numero form-control unidades_calidad text-center" [(ngModel)]="AnalisisProducto.ncamarones33">
                                         <span class="input-group-btn input-group-append">
                                             <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
@@ -1201,13 +1196,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal28Redondeado}}">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" [(ngModel)]="AnalisisProducto.pesoT33" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{AnalisisProducto.ncamarones33 * gramo28}}">
                                        
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc28Redondeado}}">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" [(ngModel)]="AnalisisProducto.porc28" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{((AnalisisProducto.ncamarones33 * gramo28)/totalPesoTotal}*100}">
                                         
                                     </div>
                                 </td>
@@ -1229,7 +1224,7 @@
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
-                                        <input type="tel" class="numero form-control unidades_calidad text-center" value="{{totalCamaron29}}">
+                                        <input type="tel" class="numero form-control unidades_calidad text-center" [(ngModel)]="AnalisisProducto.ncamarones26">
                                         <span class="input-group-btn input-group-append">
                                             <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
@@ -1240,13 +1235,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal29Redondeado}}">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" [(ngModel)]="AnalisisProducto.pesoT26" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{AnalisisProducto.ncamarones26 * gramo29}}">
                                        
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc29Redondeado}}">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" [(ngModel)]="AnalisisProducto.porc29" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{((AnalisisProducto.ncamarones26 * gramo29)/totalPesoTotal)*100}}">
                                         
                                     </div>
                                 </td>
@@ -1265,7 +1260,7 @@
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
-                                        <input type="tel" class="numero form-control unidades_calidad text-center" value="{{totalCamaron30}}">
+                                        <input type="tel" class="numero form-control unidades_calidad text-center" [(ngModel)]="AnalisisProducto.ncamarones2">
                                         <span class="input-group-btn input-group-append">
                                             <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
@@ -1276,13 +1271,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal30Redondeado}}">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" [(ngModel)]="AnalisisProducto.pesoT2" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{AnalisisProducto.ncamarones2 * gramo30}}">
                                        
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc30Redondeado}}">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" [(ngModel)]="AnalisisProducto.porc30" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{((AnalisisProducto.ncamarones2 * gramo30)/totalPesoTotal)*100}}">
                                         
                                     </div>
                                 </td>
@@ -1301,7 +1296,7 @@
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
-                                        <input type="tel" class="numero form-control unidades_calidad text-center" value="{{totalCamaron31}}">
+                                        <input type="tel" class="numero form-control unidades_calidad text-center" [(ngModel)]="AnalisisProducto.ncamarones133">
                                         <span class="input-group-btn input-group-append">
                                             <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
@@ -1312,13 +1307,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal31Redondeado}}">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" [(ngModel)]="AnalisisProducto.pesoT133" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{AnalisisProducto.ncamarones133 * gramo31}}">
                                        
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc31Redondeado}}">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" [(ngModel)]="AnalisisProducto.porc31" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{((AnalisisProducto.ncamarones133 * gramo31)/totalPesoTotal)*100}}">
                                         
                                     </div>
                                 </td>
@@ -1337,7 +1332,7 @@
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
-                                        <input type="tel" class="numero form-control unidades_calidad text-center" value="{{totalCamaron32}}">
+                                        <input type="tel" class="numero form-control unidades_calidad text-center" [(ngModel)]="AnalisisProducto.ncamarones07">
                                         <span class="input-group-btn input-group-append">
                                             <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
@@ -1348,13 +1343,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal32Redondeado}}">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" [(ngModel)]="AnalisisProducto.pesoT07" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{AnalisisProducto.ncamarones07 * gramo32}}">
                                        
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc32Redondeado}}">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" [(ngModel)]="AnalisisProducto.porc32" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{((AnalisisProducto.ncamarones07 * gramo32)/totalPesoTotal)*100}}">
                                         
                                     </div>
                                 </td>
@@ -1374,7 +1369,7 @@
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
-                                        <input type="tel" class="numero form-control unidades_calidad text-center" value="{{totalCamaron33}}">
+                                        <input type="tel" class="numero form-control unidades_calidad text-center" [(ngModel)]="AnalisisProducto.ncamarones39">
                                         <span class="input-group-btn input-group-append">
                                             <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
@@ -1385,13 +1380,13 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{pesoTotal33Redondeado}}">
-                                       
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" [(ngModel)]="AnalisisProducto.pesoT39" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{AnalisisProducto.ncamarones39 * gramo33}}">
+                                        {{AnalisisProducto.pesoT39}}
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-porcentaje">
-                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" value="-"name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{porc33Redondeado}}">
+                                        <input type="text" class="form-control col-md-6 col-xs-12 text-center porcentaje-calidad" [(ngModel)]="AnalisisProducto.porc33" name="CalidadMuestras[0][porcentaje]" readonly style="top: 0px;" value="{{((AnalisisProducto.ncamarones39 * gramo33)/totalPesoTotal)*100}}">
                                         
                                     </div>
                                 </td>
@@ -1404,10 +1399,10 @@
 
                                 </td>
                                 <td style="text-align: center;">
-                                    {{totalCamarones}}
+                                    {{AnalisisProducto.ncamarones215 + AnalisisProducto.ncamarones205 + AnalisisProducto.ncamarones202 + AnalisisProducto.ncamarones195 + AnalisisProducto.ncamarones189 + AnalisisProducto.ncamarones182 + AnalisisProducto.ncamarones176 + AnalisisProducto.ncamarones169 + AnalisisProducto.ncamarones163 + AnalisisProducto.ncamarones155 + AnalisisProducto.ncamarones15 + AnalisisProducto.ncamarones143 + AnalisisProducto.ncamarones137 + AnalisisProducto.ncamarones13 + AnalisisProducto.ncamarones124 + AnalisisProducto.ncamarones117 + AnalisisProducto.ncamarones111 + AnalisisProducto.ncamarones104 + AnalisisProducto.ncamarones96 + AnalisisProducto.ncamarones91 + AnalisisProducto.ncamarones85 + AnalisisProducto.ncamarones78 + AnalisisProducto.ncamarones72 + AnalisisProducto.ncamarones65 + AnalisisProducto.ncamarones59 + AnalisisProducto.ncamarones52 + AnalisisProducto.ncamarones46 + AnalisisProducto.ncamarones33 + AnalisisProducto.ncamarones26 + AnalisisProducto.ncamarones2 + AnalisisProducto.ncamarones133 + AnalisisProducto.ncamarones07 + AnalisisProducto.ncamarones39}}
                                 </td> 
                                 <td>
-                                    {{totalPesoTotal}}
+                                    {{AnalisisProducto.pesoT215 + AnalisisProducto.pesoT205}}
                                 </td>
                                 <td>
                                     {{totalPorc}}

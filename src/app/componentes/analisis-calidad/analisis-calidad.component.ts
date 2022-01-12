@@ -19,6 +19,8 @@ export class AnalisisCalidadComponent implements OnInit {
   guiasRemision:any = [];
   analisissCalidad:any = [];
 
+  totalcamarones111:any
+
    //Tabla de datos
    totalCamaron1: number = 0;
    totalCamaron2: number = 0;
@@ -40,10 +42,10 @@ export class AnalisisCalidadComponent implements OnInit {
    totalCamaron18: number = 0;
    totalCamaron19: number = 0;  
    totalCamaron20: number = 0;  
-   totalCamaron21: number = 3;  
+   totalCamaron21: number = 0;  
    totalCamaron22: number = 0;  
    totalCamaron23: number = 0;  
-   totalCamaron24: number = 9;  
+   totalCamaron24: number = 0;  
    totalCamaron25: number = 0;
    totalCamaron26: number = 0;
    totalCamaron27: number = 0;
@@ -51,140 +53,9 @@ export class AnalisisCalidadComponent implements OnInit {
    totalCamaron29: number = 0;
    totalCamaron30: number = 0;
    totalCamaron31: number = 0;
-   totalCamaron32: number = 3;
+   totalCamaron32: number = 0;
    totalCamaron33: number = 0;
 
-  AnalisisProducto:AnalisisCalidad = {
-    id:0,
-    producto:'',
-    totalCamarones: 0,
-    observacion:'',
-    color:'',
-    olor:'',
-    sabor:'',
-    temp1:0,
-    temp2:0,
-    temp3:0,
-    temp4:0,
-    temp5:0,
-    temp6:0,
-    temp7:0,
-    temp8:0,
-    temp9:0,
-    temp10:0,
-    pesoMuestra:0,
-    numeroCamaronesAO:0,
-    grsPromedio:0,
-    otros100ppm:0,
-    otros10ppm:0,
-    deshidratadoUni:0,
-    deshidratadosPorc:0,
-    blandosUni:0,
-    blandosPorc :0,
-    mudadosUni:0,
-    mudadosPorc:0,
-    cabezaBajaUni :0,
-    cabezaBajaPorc:0,
-    cabezaNegraUni:0,
-    cabezaNegraPorc :0,
-    cabezaRojaUni:0,
-    cabezaRojaPorc:0,
-    hepReventadoUni:0,
-    hepReventadoPorc :0,
-    membranaRotaUni:0,
-    membranaRotaPorc:0,
-    primerSegmentoUni :0,
-    primerSegmentoPorc :0,
-    necrosisLeveUni :0,
-    necrosisLevePorc:0,
-    necrosisFuerteUni :0,
-    necrosisFuertePorc :0,
-    melanosisUni:0,
-    melanosisPorc :0,
-    quebradosUni:0,
-    quebradosPorc :0,
-    deformesUni :0,
-    deformesPorc:0,
-    corbataUni:0,
-    corbataPorc:0,
-    pataUni:0,
-    pataPorc:0,
-    cascarasUni:0,
-    cascarasPorc:0,
-    antenasUni:0,
-    antenasPorc:0,
-    deterioroRUni:0,
-    deterioroRPorc:0,
-    totalAnalisisDef:0,
-    ncamarones215:this.totalCamaron1,
-    ncamarones205:this.totalCamaron2,
-    ncamarones202:this.totalCamaron3,
-    ncamarones195:this.totalCamaron4,
-    ncamarones189:this.totalCamaron5,
-    ncamarones182:this.totalCamaron6,
-    ncamarones176:this.totalCamaron7,
-    ncamarones169:this.totalCamaron8,
-    ncamarones163:this.totalCamaron9,
-    ncamarones155:this.totalCamaron10,
-    ncamarones15:this.totalCamaron11,   
-    ncamarones143:this.totalCamaron12,
-    ncamarones137:this.totalCamaron13, 
-    ncamarones13 :this.totalCamaron14,
-    ncamarones124:this.totalCamaron15, 
-    ncamarones117:this.totalCamaron16, 
-    ncamarones111:this.totalCamaron17, 
-    ncamarones104:this.totalCamaron18, 
-    ncamarones96 :this.totalCamaron19,
-    ncamarones91:this.totalCamaron20,
-    ncamarones85:this.totalCamaron21,
-    ncamarones78:this.totalCamaron22,
-    ncamarones72:this.totalCamaron23,
-    ncamarones65:this.totalCamaron24,
-    ncamarones59:this.totalCamaron25,
-    ncamarones52:this.totalCamaron26,
-    ncamarones46:this.totalCamaron27,
-    ncamarones33:this.totalCamaron28,
-    ncamarones26:this.totalCamaron29,
-    ncamarones2:this.totalCamaron30,
-    ncamarones133:this.totalCamaron31,
-    ncamarones07:this.totalCamaron32,
-    ncamarones39:this.totalCamaron33,
-    pesoT215:0,
-    pesoT205:0,
-    pesoT202:0,
-    pesoT195:0,
-    pesoT189:0,
-    pesoT182:0,
-    pesoT176:0,
-    pesoT169:0,
-    pesoT163:0,
-    pesoT155:0,  
-    pesoT15 :0,
-    pesoT143:0,
-    pesoT137:0,
-    pesoT13 :0,
-    pesoT124:0,
-    pesoT117:0,
-    pesoT111:0,
-    pesoT104:0,
-    pesoT96:0,
-    pesoT91:0,
-    pesoT85:0,
-    pesoT78:0,
-    pesoT72 :0,
-    pesoT65 :0,
-    pesoT59:0, 
-    pesoT52:0, 
-    pesoT46:0, 
-    pesoT33:0, 
-    pesoT26:0, 
-    pesoT2 :0,
-    pesoT133:0,
-    pesoT07:0,
-    pesoT39:0
-  }
-
- 
 
   gramo1 = 21.5;   gramo2 = 20.5;   gramo3 = 20.2;   gramo4 = 19.5;
   gramo5 = 18.9;   gramo6 = 18.2;   gramo7 = 17.6;   gramo8 = 16.9;
@@ -353,7 +224,7 @@ export class AnalisisCalidadComponent implements OnInit {
   grsPromedio = (this.totalPesoTotal / this.totalCamarones).toFixed(2);
   
   //Analisis de defectos
-  deshidratado: number = 1;
+  deshidratado: number = 0;
   blandos: number = 0;
   mudados: number = 0;
   cabezaBaja: number = 0;
@@ -367,10 +238,10 @@ export class AnalisisCalidadComponent implements OnInit {
   melanosis: number = 0;
   quebrados: number = 0;
   deformes: number = 0;
-  corbata: number = 7;
+  corbata: number = 0;
   patas: number = 0;
   cascara: number = 0;
-  antenas: number = 2;
+  antenas: number = 0;
   deterioroRojo: number = 0;
 
   //Total Unidades
@@ -420,6 +291,174 @@ export class AnalisisCalidadComponent implements OnInit {
   totalPorcAD = ( this.totalPorcDeshidratado + this.totalPorcBlandos + this.totalPorcMudados + this.totalPorcCabezaBaja + this.totalPorcCabezaNegra + this.totalPorcCabezaRoja + this.totalPorcHepReventado + this.totalPorcMembranaRota + this.totalPorcPrimerSegmento + this.totalPorcNecrosisLeve + this.totalPorcNecrosisFuerte + this.totalPorcMelanosis + this.totalPorcQuebrados + this.totalPorcDeformes + this.totalPorcCorbata + this.totalPorcPatas + this.totalPorcCascara + this.totalPorcAntenas + this.totalPorcDeterioro )
   totalPorcRedondeado = this.totalPorcAD.toFixed(2)
 
+
+  AnalisisProducto:AnalisisCalidad = {
+    id:0,
+    producto:'',
+    totalCamarones: 0,
+    observacion:'',
+    color:'',
+    olor:'',
+    sabor:'',
+    temp1:0,
+    temp2:0,
+    temp3:0,
+    temp4:0,
+    temp5:0,
+    temp6:0,
+    temp7:0,
+    temp8:0,
+    temp9:0,
+    temp10:0,
+    pesoMuestra:0,
+    numeroCamaronesAO:0,
+    grsPromedio:0,
+    otros100ppm:0,
+    otros10ppm:0,
+    deshidratadoUni:0,
+    deshidratadosPorc:0,
+    blandosUni:0,
+    blandosPorc :0,
+    mudadosUni:0,
+    mudadosPorc:0,
+    cabezaBajaUni :0,
+    cabezaBajaPorc:0,
+    cabezaNegraUni:0,
+    cabezaNegraPorc :0,
+    cabezaRojaUni:0,
+    cabezaRojaPorc:0,
+    hepReventadoUni:0,
+    hepReventadoPorc :0,
+    membranaRotaUni:0,
+    membranaRotaPorc:0,
+    primerSegmentoUni :0,
+    primerSegmentoPorc :0,
+    necrosisLeveUni :0,
+    necrosisLevePorc:0,
+    necrosisFuerteUni :0,
+    necrosisFuertePorc :0,
+    melanosisUni:0,
+    melanosisPorc :0,
+    quebradosUni:0,
+    quebradosPorc :0,
+    deformesUni :0,
+    deformesPorc:0,
+    corbataUni:0,
+    corbataPorc:0,
+    pataUni:0,
+    pataPorc:0,
+    cascarasUni:0,
+    cascarasPorc:0,
+    antenasUni:0,
+    antenasPorc:0,
+    deterioroRUni:0,
+    deterioroRPorc:0,
+    totalAnalisisDef:0,
+
+    ncamarones215:this.totalCamaron1,
+    ncamarones205:this.totalCamaron2,
+    ncamarones202:this.totalCamaron3,
+    ncamarones195:this.totalCamaron4,
+    ncamarones189:this.totalCamaron5,
+    ncamarones182:this.totalCamaron6,
+    ncamarones176:this.totalCamaron7,
+    ncamarones169:this.totalCamaron8,
+    ncamarones163:this.totalCamaron9,
+    ncamarones155:this.totalCamaron10,
+    ncamarones15:this.totalCamaron11,   
+    ncamarones143:this.totalCamaron12,
+    ncamarones137:this.totalCamaron13, 
+    ncamarones13 :this.totalCamaron14,
+    ncamarones124:this.totalCamaron15, 
+    ncamarones117:this.totalCamaron16, 
+    ncamarones111:this.totalCamaron17, 
+    ncamarones104:this.totalCamaron18, 
+    ncamarones96 :this.totalCamaron19,
+    ncamarones91:this.totalCamaron20,
+    ncamarones85:this.totalCamaron21,
+    ncamarones78:this.totalCamaron22,
+    ncamarones72:this.totalCamaron23,
+    ncamarones65:this.totalCamaron24,
+    ncamarones59:this.totalCamaron25,
+    ncamarones52:this.totalCamaron26,
+    ncamarones46:this.totalCamaron27,
+    ncamarones33:this.totalCamaron28,
+    ncamarones26:this.totalCamaron29,
+    ncamarones2:this.totalCamaron30,
+    ncamarones133:this.totalCamaron31,
+    ncamarones07:this.totalCamaron32,
+    ncamarones39:this.totalCamaron33,
+
+    pesoT215:this.pesoTotal1,
+    pesoT205:this.pesoTotal2,
+    pesoT202:this.pesoTotal3,
+    pesoT195:this.pesoTotal4,
+    pesoT189:this.pesoTotal5,
+    pesoT182:this.pesoTotal6,
+    pesoT176:this.pesoTotal7,
+    pesoT169:this.pesoTotal8,
+    pesoT163:this.pesoTotal9,
+    pesoT155:this.pesoTotal10,  
+    pesoT15 :this.pesoTotal11,
+    pesoT143:this.pesoTotal12,
+    pesoT137:this.pesoTotal13,
+    pesoT13 :this.pesoTotal14,
+    pesoT124:this.pesoTotal15,
+    pesoT117:this.pesoTotal16,
+    pesoT111:this.pesoTotal17,
+    pesoT104:this.pesoTotal18,
+    pesoT96:this.pesoTotal19,
+    pesoT91:this.pesoTotal20,
+    pesoT85:this.pesoTotal21,
+    pesoT78:this.pesoTotal22,
+    pesoT72 :this.pesoTotal23,
+    pesoT65 :this.pesoTotal24,
+    pesoT59:this.pesoTotal25, 
+    pesoT52:this.pesoTotal26, 
+    pesoT46:this.pesoTotal27, 
+    pesoT33:this.pesoTotal28, 
+    pesoT26:this.pesoTotal29, 
+    pesoT2 :this.pesoTotal30,
+    pesoT133:this.pesoTotal31,
+    pesoT07:this.pesoTotal32,
+    pesoT39:this.pesoTotal33,
+
+    porc1:this.porc1,
+    porc2:this.porc2,
+    porc3:this.porc3,
+    porc4:this.porc4,
+    porc5:this.porc5,
+    porc6:this.porc6,
+    porc7:this.porc7,
+    porc8:this.porc8,
+    porc9:this.porc9,
+    porc10:this.porc10,
+    porc11:this.porc11,
+    porc12:this.porc12,
+    porc13:this.porc13,
+    porc14:this.porc14,
+    porc15:this.porc15,
+    porc16:this.porc16,
+    porc17:this.porc17,
+    porc18:this.porc18,
+    porc19:this.porc19,
+    porc20:this.porc20,
+    porc21:this.porc21,
+    porc22:this.porc22,
+    porc23:this.porc23,
+    porc24:this.porc24,
+    porc25:this.porc25,
+    porc26:this.porc26,
+    porc27:this.porc27,
+    porc28:this.porc28,
+    porc29:this.porc29,
+    porc30:this.porc30,
+    porc31:this.porc31,
+    porc32:this.porc32,
+    porc33:this.porc33
+
+  }
+
   ngOnInit(): void {
 
     this.ordenesTrabajo = {
@@ -447,6 +486,7 @@ export class AnalisisCalidadComponent implements OnInit {
 
   }
 
+  //traer las ordenes de trabajo mediante el id enviado en el enlace
   getOrdenTrabajoId(id:number){
     this.ordenTrabajoService.getOrdenTrabajoId(id)
     .subscribe(
