@@ -168,18 +168,18 @@
                                     
                                 </td>
                             </tr>
-                            <tr>
+                            <tr >
                                 <td colspan="3" style="text-align: right;">
-                                    <b ><label for="total" >Total</label></b> 
+                                    <b>Total</b>
                                 </td>
-                                <td *ngFor="let guiaRemision of guiasRemision">
-                                    
+                                <td style="text-align: center; width: 82px;">
+                                    {{getSumaPeso()}}
                                 </td>
-                                <td>
-                                    
+                                <td style="text-align: center; width: 82px;">
+                                    {{getSumaGavetas()}}
                                 </td>
-                                <td colspan="6">
-                                    
+                                <td style="text-align: center; width: 82px;">
+                                    {{getSumaMuestras()}}
                                 </td>
                             </tr>
                         </tbody>

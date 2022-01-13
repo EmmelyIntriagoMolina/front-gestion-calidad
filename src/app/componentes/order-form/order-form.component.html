@@ -36,7 +36,7 @@
                     </thead>
                     <tr>
                             <td>
-                                <input type="text" style="width: 80%; height: 30px;" class="form-control" name="codigo" id="codigo" formControlName="codigo" autofocus [(ngModel)]="OrdenTrabajo.codigo" placeholder="O/T-245-2021" readonly value="245">
+                                <input type="text" style="width: 80%; height: 30px;" class="form-control" name="codigo" id="codigo" formControlName="codigo" autofocus [(ngModel)]="OrdenTrabajo.codigo" readonly value="{{OrdenTrabajo.id + 1}}">
                             </td>
                             <td>
                                 <select type="text" style="width: 90%; height: 35px;" class="form-select" name="ordencompra" id="ordencompra" [(ngModel)]="OrdenTrabajo.ordenCompra">
@@ -103,13 +103,11 @@
                         <td>
                             <input type="text" class="form-control" style="width: 80%; height: 30px;" name="procedencia" id="procedencia" formControlName="procedencia" [(ngModel)]="OrdenTrabajo.procedencia" required>  
                             <span *ngIf="this.form.get('procedencia')?.errors?.required" style="color: red;">
-                                
                             </span>
                         </td>
                         <td>
                             <input type="text" class="form-control" style="width: 80%; height: 30px;" name="piscina" id="piscina" formControlName="piscina" [(ngModel)]="OrdenTrabajo.piscina" required>
                             <span *ngIf="this.form.get('piscina')?.errors?.required" style="color: red;">
-                            
                             </span>
                         </td>  
                     </tr>
@@ -151,7 +149,6 @@
                                 <option>MURICO</option>
                                 <option>LANGOSTINO ENTERO</option>
                                 <option>ESPECIES VARIAS</option>
-
                             </select>
                         </td>
                     </tr>

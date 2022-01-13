@@ -15,48 +15,47 @@ export class AnalisisCalidadComponent implements OnInit {
   
   constructor(private rutaActiva:ActivatedRoute, private ordenTrabajoService:OrdenTrabajoService, private guiaRemisionService:GuiaRemisionService, private router:Router, private analisisCalidadService:AnalisisCalidadService) { }
 
-  ordenesTrabajo:any = []; 
-  guiasRemision:any = [];
+  ordenesTrabajo:any   = []; 
+  guiasRemision:any    = [];
   analisissCalidad:any = [];
 
-  totalcamarones111:any
+  totalcamarones111:any;
 
-   //Tabla de datos
-   totalCamaron1: number = 0;
-   totalCamaron2: number = 0;
-   totalCamaron3: number = 0;   
-   totalCamaron4: number = 0;   
-   totalCamaron5: number = 0;   
-   totalCamaron6: number = 0;   
-   totalCamaron7: number = 0;   
-   totalCamaron8: number = 0;   
-   totalCamaron9: number = 0;   
-   totalCamaron10: number = 0; 
-   totalCamaron11: number = 0;
-   totalCamaron12: number = 0;
-   totalCamaron13: number = 0;
-   totalCamaron14: number = 0;
-   totalCamaron15: number = 0;
-   totalCamaron16: number = 0;
-   totalCamaron17: number = 0;
-   totalCamaron18: number = 0;
-   totalCamaron19: number = 0;  
-   totalCamaron20: number = 0;  
-   totalCamaron21: number = 0;  
-   totalCamaron22: number = 0;  
-   totalCamaron23: number = 0;  
-   totalCamaron24: number = 0;  
-   totalCamaron25: number = 0;
-   totalCamaron26: number = 0;
-   totalCamaron27: number = 0;
-   totalCamaron28: number = 0;
-   totalCamaron29: number = 0;
-   totalCamaron30: number = 0;
-   totalCamaron31: number = 0;
-   totalCamaron32: number = 0;
-   totalCamaron33: number = 0;
-
-
+  //Tabla de datos
+  totalCamaron1: number = 0;
+  totalCamaron2: number = 0;
+  totalCamaron3: number = 0;   
+  totalCamaron4: number = 0;   
+  totalCamaron5: number = 0;   
+  totalCamaron6: number = 0;   
+  totalCamaron7: number = 0;   
+  totalCamaron8: number = 0;   
+  totalCamaron9: number = 0;   
+  totalCamaron10: number = 0; 
+  totalCamaron11: number = 0;
+  totalCamaron12: number = 0;
+  totalCamaron13: number = 0;
+  totalCamaron14: number = 0;
+  totalCamaron15: number = 0;
+  totalCamaron16: number = 0;
+  totalCamaron17: number = 0;
+  totalCamaron18: number = 0;
+  totalCamaron19: number = 0;  
+  totalCamaron20: number = 0;  
+  totalCamaron21: number = 0;  
+  totalCamaron22: number = 0;  
+  totalCamaron23: number = 0;  
+  totalCamaron24: number = 0;  
+  totalCamaron25: number = 0;
+  totalCamaron26: number = 0;
+  totalCamaron27: number = 0;
+  totalCamaron28: number = 0;
+  totalCamaron29: number = 0;
+  totalCamaron30: number = 0;
+  totalCamaron31: number = 0;
+  totalCamaron32: number = 0;
+  totalCamaron33: number = 0;
+   
   gramo1 = 21.5;   gramo2 = 20.5;   gramo3 = 20.2;   gramo4 = 19.5;
   gramo5 = 18.9;   gramo6 = 18.2;   gramo7 = 17.6;   gramo8 = 16.9;
   gramo9 = 16.3;   gramo10 = 15.5;  gramo11 = 15;    gramo12 = 14.3;
@@ -291,7 +290,6 @@ export class AnalisisCalidadComponent implements OnInit {
   totalPorcAD = ( this.totalPorcDeshidratado + this.totalPorcBlandos + this.totalPorcMudados + this.totalPorcCabezaBaja + this.totalPorcCabezaNegra + this.totalPorcCabezaRoja + this.totalPorcHepReventado + this.totalPorcMembranaRota + this.totalPorcPrimerSegmento + this.totalPorcNecrosisLeve + this.totalPorcNecrosisFuerte + this.totalPorcMelanosis + this.totalPorcQuebrados + this.totalPorcDeformes + this.totalPorcCorbata + this.totalPorcPatas + this.totalPorcCascara + this.totalPorcAntenas + this.totalPorcDeterioro )
   totalPorcRedondeado = this.totalPorcAD.toFixed(2)
 
-
   AnalisisProducto:AnalisisCalidad = {
     id:0,
     producto:'',
@@ -485,6 +483,7 @@ export class AnalisisCalidadComponent implements OnInit {
     this.getGuiaRemisionIdd(this.guiasRemision.id)
 
   }
+
 
   //traer las ordenes de trabajo mediante el id enviado en el enlace
   getOrdenTrabajoId(id:number){

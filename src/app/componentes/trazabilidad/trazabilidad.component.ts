@@ -42,6 +42,53 @@ export class TrazabilidadComponent implements OnInit {
     this.getGuiaRemisionId(this.guiasRemision.id_OT)
   }
 
+   //suma de los pesos
+   getSumaPeso(): number {  
+    
+    let suma=0; 
+    let valorPeso;
+
+    this.guiasRemision.forEach((valor: any) => {
+      valorPeso = valor.peso
+      suma = suma + valorPeso;
+      console.log("Valor enviado Peso", valor.peso)
+    });
+
+    return suma
+  }
+
+
+  //suma de la sgavetas
+  getSumaGavetas(): number {  
+
+    let sumaGavetas=0; 
+    let valorGavetas
+    
+    this.guiasRemision.forEach((valor: any) => {
+      valorGavetas = valor.gavetas
+      sumaGavetas = sumaGavetas + valorGavetas;
+      console.log("Valor enviado Gavetas", valor.gavetas)
+    });
+
+    return sumaGavetas
+  } 
+
+  //suma de las muestras
+  getSumaMuestras() {  
+    
+    let sumaMuestras=0; 
+    let valorMuestras
+    
+    this.guiasRemision.forEach((valor: any) => {
+      valorMuestras = valor.muestra
+      sumaMuestras = sumaMuestras + valorMuestras;
+      console.log("Valor enviado muestras", valor.muestra)
+    });
+
+    return sumaMuestras
+  } 
+  
+
   getOrdenTrabajoId(id:number){
     this.ordenTrabajoService.getOrdenTrabajoId(id)
     .subscribe(

@@ -40,20 +40,6 @@
                     </div>
                 </div>
 
-                
-                <div class = 'row'>
-                    <div class = 'col-4'>
-                    
-                      <div class="input-group mb-3">
-                      <input [(ngModel)]='totalcamarones111' type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
-                    </div>
-                    
-                    </div>
-                    
-                    <pre>Valor de variable: {{totalcamarones111}}</pre>
-                    
-                </div> 
-
                 <table class="pure-table pure-table-condensed-x table-bordered" style="width: 100%;">
                     <tr style="height: 30px;">
                         <td *ngFor="let ordenTrabajo of ordenesTrabajo" style="width: 200px; text-align: left;">
@@ -230,7 +216,6 @@
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
                                         <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total"  [(ngModel)]="AnalisisProducto.pesoT205" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{AnalisisProducto.ncamarones205 * gramo2}}">
-                                       
                                     </div>
                                 </td>
                                 <td>
@@ -254,7 +239,7 @@
                                                 <i class="fas fa-minus-circle"></i>
                                             </button>
                                         </span>
-                                        <input matInput type="number" class="numero form-control unidades_calidad text-center" [(ngModel)]="AnalisisProducto.ncamarones202">
+                                        <input matInput type="number" class="numero form-control unidades_calidad text-center" [(ngModel)]="AnalisisProducto.ncamarones202"> 
                                         <span class="input-group-btn input-group-append">
                                             <button class="btn btn-primary bootstrap-touchspin-up btn-sm" type="button">
                                                 <i class="fas fa-plus-circle"></i>
@@ -265,7 +250,7 @@
                                 </td>
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
-                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" [(ngModel)]="AnalisisProducto.pesoT202" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{AnalisisProducto.ncamarones202 * gramo3}}">
+                                        <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" [(ngModel)]="AnalisisProducto.pesoT202" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{AnalisisProducto.ncamarones202 * gramo3}}"> 
                                        
                                     </div>
                                 </td>
@@ -1381,7 +1366,7 @@
                                 <td>
                                     <div class="form-group highlight-addon field-calidadmuestras-0-peso">
                                         <input type="text" class="form-control col-md-8 col-xs-12 text-center peso_total" [(ngModel)]="AnalisisProducto.pesoT39" name="CalidadMuestras[0][peso]" readonly style="top: 0px;" value="{{AnalisisProducto.ncamarones39 * gramo33}}">
-                                        {{AnalisisProducto.pesoT39}}
+                                       
                                     </div>
                                 </td>
                                 <td>
@@ -1392,17 +1377,15 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td colspan="2">
+                                <td colspan="3">
                                     Total
                                 </td>
-                                <td>
-
+                                <td colspan="2">
+                                    {{AnalisisProducto.ncamarones215 + AnalisisProducto.ncamarones205 + AnalisisProducto.ncamarones202+ AnalisisProducto.ncamarones195 + AnalisisProducto.ncamarones189 + AnalisisProducto.ncamarones182 + AnalisisProducto.ncamarones176 + AnalisisProducto.ncamarones169 + AnalisisProducto.ncamarones163 + AnalisisProducto.ncamarones155 + AnalisisProducto.ncamarones15 + AnalisisProducto.ncamarones143 + AnalisisProducto.ncamarones137 + AnalisisProducto.ncamarones13 + AnalisisProducto.ncamarones124 + AnalisisProducto.ncamarones117 + AnalisisProducto.ncamarones111 + AnalisisProducto.ncamarones104 + AnalisisProducto.ncamarones96 + AnalisisProducto.ncamarones91 + AnalisisProducto.ncamarones85 + AnalisisProducto.ncamarones78 + AnalisisProducto.ncamarones72 + AnalisisProducto.ncamarones65 + AnalisisProducto.ncamarones59 + AnalisisProducto.ncamarones52 + AnalisisProducto.ncamarones46 + AnalisisProducto.ncamarones33 + AnalisisProducto.ncamarones26 + AnalisisProducto.ncamarones2 + AnalisisProducto.ncamarones133 + AnalisisProducto.ncamarones07 + AnalisisProducto.ncamarones39}}
                                 </td>
-                                <td style="text-align: center;">
-                                    {{AnalisisProducto.ncamarones215 + AnalisisProducto.ncamarones205 + AnalisisProducto.ncamarones202 + AnalisisProducto.ncamarones195 + AnalisisProducto.ncamarones189 + AnalisisProducto.ncamarones182 + AnalisisProducto.ncamarones176 + AnalisisProducto.ncamarones169 + AnalisisProducto.ncamarones163 + AnalisisProducto.ncamarones155 + AnalisisProducto.ncamarones15 + AnalisisProducto.ncamarones143 + AnalisisProducto.ncamarones137 + AnalisisProducto.ncamarones13 + AnalisisProducto.ncamarones124 + AnalisisProducto.ncamarones117 + AnalisisProducto.ncamarones111 + AnalisisProducto.ncamarones104 + AnalisisProducto.ncamarones96 + AnalisisProducto.ncamarones91 + AnalisisProducto.ncamarones85 + AnalisisProducto.ncamarones78 + AnalisisProducto.ncamarones72 + AnalisisProducto.ncamarones65 + AnalisisProducto.ncamarones59 + AnalisisProducto.ncamarones52 + AnalisisProducto.ncamarones46 + AnalisisProducto.ncamarones33 + AnalisisProducto.ncamarones26 + AnalisisProducto.ncamarones2 + AnalisisProducto.ncamarones133 + AnalisisProducto.ncamarones07 + AnalisisProducto.ncamarones39}}
-                                </td> 
+                                {{AnalisisProducto.totalCamarones}}
                                 <td>
-                                    {{AnalisisProducto.pesoT215 + AnalisisProducto.pesoT205}}
+                                    
                                 </td>
                                 <td>
                                     {{totalPorc}}
@@ -1753,12 +1736,12 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>Total:</td>
-                                <td style="padding: 2px;">
-                                    <input type="number" class="form-control col-md-12 col-xs total_numero_defectos text-right" placeholder="0" readonly value="{{totalUni}}">
+                                <td >Total:</td>
+                                <td style="padding: 2px;" >
+                                    <input type="number" class="form-control col-md-12 col-xs total_numero_defectos text-center" placeholder="0" readonly value="{{totalUni}}">
                                 </td>
                                 <td style="padding: 2px;">
-                                    <input type="text" class="form-control col-md-col-xs-8 total_porcentaje_defectos text-right" placeholder="0" readonly value="{{totalPorcRedondeado}}">
+                                    <input type="text" class="form-control col-md-col-xs-8 total_porcentaje_defectos text-center" placeholder="0" readonly value="{{totalPorcRedondeado}}">
                                 </td> 
                             </tr>
                         </tbody>
