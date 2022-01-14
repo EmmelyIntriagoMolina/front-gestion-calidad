@@ -94,6 +94,7 @@ export interface AnalisisCalidad {
     ncamarones07:number,
     ncamarones39:number,
     
+    totalPesosTotales:number,
     pesoT215 :number,
     pesoT205 :number,
     pesoT202 :number,
@@ -128,6 +129,7 @@ export interface AnalisisCalidad {
     pesoT07:number,
     pesoT39:number,
 
+    totalPorcentajes:number,
     porc1:number,
     porc2:number,
     porc3:number,

@@ -387,6 +387,7 @@ export class AnalisisCalidadComponent implements OnInit {
     ncamarones07:this.totalCamaron32,
     ncamarones39:this.totalCamaron33,
 
+    totalPesosTotales:this.totalPesoTotal,
     pesoT215:this.pesoTotal1,
     pesoT205:this.pesoTotal2,
     pesoT202:this.pesoTotal3,
@@ -421,6 +422,7 @@ export class AnalisisCalidadComponent implements OnInit {
     pesoT07:this.pesoTotal32,
     pesoT39:this.pesoTotal33,
 
+    totalPorcentajes:this.totalPorc,
     porc1:this.porc1,
     porc2:this.porc2,
     porc3:this.porc3,
