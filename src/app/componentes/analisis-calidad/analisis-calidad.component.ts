@@ -351,8 +351,8 @@ export class AnalisisCalidadComponent implements OnInit {
     antenasPorc:0,
     deterioroRUni:0,
     deterioroRPorc:0,
-    totalAnalisisDef:0,
-
+    totalAnalisisDefUni:0,
+    totalAnalisisDefPorc:0,
     ncamarones215:this.totalCamaron1,
     ncamarones205:this.totalCamaron2,
     ncamarones202:this.totalCamaron3,
@@ -521,7 +521,7 @@ export class AnalisisCalidadComponent implements OnInit {
   }
 
   //guardar analisis calidad y cerrar
-  postAnalisisCalidadCerrar(id:number) {
+  postAnalisisCalidadCerrar() {
     Swal.fire({
       position: 'top-end',
       icon: 'success',
@@ -529,7 +529,7 @@ export class AnalisisCalidadComponent implements OnInit {
       showConfirmButton: false,
       timer: 1500
     })
-    this.analisisCalidadService.postAnalisisCalidad(this.AnalisisProducto, id)
+    this.analisisCalidadService.postAnalisisCalidad(this.AnalisisProducto)
     .subscribe(
       res=> {
         console.log(res);
@@ -540,7 +540,7 @@ export class AnalisisCalidadComponent implements OnInit {
   }
 
   //ingresar analisis calidad
-  postAnalisisCalidad(id:number) {
+  postAnalisisCalidad() {
     Swal.fire({
       position: 'top-end',
       icon: 'success',
@@ -548,7 +548,7 @@ export class AnalisisCalidadComponent implements OnInit {
       showConfirmButton: false,
       timer: 1500
     })
-    this.analisisCalidadService.postAnalisisCalidad(this.AnalisisProducto, id)
+    this.analisisCalidadService.postAnalisisCalidad(this.AnalisisProducto)
     .subscribe(
       res=> {
         console.log(res);

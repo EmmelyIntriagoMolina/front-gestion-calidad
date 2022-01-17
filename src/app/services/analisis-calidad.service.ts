@@ -14,8 +14,8 @@ export class AnalisisCalidadService {
   //Métodos Análisis de Calidad
 
   //Ingresar - GET
-  postAnalisisCalidad(analisisCalidad:AnalisisCalidad, id:number){
-    return this.http.post(`${this.URL}/guiasRemision/analisisCalidad/guardarAnalisis/${id}`, analisisCalidad)
+  postAnalisisCalidad(analisisCalidad:AnalisisCalidad){
+    return this.http.post(`${this.URL}/guiasRemision/analisisCalidad/guardarAnalisis/`, analisisCalidad)
   } 
 
   //Consulta individual
